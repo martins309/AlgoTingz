@@ -33,6 +33,8 @@ For example, 121 is a palindrome while 123 is not.
      
 // }
 
+
+
 const isPalindrome = function(x){
     if(x < 0) {
         return false
@@ -42,6 +44,7 @@ const isPalindrome = function(x){
 
     while(origin > 0){
         const lastDigit = origin % 10
+        //taking the last digit and adding it to the ones column 
         reversed = (reversed * 10) + lastDigit
         origin = Math.trunc(origin / 10)
     }
