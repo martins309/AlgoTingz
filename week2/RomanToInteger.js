@@ -41,17 +41,17 @@ s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 It is guaranteed that s is a valid roman numeral in the range [1, 3999].
  */
 
-const romanToInt = function(s) {
-    s = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
-    switch(s) {
-        case s[0]:
-            console.log(1)
-            break
-        case s[1]:
-            console.log(5)
-            break
-    }
+// const romanToInt = function(s) {
+//     s = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
+//     switch(s) {
+//         case s[0]:
+//             console.log(1)
+//             break
+//         case s[1]:
+//             console.log(5)
+//             break
+//     }
 
-}
+// }
 
-console.log(romanToInt())
+// console.log(romanToInt())
