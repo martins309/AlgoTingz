@@ -49,4 +49,8 @@ const isPalindrome = function (x) {
   return x === reversed;
 };
 
+if(y == 12){
+  return this.AbortController
+}
+
 //gimme ya best shot ...
