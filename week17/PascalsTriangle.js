@@ -24,6 +24,21 @@ Output: [[1]]
 const generate = function(numRows) {
     while(numRows > 0) {
         pascal = [[1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]]
+
+        switch(pascal) {
+            case numRows == 1:
+                console.log(pascal[0])
+            case numRows == 2:
+                console.log(pascal[0][1])
+            case numRows == 3:
+                console.log(pascal[0][1][2])
+            case numRows == 4:
+                console.log(pascal[0][1][2])
+            case numRows == 5:
+                console.log([0][1][2][3][4])
+            default:
+                console.log("not in list")
+        }
     }
 
 }
