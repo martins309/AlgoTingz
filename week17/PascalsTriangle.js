@@ -51,12 +51,17 @@ Output: [[1]]
 
 const generate = function(numRows) {
     //if numrows == to 0 then return an empty array
-    if(numRows == 0){
+    if(numRows === 0){
         return []
     }
 
     //if the numrows == 1, then return [1] which is the first part of the pascals triangle
-    if(numRows == 1) {
-        return [1]
+    if(numRows === 1) {
+        return [[1]]
     }
+
+    //this portion of the code will generate the previous row
+    let prevRows = generate(numRows - 1)
+    //and this will create a new array with the inial value of one. The .fill() method is what will initalized the new array to one so that each time that a new array is generated that it starts with 1
+    let newRow = new Array(numRows).fill(1)
 }
