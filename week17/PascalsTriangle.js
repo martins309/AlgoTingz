@@ -70,4 +70,7 @@ const generate = function(numRows) {
     for (let i = 1; i < numRows.length; i++) {
         newRow[i] = prevRows[numRows -2][i - 1] + prevRows[numRows - 2][i]
     }
+    //this will push the new row to the previous row  and then return the elements of the previous row
+    prevRows.push(newRow)
+    return prevRows
 }
