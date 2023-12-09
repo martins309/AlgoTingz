@@ -64,4 +64,10 @@ const generate = function(numRows) {
     let prevRows = generate(numRows - 1)
     //and this will create a new array with the inial value of one. The .fill() method is what will initalized the new array to one so that each time that a new array is generated that it starts with 1
     let newRow = new Array(numRows).fill(1)
+
+    //this will be the for loop that will calculate the new values
+    //it excludes the edge elements which is one because the sequence always starts with 1
+    for (let i = 1; i < numRows.length; i++) {
+        newRow[i] = prevRows[numRows -2][i - 1] + prevRows[numRows - 2][i]
+    }
 }
