@@ -44,11 +44,11 @@ nums2.length == n
 // be aware of time and space complexity 
 
 var merge = function(nums1, m, nums2, n) {
-    if(num1 || nums2 <= 0) {
+    if(nums1 || nums2 >= 0) {
         return 
     }
     for(i = n-1; i <= nums2.length; i--) {
-        for(j = m-1; j <= nums1.length; i--) {
+        for(j = m-1; j >= nums1.length; i--) {
             if(nums2[j] > nums1[i]){
                 nums2.push(nums1)
                 
