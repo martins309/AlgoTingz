@@ -51,9 +51,11 @@ var merge = function(nums1, m, nums2, n) {
         for(j = m-1; j <= nums1.length; i--) {
             if(nums2[j] > nums1[i]){
                 nums2.push(nums1)
+                
             }
         }
     }
     return [nums1]
-
+   
 } 
+
