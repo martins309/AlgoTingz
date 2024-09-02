@@ -58,7 +58,7 @@ var merge = function(nums1, m, nums2, n) {
 
             i--
         }else {
-            nums1[k] = nums1[j]
+            nums1[k] = nums2[j]
             
             j--
         }
@@ -66,7 +66,12 @@ var merge = function(nums1, m, nums2, n) {
     }
     return nums1
    
-    
-   
 } 
+
+let nums1 = [1,2,3,0,0,0]
+let nums2 = [2,5,6]
+let m = 3
+let n = 3
+
+console.log(merge(nums1, m, nums2, n))
 
