@@ -50,12 +50,21 @@ Constraints:
 
 
 var removeElement = function(nums, val) {
-    if(nums <= 0 && val <= 0) {
+    if(nums.length <= 0 && val <= 0) {
         return nums
     }
 
-    while(nums > 0 && val > 0) {
-        
+    let i = 0 
+    let j = nums.length - 1
+    let k = val
+
+    while(i > 0 && k > 0) {
+        if(nums[i] === nums[j]) {
+            nums.shift(nums[i])
+            nums.pop(nums[j])
+            i++
+        }
+
     }
 
 }
