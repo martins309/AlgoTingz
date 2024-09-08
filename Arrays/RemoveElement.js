@@ -50,5 +50,12 @@ Constraints:
 
 
 var removeElement = function(nums, val) {
+    if(nums <= 0 && val <= 0) {
+        return nums
+    }
+
+    while(nums > 0 && val > 0) {
+        
+    }
 
 }
