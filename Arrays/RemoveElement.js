@@ -66,7 +66,7 @@ var removeElement = function(nums, val) {
         } else {
             j--
         }
-
+        
     }
-
+    return k
 }
