@@ -70,3 +70,8 @@ var removeElement = function(nums, val) {
     }
     return k
 }
+
+let nums = [3,2,2,3]
+let val = 3
+
+console.log(nums, val)
