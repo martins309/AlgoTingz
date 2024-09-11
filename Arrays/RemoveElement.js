@@ -56,7 +56,7 @@ var removeElement = function(nums, val) {
 
     let i = 0 
     let j = nums.length - 1
-    k = nums.length
+    
    
 
     while(nums.length > 0 && val > 0) {
@@ -65,8 +65,9 @@ var removeElement = function(nums, val) {
             nums.pop(nums[j])
             i++
         } else {
+            nums.push([nums[j]])
             j--
-            val = k
+            val = nums.length
         }
     }
     return val
