@@ -46,3 +46,9 @@ nums is sorted in non-decreasing order.
 
 
 */
+
+
+
+var  removeElement = function (nums) {
+
+}
