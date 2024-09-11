@@ -43,29 +43,30 @@ nums2.length == n
 // this will also make me better javascript developer because I know how to use the tools better
 // be aware of time and space complexity 
 
-var removeElement = function(nums, val) {
-    if(nums.length <= 0 && val <= 0) {
-        return nums.length
+var merge = function(nums1, m, nums2, n) {
+    if(m <= 0 && n <= 0) {
+        return nums1
     }
 
-    let i = 0 
-    let j = nums.length - 1
-    k = nums.length
-   
+    let i = m - 1
+    let j = n - 1
+    let k = m + n - 1
 
-    while(nums.length > 0 && val > 0) {
-        if(nums[i] === nums[j]) {
-            nums.shift(nums[i])
-            nums.pop(nums[j])
-            i++
-        } else {
+    while(j >= 0) {
+        if(i >= 0 && nums1[i] > nums2[j]) {
+            nums1[k] = nums1[i]
+
+            i--
+        }else {
+            nums1[k] = nums2[j]
+            
             j--
-            val = k
         }
+        k--
     }
-    return val
-}
-
+    return nums1
+   
+} 
 
 let nums1 = [1,2,3,0,0,0]
 let nums2 = [2,5,6]
