@@ -50,12 +50,13 @@ nums is sorted in non-decreasing order.
 
 
 
-var  removeElement = function (nums) {
+var  removeDuplicates = function (nums) {
 
     let i = 0
 
     for(let j = 1; j < nums.length; j++) {
-        if(nums[i] === nums[j + 1]) {
+        if(nums[i] === nums[j]) {
+            nums[i] === nums[j]
             i++
             nums = nums.length - 1
 
