@@ -54,11 +54,18 @@ var  removeElement = function (nums) {
 
     let i = 0
 
-    for(let j = 0; j < nums.length - 1; j++) {
+    for(let j = 1; j < nums.length - 1; j++) {
+        if(nums[i] === nums[j]) {
+            nums[i] = nums[i + 1]
+            i++
 
+        
+        }
     }
-
+    return nums
 }
 
 let nums = [1,2,3,3,4,5,5,6]
+console.log(removeElement(nums))
+
 
