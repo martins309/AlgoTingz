@@ -55,7 +55,10 @@ var  removeElement = function (nums) {
     let i = 0
 
     for(let j = 0; j < nums.length - 1; j++) {
-        
+
     }
 
 }
+
+let nums = [1,2,3,3,4,5,5,6]
+
