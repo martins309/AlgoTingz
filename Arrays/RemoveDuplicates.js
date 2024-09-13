@@ -59,8 +59,6 @@ var  removeDuplicates = function (nums) {
             nums[i + 1] === nums[i + 2]
             i++
             nums = nums.length - 1
-
-        
         }
     }
     return nums
