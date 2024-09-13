@@ -56,7 +56,7 @@ var  removeDuplicates = function (nums) {
 
     for(let j = 1; j < nums.length; j++) {
         if(nums[i] === nums[j]) {
-            nums[i + 2] === nums[j]
+            nums[i + 1] === nums[i]
             i++
             nums = nums.length - 1
 
@@ -66,7 +66,7 @@ var  removeDuplicates = function (nums) {
     return nums
 }
 
-let nums = [1,1,2]
+let nums = [1,1,3]
 console.log(removeDuplicates(nums))
 
 
