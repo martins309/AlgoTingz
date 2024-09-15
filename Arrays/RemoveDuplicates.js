@@ -49,7 +49,6 @@ nums is sorted in non-decreasing order.
 */
 
 
-
 var  removeDuplicates = function (nums) {
 
     if(nums.length === 0) {
