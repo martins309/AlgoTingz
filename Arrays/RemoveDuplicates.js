@@ -52,6 +52,10 @@ nums is sorted in non-decreasing order.
 
 var  removeDuplicates = function (nums) {
 
+    if(nums.length === 0) {
+        return 0
+    }
+
     let i = 0
 
     for(let j = 1; j < nums.length; j++) {
