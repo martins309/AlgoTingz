@@ -63,10 +63,12 @@ var  removeDuplicates = function (nums) {
             nums[i] === nums[j]
         }
     }
-    return nums
+    return i + 1
 }
 
-let nums = [1,1,3]
-console.log(removeDuplicates(nums))
+let nums = [1,1,2,3,3]
+let length = removeDuplicates(nums)
+console.log(length)
+console.log(nums.slice(0, length))
 
 
