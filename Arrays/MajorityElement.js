@@ -32,11 +32,10 @@ var majorityElement = function(nums) {
     let i = 0
     for (let j = 0; j < nums.length; j++){
         let seen = 0
+        let value 
         if(nums[i] === nums[j]){
-            nums[i] = nums[seen]
-            i++ 
-        } else {
-            nums[j] = nums[seen]
+            seen++
+            value = nums[i]
         }
     }
 
