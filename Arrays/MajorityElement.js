@@ -31,6 +31,7 @@ var majorityElement = function(nums) {
 
     let i = 0
     for (let j = 0; j < nums.length; j++){
+        let seen = 0
         
     }
 
