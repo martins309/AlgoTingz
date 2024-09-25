@@ -25,6 +25,11 @@ n == nums.length
 
 */
 
+/*
+first note. Find a away to keep track of the elements in the array
+nevermind
+*/
+
 
 var majorityElement = function(nums) {
     if (nums.length === 0 ) return 0
