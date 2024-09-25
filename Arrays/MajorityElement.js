@@ -34,6 +34,9 @@ var majorityElement = function(nums) {
         let seen = 0
         if(nums[i] === nums[j]){
             nums[i] = nums[seen]
+            i++ 
+        } else {
+            nums[j] = nums[seen]
         }
     }
 
