@@ -35,7 +35,7 @@ var majorityElement = function(nums) {
     if (nums.length === 0 ) return 0
 
     let i = 0
-    for (let j = 0; j < nums.length; j++){
+    for (let j = 1; j < nums.length; j++){
         let seen = 0
         let value 
         if(nums[i] === nums[j]){
@@ -43,7 +43,7 @@ var majorityElement = function(nums) {
             value = nums[i]
         }
     }
-
+    
 }
 
 let nums = [3,2,3]
