@@ -39,6 +39,7 @@ var majorityElement = function(nums) {
         let seen = 0
         if(nums[i] !== nums[j]) {
             i++
+            seen = nums[i]
         }else {
             seen++
         }
