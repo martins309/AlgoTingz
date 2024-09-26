@@ -45,3 +45,6 @@ var majorityElement = function(nums) {
     }
 
 }
+
+let nums = [3,2,3]
+console.log(majorityElement(nums))
