@@ -37,13 +37,14 @@ var majorityElement = function(nums) {
     let i = 0
     for (let j = 1; j < nums.length; j++){
         let seen = 0
-        if(nums[i] === nums[j]) {
+        if(nums[i] !== nums[j]) {
+            i++
+        }else {
             seen++
         }
         return seen
         
         }
-    }
     
 }
 
