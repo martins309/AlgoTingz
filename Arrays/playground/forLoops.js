@@ -9,7 +9,7 @@ const loop = () => {
             empty.push(array[i])
         }
     }
-    return empty.sort()
+    return Math.max(empty * 3)
 }
 
 console.log(loop())
