@@ -9,8 +9,19 @@ const loop = () => {
             empty[empty.length] = array[i]
         }
     }
-    return empty
+    return empty.sort()
 }
 
 
 console.log(loop())
+
+
+
+const loop2 = () => {
+    for(num of array) {
+        console.log(num)
+    }
+    
+}
+
+console.log(loop2())
