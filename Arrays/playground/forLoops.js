@@ -6,10 +6,11 @@ let empty = []
 const loop = () => {
     for(let i = 0; i < array.length; i++){
         if(array[i] % 2 !== 0){
-            empty.push(array[i])
+            empty[empty.length] = array[i]
         }
     }
-    return Math.max(empty * 3)
+    return empty
 }
+
 
 console.log(loop())
