@@ -5,9 +5,11 @@ let empty = []
 
 const loop = () => {
     for(let i = 0; i < array.length; i++){
-        if(array[i] / 2 !== 0){
-            array.push(empty)
+        if(array[i] % 2 !== 0){
+            empty.push(array[i])
         }
     }
-    return empty
+    return empty.sort()
 }
+
+console.log(loop())
