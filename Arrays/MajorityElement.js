@@ -43,7 +43,7 @@ var majorityElement = function(nums) {
         }else {
             seen++
         }
-        return seen[i]
+        return seen
         
         }
     
