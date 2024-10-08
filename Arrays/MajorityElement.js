@@ -31,23 +31,33 @@ nevermind
 */
 
 
-var majorityElement = function(nums) {
-    if (nums.length === 0 ) return 0
+// var majorityElement = function(nums) {
+//     if (nums.length === 0 ) return 0
 
-    let i = 0
-    for (let j = 1; j < nums.length; j++){
-        let seen = 0
-        if(nums[i] !== nums[j]) {
-            i++
-            seen = nums[i]
-        }else {
-            seen++
-        }
-        return seen
+//     let i = 0
+//     for (let j = 1; j < nums.length; j++){
+//         let seen = 0
+//         if(nums[i] !== nums[j]) {
+//             i++
+//             seen = nums[i]
+//         }else {
+//             seen++
+//         }
+//         return seen
         
-        }
+//         }
     
+// }
+
+// let nums = [3,2,3]
+// console.log(majorityElement(nums))
+
+
+for(let nums of [3,2,3]){
+    console.log(nums)
+    return nums
 }
 
-let nums = [3,2,3]
-console.log(majorityElement(nums))
+for(let nums of [1,2,3,]){
+    console.log(nums)
+}
