@@ -59,9 +59,12 @@ var majorityElement = function(nums){
 
     for(let num of nums){
         if(count === 0){
-            candidate = nums
+            candidate = num
         }
-        count += (nums === candidate) ? 1 : -1
+        count += (num === candidate) ? 1 : -1
     }
     return candidate
 }
+
+let nums = [3,2,3]
+console.log(majorityElement(nums))
