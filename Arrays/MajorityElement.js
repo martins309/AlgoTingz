@@ -53,11 +53,6 @@ nevermind
 // console.log(majorityElement(nums))
 
 
-for(let nums of [3,2,3]){
-    console.log(nums)
-   
-}
-
-for(let nums of [1,2,3,]){
-    console.log(nums)
+var majorityElement = function(nums){
+    
 }
