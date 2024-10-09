@@ -55,7 +55,7 @@ nevermind
 
 for(let nums of [3,2,3]){
     console.log(nums)
-    return nums
+   
 }
 
 for(let nums of [1,2,3,]){
