@@ -72,3 +72,5 @@ console.log(length)
 console.log(nums.slice(0, length))
 
 
+//i understand it now lol
+// will try to write a refactored version tomorrow
