@@ -49,7 +49,7 @@ nums is sorted in non-decreasing order.
 */
 
 
-var  removeDuplicates = function (nums) {
+var removeDuplicates = function(nums) {
 
     if(nums.length === 0) {
         return 0
@@ -74,3 +74,7 @@ console.log(nums.slice(0, length))
 
 //i understand it now lol
 // will try to write a refactored version tomorrow
+
+var removeDuplicates = function(nums) {
+
+}
