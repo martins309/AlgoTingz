@@ -80,6 +80,7 @@ var removeDuplicates = function(nums) {
     for(let j = 1; j < nums.length; j++) {
         if(nums[j] != nums[i - 1]){
             nums[i] = nums[j]
+            i++
         }
     }
     return i
