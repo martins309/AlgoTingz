@@ -76,5 +76,8 @@ console.log(nums.slice(0, length))
 // will try to write a refactored version tomorrow
 
 var removeDuplicates = function(nums) {
-
+    let i = 1
+    for(let j = 1; j < nums.length; j++) {
+        
+    }
 }
