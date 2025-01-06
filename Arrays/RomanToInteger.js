@@ -50,7 +50,7 @@ var RomanToInteger = function(s) {
     // s cannot = 0 
     // because then there is no number
     
-    if(s.length <= 0 ) {
-        return 0
+    if(s.length === "" ) {
+        return 
     }
 }
