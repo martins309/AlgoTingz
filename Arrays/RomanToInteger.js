@@ -50,11 +50,13 @@ var RomanToInteger = function(s) {
     // s cannot = " " 
     // because then there is no number
     
-    if(s.length === " " ) {
-        return 
+    
+    if(s === "" ) {
+        return "nothing is here"
     }
-    for(let char of s){
-        console.log(char)
-    }
+   for(let i = 0; i < s.length; i++){
+    console.log(s[i])
+   }
 
 }
+console.log(RomanToInteger("MCMXCIV"))
