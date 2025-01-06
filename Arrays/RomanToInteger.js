@@ -47,10 +47,14 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
  */
 
 var RomanToInteger = function(s) {
-    // s cannot = 0 
+    // s cannot = " " 
     // because then there is no number
     
-    if(s.length === "" ) {
+    if(s.length === " " ) {
         return 
     }
+    for(let char of s){
+        console.log(char)
+    }
+
 }
