@@ -49,5 +49,8 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 var RomanToInteger = function(s) {
     // s cannot = 0 
     // because then there is no number
-
+    
+    if(s.length <= 0 ) {
+        return 0
+    }
 }
