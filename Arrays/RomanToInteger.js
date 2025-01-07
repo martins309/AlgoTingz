@@ -54,9 +54,9 @@ var RomanToInteger = function(s) {
     if(s === "" ) {
         return "nothing is here"
     }
-   for(let i = 0; i < s.length; i++){
-    console.log(s[i])
+   for(let char of s){
+    console.log(char)
+   
    }
-
 }
 console.log(RomanToInteger("MCMXCIV"))
