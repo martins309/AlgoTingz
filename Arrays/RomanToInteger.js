@@ -63,9 +63,7 @@ const numerals = {
     if(s === "" ) {
         return "nothing is here"
     }
-   for(let char of s){
-    console.log(char)
-
-   }
+  
+   console.log(Object.keys(numerals))
 }
 console.log(RomanToInteger("MCMXCIV"))
