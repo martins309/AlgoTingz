@@ -46,6 +46,9 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 
  */
 
+//fun fact !! 
+//you can iterate over strings as arrays when accessing each character
+
 var RomanToInteger = function(s) {
     // s cannot = " " 
     // because then there is no number
