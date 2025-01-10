@@ -64,8 +64,10 @@ const numerals = {
         return "nothing is here"
     }
 
-    for(const key in numerals){
-      console.log(numerals[key])
+    for(const key of Object.keys(numerals)){
+      if(s.includes(key)){
+        console.log(`The string matches ${key}`)
+      }
     
     }
   
