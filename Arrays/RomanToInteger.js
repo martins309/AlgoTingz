@@ -65,12 +65,7 @@ const numerals = {
     }
 
     for(const key of Object.keys(numerals)){
-        switch(numerals){
-            case I && V:
-                console.log(I + V)
-            default:
-                console.log("test")
-        }
+        
       if(s.includes(key)){
         console.log(`The string matches ${key}`)
       }
