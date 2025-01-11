@@ -69,8 +69,11 @@ let next = numerals[s[i + 1]]
     for(let i = 0; i < s.length; i++){
       if(current < next) {
         result += current - next
+        i++
+      }else {
+        result += current
       }
   }
-    
+    return result
     
 }
