@@ -68,9 +68,9 @@ let result = 0
     for(let i = 0; i < s.length; i++){
       let current = numerals[s[i]]
       let next = numerals[s[i + 1]]
-      
+
       if(current < next) {
-        result += current - next
+        result += next - current
         i++
       }else {
         result += current
@@ -79,3 +79,4 @@ let result = 0
     return result
     
 }
+console.log(RomanToInteger("LVIII"))
