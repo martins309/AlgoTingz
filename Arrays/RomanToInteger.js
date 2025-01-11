@@ -61,20 +61,16 @@ const numerals = {
  D: 500,
  M: 1000
 }
+let result = 0
 
-    
-    if(s === "" ) {
-        return "nothing is here"
-    }
+let current = numerals[s[i]]
+let next = numerals[s[i + 1]]
 
-    for(const key of Object.keys(numerals)){
-        
-      if(s.includes(key)){
-        console.log(`The string matches ${key}`)
+    for(let i = 0; i < s.length; i++){
+      if(current < next) {
+        result += current - next
       }
+  }
     
-    }
-  
-//    console.log(Object.keys(numerals))
+    
 }
-console.log(RomanToInteger("MCMXCIV"))
