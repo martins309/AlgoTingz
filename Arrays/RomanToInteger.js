@@ -80,3 +80,6 @@ let result = 0
     
 }
 console.log(RomanToInteger("LVIII"))
+
+
+//refactor this study different ways to solve this 
