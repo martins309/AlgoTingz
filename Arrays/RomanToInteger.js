@@ -83,3 +83,18 @@ console.log(RomanToInteger("LVIII"))
 
 
 //refactor this study different ways to solve this 
+
+// so here is what i wanted to do but did not articulate it properly into code 
+
+var RomanToInteger = function(s) {
+  let res = 0
+  let lowerString  = s.toLowerCase() 
+
+  for(let i = 0; i < s.length; i++){
+    switch(s[i].toLowerCase()){
+      case "i":
+        res += 1
+      case 
+    }
+  }
+}
