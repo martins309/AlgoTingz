@@ -118,5 +118,11 @@ var RomanToInteger = function(s) {
   if(lowerString.includes("iv") || lowerString.includes("ix")) {
     res -= 2
   }
-  
+  if(lowerString.includes("xc") || lowerString.includes("xl")) {
+    res -= 20
+  }
+  if(lowerString.includes("cd") || lowerString.includes("cm")) {
+    res -= 200
+  }
+  return res 
 }
