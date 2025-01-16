@@ -94,7 +94,29 @@ var RomanToInteger = function(s) {
     switch(s[i].toLowerCase()){
       case "i":
         res += 1
-      case 
+        break
+      case "v":
+        res += 5
+        break
+      case "x":
+        res += 10
+        break
+      case 'l':
+        res += 50
+        break
+      case "c":
+        res += 100
+        break
+      case "d":
+        res += 500
+        break
+      case "m":
+        res += 1000
+        break
     }
   }
+  if(lowerString.includes("iv") || lowerString.includes("ix")) {
+    res -= 2
+  }
+  
 }
