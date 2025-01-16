@@ -49,37 +49,37 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 //fun fact !! 
 //you can iterate over strings as arrays when accessing each character
 
-var RomanToInteger = function(s) {
-    // s cannot = " " 
-    // because then there is no number
-const numerals = {    
- I: 1,
- V: 5,
- X: 10,
- L: 50,
- C: 100,
- D: 500,
- M: 1000
-}
-let result = 0
+// var RomanToInteger = function(s) {
+//     // s cannot = " " 
+//     // because then there is no number
+// const numerals = {    
+//  I: 1,
+//  V: 5,
+//  X: 10,
+//  L: 50,
+//  C: 100,
+//  D: 500,
+//  M: 1000
+// }
+// let result = 0
 
 
 
-    for(let i = 0; i < s.length; i++){
-      let current = numerals[s[i]]
-      let next = numerals[s[i + 1]]
+//     for(let i = 0; i < s.length; i++){
+//       let current = numerals[s[i]]
+//       let next = numerals[s[i + 1]]
 
-      if(current < next) {
-        result += next - current
-        i++
-      }else {
-        result += current
-      }
-  }
-    return result
+//       if(current < next) {
+//         result += next - current
+//         i++
+//       }else {
+//         result += current
+//       }
+//   }
+//     return result
     
-}
-console.log(RomanToInteger("LVIII"))
+// }
+// console.log(RomanToInteger("LVIII"))
 
 
 //refactor this study different ways to solve this 
@@ -126,3 +126,4 @@ var RomanToInteger = function(s) {
   }
   return res 
 }
+console.log(RomanToInteger("LVIII"))
