@@ -9,7 +9,9 @@
 //here we will use this for the length of last word algo
 
 var lengthOfLast = function(s) {
-
+    for(let i = 0; i < s.length; i++) {
+        
+    }
 }
 
 console.log(lengthOfLast("Hello fuck nigga"))
