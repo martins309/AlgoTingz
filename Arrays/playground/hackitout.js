@@ -8,3 +8,8 @@
 
 //here we will use this for the length of last word algo
 
+var lengthOfLast = function(s) {
+
+}
+
+console.log(lengthOfLast("Hello fuck nigga"))
