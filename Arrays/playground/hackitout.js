@@ -9,6 +9,9 @@
 //here we will use this for the length of last word algo
 
 var lengthOfLast = function(s) {
+    //might use a regular expression for this
+    let regex;
+
     for(let i = 0; i < s.length; i++) {
         
     }
