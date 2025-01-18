@@ -10,13 +10,14 @@
 
 var lengthOfLast = function(s) {
     //might use a regular expression for this
-    let regex = /a-z, A-Z/ 
+    let regex = /^[a-zA-Z\s]*$/ 
 
     for(let i = 0; i < s.length; i++) {
-        if(s.length != regex) {
-            return
+        if(s !== regex) {
+            console.log("no")
         }
     }
+    return s.length
 }
 
 console.log(lengthOfLast("Hello fuck nigga"))
