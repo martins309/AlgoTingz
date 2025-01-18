@@ -10,10 +10,12 @@
 
 var lengthOfLast = function(s) {
     //might use a regular expression for this
-    let regex;
+    let regex = /a-z, A-Z/ 
 
     for(let i = 0; i < s.length; i++) {
-        
+        if(s.length != regex) {
+            return
+        }
     }
 }
 
