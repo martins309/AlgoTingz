@@ -11,13 +11,12 @@
 var lengthOfLast = function(s) {
     //might use a regular expression for this
     let regex = /^[a-zA-Z\s]*$/ 
-
+    
     for(let i = 0; i < s.length; i++) {
-        if(s !== regex) {
-            console.log("no")
-        }
+        s[i] === " " ? i++ : console.log(s.substring(0))
+        return s
     }
-    return s.length
+    
 }
 
-console.log(lengthOfLast("Hello fuck nigga"))
+console.log(lengthOfLast("Hello World"))
