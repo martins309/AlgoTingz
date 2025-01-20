@@ -15,8 +15,9 @@ var lengthOfLast = function(s) {
     let newString = ""
     
     for(let i = 0; i < s.length; i++) {
-        s[i] === " " ? i++ : s.push(newString)
+        s[i] === " " ? i++ : newString[i] === s[i]
         return newString
+        
     }
     
 }
