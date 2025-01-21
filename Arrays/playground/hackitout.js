@@ -9,17 +9,13 @@
 //here we will use this for the length of last word algo
 
 var lengthOfLast = function(s) {
-    //might use a regular expression for this
-    let regex = /^[a-zA-Z\s]*$/ 
-    
-    let newString = ""
-    
-    for(let i = 0; i < s.length; i++) {
-        s[i] === " " ? i++ : newString[i] === s[i]
-        return newString
-        
-    }
-    
+  
+    s = s.trim()
+
+    let words = s.split(" ")
+
+    return words[words.length - 1].length 
+ 
 }
 
 console.log(lengthOfLast("hello world"))
