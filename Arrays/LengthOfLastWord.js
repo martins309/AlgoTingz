@@ -35,5 +35,14 @@ There will be at least one word in s.
 */
 
 var lengthOfLast = function(s) {
+    // trim of any trailing spaces
+    s = s.trim()
+
+    //any time there is a space count that as a word
+
+    words = s.split(" ")
+
+    //return the length of the last word 
+    return words[words.length - 1].length
     
 }
