@@ -25,3 +25,7 @@ console.log(lengthOfLast("hello world"))
 
 // so here we are iterating through an array and then returning the difference between 
 //stock bought and sold on different days
+
+const buySell = () => {
+    
+}
