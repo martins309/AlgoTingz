@@ -19,3 +19,9 @@ var lengthOfLast = function(s) {
 }
 
 console.log(lengthOfLast("hello world"))
+
+
+//buy and sell ting
+
+// so here we are iterating through an array and then returning the difference between 
+//stock bought and sold on different days
