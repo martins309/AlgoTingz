@@ -18,3 +18,17 @@ If the array is empty, return null.
 // console.log(maxValue([]))
 
 
+
+
+/*
+2. Remove Duplicates from Sorted Array
+Problem:
+Write a function that removes duplicates from a sorted array in place (no extra space) and returns the new length of the array. 
+You only need to maintain the unique elements at the beginning.
+
+*/
+
+
+const removeDups = (duplicates) => {
+    
+}
