@@ -29,9 +29,8 @@
 let prices = [7, 1, 5, 3, 6, 4]
 
 const testLoop = (prices) => {
-    let j = i + 1
-
     for(let i = 0; i < prices.length; i++) {
+        let j = i + 1
        i > j ? 0 : max = j - i
     }
     return max
