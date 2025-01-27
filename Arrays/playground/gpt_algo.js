@@ -9,13 +9,7 @@ If the array is empty, return null.
 
 
 const maxValue = (array) => {
-    if( array.length === 0) {
-        return []
-    }
-
-   for(let i = 0; i < array.length; i++){
-    return Math.max(array)
-   }
+  return array !== 0 ? Math.max(array) : null
 }
 
 console.log([2,5,1,8,4])
