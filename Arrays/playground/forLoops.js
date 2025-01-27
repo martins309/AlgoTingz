@@ -28,8 +28,11 @@
 
 let prices = [7, 6, 4, 3, 2, 1]
 
-const testLoop = () => {
-    for(let i = 0; i < prices.length; i++) {
-
+const testLoop = (buy, sell) => {
+    for(let i = buy; i < prices.length; i++) {
+        buy > sell ? 0 : sell - buy 
     }
+    return sell - buy
 }
+
+console.log(1, 6)
