@@ -8,8 +8,13 @@ If the array is empty, return null.
 */
 
 
-const maxValue = (array) => {
-  return array !== 0 ? Math.max(array) : null
-}
+//math.max does not take arrays directly but expects numbers as separate arguments
 
-console.log([2,5,1,8,4])
+
+// const maxValue = (array) => {
+//   return array.length !== 0 ? Math.max(...array) : null
+// }
+
+// console.log(maxValue([]))
+
+
