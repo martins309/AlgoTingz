@@ -31,10 +31,10 @@ let prices = [7, 1, 5, 3, 6, 4]
 const testLoop = (prices) => {
     for(let i = 0; i < prices.length; i++) {
         let j = i + 1
-       i > j ? 0 : max = j - i
+       i > j || i === j ? j++ : max = j - i
     }
     return max
     
 }
 
-console.log(testLoop())
+console.log(testLoop([7, 1, 5, 3, 6, 4]))
