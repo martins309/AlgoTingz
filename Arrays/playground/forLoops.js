@@ -32,9 +32,10 @@ const testLoop = (prices) => {
     let j = i + 1
 
     for(let i = 0; i < prices.length; i++) {
-       
+       i > j ? 0 : max = j - i
     }
-    return 
+    return max
+    
 }
 
-console.log(testLoop(7, 0))
+console.log(testLoop())
