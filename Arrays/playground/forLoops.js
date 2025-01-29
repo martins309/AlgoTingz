@@ -26,15 +26,24 @@
 
 // console.log(loop2())
 
-let prices = [7, 1, 5, 3, 6, 4]
+// let prices = [7, 1, 5, 3, 6, 4]
 
-const testLoop = (prices) => {
-    for(let i = 0; i < prices.length; i++) {
-        let j = i + 1
-       i > j || i === j ? j++ : max = j - i
-    }
-    return max
+// const testLoop = (prices) => {
+//     for(let i = 0; i < prices.length; i++) {
+//         let j = i + 1
+//        i > j || i === j ? j++ : max = j - i
+//     }
+//     return max
     
-}
+// }
 
-console.log(testLoop([7, 1, 5, 3, 6, 4]))
+// console.log(testLoop([7, 1, 5, 3, 6, 4]))
+
+// i think i dont know how for loops  work appparently
+
+const forLoops = (array) => {
+    for(let i = 0; i < array.length; i++){
+        return i
+    }
+}
+console.log(forLoops([1,2,3,4,5,6]))
