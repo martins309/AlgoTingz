@@ -40,4 +40,6 @@ const removeDups = (duplicates) => {
 
     return duplicates.length
 }
-'
+
+console.log(removeDups([1,1,2,3,5]))
+
