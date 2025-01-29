@@ -30,5 +30,14 @@ You only need to maintain the unique elements at the beginning.
 
 
 const removeDups = (duplicates) => {
-    
+    for(let i = 1; i < duplicates.length; i++) {
+        let current = i
+        let next = current + 1
+
+        duplicates[current] !== duplicates[next] ? duplicates[next] = duplicates[current] : next++
+    }
+    current++
+
+    return duplicates.length
 }
+'
