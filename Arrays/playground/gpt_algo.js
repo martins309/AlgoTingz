@@ -48,5 +48,13 @@ You only need to maintain the unique elements at the beginning.
 // console.log(removeDups([1,1,2,3,3]))
 
 
+//will this work without the parenthesis??
 
+const fetchTing = callback => {
+    setTimeout(() => {
+        callback("I need TP")
+    })
+}
+
+console.log("for my bunghole")
 
