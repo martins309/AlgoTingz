@@ -53,8 +53,17 @@ You only need to maintain the unique elements at the beginning.
 const fetchTing = callback => {
     setTimeout(() => {
         callback("I need TP")
-    })
+    }, 1000)
 }
 
-console.log("for my bunghole")
+setTimeout(() => {
+    fetchTing(text => {
+        console.log(text)
+    })
+}, 2000)
 
+setTimeout(() => {
+    console.log('i see you ')
+}, 3000)
+
+console.log("grape!!")
