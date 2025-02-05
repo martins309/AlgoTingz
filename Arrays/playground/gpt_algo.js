@@ -30,17 +30,17 @@ You only need to maintain the unique elements at the beginning.
 
 
 // this is ssooooooo wrong lol
-const removeDups = (duplicates) => {
-    if(duplicates.length === 0) return 0
+// const removeDups = (duplicates) => {
+//     if(duplicates.length === 0) return 0
 
-    let j = 1
-   for(let i = 1; i < duplicates.length; i++){
-        duplicates[i - 1] !== duplicates[i] ? duplicates[j] === duplicates[i] : j++
-   }
-   return j
-}
+//     let j = 1
+//    for(let i = 1; i < duplicates.length; i++){
+//         duplicates[i - 1] !== duplicates[i] ? duplicates[j] === duplicates[i] : j++
+//    }
+//    return j
+// }
 
-console.log(removeDups([1,1,2,3,3]))
+// console.log(removeDups([1,1,2,3,3]))
 
 
 
@@ -72,9 +72,10 @@ console.log(removeDups([1,1,2,3,3]))
 // Output: [1, 3, 12, 0, 0]
 
 const moveZeros = (array) => {
-    let j = 1
+    
     for(let i = 0; i < array.length; i++){
-        array[i] < 1 ? array[j] = array[i] : console.log("nah")
+        let j = 1
+        array[i] < 1 ? array[j] = array[i] : j++
     }
     return array
 }
