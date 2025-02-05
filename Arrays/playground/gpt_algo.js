@@ -61,3 +61,22 @@ console.log(removeDups([1,1,2,3,3]))
 // };
 
 // console.log(removeDups([1, 1, 2, 3, 3])); // Output: 3
+
+
+
+// Problem: Move Zeros
+// Given an integer array nums, move all 0s to the end of the array while maintaining the relative order of the non-zero elements.
+//  Do this in-place without making a copy of the array.
+
+//Input: [0, 1, 0, 3, 12]  
+// Output: [1, 3, 12, 0, 0]
+
+const moveZeros = (array) => {
+    let j = 1
+    for(let i = 0; i < array.length; i++){
+        array[i] < 1 ? array[j] = array[i] : console.log("nah")
+    }
+    return array
+}
+
+console.log(moveZeros([0, 1, 0, 3, 12]))
