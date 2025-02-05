@@ -75,7 +75,7 @@ const moveZeros = (array) => {
     
     for(let i = 0; i < array.length; i++){
         let j = 0
-        array[j] ===0 ? array[j] = array[i + 1] : j++
+        array[j] < 1 ? array[i + 1] = i : j++
     }
     return array
 }
