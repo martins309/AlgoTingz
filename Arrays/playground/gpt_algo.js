@@ -29,38 +29,35 @@ You only need to maintain the unique elements at the beginning.
 */
 
 
-//this is ssooooooo wrong lol
-// const removeDups = (duplicates) => {
-//     for(let i = 1; i < duplicates.length; i++) {
-//         let current = i
-//         let next = current + 1
+// this is ssooooooo wrong lol
+const removeDups = (duplicates) => {
+   for(let i = 0; i < duplicates.length; i++){
+        let j = 1
+        duplicate[i + 1] !== duplicates[i] ? duplicates[j] === duplicates[i] : j++
 
-//         duplicates[current] !== duplicates[next] ? duplicates[next] === duplicates[current] : next++
-//         current++
+        
+   }
 
-//     }
+}
 
     
 
-//     return duplicates.length - 1
-// }
-
-// console.log(removeDups([1,1,2,3,3]))
 
 
-const removeDups = (duplicates) => {
-    if (duplicates.length === 0) return 0; // Edge case: Empty array
 
-    let j = 1; // Pointer for placing the next unique value
+// const removeDups = (duplicates) => {
+//     if (duplicates.length === 0) return 0; // Edge case: Empty array
 
-    for (let i = 1; i < duplicates.length; i++) {
-        if (duplicates[i] !== duplicates[i - 1]) { // Check if the value is unique
-            duplicates[j] = duplicates[i]; // Place the unique value
-            j++; // Move the position for the next unique value
-        }
-    }
+//     let j = 1; // Pointer for placing the next unique value
 
-    return j; // New length of the modified array
-};
+//     for (let i = 1; i < duplicates.length; i++) {
+//         if (duplicates[i] !== duplicates[i - 1]) { // Check if the value is unique
+//             duplicates[j] = duplicates[i]; // Place the unique value
+//             j++; // Move the position for the next unique value
+//         }
+//     }
 
-console.log(removeDups([1, 1, 2, 3, 3])); // Output: 3
+//     return j; // New length of the modified array
+// };
+
+// console.log(removeDups([1, 1, 2, 3, 3])); // Output: 3
