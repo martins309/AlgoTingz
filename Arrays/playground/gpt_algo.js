@@ -38,7 +38,7 @@ const removeDups = (duplicates) => {
    return j
 }
 
-    
+console.log(removeDups([1,1,2,3,4]))
 
 
 
