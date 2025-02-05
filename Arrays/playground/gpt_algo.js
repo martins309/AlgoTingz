@@ -74,8 +74,8 @@ You only need to maintain the unique elements at the beginning.
 const moveZeros = (array) => {
     
     for(let i = 0; i < array.length; i++){
-        let j = 1
-        array[i] < 1 ? array[j] = array[i] : j++
+        let j = 0
+        array[j] ===0 ? array[j] = array[i + 1] : j++
     }
     return array
 }
