@@ -48,22 +48,19 @@ You only need to maintain the unique elements at the beginning.
 // console.log(removeDups([1,1,2,3,3]))
 
 
-//will this work without the parenthesis??
+const removeDups = (duplicates) => {
+    if (duplicates.length === 0) return 0; // Edge case: Empty array
 
-const fetchTing = callback => {
-    setTimeout(() => {
-        callback("I need TP")
-    }, 1000)
-}
+    let j = 1; // Pointer for placing the next unique value
 
-setTimeout(() => {
-    fetchTing(text => {
-        console.log(text)
-    })
-}, 2000)
+    for (let i = 1; i < duplicates.length; i++) {
+        if (duplicates[i] !== duplicates[i - 1]) { // Check if the value is unique
+            duplicates[j] = duplicates[i]; // Place the unique value
+            j++; // Move the position for the next unique value
+        }
+    }
 
-setTimeout(() => {
-    console.log('i see you ')
-}, 3000)
+    return j; // New length of the modified array
+};
 
-console.log("grape!!")
+console.log(removeDups([1, 1, 2, 3, 3])); // Output: 3
