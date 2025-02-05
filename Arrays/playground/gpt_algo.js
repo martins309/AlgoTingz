@@ -34,10 +34,8 @@ const removeDups = (duplicates) => {
    for(let i = 0; i < duplicates.length; i++){
         let j = 1
         duplicate[i + 1] !== duplicates[i] ? duplicates[j] === duplicates[i] : j++
-
-        
    }
-
+   return j
 }
 
     
