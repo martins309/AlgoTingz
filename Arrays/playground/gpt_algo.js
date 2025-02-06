@@ -29,41 +29,24 @@ You only need to maintain the unique elements at the beginning.
 */
 
 
-//this is ssooooooo wrong lol
-// const removeDups = (duplicates) => {
-//     for(let i = 1; i < duplicates.length; i++) {
-//         let current = i
-//         let next = current + 1
+// this is ssooooooo wrong lol
+const removeDups = (duplicates) => {
+    for(let i = 1; i < duplicates.length; i++) {
+        let current = i
+        let next = current + 1
 
-//         duplicates[current] !== duplicates[next] ? duplicates[next] === duplicates[current] : next++
-//         current++
+        duplicates[current] !== duplicates[next] ? duplicates[next] === duplicates[current] : next++
+        current++
 
-//     }
+    }
 
     
 
-//     return duplicates.length - 1
-// }
-
-// console.log(removeDups([1,1,2,3,3]))
-
-
-//will this work without the parenthesis??
-
-const fetchTing = callback => {
-    setTimeout(() => {
-        callback("I need TP")
-    }, 1000)
+    return duplicates.length - 1
 }
 
-setTimeout(() => {
-    fetchTing(text => {
-        console.log(text)
-    })
-}, 2000)
+console.log(removeDups([1,1,2,3,3]))
 
-setTimeout(() => {
-    console.log('i see you ')
-}, 3000)
 
-console.log("grape!!")
+// will this work without the parenthesis??
+
