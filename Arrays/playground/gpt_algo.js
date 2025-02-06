@@ -30,23 +30,54 @@ You only need to maintain the unique elements at the beginning.
 
 
 // this is ssooooooo wrong lol
-const removeDups = (duplicates) => {
-    for(let i = 1; i < duplicates.length; i++) {
-        let current = i
-        let next = current + 1
+// const removeDups = (duplicates) => {
+//     if(duplicates.length === 0) return 0
 
-        duplicates[current] !== duplicates[next] ? duplicates[next] === duplicates[current] : next++
-        current++
+//     let j = 1
+//    for(let i = 1; i < duplicates.length; i++){
+//         duplicates[i - 1] !== duplicates[i] ? duplicates[j] === duplicates[i] : j++
+//    }
+//    return j
+// }
 
-    }
+// console.log(removeDups([1,1,2,3,3]))
 
+
+
+
+// const removeDups = (duplicates) => {
+//     if (duplicates.length === 0) return 0; // Edge case: Empty array
+
+//     let j = 1; // Pointer for placing the next unique value
+
+//     for (let i = 1; i < duplicates.length; i++) {
+//         if (duplicates[i] !== duplicates[i - 1]) { // Check if the value is unique
+//             duplicates[j] = duplicates[i]; // Place the unique value
+//             j++; // Move the position for the next unique value
+//         }
+//     }
+
+//     return j; // New length of the modified array
+// };
+
+// console.log(removeDups([1, 1, 2, 3, 3])); // Output: 3
+
+
+
+// Problem: Move Zeros
+// Given an integer array nums, move all 0s to the end of the array while maintaining the relative order of the non-zero elements.
+//  Do this in-place without making a copy of the array.
+
+//Input: [0, 1, 0, 3, 12]  
+// Output: [1, 3, 12, 0, 0]
+
+const moveZeros = (array) => {
     
-
-    return duplicates.length - 1
+    for(let i = 0; i < array.length; i++){
+        let j = 0
+        array[j] < 1 ? array[i + 1] = i : j++
+    }
+    return array
 }
 
-console.log(removeDups([1,1,2,3,3]))
-
-
-// will this work without the parenthesis??
-
+console.log(moveZeros([0, 1, 0, 3, 12]))
