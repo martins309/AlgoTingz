@@ -29,7 +29,7 @@ You only need to maintain the unique elements at the beginning.
 */
 
 
-// this is ssooooooo wrong lol
+
 // const removeDups = (duplicates) => {
 //     if(duplicates.length === 0) return 0
 
