@@ -37,9 +37,9 @@ const negNums = (array) => {
     let negNums = 0
 
     for(let i = 0; i < array.length; i++){
-        array[i] < 0 ? [array[negNums], array[i]] = [array[i], array[negNums]] : negNums++ 
+        array[negNums] < 0 ? [array[i], array[negNums]] = [array[negNums], array[i]] : negNums++ 
     }
     return array
 }
 
-console.log([negNums([1, -3, 2, -5, 4, -1])])
+console.log(negNums([1, -3, 2, -5, 4, -1]))
