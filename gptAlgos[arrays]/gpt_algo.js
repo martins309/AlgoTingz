@@ -71,12 +71,43 @@ You only need to maintain the unique elements at the beginning.
 //Input: [0, 1, 0, 3, 12]  
 // Output: [1, 3, 12, 0, 0]
 
+
+
+
+////////////////////////////////separation ting /////////////////////////////////////////////////
+
+
+
+
+//this is ass because of the following
+
+
+
+
+
+
+
 const moveZeros = (array) => {
     if(array.length === 0)return 0
+
     for(let i = 0; i < array.length; i++){
-        
+// 1. let j = 1 inside the loop
+// Each time you loop (for), you're resetting j to 1, so you're effectively restarting the comparison from the beginning. This means j never tracks the correct position.
+    let j = 1
+
+// 2. array[i] < array[j] doesn't make sense for swapping zeros
+// The goal is to move all 0s to the end. Comparing values (<) doesn't achieve this since you're not looking for zeros explicitly.
+
+// 3. array[i] === i + 1 does nothing
+// === is a comparison, not an assignment. You're checking if array[i] equals i + 1, but this condition is unrelated to moving zeros.
+
+    
+        array[i] < array[j] ? array[i] === i + 1 : j++
     }
     return array
 }
+// 4. Logic to "swap" or move elements is missing
+// To solve this problem, you need to identify zeros and "push" non-zero elements forward while ensuring zeros end up at the end.
+
 
 console.log(moveZeros([0, 1, 0, 3, 12]))
