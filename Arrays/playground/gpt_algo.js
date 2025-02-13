@@ -72,9 +72,9 @@ You only need to maintain the unique elements at the beginning.
 // Output: [1, 3, 12, 0, 0]
 
 const moveZeros = (array) => {
-    
+    if(array.length === 0)return 0
     for(let i = 0; i < array.length; i++){
-        console.log(...array)
+        
     }
     return array
 }
