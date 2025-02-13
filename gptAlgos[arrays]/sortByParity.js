@@ -52,12 +52,12 @@ const parity = (array) => {
     let evenNum = 0
     
     for(let i = 0; i < array.length; i++){
-        if(array[i] % 2 !== 0) {
-            [array[evenNum], array[i] = array[i], array[evenNum]]
+        if(array[i] % 2 === 0) {
+            [array[evenNum], array[i]] = [array[i], array[evenNum]]
             evenNum++
         }
     }
     return array
 }
 
-console.log(parity([2,4,3,1]))
+console.log(parity([3,1,2,4]))
