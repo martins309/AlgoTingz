@@ -38,7 +38,7 @@ const negNums = (array) => {
 
    for(let i = 0; i < array.length; i++) {
     if(array[i] < 0) {
-        [array[negative], array[i] = array[i], array[negative]]
+        [array[negative], array[i]] = [array[i], array[negative]]
         negative++
     }
    }
