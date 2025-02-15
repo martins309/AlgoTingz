@@ -34,7 +34,13 @@ Try solving it, and I'll be here to review or assist! 😊
 
 
 const negNums = (array) => {
-   
+   let negative = 0 
+
+   for(let i = 0; i < array.length; i++) {
+    if(array[i] < 0) {
+        [array[negative], array[i] = array[i], array[negative]]
+    }
+   }
 
 }
 

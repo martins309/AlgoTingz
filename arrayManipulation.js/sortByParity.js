@@ -49,7 +49,7 @@ Let me know when you attempt it, and I can review your solution! 😊
 
 
 const parity = (array) => {
-    let evenNum = 0
+    let evenNum =  0
     
     for(let i = 0; i < array.length; i++){
         if(array[i] % 2 === 0) {
