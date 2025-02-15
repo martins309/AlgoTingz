@@ -41,7 +41,7 @@ const negNums = (array) => {
         [array[negative], array[i] = array[i], array[negative]]
     }
    }
-
+   return array
 }
 
 console.log(negNums([1, -3, 2, -5, 4, -1]))
