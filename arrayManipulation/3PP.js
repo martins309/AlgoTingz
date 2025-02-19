@@ -27,3 +27,8 @@ The relative order of the numbers within their categories does not need to be ma
 Let me know your solution or if you’d like hints along the way!
 
 */
+
+ 
+const partition = () => {
+    
+}
