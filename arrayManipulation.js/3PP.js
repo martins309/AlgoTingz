@@ -21,8 +21,6 @@ The relative order of the numbers within their categories does not need to be ma
 `[-1, -3, -5, 0, 0, 2, 4]`  
 
 ---
-
-### Key Constraints:
 - Solve the problem in one pass (or as close to it as possible) using in-place swaps.
 - No extra arrays or data structures should be used.
   
