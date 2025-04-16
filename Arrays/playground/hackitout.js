@@ -8,17 +8,17 @@
 
 //here we will use this for the length of last word algo
 
-var lengthOfLast = function(s) {
+// var lengthOfLast = function(s) {
   
-    s = s.trim()
+//     s = s.trim()
 
-    let words = s.split(" ")
+//     let words = s.split(" ")
 
-    return words[words.length - 1].length 
+//     return words[words.length - 1].length 
  
-}
+// }
 
-console.log(lengthOfLast("hello world"))
+// console.log(lengthOfLast("hello world"))
 
 
 //buy and sell ting
@@ -26,6 +26,15 @@ console.log(lengthOfLast("hello world"))
 // so here we are iterating through an array and then returning the difference between 
 //stock bought and sold on different days
 
-const buySell = () => {
+// const buySell = () => {
     
+// }
+
+
+
+var mergedAlternative = function(word1 , word2) {
+    let string = ""
+    for (let i = 0; i < word1.length; i++) {
+
+    }
 }

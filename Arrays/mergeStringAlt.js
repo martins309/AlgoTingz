@@ -37,3 +37,7 @@ Constraints:
 word1 and word2 consist of lowercase English letters.
 */
 
+var mergeAlternately = function(word1, word2) {
+    
+
+}
