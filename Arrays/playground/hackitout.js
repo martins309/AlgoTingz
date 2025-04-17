@@ -35,14 +35,15 @@
 var mergedAlternative = function(word1 , word2) {
     let string = ""
     let i = 0
-    let j =0
+    let j = 0
 
-    while(i < word1.length || j< word2.length){
-        if(i < word1.length) {
+    while(i < word1.length || j < word2.length){
+
+        if(i < word1.length || word1.length > word2.length) {
             string+= word1[i]
             i++
         }
-        if(j < word2.length) {
+        if(j < word2.length || word2.length > word1.length) {
             string+= word2[j]
             j++
         }
@@ -52,4 +53,4 @@ var mergedAlternative = function(word1 , word2) {
     
 }
 
-console.log(mergedAlternative("ab", "pq"))
+console.log(mergedAlternative("abcde", "pq"))
