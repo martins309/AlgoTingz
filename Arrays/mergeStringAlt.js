@@ -49,7 +49,7 @@ var mergeAlternately = function(word1, word2) {
         }
         
         if(j < word2.length || word2.length > word1.length) {
-            string+= word2[i]
+            string+= word2[j]
             j++
         }
     }
@@ -57,4 +57,4 @@ var mergeAlternately = function(word1, word2) {
 
 }
 
-console.log(mergeAlternately("abc", "123"))
+console.log(mergeAlternately("abcdf", "123"))
