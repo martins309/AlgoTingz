@@ -58,14 +58,14 @@
 
 // plus equals ting
 
-var plusEqualsTing = function(array) {
-    let newArray = []
-    for(let i = 0; i < array.length; i++) {
-        if(array[i] % 2 === 0) {
-            newArray+= array[i]
-        }
+var plusEqualsTing = function(string) {
+    let newString = ""
+    for(let i = 0; i < string.length; i++) {
+        newString += string[i]
     }
-    return newArray
+    return newString
 }
 
-console.log(plusEqualsTing([1,2,3,34,4,5,6,7,8,10,12]))
+console.log(plusEqualsTing("ting"))
+
+// the things that i dont know how to do , i can just hack it out!!!
