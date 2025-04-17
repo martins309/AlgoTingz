@@ -57,4 +57,4 @@ var mergeAlternately = function(word1, word2) {
 
 }
 
-console.log(mergeAlternately("abcdf", "123"))
+console.log(mergeAlternately("abc", "123"))

@@ -32,25 +32,40 @@
 
 
 
-var mergedAlternative = function(word1 , word2) {
-    let string = ""
-    let i = 0
-    let j = 0
+// var mergedAlternative = function(word1 , word2) {
+//     let string = ""
+//     let i = 0
+//     let j = 0
 
-    while(i < word1.length || j < word2.length){
+//     while(i < word1.length || j < word2.length){
 
-        if(i < word1.length || word1.length > word2.length) {
-            string+= word1[i]
-            i++
-        }
-        if(j < word2.length || word2.length > word1.length) {
-            string+= word2[j]
-            j++
-        }
+//         if(i < word1.length || word1.length > word2.length) {
+//             string+= word1[i]
+//             i++
+//         }
+//         if(j < word2.length || word2.length > word1.length) {
+//             string+= word2[j]
+//             j++
+//         }
 
-        }
-        return string
+//         }
+//         return string
     
+// }
+
+// console.log(mergedAlternative("abcde", "pq"))
+
+
+// plus equals ting
+
+var plusEqualsTing = function(array) {
+    let newArray = []
+    for(let i = 0; i < array.length; i++) {
+        if(array[i] % 2 === 0) {
+            newArray+= array[i]
+        }
+    }
+    return newArray
 }
 
-console.log(mergedAlternative("abcde", "pq"))
+console.log(plusEqualsTing([1,2,3,34,4,5,6,7,8,10,12]))
