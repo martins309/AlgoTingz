@@ -38,6 +38,23 @@ word1 and word2 consist of lowercase English letters.
 */
 
 var mergeAlternately = function(word1, word2) {
-    
+    let i = 0 
+    let j = 0
+    let string = ""
+
+    while(i < word1.length || j < word2.length) {
+        if( i < word1.length || word1.length > word2.length) {
+            string+= word1[i]
+            i++
+        }
+        
+        if(j < word2.length || word2.length > word1.length) {
+            string+= word2[i]
+            j++
+        }
+    }
+    return string
 
 }
+
+console.log(mergeAlternately("abc", "123"))
