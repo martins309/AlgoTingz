@@ -62,9 +62,10 @@ var gcdOfStrings = function(str1, str2) {
     //recursion function that will call until b === 0 
     const gcd = (a, b) => b === 0 ? a : gcd(b, a % b)
     
-    
+    //using the gcd to get the greatest common divisor of between the strings
     let len = gcd(str1.length, str2.length)
     
+    //check to see if abc repeats in both strings 
     return str1.substring(0, len)
      
     
