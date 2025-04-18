@@ -58,14 +58,25 @@
 
 // plus equals ting
 
-var plusEqualsTing = function(string) {
-    let newString = ""
-    for(let i = 0; i < string.length; i++) {
-        newString += string[i]
-    }
-    return newString
-}
+//play with string manipulation ****
 
-console.log(plusEqualsTing("ting"))
+// var plusEqualsTing = function(string) {
+//     let newString = ""
+//     for(let i = 0; i < string.length; i++) {
+//         newString += string[i]
+//     }
+//     return newString
+// }
+
+// console.log(plusEqualsTing("ting"))
+
+//**** */
 
 // the things that i dont know how to do , i can just hack it out!!!
+
+
+//gcdOf Strings Ting
+
+var gcd = function(str1, str2){
+    
+}
