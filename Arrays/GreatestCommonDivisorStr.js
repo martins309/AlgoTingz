@@ -29,14 +29,17 @@ var gcdOfStrings = function(str1, str2) {
     // one variable to keep track of string 1 and string 2
     let i = 0 
     let j = 0
-
+    let common = ""
     // loops through strings
     for(let str of str1){
-        console.log(str)
+        if (str1[str] > 0) {
+            common += str
+            str1++
+        }
     }
 
-    //return the greatest common string if any 
-    return str1
+    return common
+    
 
 }
 
