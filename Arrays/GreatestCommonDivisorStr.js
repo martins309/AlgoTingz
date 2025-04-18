@@ -25,8 +25,11 @@ Constraints:
 str1 and str2 consist of English uppercase letters.
 */
 
+
+//my previous nonsense lol 
 var gcdOfStrings = function(str1, str2) {
     // place the new strings into a variable
+    let i = 0
     let common = ""
     // loops through strings
     while(i < str1 ) {
@@ -43,3 +46,28 @@ var gcdOfStrings = function(str1, str2) {
 }
 
 console.log(gcdOfStrings("ABCABC", "ABC"))
+
+
+///////////////////////////////////////////////
+//the correct answer 
+
+
+var gcdOfStrings = function(str1, str2) {
+    // so there is this thing called  the euclidean algorithm or something like that 
+    // and i goes a little something like this
+    
+    //if the concatenation of strings does not match return an empty string
+    if(str1 + str2 != str2 + str1) return ""
+    
+    //recursion function that will call until b === 0 
+    const gcd = (a, b) => b === 0 ? a : gcd(b, a % b)
+    
+    
+    let len = gcd(str1.length, str2.length)
+    
+    return str1.substring(0, len)
+     
+    
+    }
+    
+    console.log(gcdOfStrings("ABCABC", "ABC"))
