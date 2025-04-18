@@ -26,20 +26,19 @@ str1 and str2 consist of English uppercase letters.
 */
 
 var gcdOfStrings = function(str1, str2) {
-    // one variable to keep track of string 1 and string 2
-    let i = 0 
-    let j = 0
+    // place the new strings into a variable
     let common = ""
     // loops through strings
-    for(let str of str1){
-        if (str1[str] > 0) {
-            common += str
+    while(i < str1 ) {
+        if(i < str1 && str1 !== common){
+            common += str1
             str1++
+        }else {
+            str2 === common
         }
     }
-
-    return common
-    
+ return common
+ 
 
 }
 
