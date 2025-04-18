@@ -26,5 +26,18 @@ str1 and str2 consist of English uppercase letters.
 */
 
 var gcdOfStrings = function(str1, str2) {
-    
+    // one variable to keep track of string 1 and string 2
+    let i = 0 
+    let j = 0
+
+    // loops through strings
+    for(let str of str1){
+        console.log(str)
+    }
+
+    //return the greatest common string if any 
+    return str1
+
 }
+
+console.log(gcdOfStrings("ABCABC", "ABC"))
