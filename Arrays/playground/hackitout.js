@@ -88,7 +88,7 @@ function countPositivesSumNegatives(input) {
           positive++
         }
         if(input[i] < 0){
-          negative = input.filter(input => input[i] < 0).reduce((a, b) => a - b)
+          negative = input.filter(input => input[i] < 0).reduce((a, b) => a + b, 0)
         }
       }
       return [positive, negative]
