@@ -75,8 +75,23 @@
 // the things that i dont know how to do , i can just hack it out!!!
 
 
-//gcdOf Strings Ting
+function countPositivesSumNegatives(input) {
+    // your code here
+      if( input === null) return []
+      
+      let positive = 0
+      let negative; 
+  
+      
+      for(let i = 0; i < input.length; i++) {
+        if(input[i] > 0){
+          positive++
+        }
+        if(input[i] < 0){
+          negative = input.reduce((a, b) => a - b)
+        }
+      }
+      return [positive, negative]
+  }
 
-var gcd = function(str1, str2){
-    
-}
+  console.log(countPositivesSumNegatives([1,2,3,4,5,6,7,-1,-2,-3,-4,-5]))
