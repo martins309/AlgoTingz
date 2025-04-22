@@ -122,4 +122,35 @@ for(let key in ana) {
 }
   return true
 }
-console.log(anagram("aaz", "zaa"))
+console.log(anagram('qwerty', 'qeywrt'))
+
+//lets refactor tomorrow 
+
+
+// colts solution
+
+function validAnagram(anagram1, anagram2){
+  if(anagram1.length !== anagram2.length) {
+      return false;
+  }
+
+  
+  const checkAnagram = {}
+ 
+  for(let i = 0; i < anagram1.length; i++) {
+      let letter = anagram1[i]
+      checkAnagram[letter] ? checkAnagram[letter] += 1 : checkAnagram[letter] = 1
+  }
+  
+  for(let i = 0; i < anagram2.length; i++) {
+      let letter = anagram2[i]
+      if(!checkAnagram[letter]){
+          return false
+      }else {
+          checkAnagram[letter] -= 1
+      }
+  }
+  return true
+}
+
+validAnagram("tank", "knat");
