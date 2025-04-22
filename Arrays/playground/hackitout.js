@@ -111,11 +111,15 @@ for(let s of str1) {
   str1[s] = (str1[s] || 0) + 1
 }
 
+for(let s of str2) {
+  str2[s] = (str2[s] || 0) + 1
+}
 
-
-
-
-
+for(let key in str1) {
+  if(str1[key] !== str2[key]) {
+    return false 
+  }
+}
 
 }
 console.log("aaz", "zza")
