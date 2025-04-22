@@ -154,3 +154,4 @@ function validAnagram(anagram1, anagram2){
 }
 
 validAnagram("tank", "knat");
+
