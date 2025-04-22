@@ -106,13 +106,24 @@ For example:
 [1, 2, 3] --> [2, 4, 6]
 */
 
-let numz = []
+// let numz = []
 
-function Double(array) {
-  for(num of array) {
-    numz.push(num * 2)
-  }
-  return numz
+// function Double(array) {
+//   for(num of array) {
+//     numz.push(num * 2)
+//   }
+//   return numz
+// }
+
+// console.log(Double([1,2,3]))
+
+let array = []
+
+function Double(x){
+  x.forEach((num) =>  {
+   array.push(num * 2)
+  })
+  return array
 }
 
 console.log(Double([1,2,3]))
