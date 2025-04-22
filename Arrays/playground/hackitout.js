@@ -75,23 +75,44 @@
 // the things that i dont know how to do , i can just hack it out!!!
 
 
-function countPositivesSumNegatives(input) {
-    // your code here
-      if( input === null) return []
+// function countPositivesSumNegatives(input) {
+//     // your code here
+//       if( input === null) return []
       
-      let positive = 0
-      let negative; 
+//       let positive = 0
+//       let negative; 
   
       
-      for(let i = 0; i < input.length; i++) {
-        if(input[i] > 0){
-          positive++
-        }
-        if(input[i] < 0){
-          negative = input.filter(input => input[i] < 0).reduce((a, b) => a + b, 0)
-        }
-      }
-      return [positive, negative]
-  }
+//       for(let i = 0; i < input.length; i++) {
+//         if(input[i] > 0){
+//           positive++
+//         }
+//         if(input[i] < 0){
+//           negative = input.filter(input => input[i] < 0).reduce((a, b) => a + b, 0)
+//         }
+//       }
+//       return [positive, negative]
+//   }
 
-  console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
+//   console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
+
+
+
+/* 
+Given an array of integers, return a new array with each value doubled.
+
+For example:
+
+[1, 2, 3] --> [2, 4, 6]
+*/
+
+let numz = []
+
+function Double(array) {
+  for(num of array) {
+    numz.push(num * 2)
+  }
+  return numz
+}
+
+console.log(Double([1,2,3]))
