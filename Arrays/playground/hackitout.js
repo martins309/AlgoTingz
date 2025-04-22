@@ -158,14 +158,29 @@ validAnagram("tank", "knat");
 
 // convert string to a number
 
-const stringToNumber = function(str){
-// put your code here
-  const result = parseInt(str)
+// const stringToNumber = function(str){
+// // put your code here
+//   const result = parseInt(str)
 
-  if(isNaN(result)){
-    return null
-  }
-  return result
+//   if(isNaN(result)){
+//     return null
+//   }
+//   return result
+// }
+
+// console.log(stringToNumber("123"))
+
+
+
+/*
+Create a function that accepts a parameter representing a name and returns the message: "Hello, <name> how are you doing today?".
+
+[Make sure you type the exact thing I wrote or the program may not execute properly]
+*/
+
+function greeting(name){
+return `Hello, ${name} how are you doing today?`
+
 }
 
-console.log(stringToNumber("123"))
+console.log(greeting("andrew"))
