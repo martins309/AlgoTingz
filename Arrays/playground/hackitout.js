@@ -102,24 +102,24 @@
 //An anagram is a word, phrase, or name formed by rearranging the letter of another, such as cinema, formed from iceman
 
 function anagram(str1, str2) {
-let str1 = {}
-let str2 = {}
+let ana = {}
+let gram = {}
 
 str1 === ""  && str2 === "" ? false : true
 
 for(let s of str1) {
-  str1[s] = (str1[s] || 0) + 1
+  ana[s] = (ana[s] || 0) + 1
 }
 
 for(let s of str2) {
-  str2[s] = (str2[s] || 0) + 1
+  gram[s] = (gram[s] || 0) + 1
 }
 
-for(let key in str1) {
-  if(str1[key] !== str2[key]) {
+for(let key in ana) {
+  if(ana[key] !== gram[key]) {
     return false 
   }
 }
-
+  return true
 }
-console.log("aaz", "zza")
+console.log(anagram("aaz", "zaa"))
