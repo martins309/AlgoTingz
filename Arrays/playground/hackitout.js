@@ -75,23 +75,47 @@
 // the things that i dont know how to do , i can just hack it out!!!
 
 
-function countPositivesSumNegatives(input) {
-    // your code here
-      if( !input || input.length === 0) return []
+// function countPositivesSumNegatives(input) {
+//     // your code here
+//       if( !input || input.length === 0) return []
       
-      let positive = 0
-      let negative; 
+//       let positive = 0
+//       let negative; 
   
       
-      for(let i = 0; i < input.length; i++) {
-        if(input[i] > 0){
-          positive++
-        }
-        if(input[i] < 0){
-          negative = input.filter(input => input < 0).reduce((a, b) => a + b, 0)
-        }
-      }
-      return [positive, negative]
-  }
+//       for(let i = 0; i < input.length; i++) {
+//         if(input[i] > 0){
+//           positive++
+//         }
+//         if(input[i] < 0){
+//           negative = input.filter(input => input < 0).reduce((a, b) => a + b, 0)
+//         }
+//       }
+//       return [positive, negative]
+//   }
 
-  console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
+//   console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
+
+//frequency counter 
+
+//given two strings write a function to determine if the second string is an anagram of the first. 
+//An anagram is a word, phrase, or name formed by rearranging the letter of another, such as cinema, formed from iceman
+
+function anagram(str1, str2) {
+let str1 = {}
+let str2 = {}
+
+str1 === ""  && str2 === "" ? false : true
+
+for(let s of str1) {
+  str1[s] = (str1[s] || 0) + 1
+}
+
+
+
+
+
+
+
+}
+console.log("aaz", "zza")
