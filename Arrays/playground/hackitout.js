@@ -159,11 +159,13 @@ validAnagram("tank", "knat");
 // convert string to a number
 
 const stringToNumber = function(str){
-  // put your code here
-  
+// put your code here
+  const result = parseInt(str)
 
-  
-  return null;
+  if(isNaN(result)){
+    return null
+  }
+  return result
 }
 
 console.log(stringToNumber("123"))
