@@ -77,7 +77,7 @@
 
 // function countPositivesSumNegatives(input) {
 //     // your code here
-//       if( input === null) return []
+//       if( !input || input.length === 0) return []
       
 //       let positive = 0
 //       let negative; 
@@ -88,7 +88,7 @@
 //           positive++
 //         }
 //         if(input[i] < 0){
-//           negative = input.filter(input => input[i] < 0).reduce((a, b) => a + b, 0)
+//           negative = input.filter(input => input < 0).reduce((a, b) => a + b, 0)
 //         }
 //       }
 //       return [positive, negative]
@@ -96,34 +96,61 @@
 
 //   console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
 
+//frequency counter 
 
+//given two strings write a function to determine if the second string is an anagram of the first. 
+//An anagram is a word, phrase, or name formed by rearranging the letter of another, such as cinema, formed from iceman
 
-/* 
-Given an array of integers, return a new array with each value doubled.
+function anagram(str1, str2) {
+let ana = {}
+let gram = {}
 
-For example:
+str1 === ""  && str2 === "" ? false : true
 
-[1, 2, 3] --> [2, 4, 6]
-*/
-
-// let numz = []
-
-// function Double(array) {
-//   for(num of array) {
-//     numz.push(num * 2)
-//   }
-//   return numz
-// }
-
-// console.log(Double([1,2,3]))
-
-let array = []
-
-function Double(x){
-  x.forEach((num) =>  {
-   array.push(num * 2)
-  })
-  return array
+for(let s of str1) {
+  ana[s] = (ana[s] || 0) + 1
 }
 
-console.log(Double([1,2,3]))
+for(let s of str2) {
+  gram[s] = (gram[s] || 0) + 1
+}
+
+for(let key in ana) {
+  if(ana[key] !== gram[key]) {
+    return false 
+  }
+}
+  return true
+}
+console.log(anagram('qwerty', 'qeywrt'))
+
+//lets refactor tomorrow 
+
+
+// colts solution
+
+function validAnagram(anagram1, anagram2){
+  if(anagram1.length !== anagram2.length) {
+      return false;
+  }
+
+  
+  const checkAnagram = {}
+ 
+  for(let i = 0; i < anagram1.length; i++) {
+      let letter = anagram1[i]
+      checkAnagram[letter] ? checkAnagram[letter] += 1 : checkAnagram[letter] = 1
+  }
+  
+  for(let i = 0; i < anagram2.length; i++) {
+      let letter = anagram2[i]
+      if(!checkAnagram[letter]){
+          return false
+      }else {
+          checkAnagram[letter] -= 1
+      }
+  }
+  return true
+}
+
+validAnagram("tank", "knat");
