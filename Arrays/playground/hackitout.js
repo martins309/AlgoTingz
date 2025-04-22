@@ -155,3 +155,15 @@ function validAnagram(anagram1, anagram2){
 
 validAnagram("tank", "knat");
 
+
+// convert string to a number
+
+const stringToNumber = function(str){
+  // put your code here
+  
+
+  
+  return null;
+}
+
+console.log(stringToNumber("123"))
