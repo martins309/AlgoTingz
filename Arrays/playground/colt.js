@@ -6,16 +6,17 @@ but it will always be sorted
 */
 
 function countUniqueValues(array) {
-    let left = 0
-    let right = left + 1 
-    let unique = 0
+    let i = 0
 
-    for(let i = 0; i < array.length; i++){
-        if(array[left] === array[right]){
-            right++
-        }else{
-            unique += 1
-        }
+    for(let j = 1; j < array.length; j++){
+        if(array[i] !== array[j]){
+            i++
+            array[i] = array[j]
     }
-    return unique
+    
+    }
+    return i + 1
 }
+console.log(countUniqueValues([1,1,1,1,1,1,2]))
+// console.log(countUniqueValues([1,2,3,4,4,4,7,7,12,12,13]))
+// console.log(countUniqueValues([-2,-1,-1,0,1]))
