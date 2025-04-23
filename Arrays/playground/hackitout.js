@@ -211,11 +211,11 @@ function basicOp(operation, value1, value2){
     result = value1 - value2
   }
 
-  if(opertation === "*"){
+  if(operation === "*"){
     result = value1 * value2
   }
 
-  if(opertaion === "/"){
+  if(operation === "/"){
     result = value1 / value2
   }
 
