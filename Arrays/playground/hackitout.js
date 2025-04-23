@@ -227,3 +227,22 @@ Examples(Operator, value1, value2) --> output
 // }
 
 // console.log(basicOp("/", 49,7))
+
+
+////////////////////Reverse String Ting//////////////////////////////
+
+/*
+Complete the solution so that it reverses the string passed into it.
+
+'world'  =>  'dlrow'
+'word'   =>  'drow'
+*/
+
+
+function reverseString(str){
+return str.split("").reverse().join("")
+
+
+}
+
+console.log(reverseString("chicken"))
