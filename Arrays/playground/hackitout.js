@@ -204,9 +204,23 @@ function basicOp(operation, value1, value2){
   let result = 0 
 
   let operation = ["+", "-", "*", "/"]
-
+  if(operation[0]){
+    result = value1 + value2
+  }
   
+  if(operation[1]) {
+    result = value1 - value2
+  }
 
+  if(opertation[2]){
+    result = value1 * value2
+  }
+
+  if(opertaion[3]){
+    result = value1 / value2
+  }
+
+  return result
   
   
 }
