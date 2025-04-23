@@ -199,29 +199,31 @@ Examples(Operator, value1, value2) --> output
 ('/', 49, 7) --> 7
 */
 
-function basicOp(operation, value1, value2){
-  //Code
-  let result = 0 
+//we can also use a switch for this as well
 
-  if(operation === "+"){
-    result = value1 + value2
-  }
+// function basicOp(operation, value1, value2){
+//   //Code
+//   let result = 0 
+
+//   if(operation === "+"){
+//     result = value1 + value2
+//   }
   
-  if(operation === "-") {
-    result = value1 - value2
-  }
+//   if(operation === "-") {
+//     result = value1 - value2
+//   }
 
-  if(operation === "*"){
-    result = value1 * value2
-  }
+//   if(operation === "*"){
+//     result = value1 * value2
+//   }
 
-  if(operation === "/"){
-    result = value1 / value2
-  }
+//   if(operation === "/"){
+//     result = value1 / value2
+//   }
 
-  return result
+//   return result
   
   
-}
+// }
 
-console.log(basicOp("+", 3,4))
+// console.log(basicOp("/", 49,7))
