@@ -186,6 +186,7 @@ Create a function that accepts a parameter representing a name and returns the m
 // console.log(greeting("andrew"))
 
 /*
+**Basic Mathematical Operations**
 Your task is to create a function that does four basic mathematical operations.
 
 The function should take three arguments - operation(string/char), value1(number), value2(number).
