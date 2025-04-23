@@ -200,9 +200,12 @@ Examples(Operator, value1, value2) --> output
 
 function basicOp(operation, value1, value2){
   //Code
-  if(operation === " + "){
-    return ( value1, operation, value2)
-  }
+  let result = 0 
+
+  let operation = ["+", "-", "*", "/"]
+
+  
+
   
   
 }
