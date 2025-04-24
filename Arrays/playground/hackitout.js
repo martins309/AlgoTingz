@@ -205,19 +205,19 @@ Return true if the array contains the value, false if not.
 */
 
 
-function check(a, x) {
-  if(a.length === 0) return []
+// function check(a, x) {
+//   if(a.length === 0) return []
 
-  for(let i =0; i < a.length; i++){
-    if(a[i] === x){
-      return true
-    }
-  }
-  return false
+//   for(let i =0; i < a.length; i++){
+//     if(a[i] === x){
+//       return true
+//     }
+//   }
+//   return false
 
-}
+// }
 
-console.log(check([1,2,3,4] , 6))
+// console.log(check([1,2,3,4] , 6))
 
 
 /// simpler way 
