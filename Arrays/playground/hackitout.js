@@ -96,6 +96,10 @@
 
 //   console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
 
+//frequency counter 
+
+//given two strings write a function to determine if the second string is an anagram of the first. 
+//An anagram is a word, phrase, or name formed by rearranging the letter of another, such as cinema, formed from iceman
 
 
 
@@ -202,19 +206,20 @@ Return true if the array contains the value, false if not.
 
 
 function check(a, x) {
- let element = {}
+  if(a.length === 0) return []
 
- for(let el of a){
-  element[el] = (element[el] || 0) + 1
- }
-
- for (let key in element) {
-  if(!(x === element[key])){
-    return false
+  for(let i =0; i < a.length; i++){
+    if(a[i] === x){
+      return true
+    }
   }
-  return true
- }
+  return false
 
 }
 
-console.log(check([1,2,3,4] , -1))
+console.log(check([1,2,3,4] , 6))
+
+
+/// simpler way 
+
+const check = (a, x) => a.includes(x)
