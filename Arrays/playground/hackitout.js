@@ -223,3 +223,14 @@ console.log(check([1,2,3,4] , 6))
 /// simpler way 
 
 const check = (a, x) => a.includes(x)
+
+// using an object 
+function check(a, x) {
+  let element = {};
+
+  for (let el of a) {
+    element[el] = true;
+  }
+
+  return element[x] === true;
+}
