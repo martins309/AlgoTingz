@@ -11,13 +11,22 @@ patrick feeney => P.F
 */
 
 function abbreviation(name){
-    let initial =""
+    let initial = ""
+
+    //find the space
+    let space = name.indexOf(" ")
+
 
     for(let i = 0; i < name.length; i++){
-        initial += name[0]
+        // if there is a space and its not the last character 
+        if(space !== -1 && space < name.length -1){
+            space = name[space + 1].toUpperCase()
+            initial = name[0]
+        }
+            
     }
-    return initial.toUpperCase()
-
+    
+    return initial.toUpperCase() + "." + space
 }
 
-console.log(abbreviation("tom"))
+console.log(abbreviation("patrick swazey"))
