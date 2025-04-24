@@ -239,10 +239,31 @@ Complete the solution so that it reverses the string passed into it.
 */
 
 
-function reverseString(str){
-return str.split("").reverse().join("")
+// function reverseString(str){
+// return str.split("").reverse().join("")
 
+
+// }
+
+// console.log(reverseString("chicken"))
+
+
+
+/*
+You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+
+a can contain numbers or strings. x can be either.
+
+Return true if the array contains the value, false if not.
+*/
+
+
+function check(a, x) {
+  if(a.length === 0) return []
+
+  for(let i =0; i < a.length; i++){
+    x === a[i] ? true: false
+  }
+  return x
 
 }
-
-console.log(reverseString("chicken"))
