@@ -10,26 +10,26 @@ Sam Harris => S.H
 patrick feeney => P.F
 */
 
-function abbreviation(name){
-    let initial = ""
+// function abbreviation(name){
+//     let initial = ""
 
-    //find the space
-    let space = name.indexOf(" ")
+//     //find the space
+//     let space = name.indexOf(" ")
 
 
-    for(let i = 0; i < name.length; i++){
-        // if there is a space and its not the last character 
-        if(space !== -1 && space < name.length -1){
-            space = name[space + 1].toUpperCase()
-            initial = name[0]
-        }
+//     for(let i = 0; i < name.length; i++){
+//         // if there is a space and its not the last character 
+//         if(space !== -1 && space < name.length -1){
+//             space = name[space + 1].toUpperCase()
+//             initial = name[0]
+//         }
             
-    }
+//     }
     
-    return initial.toUpperCase() + "." + space
-}
+//     return initial.toUpperCase() + "." + space
+// }
 
-console.log(abbreviation("patrick swazey"))
+// console.log(abbreviation("patrick swazey"))
 
 /*
 The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
@@ -64,14 +64,14 @@ Examples (Input -> Output)
 */
 
 function min(array){
-    return Math.min(array)
+    return Math.min(...array)
 
 }
 
 
 function max(array){
-return Math.max(array)
+    return Math.max(...array)
 }
 
-console.log(max([1,2,3,4,55,6776,54,3]))
-console.log(min([3,4,5,67,7,-2,0,-795,3,7]))
+console.log(max([1,2,3,4]))
+console.log(min([3,4,5,67,7,-2,0]))
