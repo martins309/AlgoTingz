@@ -65,7 +65,7 @@ Examples (Input -> Output)
 
 function min(array){
     // return Math.min(...array)
-    Math.min.apply(null, array)
+   return Math.min.apply(null, array)
 }
 
 
