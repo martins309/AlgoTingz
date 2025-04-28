@@ -62,3 +62,16 @@ Examples (Input -> Output)
 
 
 */
+
+function min(array){
+    return Math.min(array)
+
+}
+
+
+function max(array){
+return Math.max(array)
+}
+
+console.log(max([1,2,3,4,55,6776,54,3]))
+console.log(min([3,4,5,67,7,-2,0,-795,3,7]))
