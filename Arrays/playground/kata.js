@@ -41,9 +41,16 @@ For example:
 
 */
 
-function kokiburi(s) {
-    return Math.floor(s*1000/3600*100)
+// function kokiburi(s) {
+//     // return Math.floor(s*1000/3600*100)
+//     return Math.floor(s * 27.77778)
 
-}
+// }
 
-console.log(kokiburi(1.08))
+// console.log(kokiburi(1.08))
+
+/*
+
+
+
+*/
