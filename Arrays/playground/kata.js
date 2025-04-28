@@ -42,7 +42,7 @@ For example:
 */
 
 function kokiburi(s) {
-    return Math.floor(s*1000/360*100)
+    return Math.floor(s*1000/3600*100)
 
 }
 
