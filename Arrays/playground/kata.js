@@ -64,13 +64,14 @@ Examples (Input -> Output)
 */
 
 function min(array){
-    return Math.min(...array)
-
+    // return Math.min(...array)
+    Math.min.apply(null, array)
 }
 
 
 function max(array){
-    return Math.max(...array)
+    // return Math.max(...array)
+    return Math.max.apply(null, array)
 }
 
 console.log(max([1,2,3,4]))
