@@ -98,10 +98,13 @@ but it will always be sorted
 function slidingTing(arr, num) {
   if(num > arr.length) return null
 
+  //account for an array that is all negative
   let max = -Infinity
+  //does go all the way to the end of the array
   for(let i = 0; i < arr.length - num + 1; i++) {
     let temp = 0
     for(let j = 0; j < num; j++) {
+      //add the three numbers together
       temp += arr[i + j]
     }
     if(temp > max) {
@@ -109,4 +112,25 @@ function slidingTing(arr, num) {
     }
   }
   return max 
+}
+console.log(slidingTing([1,2,3,4,5,6,7,8,9], 3))
+
+
+///////actual sliding window approach
+
+
+function maxSubArray(arr, num) {
+  let maxSum = 0
+  let tempSum = 0
+
+  if(arr.length > num) return null
+  for(let i = 0; i < num; i++){
+    maxSum += arr[i]
+  }
+  tempSum = maxSum
+  for(let i = num; i < arr.length; i++){
+    tempSum = tempSum - arr[i - num] + arr[i]
+    maxSum = Math.max(maxSum, tempSum)
+  }
+  return maxSum
 }
