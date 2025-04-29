@@ -110,18 +110,18 @@ function quarterOf(month) {
     switch(month){
         case quarter1:
             month === 1 || 2 || 3
-            break
+            return month = "q1"
         case quarter2:
             month === 4 || 5 || 6
-            break
+            return month = "q2"
         case quarter3:
             month === 7 || 8 || 9
-            break
+            return month = "q3"
         case quarter4:
             month === 10 || 11 || 12
-            break
+            return month = "q4"
         default:
-            return null 
+            break
 
 
     }
