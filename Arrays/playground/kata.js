@@ -171,9 +171,62 @@ The tests will always use some integral number, so don't worry about that in dyn
 */
 
 
-function isSquare(n){
-    if(n < 0) return false
-    return Math.pow(n, 2)
+// function isSquare(n){
+//     //or n >= 0 && Number.isInteger(Math.sqrt(n))
+//     return Math.sqrt(n) % 1 === 0 
+
+// }
+
+// console.log(isSquare(10))
+
+/*
+Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces.
+*/
+
+function getCount(str){
+    
+  let vowels = {}
+  let isVowels = {
+    a: "a",
+    e: "e",
+    i: "i",
+    o: "o",
+    u: "u"
+  }
+
+  let count = 0 
+  
+  for(s of str){
+    vowels[s] = (vowels[s] || 0) + 1
+    
+  }
+
+  for(key in vowels) {
+    if(isVowels[key])
+        count+= vowels[key]
+  }
+  return count 
 }
 
-console.log(isSquare(2))
+console.log(getCount("chicken"))
+
+
+function getCount(str) {
+    let isVowels = ['a', 'e','i', 'o', 'u']
+    let count = 0
+    
+    for(let i = 0; i < str.length; i++){
+      if(isVowels.includes(str[i])) {
+        count += 1
+      }
+    }
+    return count
+  }
+
+  function getCount(str) {
+    return str.split('').filter(char => 'aeiou'.includes(char)).length;
+  }
