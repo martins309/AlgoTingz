@@ -7,26 +7,26 @@ Time complexity must be O(N)
 
 
 
-function sameFrequency(int1, int2){
-    if(int1.length !== int2.length)return false
+// function sameFrequency(int1, int2){
+//     if(int1.length !== int2.length)return false
 
-    let same = {}
+//     let same = {}
 
-    for(let i = 0; i < int1.length; i++) {
-        let num = int1[i]
-        same[num] ? same[num]+= 1 : same[num] = 1
-    }
+//     for(let i = 0; i < int1.length; i++) {
+//         let num = int1[i]
+//         same[num] ? same[num]+= 1 : same[num] = 1
+//     }
 
-    for(let i = 0; i < int2.length; i++) {
-        let num2 = int2[i]
-        !same[num2] ? false : same[num2] -= 1
+//     for(let i = 0; i < int2.length; i++) {
+//         let num2 = int2[i]
+//         !same[num2] ? false : same[num2] -= 1
 
-    }
- return true
+//     }
+//  return true
 
-}
+// }
 
-console.log(sameFrequency([2,4,6,8], [3,6,9,12]))
+// console.log(sameFrequency([2,4,6,8], [3,6,9,12]))
 
 
 function sameFrequency2(int1, int2) {
@@ -36,7 +36,7 @@ function sameFrequency2(int1, int2) {
     let num2 = {}
 
     for(i in int1) {
-        num1 = (num1[i] || 0) + 1
+        num1[i] = (num1[i] || 0) + 1
     }
 
     for(key in int2) {
@@ -46,3 +46,4 @@ function sameFrequency2(int1, int2) {
 }
 
 
+console.log(sameFrequency2([1,2,3], [1,2,3,4]))
