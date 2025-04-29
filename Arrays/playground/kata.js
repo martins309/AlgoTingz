@@ -111,18 +111,20 @@ Constraint:
 
 function quarterOf(month) {
   
-let quarters = [1,2,3,4,5,6,7,8,9,10,11,12]
+let q1 = [1,2,3]
 
-for(let i = 0; i < quarters.length; i++){
-    if(month == quarters[i] || quarters[i + 1] || quarters[i  + 2]){
-        console.log("this is the first quarter")
-    }
-   
+if(month === q1[0] || q1[1 || q1[2]]){
+    console.log("this is the first quarter")
+} else {
+    return -1
 }
+
+
+return month
 
  
-  return month 
+  
 }
 
 
-console.log(quarterOf(1))
+console.log(quarterOf(7))
