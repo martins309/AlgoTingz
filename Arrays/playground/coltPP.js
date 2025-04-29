@@ -26,4 +26,23 @@ function sameFrequency(int1, int2){
 
 }
 
-console.log(sameFrequency([1,2], [1]))
+console.log(sameFrequency([2,4,6,8], [3,6,9,12]))
+
+
+function sameFrequency2(int1, int2) {
+    if(int1.length !== int2.length) return false
+
+    let num1 = {}
+    let num2 = {}
+
+    for(i in int1) {
+        num1 = (num1[i] || 0) + 1
+    }
+
+    for(key in int2) {
+        num2[key] !== num1[key] ? false : true
+    }
+    return true
+}
+
+
