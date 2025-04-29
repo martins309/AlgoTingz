@@ -93,7 +93,6 @@ but it will always be sorted
 
 
 
-
 function slidingTing(array, num) {
 return array.length - num + 1
 
