@@ -109,22 +109,71 @@ Constraint:
 
 
 
-function quarterOf(month) {
-  
-let q1 = [1,2,3]
+// function quarterOf(month) {
+//     let q1 = [1,2,3]
+//     let q2 = [4,5,6]
+//     let q3 = [7,8,9]
+//     let q4 = [10,11,12]
 
-if(month === q1[0] || q1[1 || q1[2]]){
-    console.log("this is the first quarter")
-} else {
-    return -1
-}
+//     if (month === q1[0] || month === q1[1] || month === q1[2]){
+//         return 1
 
+//     }
 
-return month
+//     if(month === q2[0]|| month === q2[1] || month === q2[2]) {
+//         return 2
+//     } 
+
+//     if(month === q3[0] || month === q3[1] || month === q3[2]){
+//        return 3
+//     }
+
+//     if(month === q4[0] || month === q4[1] || month === q4[2]) {
+//         return 4
+//     }
+   
 
  
   
+// }
+
+
+
+
+
+// console.log(quarterOf(10))
+
+//////////// answer \\\\\\\\\
+// function quarterOf(month) {
+//     return Math.ceil(month / 3 )
+// }
+
+// console.log(quarterOf(4))
+
+
+
+/*
+A square of squares
+You like building blocks. You especially like building blocks that are squares. 
+And what you even like more, is to arrange them into a square of square building blocks!
+
+However, sometimes, you can't arrange them into a square. 
+Instead, you end up with an ordinary rectangle! Those blasted things! 
+If you just had a way to know, whether you're currently working in vain… 
+Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+
+Task
+Given an integral number, determine if it's a square number:
+
+In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+
+The tests will always use some integral number, so don't worry about that in dynamic typed languages.
+*/
+
+
+function isSquare(n){
+    if(n < 0) return false
+    return Math.pow(n, 2)
 }
 
-
-console.log(quarterOf(7))
+console.log(isSquare(2))
