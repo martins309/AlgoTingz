@@ -105,19 +105,21 @@ Constraint:
 1 <= month <= 12
 */
 
+let quarters = ["quarter1", "quarter2", "quarter3", "quarter4"]
+
 
 function quarterOf(month) {
     switch(month){
-        case quarter1:
+        case "quarter1":
             month === 1 || 2 || 3
             return month = "q1"
-        case quarter2:
+        case "quarter2":
             month === 4 || 5 || 6
             return month = "q2"
-        case quarter3:
+        case "quarter3":
             month === 7 || 8 || 9
             return month = "q3"
-        case quarter4:
+        case "quarter4":
             month === 10 || 11 || 12
             return month = "q4"
         default:
@@ -126,3 +128,5 @@ function quarterOf(month) {
 
     }
 }
+
+console.log(quarterOf(11))
