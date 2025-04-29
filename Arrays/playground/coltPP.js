@@ -8,7 +8,7 @@ Time complexity must be O(N)
 
 
 function sameFrequency(int1, int2){
-    if(int1.length === 0 || int2.length === 0)return null
+    if(int1.length !== int2.length)return false
 
     let same = {}
 
@@ -25,3 +25,5 @@ function sameFrequency(int1, int2){
  return true
 
 }
+
+console.log(sameFrequency([1,2], [1]))
