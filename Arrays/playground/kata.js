@@ -105,28 +105,24 @@ Constraint:
 1 <= month <= 12
 */
 
-let quarters = ["quarter1", "quarter2", "quarter3", "quarter4"]
+
+
 
 
 function quarterOf(month) {
-    switch(month){
-        case "quarter1":
-            month === 1 || 2 || 3
-            return month = "q1"
-        case "quarter2":
-            month === 4 || 5 || 6
-            return month = "q2"
-        case "quarter3":
-            month === 7 || 8 || 9
-            return month = "q3"
-        case "quarter4":
-            month === 10 || 11 || 12
-            return month = "q4"
-        default:
-            break
+  
+let quarters = [1,2,3,4,5,6,7,8,9,10,11,12]
 
-
+for(let i = 0; i < quarters.length; i++){
+    if(month == quarters[i] || quarters[i + 1] || quarters[i  + 2]){
+        console.log("this is the first quarter")
     }
+   
 }
 
-console.log(quarterOf(11))
+ 
+  return month 
+}
+
+
+console.log(quarterOf(1))
