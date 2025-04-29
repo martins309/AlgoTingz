@@ -63,16 +63,33 @@ Examples (Input -> Output)
 
 */
 
-function min(array){
-    // return Math.min(...array)
-   return Math.min.apply(null, array)
+// function min(array){
+//     // return Math.min(...array)
+//    return Math.min.apply(null, array)
+// }
+
+
+// function max(array){
+//     // return Math.max(...array)
+//     return Math.max.apply(null, array)
+// }
+
+// console.log(max([1,2,3,4]))
+// console.log(min([3,4,5,67,7,-2,0]))
+
+
+/*
+Write a function to split a string and convert it into an array of words.
+
+Examples (Input ==> Output):
+"Robin Singh" ==> ["Robin", "Singh"]
+
+"I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+
+*/
+
+function stringToArray(string){
+    return string.split(" ")
 }
 
-
-function max(array){
-    // return Math.max(...array)
-    return Math.max.apply(null, array)
-}
-
-console.log(max([1,2,3,4]))
-console.log(min([3,4,5,67,7,-2,0]))
+console.log(stringToArray("i like chicken"))
