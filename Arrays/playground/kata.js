@@ -88,8 +88,41 @@ Examples (Input ==> Output):
 
 */
 
-function stringToArray(string){
-    return string.split(" ")
-}
+// function stringToArray(string){
+//     return string.split(" ")
+// }
 
-console.log(stringToArray("i like chicken"))
+// console.log(stringToArray("i like chicken"))
+
+
+/*
+Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+
+For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+
+Constraint:
+
+1 <= month <= 12
+*/
+
+
+function quarterOf(month) {
+    switch(month){
+        case quarter1:
+            month === 1 || 2 || 3
+            break
+        case quarter2:
+            month === 4 || 5 || 6
+            break
+        case quarter3:
+            month === 7 || 8 || 9
+            break
+        case quarter4:
+            month === 10 || 11 || 12
+            break
+        default:
+            return null 
+
+
+    }
+}
