@@ -29,21 +29,33 @@ Time complexity must be O(N)
 // console.log(sameFrequency([2,4,6,8], [3,6,9,12]))
 
 
-function sameFrequency2(int1, int2) {
-    if(int1.length !== int2.length) return false
+// function sameFrequency2(int1, int2) {
+//     if(int1.length !== int2.length) return false
 
-    let num1 = {}
-    let num2 = {}
+//     let num1 = {}
+//     let num2 = {}
 
-    for(i in int1) {
-        num1[i] = (num1[i] || 0) + 1
-    }
+//     for(i in int1) {
+//         num1[i] = (num1[i] || 0) + 1
+//     }
 
-    for(key in int2) {
-        num2[key] !== num1[key] ? false : true
-    }
-    return true
+//     for(key in int2) {
+//         num2[key] !== num1[key] ? false : true
+//     }
+//     return true
+// }
+
+
+// console.log(sameFrequency2([1,2,3], [1,2,3,4]))
+
+
+/// implement a function called areThereDuplicates which accepts a variable number of arguments
+// and checks whether there are any duplicates among the arguments passed in 
+// this can be solved with a frequency counter or multiple pointers ting
+
+const areThereDuplicates = (...arr) => {
+
+
+
+    
 }
-
-
-console.log(sameFrequency2([1,2,3], [1,2,3,4]))
