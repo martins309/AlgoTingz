@@ -106,4 +106,4 @@ function constructNote(str1, str2) {
   return true 
 }
 
-console.log(constructNote("chickenisgreat" "chickenisgreat"))
+console.log(constructNote("abc","dcab"))
