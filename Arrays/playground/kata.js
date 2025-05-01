@@ -187,46 +187,61 @@ We will consider a, e, i, o, u as vowels for this Kata (but not y).
 The input string will only consist of lower case letters and/or spaces.
 */
 
-function getCount(str){
+// function getCount(str){
     
-  let vowels = {}
-  let isVowels = {
-    a: "a",
-    e: "e",
-    i: "i",
-    o: "o",
-    u: "u"
-  }
+//   let vowels = {}
+//   let isVowels = {
+//     a: "a",
+//     e: "e",
+//     i: "i",
+//     o: "o",
+//     u: "u"
+//   }
 
-  let count = 0 
+//   let count = 0 
   
-  for(s of str){
-    vowels[s] = (vowels[s] || 0) + 1
+//   for(s of str){
+//     vowels[s] = (vowels[s] || 0) + 1
     
-  }
+//   }
 
-  for(key in vowels) {
-    if(isVowels[key])
-        count+= vowels[key]
-  }
-  return count 
-}
+//   for(key in vowels) {
+//     if(isVowels[key])
+//         count+= vowels[key]
+//   }
+//   return count 
+// }
 
-console.log(getCount("chicken"))
+// console.log(getCount("chicken"))
 
 
-function getCount(str) {
-    let isVowels = ['a', 'e','i', 'o', 'u']
-    let count = 0
+// function getCount(str) {
+//     let isVowels = ['a', 'e','i', 'o', 'u']
+//     let count = 0
     
-    for(let i = 0; i < str.length; i++){
-      if(isVowels.includes(str[i])) {
-        count += 1
-      }
-    }
-    return count
-  }
+//     for(let i = 0; i < str.length; i++){
+//       if(isVowels.includes(str[i])) {
+//         count += 1
+//       }
+//     }
+//     return count
+//   }
 
-  function getCount(str) {
-    return str.split('').filter(char => 'aeiou'.includes(char)).length;
-  }
+//   function getCount(str) {
+//     return str.split('').filter(char => 'aeiou'.includes(char)).length;
+//   }
+
+
+/*
+Description:
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+The output should be two capital letters with a dot separating them.
+
+It should look like this:
+
+Sam Harris => S.H
+
+patrick feeney => P.F
+
+*/
