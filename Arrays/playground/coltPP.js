@@ -54,8 +54,15 @@ Time complexity must be O(N)
 // this can be solved with a frequency counter or multiple pointers ting
 
 const areThereDuplicates = (...arr) => {
+    arr.sort((a,b) => a - b)
+    let left = 0
+    let right = arr.length - 1
+    isDuplicate = 0 
 
+    while(left < right) {
+        
+    }
 
-
-    
 }
+
+console.log(areThereDuplicates(1,5,6,8,4,5))
