@@ -99,11 +99,11 @@ function constructNote(str1, str2) {
     }
 
     for(key in message){
-        if(message[key] !== letters[key]) {
+        if(!letters[key] || letters[key] < message[key]) {
             return false
         }
     }
   return true 
 }
 
-console.log(constructNote("abc","dcab"))
+console.log(constructNote("chickenisfum","cckisfm"))
