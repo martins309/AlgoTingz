@@ -60,9 +60,11 @@ const areThereDuplicates = (...arr) => {
     isDuplicate = 0 
 
     while(left < right) {
-        
+        arr[left] === arr[right] ? isDuplicate+= 1 : left++ 
+        right++ 
     }
+    return isDuplicate > 0
 
 }
 
-console.log(areThereDuplicates(1,5,6,8,4,5))
+console.log(areThereDuplicates(1,5,6,1,8,4,5))
