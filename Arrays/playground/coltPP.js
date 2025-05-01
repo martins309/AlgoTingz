@@ -53,20 +53,20 @@ Time complexity must be O(N)
 // and checks whether there are any duplicates among the arguments passed in 
 // this can be solved with a frequency counter or multiple pointers ting
 
-const areThereDuplicates = (...arr) => {
-    arr.sort((a,b) => a.toString().localeCompare(b.toString()))
+// const areThereDuplicates = (...arr) => {
+//     arr.sort((a,b) => a.toString().localeCompare(b.toString()))
 
-    let isDuplicate = []
+//     let isDuplicate = []
     
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i] === arr[i + 1] ){
-            isDuplicate.push(arr[i])
-        }
-    }
-    return isDuplicate.length > 0 
-}
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr[i] === arr[i + 1] ){
+//             isDuplicate.push(arr[i])
+//         }
+//     }
+//     return isDuplicate.length > 0 
+// }
 
-console.log(areThereDuplicates(1,'s','1',1))
+// console.log(areThereDuplicates(1,'s','1',1))
 
 
 
@@ -86,5 +86,24 @@ Space Complexity: O(N)
 */
 
 function constructNote(str1, str2) {
-    
+    let message = {}
+    let letters = {}
+
+    for(s of str1){
+        message[s] = (message[s] || 0) + 1
+
+    }
+
+    for(s of str2) {
+        letters[s] = (letters[s] || 0) + 1
+    }
+
+    for(key in message){
+        if(message[key] !== letters[key]) {
+            return false
+        }
+    }
+  return true 
 }
+
+console.log(constructNote("chickenisgreat" "chickenisgreat"))

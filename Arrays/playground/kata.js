@@ -245,3 +245,22 @@ Sam Harris => S.H
 patrick feeney => P.F
 
 */
+
+function abbrevName(name){
+  let initial = ""
+
+    //find the space
+    let space = name.indexOf(" ")
+
+
+   
+        // if there is a space and its not the last character 
+        if(space !== -1 && space < name.length -1){
+            space = name[space + 1].toUpperCase()
+            initial = name[0]
+        }
+
+    
+    return initial.toUpperCase() + "." + space
+
+}
