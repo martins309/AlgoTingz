@@ -135,7 +135,7 @@ function constructNote2(message, letters) {
     // loop through the message and see if the letters exist in the message
     for(char in message) {
         //if they dont exist, then return false. because you cant make the message
-        //
+        // without the letters 
         if(!lettersMap[char]) {
             return false
         }
