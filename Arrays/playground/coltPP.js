@@ -102,8 +102,47 @@ function constructNote(str1, str2) {
         if(!letters[key] || letters[key] < message[key]) {
             return false
         }
+        if(message[key] === 0){
+            return true
+        }
+
     }
   return true 
 }
 
-console.log(constructNote("cchisfm","chickenisfum"))
+console.log(constructNote("","chickenisfum"))
+
+
+
+
+
+///// using a single object 
+
+function constructNote2(message, letters) {
+    //if the message is empty its fine as long as there are letters
+    if(message.length === 0) return true 
+    //if there are no letters than you cant construct the message
+    if(letters.length === 0 ) return false 
+
+    //create the hash map
+    let lettersMap = {}
+
+    //loop through the letters and add it to the hash map
+    for(char of letters) {
+        lettersMap[char] = (lettersMap[char] || 0 ) + 1
+    }
+
+    // loop through the message and see if the letters exist in the message
+    for(char in message) {
+        //if they dont exist, then return false. because you cant make the message
+        //
+        if(!lettersMap[char]) {
+            return false
+        }
+        lettersMap[char] --
+    }
+   
+    return true 
+}
+
+console.log(constructNote2("thisisfun", "thisisfun"))
