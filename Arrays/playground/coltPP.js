@@ -185,22 +185,33 @@ console.log(findAllDuplicates([4, 3, 2, 1, 0, 1, 2, 3]))
 
 
 function findAllDuplicates2(arr){
+    // counts the number of times that number occurs in the array
     const counts = {}
+    // this will house the duplicates
     duplicates = []
 
+    // loop through the array
     for(let i = 0; i < arr.length; i++){
+        // variable to hold the elements of the array for which we are tracking
         const num = arr[i]
+        //if the number exists in the object then increment it
         if(counts[num]){
             counts++
+        // otherwise initialize it to one
         }else {
             counts = 1
         }
     }
 
+    // loop throught the keys in the object 
     for(num in counts){
+    // if the values of the keys are greater than one 
+    // basically if there is more than one occurence
         if(counts[num] > 1 ){
+    // push it to the duplicates array
             duplicates.push(Number(num))
         }
     }
+    // return the array that houses the duplicates
     return duplicates
 }
