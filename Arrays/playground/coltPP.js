@@ -182,3 +182,25 @@ function findAllDuplicates(arr){
 }
 
 console.log(findAllDuplicates([4, 3, 2, 1, 0, 1, 2, 3]))
+
+
+function findAllDuplicates2(arr){
+    const counts = {}
+    duplicates = []
+
+    for(let i = 0; i < arr.length; i++){
+        const num = arr[i]
+        if(counts[num]){
+            counts++
+        }else {
+            counts = 1
+        }
+    }
+
+    for(num in counts){
+        if(counts[num] > 1 ){
+            duplicates.push(Number(num))
+        }
+    }
+    return duplicates
+}
