@@ -163,11 +163,13 @@ Time Complexity - O(n)
 
 
 function findAllDuplicates(arr){
-    // object to hold the counts of the duplicates
-
-    const counts = {}
+    // object to hold the number of occurences of an element
+     counts = {}
+    // houses the unique values or the ones that occur more than once
     const duplicates = new Set()
 
+    // loop through the array and if it exists then add it to the set
+    // otherise initalize it to one
     for(const num of arr){
         if(counts[num]){
             duplicates.add(num)
@@ -175,7 +177,7 @@ function findAllDuplicates(arr){
             counts[num] = 1
         }
     }
-
+    // set isnt a true array so use the Array.from to turn the set of unique values into an array
  return Array.from(duplicates)
     
 
