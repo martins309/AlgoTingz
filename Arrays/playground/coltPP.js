@@ -163,14 +163,20 @@ Time Complexity - O(n)
 
 
 function findAllDuplicates(arr){
-    
+    // object to hold the counts of the duplicates
 
-    // array to hold all the duplicates
-    const duplicate = []
-    let i = 0
-    let j = arr.length -1
+    const counts = {}
+    const duplicates = new Set()
 
-   
+    for(const num of arr){
+        if(counts[num]){
+            duplicates.add(num)
+        }else {
+            counts[num] = 1
+        }
+    }
+
+ return Array.from(duplicates)
     
 
 }
