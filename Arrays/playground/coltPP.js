@@ -219,3 +219,14 @@ Time Complexity - O(n)
 // }
 
 
+function isSubsequence(str1, str2) {
+    let compare = {}
+
+    for(const char of str1) {
+        compare[char] = (compare[char] || 0) + 1
+    }
+    return compare[char]
+
+}
+
+console.log(isSubsequence("hello", "world"))
