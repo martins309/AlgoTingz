@@ -162,58 +162,60 @@ Time Complexity - O(n)
 
 
 
-function findAllDuplicates(arr){
-    // object to hold the number of occurrences of an element
-     counts = {}
-    // houses the unique values or the ones that occur more than once
-    const duplicates = new Set()
+// function findAllDuplicates(arr){
+//     // object to hold the number of occurrences of an element
+//      counts = {}
+//     // houses the unique values or the ones that occur more than once
+//     const duplicates = new Set()
 
-    // loop through the array and if it exists then add it to the set
-    // otherwise initialize it to one
-    for(const num of arr){
-        if(counts[num]){
-            duplicates.add(num)
-        }else {
-            counts[num] = 1
-        }
-    }
-    // set isnt a true array so use the Array.from to turn the set of unique values into an array
- return Array.from(duplicates)
+//     // loop through the array and if it exists then add it to the set
+//     // otherwise initialize it to one
+//     for(const num of arr){
+//         if(counts[num]){
+//             duplicates.add(num)
+//         }else {
+//             counts[num] = 1
+//         }
+//     }
+//     // set isn't a true array so use the Array.from to turn the set of unique values into an array
+//  return Array.from(duplicates)
     
 
-}
+// }
 
-console.log(findAllDuplicates([4, 3, 2, 1, 0, 1, 2, 3]))
+// console.log(findAllDuplicates([4, 3, 2, 1, 0, 1, 2, 3]))
 
 
-function findAllDuplicates2(arr){
-    // counts the number of times that number occurs in the array
-    const counts = {}
-    // this will house the duplicates
-    duplicates = []
+// function findAllDuplicates2(arr){
+//     // counts the number of times that number occurs in the array
+//     const counts = {}
+//     // this will house the duplicates
+//     duplicates = []
 
-    // loop through the array
-    for(let i = 0; i < arr.length; i++){
-        // variable to hold the elements of the array for which we are tracking
-        const num = arr[i]
-        //if the number exists in the object then increment it
-        if(counts[num]){
-            counts++
-        // otherwise initialize it to one
-        }else {
-            counts = 1
-        }
-    }
+//     // loop through the array
+//     for(let i = 0; i < arr.length; i++){
+//         // variable to hold the elements of the array for which we are tracking
+//         const num = arr[i]
+//         //if the number exists in the object then increment it
+//         if(counts[num]){
+//             counts++
+//         // otherwise initialize it to one
+//         }else {
+//             counts = 1
+//         }
+//     }
 
-    // loop through the keys in the object 
-    for(num in counts){
-    // if the values of the keys are greater than one 
-    // basically if there is more than one occurrence
-        if(counts[num] > 1 ){
-    // push it to the duplicates array
-            duplicates.push(Number(num))
-        }
-    }
-    // return the array that houses the duplicates
-    return duplicates
-}
+//     // loop through the keys in the object 
+//     for(num in counts){
+//     // if the values of the keys are greater than one 
+//     // basically if there is more than one occurrence
+//         if(counts[num] > 1 ){
+//     // push it to the duplicates array
+//             duplicates.push(Number(num))
+//         }
+//     }
+//     // return the array that houses the duplicates
+//     return duplicates
+// }
+
+
