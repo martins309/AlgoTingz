@@ -220,12 +220,22 @@ Time Complexity - O(n)
 
 
 function isSubsequence(str1, str2) {
-    let compare = {}
+    //hash map of the characters in a string
+    let wordMap = {}
 
-    for(const char of str1) {
-        compare[char] = (compare[char] || 0) + 1
+    //build an object that has all the characters
+    for(const char of str1){
+        wordMap[char] = (wordMap[char] || 0) + 1
     }
-    return compare[char]
+
+    //loop through the second string and compare 
+    //if the characters of the first string don't exist in the second string 
+    //return false otherwise take it out 
+    for(char in str2) {
+        !wordMap[char] ? false : wordMap--
+    }
+    
+    return true
 
 }
 
