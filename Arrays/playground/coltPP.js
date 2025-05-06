@@ -84,7 +84,7 @@ Time Complexity: O(M+N)
 Space Complexity: O(N)
 
 */
-
+                       //m    //l
 // function constructNote(str1, str2) {
 //     let message = {}
 //     let letters = {}
@@ -107,10 +107,10 @@ Space Complexity: O(N)
 //         }
 
 //     }
-//   return true 
+//   return true
 // }
 
-// console.log(constructNote("","chickenisfum"))
+// console.log(constructNote("chicken","sting"))
 
 
 
@@ -133,9 +133,10 @@ Space Complexity: O(N)
 //     }
 
 //     // loop through the message and see if the letters exist in the message
-//     for(char in message) {
-//         //if they dont exist, then return false. because you cant make the message
+//     for(char of message) {
+//         //if they don't exist, then return false. because you cant make the message
 //         // without the letters 
+
 //         if(!lettersMap[char]) {
 //             return false
 //         }
@@ -215,28 +216,20 @@ Time Complexity - O(n)
 //         }
 //     }
 //     // return the array that houses the duplicates
-//     return duplicates
+//     return duplicates 
 // }
 
 
 function isSubsequence(str1, str2) {
-    //hash map of the characters in a string
-    let wordMap = {}
+    let i = 0
+    let j = 0
 
-    //build an object that has all the characters
-    for(const char of str1){
-        wordMap[char] = (wordMap[char] || 0) + 1
+    while(i < str1.length && j < str2.length){
+        str1[i] === str2[j] ? i++ : j++
     }
 
-    //loop through the second string and compare 
-    //if the characters of the first string don't exist in the second string 
-    //return false otherwise take it out 
-    for(char in str2) {
-        !wordMap[char] ? false : wordMap--
-    }
-    
-    return true
+   return i === str1.length
 
 }
 
-console.log(isSubsequence("hello", "world"))
+console.log(isSubsequence("abc", "abc"))
