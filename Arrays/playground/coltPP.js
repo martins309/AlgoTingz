@@ -220,16 +220,22 @@ Time Complexity - O(n)
 // }
 
 
-function isSubsequence(str1, str2) {
-    let i = 0
-    let j = 0
+// function isSubsequence(str1, str2) {
+//     let i = 0
+//     let j = 0
 
-    while(i < str1.length && j < str2.length){
-        str1[i] === str2[j] ? i++ : j++
-    }
+//     while(i < str1.length && j < str2.length){
+//         str1[i] === str2[j] ? i++ : j++
+//     }
 
-   return i === str1.length
+//    return i === str1.length
 
+// }
+
+// console.log(isSubsequence("abc", "abc"))
+
+function smash(words) {
+    return words.join(" ")
 }
 
-console.log(isSubsequence("abc", "abc"))
+console.log(smash(['hello', 'world', 'this', 'is', 'great']))
