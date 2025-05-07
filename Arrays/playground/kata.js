@@ -300,7 +300,7 @@ function nbYear(p0, percent, aug, p) {
     if(p0 < 0 || p < 0)return null
     const eof = (p0 + p0 * percent ) 
     const growth = aug
-    if 
+
     
     
     
