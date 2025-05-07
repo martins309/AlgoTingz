@@ -131,10 +131,9 @@ Constraint:
 //     if(month === q4[0] || month === q4[1] || month === q4[2]) {
 //         return 4
 //     }
-   
 
- 
-  
+
+
 // }
 
 
@@ -297,5 +296,6 @@ nb_year(1500000, 2.5, 10000, 2000000) -> 10
 */
 
 function nbYear(p0, percent, aug, p) {
+    
     
 }
