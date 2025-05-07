@@ -302,8 +302,8 @@ function nbYear(p0, percent, aug, p) {
     const growth = aug
     let total = 0 
 
-    while(eoy + growth < p){
-        if(eoy + growth <= p) {
+    while(p > 0){
+        if(eoy + growth < p) {
             total += 1
         }
         return total 
