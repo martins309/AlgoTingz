@@ -252,18 +252,25 @@ findPair([0,1,3,4,6],-2) // true
 findPair([1,2,3], 0) // false
 
 */
-
 function findPair(arr, n) {
-    if(arr.length === 0) return false
-    let end = arr.length - 1
+    if (arr.length === 0) return false;
 
-    for (let i = 0; i < arr.length; i++){
-        if(arr[i] - arr[end] === n) {
-            return true
+    // Use a set to store elements for quick lookup
+    let set = new Set();
+
+    for (let i = 0; i < arr.length; i++) {
+        // Check if the difference with any previously seen element matches 'n'
+        if (set.has(arr[i] + n) || set.has(arr[i] - n)) {
+            return true;
         }
-        end--
+
+        // Add the current element to the set
+        set.add(arr[i]);
     }
- return false
+
+    return false;
 }
+
+
 
 console.log(findPair([0,1,3,4,6],-2))
