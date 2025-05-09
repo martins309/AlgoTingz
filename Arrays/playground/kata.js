@@ -302,27 +302,29 @@ nb_year(1500, 5, 100, 5000) -> 15
 nb_year(1500000, 2.5, 10000, 2000000) -> 10
 */
 
-function nbYear(p0, percent, aug, p) {
-    if(p0 <= 0 || p <= 0)return null
+// function nbYear(p0, percent, aug, p) {
+//     if(p0 <= 0 || p <= 0)return null
 
-    let years = 0
+//     let years = 0
 
-    while(p0 < p){
-        p0 = p0 + p0 * (percent / 100) + aug
-        p0 = Math.floor(p0)
-        years++
-    }
+//     while(p0 < p){
+//         p0 = p0 + p0 * (percent / 100) + aug
+//         p0 = Math.floor(p0)
+//         years++
+//     }
 
-    return years
+//     return years
     
     
     
     
-}
+// }
 
-console.log(nbYear(1500, 5, 100, 5000))
+// console.log(nbYear(1500, 5, 100, 5000))
 
 
-// here is the one liner that I probs would or would not use
-const nbYear = (p0, percent, aug, p) => { let years = 0; while (p0 < p) p0 += p0 * (percent / 100) + aug, years++; return years; };
+// // here is the one liner that I probs would or would not use
+// const nbYear = (p0, percent, aug, p) => { let years = 0; while (p0 < p) p0 += p0 * (percent / 100) + aug, years++; return years; };
+
+
 
