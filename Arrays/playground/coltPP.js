@@ -243,13 +243,12 @@ function findPair(arr, n) {
     let end = arr.length - 1
 
     for (let i = 0; i < arr.length; i++){
-        if(arr[i] - end === n){
+        if(arr[i] - arr[end] === n) {
             return true
         }
-        i++
-        end++
+        end--
     }
     return false
 }
 
-console.log(findPair([6,1,4,10,2,4], 2))
+console.log(findPair([0,1,3,4,6],-2))
