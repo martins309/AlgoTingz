@@ -260,11 +260,10 @@ function findPair(arr, n) {
     for (let i = 0; i < arr.length; i++){
         if(arr[i] - arr[end] === n) {
             return true
-            
         }
-    
+        end--
     }
- 
+ return false
 }
 
-console.log(findPair([1,2,3], 0))
+console.log(findPair([0,1,3,4,6],-2))
