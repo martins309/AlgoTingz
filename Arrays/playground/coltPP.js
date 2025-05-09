@@ -239,5 +239,17 @@ Time Complexity - O(n)
 //if so the function will return true else false
 
 function findPair(arr, n) {
+    if(arr.length === 0) return false
+    let end = arr.length - 1
 
+    for (let i = 0; i < arr.length; i++){
+        if(arr[i] - end === n){
+            return true
+        }
+        i++
+        end++
+    }
+    return false
 }
+
+console.log(findPair([6,1,4,10,2,4], 2))
