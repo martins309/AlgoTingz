@@ -234,3 +234,10 @@ Time Complexity - O(n)
 
 // console.log(isSubsequence("abc", "abc"))
 
+//given am unsorted array  and a number n
+//find if there exists a pair of elements in the array whose difference is n
+//if so the function will return true else false
+
+function findPair(arr, n) {
+
+}
