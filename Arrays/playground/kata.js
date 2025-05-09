@@ -264,6 +264,13 @@ patrick feeney => P.F
 
 // }
 
+//join ting 
+// function smash(words) {
+//     return words.join(" ")
+// }
+
+// console.log(smash(['hello', 'world', 'this', 'is', 'great']))
+
 
 /*
 In a small town the population is p0 = 1000 at the beginning of a year. 
