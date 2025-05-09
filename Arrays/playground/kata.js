@@ -296,20 +296,24 @@ nb_year(1500000, 2.5, 10000, 2000000) -> 10
 */
 
 function nbYear(p0, percent, aug, p) {
-    if(p0 < 0 || p < 0)return 0
+    if(p0 <= 0 || p <= 0)return null
 
-    const eoy = p0 + p0 * percent 
-    let growth = eoy + aug
+    let years = 0
 
-    while(growth < p){
-        growth += aug
+    while(p0 < p){
+        p0 = p0 + p0 * (percent / 100) + aug
+        p0 = Math.floor(p0)
+        years++
     }
-    return growth
 
+    return years
     
     
     
     
 }
 
-console.log(nbYear(1000, .02, 50, 1200))
+console.log(nbYear(1500, 5, 100, 5000))
+
+
+
