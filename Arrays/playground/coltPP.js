@@ -282,4 +282,14 @@ function firstDuplicate(arr){
 
     let set = new Set()
 
+    for(let i = 0; i < arr.length; i++) {
+        if(set.has(arr[i])){
+            return true
+        }  
+        return set.add(arr[i])
+    } 
+
+
 }
+
+console.log(firstDuplicate([1,3,4,5,6,4,3]))
