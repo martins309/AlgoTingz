@@ -272,5 +272,14 @@ function findPair(arr, n) {
 }
 
 
-
 console.log(findPair([0,1,3,4,6],-2))
+
+
+
+
+function firstDuplicate(arr){
+    if(arr.length === 0)return null
+
+    let set = new Set()
+
+}
