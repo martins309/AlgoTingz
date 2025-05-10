@@ -252,50 +252,68 @@ findPair([0,1,3,4,6],-2) // true
 findPair([1,2,3], 0) // false
 
 */
-function findPair(arr, n) {
-    if (arr.length === 0) return false;
+// function findPair(arr, n) {
+//     if (arr.length === 0) return false;
 
-    // Use a set to store elements for quick lookup
-    let set = new Set();
+//     // Use a set to store elements for quick lookup
+//     let set = new Set();
 
-    for (let i = 0; i < arr.length; i++) {
-        // Check if the difference with any previously seen element matches 'n'
-        if (set.has(arr[i] + n) || set.has(arr[i] - n)) {
-            return true;
-        }
+//     for (let i = 0; i < arr.length; i++) {
+//         // Check if the difference with any previously seen element matches 'n'
+//         if (set.has(arr[i] + n) || set.has(arr[i] - n)) {
+//             return true;
+//         }
 
-        // Add the current element to the set
-        set.add(arr[i]);
-    }
+//         // Add the current element to the set
+//         set.add(arr[i]);
+//     }
 
-    return false;
-}
-
-
-console.log(findPair([0,1,3,4,6],-2))
+//     return false;
+// }
 
 
-
-
-function firstDuplicate(arr){
-    if(arr.length === 0)return null
-
-    let set = new Set()
-
-    for(let i = 0; i < arr.length; i++) {
-            if(set.has(arr[i])){
-                return arr[i]
-            }
-        set.add(arr[i])
-    }
-    return null
-}
-
-console.log(firstDuplicate([1,3,4,5,6,4,3]))
+// console.log(findPair([0,1,3,4,6],-2))
 
 
 
 
-function firstNonRepeatingChar(str) {
-    if(str.length === "") return null 
-}
+// function firstDuplicate(arr){
+//     if(arr.length === 0)return null
+
+//     let set = new Set()
+
+//     for(let i = 0; i < arr.length; i++) {
+//             if(set.has(arr[i])){
+//                 return arr[i]
+//             }
+//         set.add(arr[i])
+//     }
+//     return null
+// }
+
+// console.log(firstDuplicate([1,3,4,5,6,4,3]))
+
+
+
+
+// function firstNonRepeatingChar(str) {
+//     if(str.length === "") return null 
+
+//     let seen = new Set()
+//     let count = {}
+
+//     for(let char of str) {
+//         count[char] = (count[char] || 0) + 1
+//         seen.add(char)
+        
+//     }
+
+//     for(let char of seen){
+//         if(count[char] === 1){
+//             return char
+//         }
+//     }
+//     return null 
+// }
+
+// console.log(firstNonRepeatingChar("aabbccde"))
