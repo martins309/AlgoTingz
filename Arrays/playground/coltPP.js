@@ -323,21 +323,22 @@ function firstUniqueChar(str) {
     if (str.length === 0) return null;
   
     let map = new Map();
-  
     // Step 1: Count character frequencies using Map
     for (let char of str) {
       // your code here
-      map.set(char, count)
-      console.log(map.set)
+    map.set(char,(map.get(char) || 0) + 1) 
+
     }
-  
+
     // Step 2: Find the first character with a count of 1
     for (let char of str) {
-      // your code here
+        if(map.get(char) === 1){
+            return char
+        }
     }
-  
+
     return null;
-  }
-  
+
+    }
+
   console.log(firstUniqueChar("abacabad")); // "c"
-  
