@@ -365,21 +365,22 @@ Space Complexity - O(1)
   */
 
 
-function maxSubArraySum(arr, num) {
+function maxSubArraySum(arr, k) {
   let maxSum = 0
-  let tempSum = 0
+  let windowSum = 0
+  let windowStart = 0
 
-  if(arr.length < num) return null 
-  for(let i = 0; i < num; i++){
-    maxSum+= arr[i]
+  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++){
+    windowSum += arr[windowEnd]  // add the next element
+
+    //slide the window if we've hit the window size of k
+    if(windowEnd >= k - 1) {
+      maxSum = Math.max(maxSum, windowSum)  //update max 
+      windowSum -= arr[windowStart] // subtract the window going out 
+      windowStart++ //slide the window forward 
+    }
   }
 
-  tempSum = maxSum
-  for(let i = 0; i < arr.length; i++){
-    tempSum = tempSum - arr[i - num] + arr[i]
-    maxSum = Math.max(maxSum, tempSum)
-  }
-  return maxSum
+return maxSum
 
 }
-console.log(maxSubArraySum([100,200,300,400]))
