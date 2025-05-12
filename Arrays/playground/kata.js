@@ -339,29 +339,45 @@ solution('abc', 'd') // returns false
 
 
 
-
 function solution(str, ending){
-    if(str.length === 0) return null 
+    if(str.length === "") return null
 
-    let str1 = {}
-    let str2 = {}
-
-    for(let s of str) {
-        str1[s] = (str1[s] || 0) + 1
-        console.log(str1[s])
-    }
-
-    for(let s of ending){
-        str2[s] = (str2[s] || 0) + 1
-
-    }
-
-    for(let key in str2) {
-        if(!str1[key]){
-            return false 
+    for (let i = 1; i < str.length; i++){
+        if(str[i] !== ending[i]){
+            return false
         }
     }
-    return true
-  }
+    return true 
+}
 
-  console.log(solution("abc", "d"))
+
+
+
+
+
+
+// function solution(str, ending){
+//     if(str.length === 0) return null 
+
+//     let str1 = {}
+//     let str2 = {}
+
+//     for(let s of str) {
+//         str1[s] = (str1[s] || 0) + 1
+//         console.log(str1[s])
+//     }
+
+//     for(let s of ending){
+//         str2[s] = (str2[s] || 0) + 1
+
+//     }
+
+//     for(let key in str2) {
+//         if(!str1[key]){
+//             return false 
+//         }
+//     }
+//     return true
+//   }
+
+//   console.log(solution("abc", "d"))
