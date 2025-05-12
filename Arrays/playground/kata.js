@@ -339,45 +339,22 @@ solution('abc', 'd') // returns false
 
 
 
-function solution(str, ending){
-    if(str.length === "") return null
-
-    for(s of str){
-        if (s.includes(ending)){
-            return true
-        }
-    }
-    return false
-}
-
-console.log(solution("abc", "bc"))
-
-
-
-
-
 // function solution(str, ending){
-//     if(str.length === 0) return null 
+//     if(str === "") return null
 
-//     let str1 = {}
-//     let str2 = {}
+//     return str.endsWith(ending) 
+// }
 
-//     for(let s of str) {
-//         str1[s] = (str1[s] || 0) + 1
-//         console.log(str1[s])
-//     }
+// console.log(solution("abc", "d"))
 
-//     for(let s of ending){
-//         str2[s] = (str2[s] || 0) + 1
 
-//     }
 
-//     for(let key in str2) {
-//         if(!str1[key]){
-//             return false 
-//         }
-//     }
-//     return true
-//   }
 
-//   console.log(solution("abc", "d"))
+
+function solutions(str, ending){
+    if(str === "") return null 
+
+    return str.slice(-ending.length) === ending
+  }
+
+  console.log(solutions("abc", "bc"))
