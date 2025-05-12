@@ -348,6 +348,7 @@ function solution(str, ending){
 
     for(let s of str1) {
         str1[s] = (str1[s] || 0) + 1
+        console.log(str1[s])
     }
 
 
