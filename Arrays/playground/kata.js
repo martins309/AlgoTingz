@@ -346,10 +346,22 @@ function solution(str, ending){
     let str1 = {}
     let str2 = {}
 
-    for(let s of str1) {
+    for(let s of str) {
         str1[s] = (str1[s] || 0) + 1
         console.log(str1[s])
     }
 
+    for(let s of ending){
+        str2[s] = (str2[s] || 0) + 1
 
+    }
+
+    for(let key in str2) {
+        if(!str1[key]){
+            return false 
+        }
+    }
+    return true
   }
+
+  console.log(solution("abc", "d"))
