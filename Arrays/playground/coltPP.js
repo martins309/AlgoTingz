@@ -370,6 +370,8 @@ function maxSubArraySum(arr, k) {
   let windowSum = 0
   let windowStart = 0
 
+  if(arr.length < k) return null 
+
   for (let windowEnd = 0; windowEnd < arr.length; windowEnd++){
     windowSum += arr[windowEnd]  // add the next element
 
