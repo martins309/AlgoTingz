@@ -376,6 +376,7 @@ function maxSubArraySum(arr, k) {
     windowSum += arr[windowEnd]  // add the next element
 
     //slide the window if we've hit the window size of k
+    //if we're at the third position or the kth position, start comparing
     if(windowEnd >= k - 1) {
       maxSum = Math.max(maxSum, windowSum)  //update max 
       windowSum -= arr[windowStart] // subtract the window going out 
