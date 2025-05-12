@@ -343,14 +343,13 @@ function solution(str, ending){
     if(str.length === "") return null
 
     for (let i = 1; i < str.length; i++){
-        if(str[i] !== ending[i]){
-            return false
-        }
+            
+        
     }
-    return true 
+    
 }
 
-
+console.log(solution("abc", "bc"))
 
 
 
