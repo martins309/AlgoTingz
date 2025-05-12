@@ -84,7 +84,7 @@ Time Complexity: O(M+N)
 Space Complexity: O(N)
 
 */
-                       //m    //l
+
 // function constructNote(str1, str2) {
 //     let message = {}
 //     let letters = {}
