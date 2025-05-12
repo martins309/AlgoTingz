@@ -343,7 +343,12 @@ solution('abc', 'd') // returns false
 function solution(str, ending){
     if(str.length === 0) return null 
 
-    
+    let str1 = {}
+    let str2 = {}
+
+    for(let s of str1) {
+        str1[s] = (str1[s] || 0) + 1
+    }
 
 
   }
