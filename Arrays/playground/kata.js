@@ -342,11 +342,12 @@ solution('abc', 'd') // returns false
 function solution(str, ending){
     if(str.length === "") return null
 
-    for (let i = 1; i < str.length; i++){
-            
-        
+    for(s of str){
+        if (s.includes(ending)){
+            return true
+        }
     }
-    
+    return false
 }
 
 console.log(solution("abc", "bc"))
