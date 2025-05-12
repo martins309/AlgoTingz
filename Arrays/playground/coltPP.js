@@ -319,29 +319,29 @@ findPair([1,2,3], 0) // false
 // console.log(firstNonRepeatingChar("aabbccde"))
 
 
-function firstUniqueChar(str) {
-    if (str.length === 0) return null;
+// function firstUniqueChar(str) {
+//     if (str.length === 0) return null;
   
-    let map = new Map();
-    // Step 1: Count character frequencies using Map
-    for (let char of str) {
-      // your code here
-    map.set(char,(map.get(char) || 0) + 1) 
+//     let map = new Map();
+//     // Step 1: Count character frequencies using Map
+//     for (let char of str) {
+//       // your code here
+//     map.set(char,(map.get(char) || 0) + 1) 
 
-    }
+//     }
 
-    // Step 2: Find the first character with a count of 1
-    for (let char of str) {
-        if(map.get(char) === 1){
-            return char
-        }
-    }
+//     // Step 2: Find the first character with a count of 1
+//     for (let char of str) {
+//         if(map.get(char) === 1){
+//             return char
+//         }
+//     }
 
-    return null;
+//     return null;
 
-    }
+//     }
 
-  console.log(firstUniqueChar("abacabad")); // "c"
+//   console.log(firstUniqueChar("abacabad")); // "c"
 
   /*
 
@@ -365,7 +365,7 @@ Space Complexity - O(1)
   */
 
 
-function maxSubArraySum(arr) {
+function maxSubArraySum(arr, num) {
   let maxSum = 0
   let tempSum = 0
 
