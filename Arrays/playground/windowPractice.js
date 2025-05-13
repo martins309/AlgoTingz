@@ -14,20 +14,16 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 */
 
 function findAverages(arr, k){
-    let averageSum = []
-    let currentWindow = []
+    let average = []
+    let currentWindow = 0
     let windowStart = 0
 
     for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
-        currentWindow.push(arr[windowEnd])
-
-
-        // if(windowEnd >= k -1){
-        //     averageSum = averageSum.push(arr.reduce((a,b) => a + b))
-        //     windowStart++ 
-        // }
+        
+        
+        
     }
-    // return averageSum
+    return currentWindow
 }
 
 console.log(findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))
