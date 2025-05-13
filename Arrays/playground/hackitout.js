@@ -234,3 +234,5 @@ function check(a, x) {
 
   return element[x] === true;
 }
+
+
