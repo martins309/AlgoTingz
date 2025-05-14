@@ -119,25 +119,58 @@ but it will always be sorted
 ///////actual sliding window approach
 
 
-function maxSubArray(arr, num) {
-  let maxSum = 0
-  let tempSum = 0
+// function maxSubArray(arr, num) {
+//   let maxSum = 0
+//   let tempSum = 0
 
-  if(arr.length < num) return null
-  for(let i = 0; i < num; i++){
-    maxSum += arr[i]
-  }
-  tempSum = maxSum
-  for(let i = num; i < arr.length; i++){
-    tempSum = tempSum - arr[i - num] + arr[i]
-    maxSum = Math.max(maxSum, tempSum)
-  }
-  return maxSum
-}
+//   if(arr.length < num) return null
+//   for(let i = 0; i < num; i++){
+//     maxSum += arr[i]
+//   }
+//   tempSum = maxSum
+//   for(let i = num; i < arr.length; i++){
+//     tempSum = tempSum - arr[i - num] + arr[i]
+//     maxSum = Math.max(maxSum, tempSum)
+//   }
+//   return maxSum
+// }
 
-console.log(maxSubArray([1,2,3,4,5,6,7,8,9], 3))
+// console.log(maxSubArray([1,2,3,4,5,6,7,8,9], 3))
 
 
 
 //////////////Divide and Conquer\\\\\\\\\\\\\\\\\\\\\
 
+
+
+
+
+
+
+
+
+
+
+////////////////////Recursion\\\\\\\\\\\\\\\\\\
+
+//without recursion
+// function CountDown(num){
+//   for(let i = num; i > 0; i--){
+//   console.log(i)
+    
+//   }
+//   console.log("All done")
+//   return
+// }
+
+// console.log(CountDown(5))
+
+function countDown(num) {
+  if(num <= 0){
+    console.log("All done")
+    return
+  }
+  console.log(num)
+  num--
+  countDown(num)
+}
