@@ -20,7 +20,7 @@ function findAverages(arr, k){
 
     for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
         if(windowEnd >= k) {
-            
+            average = average.push()
         }
         
         
