@@ -20,12 +20,13 @@ function findAverages(arr, k){
 
     for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
         if(windowEnd >= k) {
-            average = average.push()
+            average = average.push(arr[windowEnd])
+            console.log(average)
         }
         
         
     }
-    return currentWindow
+    return average
 }
 
 console.log(findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))
