@@ -222,17 +222,23 @@ Return true if the array contains the value, false if not.
 
 /// simpler way 
 
-const check = (a, x) => a.includes(x)
+// const check = (a, x) => a.includes(x)
 
-// using an object 
-function check(a, x) {
-  let element = {};
+// // using an object 
+// function check(a, x) {
+//   let element = {};
 
-  for (let el of a) {
-    element[el] = true;
-  }
+//   for (let el of a) {
+//     element[el] = true;
+//   }
 
-  return element[x] === true;
-}
+//   return element[x] === true;
+// }
+
+
+const raw = "abc123x!@#";
+const cleaned = raw.replace(/[^0-9]/g, "");
+console.log(cleaned); // → "123"
+  
 
 
