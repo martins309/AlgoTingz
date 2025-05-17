@@ -19,7 +19,9 @@ function findAverages(arr, k){
     let windowStart = 0
 
     for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
-        
+        if(windowEnd >= k) {
+            
+        }
         
         
     }
