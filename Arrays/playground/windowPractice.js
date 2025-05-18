@@ -39,6 +39,9 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 
 function maxAverage(arr, k) {
     let maxAverage = -Infinity
+    let windowSum = 0
+    let windowStart = 0
+
     
 
 
