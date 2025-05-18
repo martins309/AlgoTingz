@@ -42,7 +42,9 @@ function maxAverage(arr, k) {
     let windowSum = 0
     let windowStart = 0
 
-    
+    for (let i = windowEnd; i < arr.length; i++) {
+        windowStart += arr[windowEnd]
+    }
 
 
 }
