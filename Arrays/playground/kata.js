@@ -394,6 +394,7 @@ Example: (Input --> Output)
 
 */
 
-function isIsogram(){
-  
+function isIsogram(str){
+  if(str.length === 0) return null
+
 }
