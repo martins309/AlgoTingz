@@ -361,6 +361,8 @@ solution('abc', 'd') // returns false
 
 
 /*
+name of the problem = Function 1 - hello world
+
 Make a simple function called greet that returns the most-famous "hello world!".
 
 Style Points
@@ -371,8 +373,6 @@ What is a "hello world" solution you would want to show your friends?
 
 
 const greeting = (greet) => {
-
-  
 
 
 }
