@@ -13,17 +13,39 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 
 */
 
-function findAverages(arr, k){
-    let average = []
-    let currentWindow = 0
+// function findAverages(arr, k){
+//     let averages = []
+//     let windowStart = 0
+//     let windowSum = 0
+
+//     for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
+//         windowStart+= arr[windowEnd]
+
+//         if( windowEnd >= k - 1) {
+//             averages.push(windowSum / k)
+//         }
+
+//         windowSum -= arr[windowStart]
+
+//         windowStart++
+        
+        
+//     }
+//     return averages
+// }
+
+// console.log(findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))
+
+
+function maxAverage(arr, k) {
+    let maxAverage = -Infinity
+    let windowSum = 0
     let windowStart = 0
 
-    for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
-        
-        
-        
+    for (let i = windowEnd; i < arr.length; i++) {
+        windowStart += arr[windowEnd]
     }
-    return currentWindow
+
+
 }
 
-console.log(findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))
