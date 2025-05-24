@@ -351,10 +351,20 @@ solution('abc', 'd') // returns false
 
 
 
-function solutions(str, ending){
-    if(str === "") return null 
+// function solutions(str, ending){
+//     if(str === "") return null 
 
-    return str.slice(-ending.length) === ending
-  }
+//     return str.slice(-ending.length) === ending
+//   }
 
-  console.log(solutions("abc", "bc"))
+//   console.log(solutions("abc", "bc"))
+
+
+/*
+Make a simple function called greet that returns the most-famous "hello world!".
+
+Style Points
+Sure, this is about as easy as it gets. 
+But how clever can you be to create the most creative "hello world" you can think of? 
+What is a "hello world" solution you would want to show your friends?
+*/
