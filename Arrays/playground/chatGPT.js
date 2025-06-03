@@ -43,14 +43,29 @@ Try coding it out. Don't worry if you get stuck — send me **whatever you come 
 // }
 // console.log(netChange([5,3,10,2,8,5]))
 
+//works on array of arrays
+
 // function netChange(array) {
 //     if(array.length === 0) return null
 
 //     return array.map(x => x[0] - x[1]).reduce((x,y) => x + y)
 // }
+// console.log(netChange([[5,3],[10,2],[8,5]]))
+
+// function netChange(array) {
+//     if(array.length === 0) return null
+
+//     let net = 0
+
+//     for(let i = 0; i < array.length; i++){
+//         net += array[i][0]
+//         net -= array[i][1]
+//         console.log(net)
+//     }
+//     return net
+// }
 // console.log(netChange([5,3,10,2,8,5]))
 
-function netChange(array) {
-    if(array.length === 0) return null
-}
-console.log(netChange([5,3,10,2,8,5]))
+
+
+//
