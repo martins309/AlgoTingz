@@ -381,8 +381,16 @@ function sumTwoSmallestNumbers(numbers) {
   // Code here
   if(numbers.length === 0) return null
 
-  let sum = 0
+  let sum = 0 
+  
+  let sorted = numbers.sort((a,b) => a - b)
 
-
-
+  for(let i = 0; i < sorted.length; i++){
+    return sum = (sorted[sum] + sorted[sum + 1])
+    
+  }
+  return sum
+  
 }
+
+console.log(sumTwoSmallestNumbers([10, 343445353, 3453445, 3453545353453]))
