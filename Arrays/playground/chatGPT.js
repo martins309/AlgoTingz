@@ -29,9 +29,28 @@ Try coding it out. Don't worry if you get stuck — send me **whatever you come 
 
 */
 
+// function netChange(array) {
+//     if(array.length === 0) return null
+    
+
+//     let net = 0
+
+//     for(let i = 0; i < array.length; i+= 2){
+//         net += array[i]
+//         net -= array[i + 1]
+//     }
+//     return net
+// }
+// console.log(netChange([5,3,10,2,8,5]))
+
+// function netChange(array) {
+//     if(array.length === 0) return null
+
+//     return array.map(x => x[0] - x[1]).reduce((x,y) => x + y)
+// }
+// console.log(netChange([5,3,10,2,8,5]))
+
 function netChange(array) {
     if(array.length === 0) return null
-
-    return array.map(x => x[0] - x[1].reduce((x,y) => x + y))
 }
 console.log(netChange([5,3,10,2,8,5]))
