@@ -441,10 +441,11 @@ var number = function(busStops){
   let total = 0 
 
   for(let i = 0; i < busStops.length; i++){
-    total += busStops[i] - busStops[i + 1]
-  }
+    total += busStops[i]
 
+  }
   return total
+  
 
 
 }
