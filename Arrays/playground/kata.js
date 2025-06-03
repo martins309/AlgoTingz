@@ -433,21 +433,36 @@ in the bus is always >= 0. So the returned integer can't be negative.
 The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
 */
 
-var number = function(busStops){
-  // Good Luck!
-  if(busStops.length % 2 !== 0) return null
-  if(busStops.length === 0) return 0
+// var number = function(busStops){
+//   // Good Luck!
+//   if(busStops.length % 2 !== 0) return null
+//   if(busStops.length === 0) return 0
 
-  let total = 0 
+//   let total = 0 
 
-  for(let i = 0; i < busStops.length; i++){
-    total += busStops[i]
+//   for(let i = 0; i < busStops.length; i+= 2){
+//     total += busStops[i] 
+//     total -= busStops[i + 1]
 
-  }
-  return total
+//   }
+//   return total
   
 
 
-}
+// }
 
-console.log(number([10,0,3,5,5,8]))
+// console.log(number([10,0,3,5,5,8]))
+
+//
+
+// var number = function(busStops){
+//   let total = 0;
+
+//   for (let i = 0; i < busStops.length; i++) {
+//     total += busStops[i][0]; // people getting on
+//     total -= busStops[i][1]; // people getting off
+//   }
+
+//   return total;
+// }
+// console.log(number([10,0,3,5,5,8]))
