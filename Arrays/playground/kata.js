@@ -435,11 +435,18 @@ The second value in the first pair in the array is 0, since the bus is empty in 
 
 var number = function(busStops){
   // Good Luck!
-  if(busStops % 2 !== 0) return null
+  if(busStops.length % 2 !== 0) return null
+  if(busStops.length === 0) return 0
 
-  const paired = busStops.slice(" ")
-  return paired
+  let total = 0 
+
+  for(let i = 0; i < busStops.length; i++){
+    total += busStops[i] - busStops[i + 1]
+  }
+
+  return total
+
 
 }
 
-console.log(number([0,1,2,3,4,5]))
+console.log(number([10,0,3,5,5,8]))
