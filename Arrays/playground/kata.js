@@ -360,6 +360,23 @@ solution('abc', 'd') // returns false
 //   console.log(solutions("abc", "bc"))
 
 
+/*
+name of the problem = Function 1 - hello world
+
+Make a simple function called greet that returns the most-famous "hello world!".
+
+Style Points
+Sure, this is about as easy as it gets. 
+But how clever can you be to create the most creative "hello world" you can think of? 
+What is a "hello world" solution you would want to show your friends?
+*/
+
+
+const greeting = (greet) => {
+
+
+}
+
 
 
 
@@ -466,3 +483,23 @@ The second value in the first pair in the array is 0, since the bus is empty in 
 //   return total;
 // }
 // console.log(number([10,0,3,5,5,8]))
+
+
+
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
+// Implement a function that determines whether a string that contains only letters is an isogram. 
+// Assume the empty string is an isogram. Ignore letter case.
+
+// Example: (Input --> Output)
+
+// "Dermatoglyphics" --> true
+// "aba" --> false
+// "moOse" --> false (ignore letter case)
+
+// */
+
+// function isIsogram(str){
+//   if(str.length === 0) return null
+
+// }
