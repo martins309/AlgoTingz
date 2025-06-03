@@ -437,4 +437,9 @@ var number = function(busStops){
   // Good Luck!
   if(busStops % 2 !== 0) return null
 
+  const paired = busStops.slice(" ")
+  return paired
+
 }
+
+console.log(number([0,1,2,3,4,5]))
