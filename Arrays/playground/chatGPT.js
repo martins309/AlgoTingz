@@ -326,3 +326,10 @@ function salesTracker(arr){
   return tickets
 }
 
+console.log(salesTracker([
+  5, "sell", "VIP",
+  3, "sell", "GA",
+  2, "refund", "VIP",
+  4, "sell", "Balcony",
+  1, "refund", "GA"
+]))
