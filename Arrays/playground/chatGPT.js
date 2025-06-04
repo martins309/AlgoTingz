@@ -209,19 +209,29 @@ Give it a try. Send me your code, and if it goes sideways, I’ll help untangle 
 */
 
 
+
 function inventoryTracker(arr) {
-  if(arr.length === 0) return null
+  if (arr.length === 0) return null;
 
-  let inventory
+  let inventory = {};
 
-  for(let i = 0; i < arr.length; i += 3) {
-    if(arr[i] && arr[i + 1] === "add"){
-      iventory = Object.fromEntries(arr.map((item, value) => [item, value]))
-      console.log(invetory)
+  for (let i = 0; i < arr.length; i += 3) {
+    let amount = arr[i];
+    let type = arr[i + 1];
+    let item = arr[i + 2];
+
+    // Make sure item is initialized
+    if (!inventory[item]) inventory[item] = 0;
+
+    if (type === "add") {
+      inventory[item] += amount;
+    } else if (type === "remove") {
+      inventory[item] -= amount;
     }
-
   }
-    
+
+  return inventory;
 }
+
 
 console.log(inventoryTracker([10, "add", "apple", 4, "remove", "apple", 3, "add", "banana", 1, "remove", "banana"]))
