@@ -144,7 +144,6 @@ I’ll help from there if needed — or tell you when to flex 💪 and move on t
 
 /*
 
-YESSS that’s the mindset. Every “almost” is just a rep at the mental gym. 💪 You're leveling up every time.
 
 ---
 
@@ -210,6 +209,19 @@ Give it a try. Send me your code, and if it goes sideways, I’ll help untangle 
 */
 
 
-function inventoryTracker() {
-    //ill be back 
+function inventoryTracker(arr) {
+  if(arr.length === 0) return null
+
+  let inventory
+
+  for(let i = 0; i < arr.length; i += 3) {
+    if(arr[i] && arr[i + 1] === "add"){
+      iventory = Object.fromEntries(arr.map((item, value) => [item, value]))
+      console.log(invetory)
+    }
+
+  }
+    
 }
+
+console.log(inventoryTracker([10, "add", "apple", 4, "remove", "apple", 3, "add", "banana", 1, "remove", "banana"]))

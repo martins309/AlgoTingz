@@ -372,10 +372,10 @@ What is a "hello world" solution you would want to show your friends?
 */
 
 
-const greeting = (greet) => {
+// const greeting = (greet) => {
 
 
-}
+// }
 
 
 
