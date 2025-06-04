@@ -210,28 +210,119 @@ Give it a try. Send me your code, and if it goes sideways, I’ll help untangle 
 
 
 
-function inventoryTracker(arr) {
-  if (arr.length === 0) return null;
+// function inventoryTracker(arr) {
+//   if (arr.length === 0) return null;
 
-  let inventory = {};
+//   let inventory = {};
 
-  for (let i = 0; i < arr.length; i += 3) {
-    let amount = arr[i];
-    let type = arr[i + 1];
-    let item = arr[i + 2];
+//   for (let i = 0; i < arr.length; i += 3) {
+//     let amount = arr[i];
+//     let type = arr[i + 1];
+//     let item = arr[i + 2];
 
-    // Make sure item is initialized
-    if (!inventory[item]) inventory[item] = 0;
+//     // Make sure item is initialized
+//     if (!inventory[item]) inventory[item] = 0;
 
-    if (type === "add") {
-      inventory[item] += amount;
-    } else if (type === "remove") {
-      inventory[item] -= amount;
+//     if (type === "add") {
+//       inventory[item] += amount;
+//     } else if (type === "remove") {
+//       inventory[item] -= amount;
+//     }
+//   }
+
+//   return inventory;
+// }
+
+
+// console.log(inventoryTracker([10, "add", "apple", 4, "remove", "apple", 3, "add", "banana", 1, "remove", "banana"]))
+
+
+
+
+
+/*
+
+---
+
+## 🧠 PROBLEM 3.5: 🎟️ Event Ticket Sales Tracker
+
+You're given an array of transactions. Every **three elements** form a transaction:
+
+```
+[amount, action, section]
+```
+
+* `amount`: number of tickets
+* `action`: `"sell"` or `"refund"`
+* `section`: a string like `"VIP"`, `"GA"`, `"Balcony"`
+
+Your job:
+🔁 Track the number of tickets **sold per section**, adjusting for refunds.
+
+### 🧪 Example:
+
+```js
+ticketTracker([
+  5, "sell", "VIP",
+  3, "sell", "GA",
+  2, "refund", "VIP",
+  4, "sell", "Balcony",
+  1, "refund", "GA"
+])
+```
+
+### ✅ Output:
+
+```js
+{
+  VIP: 3,
+  GA: 2,
+  Balcony: 4
+}
+```
+
+---
+
+### 🧩 Rules:
+
+* Start all sections at 0.
+* A `"refund"` subtracts from that section.
+* You can assume refunds will never overdraw (no negatives).
+
+---
+
+### 🛠️ Tip:
+
+This is **almost the same logic** as the store inventory one — just a new context and variable names.
+
+Try it out and show me your solution!
+
+
+
+*/
+
+
+function salesTracker(arr){
+  if(arr.length === 0) return null
+
+  let tickets = []
+
+  for(let i = 0; i < arr.length; i+= 3){
+    let amount = arr[i]
+    let action = arr[i + 1]
+    let section = arr[i + 2]
+
+    if(!tickets[section]) tickets[section] = 0
+
+    if(action === "sell"){
+      tickets[section] += amount
     }
+    if(action === "refund"){
+      tickets[section] -= amount
+    }
+
   }
 
-  return inventory;
+  return tickets
 }
 
-
-console.log(inventoryTracker([10, "add", "apple", 4, "remove", "apple", 3, "add", "banana", 1, "remove", "banana"]))
