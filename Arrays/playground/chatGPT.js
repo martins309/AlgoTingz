@@ -302,34 +302,92 @@ Try it out and show me your solution!
 */
 
 
-function salesTracker(arr){
-  if(arr.length === 0) return null
+// function salesTracker(arr){
+//   if(arr.length === 0) return null
 
-  let tickets = []
+//   let tickets = {}
 
-  for(let i = 0; i < arr.length; i+= 3){
-    let amount = arr[i]
-    let action = arr[i + 1]
-    let section = arr[i + 2]
+//   for(let i = 0; i < arr.length; i+= 3){
+//     let amount = arr[i]
+//     let action = arr[i + 1]
+//     let section = arr[i + 2]
 
-    if(!tickets[section]) tickets[section] = 0
+//     if(!tickets[section]) tickets[section] = 0
 
-    if(action === "sell"){
-      tickets[section] += amount
-    }
-    if(action === "refund"){
-      tickets[section] -= amount
-    }
+//     if(action === "sell"){
+//       tickets[section] += amount
+//     }
+//     if(action === "refund"){
+//       tickets[section] -= amount
+//     }
 
-  }
+//   }
 
-  return tickets
-}
+//   return tickets
+// }
 
-console.log(salesTracker([
-  5, "sell", "VIP",
-  3, "sell", "GA",
-  2, "refund", "VIP",
-  4, "sell", "Balcony",
-  1, "refund", "GA"
-]))
+// console.log(salesTracker([
+//   5, "sell", "VIP",
+//   3, "sell", "GA",
+//   2, "refund", "VIP",
+//   4, "sell", "Balcony",
+//   1, "refund", "GA"
+// ]))
+
+
+/*
+Totally get that — typos are the shadow bosses of programming 😅. The fact that you're **catching your own patterns** already (logic vs typo) is a *huge sign* you're leveling up.
+
+Let’s keep the streak alive 🔥
+
+---
+
+## 🧠 PROBLEM 4: 🧾 Shopping Cart Total with Discounts
+
+You’re given an array that represents a customer’s shopping cart. Every **four elements** are grouped like this:
+
+```
+[itemName, quantity, pricePerUnit, discountEligible]
+```
+
+* `itemName`: string
+* `quantity`: number
+* `pricePerUnit`: number
+* `discountEligible`: boolean (true/false)
+
+🧮 Your task:
+Return the **total cost** of the cart. If an item is discount-eligible, apply a 20% discount to its price.
+
+---
+
+### 💡 Example:
+
+```js
+cartTotal([
+  "apple", 2, 3, true,     // 2 × 3 × 0.8 = 4.8
+  "banana", 1, 1, false,   // 1 × 1 = 1
+  "milk", 1, 4, true       // 1 × 4 × 0.8 = 3.2
+])
+```
+
+### ✅ Output:
+
+```js
+9
+```
+
+---
+
+### 🛠️ Hints:
+
+* Loop by 4s (`i += 4`)
+* Multiply `quantity × pricePerUnit`
+* If `discountEligible` is `true`, apply a 20% discount (`× 0.8`)
+* Accumulate into a `total`
+
+---
+
+
+*/
+
+
