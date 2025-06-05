@@ -394,7 +394,18 @@ cartTotal([
 function totalDiscounts(arr){
   if(arr.length === 0) return null
 
-  
+  const total = 0
+
+  for(let i = 0; i < arr.length; i += 4){
+    let item = ""
+    let quantity = 0
+    let ppu = 0
+    let discount = false
+
+    ()
+  }
 
 }
+
+
 
