@@ -397,20 +397,23 @@ function totalDiscounts(arr){
   const total = 0
 
   for(let i = 0; i < arr.length; i += 4){
-    let quantity = 0
-    let ppu = 0
-    let discount = false
+    let item = arr[i]
+    let quantity = arr[i + 1]
+    let ppu = arr[i + 2]
+    let isDiscount = arr[i + 3]
+    const discount = 0.8
 
-    if(discount === "true"){
-      quantity 
+    if(item && isDiscount === "true"){
+      total += quantity * ppu * discount
+    }else {
+      total += quantity * ppu 
     }
+
+   
   }
+  return total
 
 }
 
-console.log(totalDiscounts([
-   "apple", 2, 3, true,     
-  "banana", 1, 1, false,   
-  "milk", 1, 4, true       
-]))
+console.log(totalDiscounts(["apple", 2, 3, true,"banana", 1, 1, false,"milk", 1, 4, true]))
 
