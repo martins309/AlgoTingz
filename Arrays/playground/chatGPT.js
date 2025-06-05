@@ -397,7 +397,7 @@ function totalDiscounts(arr){
   let total = 0
 
   for(let i = 0; i < arr.length; i += 4){
-    let item = arr[i]
+  
     let quantity = arr[i + 1]
     let ppu = arr[i + 2]
     let isDiscount = arr[i + 3]
