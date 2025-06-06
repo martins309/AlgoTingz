@@ -478,7 +478,6 @@ baggageFees([
 
 ---
 
-Your turn — I’ll be here to debug or cheer 🎉
 
 
 */
@@ -488,9 +487,18 @@ function baggageFees(arr){
 
   if(arr.length === 0 )return null
 
-  let passenger = {}
+    let passenger = {}
 
-  
+  for(let i = 0; i < arr.length; i += 3){
+    let isOverweight = arr[i + 1]
+    let name = arr[i + 2]
+
+    isOverweight === true ? passenger[name] += 50 : passenger[name]
+
+
+  }
+  return passenger
+
 
 
 }
