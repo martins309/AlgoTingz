@@ -391,30 +391,105 @@ cartTotal([
 */
 
 
-function totalDiscounts(arr){
-  if(arr.length === 0) return null
+// function totalDiscounts(arr){
+//   if(arr.length === 0) return null
 
-  let total = 0
+//   let total = 0
 
-  for(let i = 0; i < arr.length; i += 4){
+//   for(let i = 0; i < arr.length; i += 4){
   
-    let quantity = arr[i + 1]
-    let ppu = arr[i + 2]
-    let isDiscount = arr[i + 3]
-    let discount = 0.8
+//     let quantity = arr[i + 1]
+//     let ppu = arr[i + 2]
+//     let isDiscount = arr[i + 3]
+//     let discount = 0.8
 
-    if(isDiscount === true){
-      total += quantity * ppu * discount
+//     if(isDiscount === true){
+//       total += quantity * ppu * discount
       
-    }else {
-      total += quantity * ppu 
+//     }else {
+//       total += quantity * ppu 
       
-    }
+//     }
    
-  }
-  return total
+//   }
+//   return total
+
+// }
+
+// console.log(totalDiscounts(["apple", 2, 3, true,"banana", 1, 1, false,"milk", 1, 4, true]))
+
+
+
+/*
+Let’s go! 🧠🔥
+
+---
+
+## 🧩 PROBLEM 5: 🛫 Airport Baggage Weight Checker
+
+You’re building a simple system for checking passenger luggage at an airport. You’re given an array, where **every 3 elements** represent:
+
+```
+[weight, isOverweight, passengerName]
+```
+
+* `weight`: number — weight of the bag in kilograms
+* `isOverweight`: boolean — if true, the bag is overweight and needs to be charged
+* `passengerName`: string
+
+✈️ **Your task:**
+Return an object where the **keys are passenger names**, and the **values are the total overweight baggage fees they owe**.
+
+💰 Fee = **\$50 for every overweight bag**
+
+---
+
+### 🧪 Example:
+
+```js
+baggageFees([
+  30, true, "Alice",
+  25, false, "Bob",
+  35, true, "Alice",
+  20, true, "Charlie"
+])
+```
+
+### ✅ Output:
+
+```js
+{
+  Alice: 100,
+  Charlie: 50
+}
+```
+
+* Alice had 2 overweight bags → 2 × \$50 = \$100
+* Charlie had 1 overweight bag → \$50
+* Bob had no fees
+
+---
+
+### 🛠️ Hints:
+
+* Loop through `i += 3`
+* Only care about entries where `isOverweight === true`
+* Track totals using an object
+
+---
+
+Your turn — I’ll be here to debug or cheer 🎉
+
+
+*/
+
+
+function baggageFees(arr){
+
+  if(arr.length === 0 )return null
+
+
 
 }
 
-console.log(totalDiscounts(["apple", 2, 3, true,"banana", 1, 1, false,"milk", 1, 4, true]))
-
+console.log(baggageFees([]))
