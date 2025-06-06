@@ -528,3 +528,19 @@ input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
 output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 
 */
+
+function openOrSenior(data){
+    if(data.length === 0) return null
+
+    for(let i = 0; i < data.length; i++){
+        let age = data[0][0]
+        let handicap = data[0][1]
+        let category = []
+
+        
+        
+        
+    }
+}
+
+console.log(openOrSenior([[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]))
