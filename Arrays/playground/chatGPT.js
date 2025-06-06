@@ -488,8 +488,11 @@ function baggageFees(arr){
 
   if(arr.length === 0 )return null
 
+  let passenger = {}
+
+  
 
 
 }
 
-console.log(baggageFees([]))
+console.log(baggageFees([30, true, "Alice",25, false, "Bob",35, true, "Alice",20, true, "Charlie"]))
