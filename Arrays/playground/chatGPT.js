@@ -490,10 +490,15 @@ function baggageFees(arr){
     let passenger = {}
 
   for(let i = 0; i < arr.length; i += 3){
+   
     let isOverweight = arr[i + 1]
     let name = arr[i + 2]
+    let fee = 50
 
-    isOverweight === true ? passenger[name] += 50 : passenger[name]
+    if(isOverweight === true){
+      passenger[name] += parseInt(fee)
+      console.log(passenger)
+    }
 
 
   }
