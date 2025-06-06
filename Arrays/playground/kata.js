@@ -531,13 +531,14 @@ output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 
 function openOrSenior(data){
     if(data.length === 0) return null
+    let category = []
 
     for(let i = 0; i < data.length; i++){
-        let age = data[0][0]
-        let handicap = data[0][1]
-        let category = []
+        let age = data[i][0]
+        let handicap = data[i][1]
+        
 
-        age >=55 && handicap >= 7 ? category.push("Senior") :  category.push("Open")
+        age >= 55 && handicap > 7 ? category.push("Senior") :  category.push("Open")
         
     }
     return category
