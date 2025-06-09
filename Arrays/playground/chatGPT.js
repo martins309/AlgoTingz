@@ -526,5 +526,5 @@ function removeMiddleExclamation(str) {
 
 console.log(removeMiddleExclamation("!he!llo!"));     // "!hello!"
 console.log(removeMiddleExclamation("wo!w!"));         // "wow!"
-console.log(removeMiddleExclamation("!hi!!!there!"));  // "!hi!there!"
+console.log(removeMiddleExclamation("!hi!!!there!"));  // "!hithere!"
 console.log(removeMiddleExclamation("a!b!c"));         // "abc"
