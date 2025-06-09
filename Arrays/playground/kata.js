@@ -547,21 +547,50 @@ output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 // console.log(openOrSenior([[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]))
 
 
-function getMiddle(str){
+// function getMiddle(str){
 
-    if(str.length === 0) return null
+//    let len = str.length
+//    let middle = Math.floor(len / 2)
 
-    for(let i = 0; i < str.length; i++){
+//    if(str.length % 2 === 0){
+//     return str.slice(middle -1, middle + 1)
+//    }else {
+//     return str[middle]
+//    }
     
-        let middle = str[str.length % 3] 
-        
-        if(str.length % 2 !== 0){
-            return middle 
-        }else {
-            middle
-        }
-    }
 
+    
+// }
+
+// console.log(getMiddle("middle"))
+
+
+// function noEx(str){
+    
+//     if(str.length === 0) return null
+
+//     str.endsWith("!") ? str.slice(0, -1) : str
+
+// }
+
+// console.log(noEx("hi!"))
+
+// function noEx(str){
+//     return str.replace(/!/g, "")
+// }
+
+
+function removeMiddleExclamation(str){
+    if(str.length === 0 ) return null
+
+    const regex = /[a-z]gi/
+    let middle = Math.floor(str.length / 2)
+
+    if(str.length % 2 !== 0){
+       str[middle].replace(/!/g, "")
+    }
+    return str
+    
 }
 
-console.log(getMiddle("tree"))
+console.log(removeMiddleExclamation("!he!llo!"))

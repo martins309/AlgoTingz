@@ -483,28 +483,48 @@ baggageFees([
 */
 
 
-function baggageFees(arr){
+// function baggageFees(arr){
 
-  if(arr.length === 0 )return null
+//   if(arr.length === 0 )return null
 
-    let passenger = {}
+//     let passenger = {}
 
-  for(let i = 0; i < arr.length; i += 3){
+//   for(let i = 0; i < arr.length; i += 3){
    
-    let isOverweight = arr[i + 1]
-    let name = arr[i + 2]
-    let fee = 50
+//     let isOverweight = arr[i + 1]
+//     let name = arr[i + 2]
+//     let fee = 50
 
-    if(!passenger[name]) passenger[name] = 0
+//     if(!passenger[name]) passenger[name] = 0
 
-    isOverweight === true ? passenger[name] += 50 : passenger[name]
-
-
-  }
-  return passenger
+//     isOverweight === true ? passenger[name] += 50 : passenger[name]
 
 
+//   }
+//   return passenger
 
+
+
+// }
+
+// console.log(baggageFees([30, true, "Alice", 25, false, "Bob",35, true, "Alice",20, true, "Charlie"]))
+
+
+
+//Remove the Middle Exclamation from the string
+
+function removeMiddleExclamation(str) {
+    if (str.length === 0) return null;
+    if (str.length <= 2) return str; // no real middle to clean
+
+    let first = str[0];
+    let last = str[str.length - 1];
+    let middle = str.slice(1, -1).replace(/!/g, "");
+
+    return first + middle + last;
 }
 
-console.log(baggageFees([30, true, "Alice", 25, false, "Bob",35, true, "Alice",20, true, "Charlie"]))
+console.log(removeMiddleExclamation("!he!llo!"));     // "!hello!"
+console.log(removeMiddleExclamation("wo!w!"));         // "wow!"
+console.log(removeMiddleExclamation("!hi!!!there!"));  // "!hi!there!"
+console.log(removeMiddleExclamation("a!b!c"));         // "abc"
