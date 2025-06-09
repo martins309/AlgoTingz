@@ -552,11 +552,16 @@ function getMiddle(str){
     if(str.length === 0) return null
 
     for(let i = 0; i < str.length; i++){
-        let first = arr[i]
-        let middle = arr.length % 3 == 0
-        console.log(middle)
+    
+        let middle = str[str.length % 3] 
+        
+        if(str.length % 2 !== 0){
+            return middle 
+        }else {
+            middle
+        }
     }
 
 }
 
-console.log(getMiddle("trees"))
+console.log(getMiddle("tree"))
