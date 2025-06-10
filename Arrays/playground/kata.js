@@ -624,6 +624,7 @@ Return true if yes, false otherwise :)
 */
 
 //this wont work cuz we need math lol i see it now we fix tomorrow
+//name = Is he gonna survive?
 function hero(bullets, dragons){
 //Get Coding!
     if(bullets === 0) return false
