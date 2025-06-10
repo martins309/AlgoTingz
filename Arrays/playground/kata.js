@@ -598,13 +598,37 @@ Given an array of integers as strings and numbers, return the sum of the array v
 Return your answer as a number.
 */
 
-function sumMix(x){
-    if(x.length === 0) return null
+// function sumMix(x){
+//     if(x.length ?? 0) 
 
-    let sum = x.reduce((a,b) => a + b)
+    
 
-    return parseInt(sum)
+//     return Array.from(x, Number).reduce((a,b) => a + b)
+// }
 
+// console.log(sumMix(["1", "2", "3", "4", "5"]))
+
+
+
+/*
+A hero is on his way to the castle to complete his mission. 
+However, he's been told that the castle is surrounded with a couple of powerful dragons!
+ each dragon takes 2 bullets to be defeated, 
+ our hero has no idea how many bullets he should carry.. 
+ Assuming he's gonna grab a specific given number of bullets and 
+ move forward to fight another specific given number of dragons, will he survive?
+
+Return true if yes, false otherwise :)
+
+
+*/
+
+function hero(bullets, dragons){
+//Get Coding!
+    if(bullets.length === 0) return false
+
+    while(bullets < dragons){
+        if(bullets.length < 2 && dragons) return false
+    }
+    return true
 }
-
-console.log(sumMix(["1", "2", "3", "4", "5"]))
