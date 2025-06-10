@@ -165,12 +165,12 @@ but it will always be sorted
 
 // console.log(CountDown(5))
 
-function countDown(num) {
-  if(num <= 0){
-    console.log("All done")
-    return
-  }
-  console.log(num)
-  num--
-  countDown(num)
-}
+// function countDown(num) {
+//   if(num <= 0){
+//     console.log("All done")
+//     return
+//   }
+//   console.log(num)
+//   num--
+//   countDown(num)
+// }

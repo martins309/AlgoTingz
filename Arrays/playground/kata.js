@@ -583,7 +583,6 @@ output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 function removeMiddleExclamation(str){
     if(str.length === 0 ) return null
 
-    const regex = /[a-z]gi/
     let middle = Math.floor(str.length / 2)
 
     if(str.length % 2 !== 0){
