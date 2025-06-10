@@ -372,10 +372,6 @@ What is a "hello world" solution you would want to show your friends?
 */
 
 
-// const greeting = (greet) => {
-
-
-// }
 
 
 
@@ -580,16 +576,34 @@ output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 // }
 
 
-function removeMiddleExclamation(str){
-    if(str.length === 0 ) return null
+// function removeMiddleExclamation(str){
+//     if(str.length === 0 ) return null
 
-    let middle = Math.floor(str.length / 2)
+//     let middle = Math.floor(str.length / 2)
 
-    if(str.length % 2 !== 0){
-       str[middle].replace(/!/g, "")
-    }
-    return str
+//     if(str.length % 2 !== 0){
+//        str[middle].replace(/!/g, "")
+//     }
+//     return str
     
+// }
+
+// console.log(removeMiddleExclamation("!he!llo!"))
+
+
+
+/*
+Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+Return your answer as a number.
+*/
+
+function sumMix(x){
+    if(x.length === 0) return null
+
+    let sum = x.reduce((a,b) => a + b)
+
+    return parseInt(sum)
+
 }
 
-console.log(removeMiddleExclamation("!he!llo!"))
