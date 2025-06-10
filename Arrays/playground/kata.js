@@ -623,12 +623,19 @@ Return true if yes, false otherwise :)
 
 */
 
+//this wont work cuz we need math lol i see it now we fix tomorrow
 function hero(bullets, dragons){
 //Get Coding!
-    if(bullets.length === 0) return false
+    if(bullets === 0) return false
 
     while(bullets < dragons){
-        if(bullets.length < 2 && dragons) return false
+        if(bullets < dragons){
+            return false
+        } else if(bullets % 2 === 0 && bullets % 2 === 0 < dragons){
+            return false
+        }
     }
     return true
 }
+
+console.log(hero(1500, 751))
