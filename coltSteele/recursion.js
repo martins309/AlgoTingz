@@ -81,7 +81,24 @@ This function should mimic the functionality of Math.pow()  -
 do not worry about negative bases and exponents.
 
 */
+function power(base, exponent){
+    if(exponent === 0) return 1
 
+    let product = 0
 
+    if(base && exponent === base){
+        product = exponent * power
+        
+    }
 
+    if(exponent > base){
+        for(let i = 0; i < exponent; i++)
+            product *= base
+    }
+
+    return product
+
+}
+
+console.log(power(2,4))
 
