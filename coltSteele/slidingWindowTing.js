@@ -221,6 +221,14 @@ function minSubArrayLen(arr, num){
   let min = Infinity
   let windowSum = 0
 
+  for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
+    windowSum += arr[windowEnd]
+    
+
+  }
+
+  return min 
+
 }
 
 
