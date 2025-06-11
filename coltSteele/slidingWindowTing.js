@@ -156,27 +156,32 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 // console.log(maxAverage([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))
 
 
-function smallestSubarrayLen(s, arr) {
-  let windowSum = 0;
-  let minLength = Infinity;
-  let windowStart = 0;
 
-  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-    windowSum += arr[windowEnd]; // Add the next element
+//gpt showed me this for practice 
+// function smallestSubarrayLen(s, arr) {
+//   let windowSum = 0;
+//   let minLength = Infinity;
+//   let windowStart = 0;
 
-    // Shrink the window as small as possible while sum ≥ s
-    while (windowSum >= s) {
-      const currentLength = windowEnd - windowStart + 1;
-      minLength = Math.min(minLength, currentLength);
+//   for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+//     windowSum += arr[windowEnd]; // Add the next element
 
-      windowSum -= arr[windowStart]; // remove element from left
-      windowStart++;                 // move start forward
-    }
-  }
+//     // Shrink the window as small as possible while sum ≥ s
+//     while (windowSum >= s) {
+//       const currentLength = windowEnd - windowStart + 1;
+//       minLength = Math.min(minLength, currentLength);
 
-  // If we never found a window, return 0
-  return minLength === Infinity ? 0 : minLength;
+//       windowSum -= arr[windowStart]; // remove element from left
+//       windowStart++;                 // move start forward
+//     }
+//   }
+
+//   // If we never found a window, return 0
+//   return minLength === Infinity ? 0 : minLength;
+// }
+
+
+
+function longestSubString(){
+  
 }
-
-
-
