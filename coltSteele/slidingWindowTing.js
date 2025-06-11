@@ -136,23 +136,47 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 // console.log(findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))
 
 
-function maxAverage(arr, k) {
-    let maxAv = -Infinity
-    let windowSum = 0
-    let windowStart = 0
+// function maxAverage(arr, k) {
+//     let maxAv = -Infinity
+//     let windowSum = 0
+//     let windowStart = 0
 
-    for (let i = windowEnd; i < arr.length; i++) {
-        windowSum += arr[windowEnd]
+//     for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+//         windowSum += arr[windowEnd]
 
-        if(windowEnd >= k - 1){
-            maxAv = Math.max(maxAv, windowSum / k)
-            windowSum -= arr[windowStart]
-            windowStart++
-        }
+//         if(windowEnd >= k - 1){
+//             maxAv = Math.max(maxAv, windowSum / k)
+//             windowSum -= arr[windowStart]
+//             windowStart++
+//         }
+//     }
+
+//     return maxAv
+// }
+// console.log(maxAverage([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))
+
+
+function smallestSubarrayLen(s, arr) {
+  let windowSum = 0;
+  let minLength = Infinity;
+  let windowStart = 0;
+
+  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    windowSum += arr[windowEnd]; // Add the next element
+
+    // Shrink the window as small as possible while sum ≥ s
+    while (windowSum >= s) {
+      const currentLength = windowEnd - windowStart + 1;
+      minLength = Math.min(minLength, currentLength);
+
+      windowSum -= arr[windowStart]; // remove element from left
+      windowStart++;                 // move start forward
     }
+  }
 
-    return maxAv
+  // If we never found a window, return 0
+  return minLength === Infinity ? 0 : minLength;
 }
-console.log(maxAverage([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))
+
 
 
