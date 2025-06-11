@@ -181,7 +181,23 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 // }
 
 
+/*
 
-function longestSubString(){
-  
+
+
+*/
+
+
+
+function longestSubString(s, k){
+  if(s.length === 0 ) return null
+
+  let windowStart = 0
+  let chars = {}
+
+  for(let char of s){
+    chars[char] = (chars[char] || 0) + 1
+  }
+
+
 }
