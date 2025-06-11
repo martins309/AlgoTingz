@@ -235,24 +235,38 @@ Give it a shot, and drop your code here if you hit any snags!
 
 
 
-function longestSubString(s, k){
-  if(s.length === 0 ) return null
-  if(k === 0) return null 
 
-  let windowStart = 0
-  let chars = {}
-  let unique = ''
-  
+/// not my solution but study it
+function longestSubString(s, k) {
+  if (s.length === 0 || k === 0) return 0;
 
-  for(let windowEnd = 0; windowEnd < s.length; windowEnd++){
-    const char = s[windowEnd]
-    chars[char] = (chars[char] || 0) + 1
-    console.log(chars)
+  let windowStart = 0;
+  let chars = {};
+  let maxLength = 0;
 
+  for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
+    const rightChar = s[windowEnd];
+
+    // Add current char to frequency map
+    chars[rightChar] = (chars[rightChar] || 0) + 1;
+
+    // Shrink window if distinct chars > k
+    while (Object.keys(chars).length > k) {
+      const leftChar = s[windowStart];
+      chars[leftChar]--;
+
+      if (chars[leftChar] === 0) {
+        delete chars[leftChar]; // no longer in window
+      }
+
+      windowStart++; // shrink window from the left
+    }
+
+    // Update max length
+    maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
   }
-  
-  
 
-
+  return maxLength;
 }
-console.log(longestSubString("eceba", 2))
+
+console.log(longestSubString("eceba", 2)); // Output: 3
