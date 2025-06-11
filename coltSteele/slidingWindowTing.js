@@ -158,28 +158,39 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 
 
 //gpt showed me this for practice 
-// function smallestSubarrayLen(s, arr) {
-//   let windowSum = 0;
-//   let minLength = Infinity;
+// function longestSubString(s, k) {
+//   if (s.length === 0 || k === 0) return 0;
+
 //   let windowStart = 0;
+//   let chars = {};
+//   let maxLength = 0;
 
-//   for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-//     windowSum += arr[windowEnd]; // Add the next element
+//   for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
+//     const rightChar = s[windowEnd];
 
-//     // Shrink the window as small as possible while sum ≥ s
-//     while (windowSum >= s) {
-//       const currentLength = windowEnd - windowStart + 1;
-//       minLength = Math.min(minLength, currentLength);
+//     // Add current char to frequency map
+//     chars[rightChar] = (chars[rightChar] || 0) + 1;
 
-//       windowSum -= arr[windowStart]; // remove element from left
-//       windowStart++;                 // move start forward
+//     // Shrink window if distinct chars > k
+//     while (Object.keys(chars).length > k) {
+//       const leftChar = s[windowStart];
+//       chars[leftChar]--;
+
+//       if (chars[leftChar] === 0) {
+//         delete chars[leftChar]; // no longer in window
+//       }
+
+//       windowStart++; // shrink window from the left
 //     }
+
+//     // Update max length
+//     maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
 //   }
 
-//   // If we never found a window, return 0
-//   return minLength === Infinity ? 0 : minLength;
+//   return maxLength;
 // }
 
+// console.log(longestSubString("eceba", 2)); // Output: 3
 
 
 
@@ -189,84 +200,4 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 
 
 
-/*
 
-
----
-
-### 🧪 **New Problem: Longest Substring with at Most K Distinct Characters**
-
-**Prompt:**
-
-Given a string `s` and an integer `k`, return the **length of the longest substring** 
-that contains **at most `k` distinct characters**.
-
----
-
-### 🧠 Example:
-
-```js
-Input: s = "eceba", k = 2  
-Output: 3  
-Explanation: "ece" is the longest substring with 2 distinct characters.
-```
-
----
-
-### 💡 Hints:
-
-* You’ll need to track characters and their frequencies/counts.
-* Use a **sliding window** to expand and contract.
-* A **hashmap/object** is helpful to count character frequencies.
-
----
-
-### ⚠️ Constraints:
-
-* If `k` is 0, return 0.
-* Assume string length ≥ 1.
-
----
-
-Give it a shot, and drop your code here if you hit any snags!
-
-
-*/
-
-
-
-
-/// not my solution but study it
-function longestSubString(s, k) {
-  if (s.length === 0 || k === 0) return 0;
-
-  let windowStart = 0;
-  let chars = {};
-  let maxLength = 0;
-
-  for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
-    const rightChar = s[windowEnd];
-
-    // Add current char to frequency map
-    chars[rightChar] = (chars[rightChar] || 0) + 1;
-
-    // Shrink window if distinct chars > k
-    while (Object.keys(chars).length > k) {
-      const leftChar = s[windowStart];
-      chars[leftChar]--;
-
-      if (chars[leftChar] === 0) {
-        delete chars[leftChar]; // no longer in window
-      }
-
-      windowStart++; // shrink window from the left
-    }
-
-    // Update max length
-    maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
-  }
-
-  return maxLength;
-}
-
-console.log(longestSubString("eceba", 2)); // Output: 3
