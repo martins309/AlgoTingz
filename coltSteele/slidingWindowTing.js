@@ -218,13 +218,13 @@ function minSubArrayLen(arr, num){
   if(arr.length === 0 || num === 0) return null
 
   let windowStart = 0
-  let min = Infinity
+  let min = []
   let windowSum = 0
 
   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
     windowSum += arr[windowEnd]
     if(windowSum >= num){
-      
+
     }
 
   }
