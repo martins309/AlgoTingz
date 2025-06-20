@@ -215,22 +215,20 @@ Space Complexity - O(1)
 */
 
 function minSubArrayLen(arr, num){
-  if(arr.length === 0 || num === 0) return null
-
+ 
   let windowStart = 0
-  let min = []
+  let minLength = Infinity
   let windowSum = 0
 
   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
     windowSum += arr[windowEnd]
-    if(windowSum < num){
+    while(windowSum >= num){
+      minLength = Math.min(minLength, windowEnd - windowStart + 1)
       windowSum -= arr[windowStart]
       windowStart++ 
     }
-      min.push(arr[windowEnd])
   }
-
-  return min.length
+  return minLength === Infinity ? 0 : minLength
 }
 
 console.log(minSubArrayLen([2,3,1,2,4,3], 7))
