@@ -224,15 +224,13 @@ function minSubArrayLen(arr, num){
   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
     windowSum += arr[windowEnd]
     if(windowSum < num){
-      min.push(arr[windowEnd])
-      console.log(min)
       windowSum -= arr[windowStart]
-      console.log(windowSum)
+      windowStart++ 
     }
-  
+      min.push(arr[windowEnd])
   }
 
-  return 
+  return min.length
 }
 
 console.log(minSubArrayLen([2,3,1,2,4,3], 7))
