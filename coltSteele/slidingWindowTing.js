@@ -222,6 +222,7 @@ function minSubArrayLen(arr, num){
 
   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
     windowSum += arr[windowEnd]
+    
     while(windowSum >= num){
       minLength = Math.min(minLength, windowEnd - windowStart + 1)
       windowSum -= arr[windowStart]
