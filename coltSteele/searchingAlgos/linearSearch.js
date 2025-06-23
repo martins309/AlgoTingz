@@ -1,0 +1,5 @@
+/*
+write a function that accepts an array and a value
+loop through the array and check to see if that element is equal 
+to the current value
+*/
