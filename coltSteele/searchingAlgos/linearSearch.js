@@ -12,10 +12,10 @@ function linearSearch(arr, value){
 
     for(let i = 0; i < arr.length; i++){
         if(arr[i] === value){
-            return indexOf(arr[i])
+            return arr.indexOf(arr[i])
         }
     }
     return -1
 }
 
-console.log(linearSearch([1,2,3,4,5,6,3], 4))
+console.log(linearSearch([1,2,3,4,5,6,3], 2))
