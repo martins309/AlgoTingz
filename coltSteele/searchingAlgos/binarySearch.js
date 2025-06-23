@@ -18,8 +18,13 @@ function binarySearch(arr, value){
 
     while(left < right){
         let middle = Math.floor(right - left / 2)
-        
+        if(middle === value){
+            return arr.indexOf(middle)
+        }else {
+            left++
+            right--
+        }
 
     }
-
+    return -1 
 }
