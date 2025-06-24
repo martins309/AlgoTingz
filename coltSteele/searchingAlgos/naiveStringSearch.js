@@ -8,21 +8,46 @@ return the count
 
 */
 
-
-function stringSearch(str, pat){
+//gpt solution
+// function stringSearch(str, pat){
     
+//     let count = 0
+   
+    
+
+//     //loop over the first string
+//     for(let i = 0; i < str.length; i++){
+//         let match = true
+//         for(let j = 0; j < pat.length; j++ ){
+//             if(str[i + j] !== pat[j]){
+//                 match = false
+//                 break
+//             }
+//         }
+//         if(match){
+//             count++
+//         }
+//     }
+    
+//     return count 
+// }   
+
+// console.log(stringSearch("wowomgwowomg", "omg"))
+
+
+
+//coltsteele solution
+
+function strSearch(str, pat){
     let count = 0
 
-    //loop over the first string
     for(let i = 0; i < str.length; i++){
-        if(str[i] !== pat[i]){
-            return count
-        }else {
-            str[i] === pat
-            count++
+        for(let j = 0; j < pat.length; j++){
+            if(pat[j] !== str[i + j]) break
+            if(j === pat.length -1) count++
         }
     }
     return count
 }
 
-console.log(stringSearch("wowomgwowomg", "omg"))
+console.log(strSearch("wowomgwowomg", "omg"))
