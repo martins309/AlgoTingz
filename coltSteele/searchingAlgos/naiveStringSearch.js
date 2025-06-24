@@ -12,4 +12,17 @@ return the count
 function stringSearch(str, pat){
     
     let count = 0
+
+    //loop over the first string
+    for(let i = 0; i < str.length; i++){
+        if(str[i] !== pat[i]){
+            return count
+        }else {
+            str[i] === pat
+            count++
+        }
+    }
+    return count
 }
+
+console.log(stringSearch("wowomgwowomg", "omg"))
