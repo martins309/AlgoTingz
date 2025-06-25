@@ -236,9 +236,13 @@ Return true if the array contains the value, false if not.
 // }
 
 
-const raw = "abc123x!@#";
-const cleaned = raw.replace(/[^0-9]/g, "");
-console.log(cleaned); // → "123"
+// const raw = "abc123x!@#";
+// const cleaned = raw.replace(/[^0-9]/g, "");
+// console.log(cleaned); // → "123"
   
+function sortTing(num){
+    return num.sort((a, b) => b - a)
+}
 
+console.log(sortTing([4,5,8,1,4,33,9]))
 
