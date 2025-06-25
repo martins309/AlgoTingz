@@ -623,23 +623,16 @@ Return true if yes, false otherwise :)
 
 */
 
-//this wont work cuz we need math lol i see it now we fix tomorrow
-//name = Is he gonna survive?
-// function hero(bullets, dragons){
-// //Get Coding!
-//     if(bullets === 0) return false
+// this wont work cuz we need math lol i see it now we fix tomorrow
+// name = Is he gonna survive?
 
-//     while(bullets < dragons){
-//         if(bullets < dragons){
-//             return false
-//         } else if(bullets % 2 === 0 && bullets % 2 === 0 < dragons){
-//             return false
-//         }
-//     }
-//     return true
-// }
+function hero(bullets, dragons){
+//Get Coding!
+   
+    return bullets >= dragons *2
+}
 
-// console.log(hero(1500, 751))
+console.log(hero(1500, 751))
 
 
 /*
@@ -650,9 +643,17 @@ For example, for [1, 2, 2] it should return 9 because
 
 */
 
-function squareSum(numbers){
+// function squareSum(numbers){
     
-  return Array.from(numbers, (x) => x ** 2).reduce((a,b) => a + b)
-}
+//   return Array.from(numbers, (x) => x ** 2).reduce((a,b) => a + b)
 
-console.log(squareSum([1,2,2]))
+//     // return numbers.map(x => x **2).reduce((a,b) => a + b)
+
+//     // let sum = 0
+//     //  numbers.forEach(x => sum += x ** 2)
+//     //  return sum
+// }
+
+// console.log(squareSum([1,2,2]))
+
+
