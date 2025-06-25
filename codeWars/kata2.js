@@ -7,15 +7,15 @@ Examples
 */
 
 
-function reverseString(str){
-//     const string = str.split(" ")
+// function reverseString(str){
+// //     const string = str.split(" ")
 
-//    const reversed =  string.map(w => {
-//         return w.split("").reverse().join("")
-//     })
-//     return reversed.join(" ")
+// //    const reversed =  string.map(w => {
+// //         return w.split("").reverse().join("")
+// //     })
+// //     return reversed.join(" ")
 
-    return str.split("").reverse().join("").split(" ").reverse().join(" ")
-}
+//     return str.split("").reverse().join("").split(" ").reverse().join(" ")
+// }
 
-console.log(reverseString("I like eggs"))
+// console.log(reverseString("I like eggs"))
