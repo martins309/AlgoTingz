@@ -652,6 +652,7 @@ For example, for [1, 2, 2] it should return 9 because
 
 function squareSum(numbers){
     
-   return numbers.forEach(num => num * 2).reduce((a,b) => a + b)
-
+  return Array.from(numbers, (x) => x ** 2).reduce((a,b) => a + b)
 }
+
+console.log(squareSum([1,2,2]))
