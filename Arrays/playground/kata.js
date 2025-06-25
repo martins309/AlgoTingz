@@ -625,18 +625,33 @@ Return true if yes, false otherwise :)
 
 //this wont work cuz we need math lol i see it now we fix tomorrow
 //name = Is he gonna survive?
-function hero(bullets, dragons){
-//Get Coding!
-    if(bullets === 0) return false
+// function hero(bullets, dragons){
+// //Get Coding!
+//     if(bullets === 0) return false
 
-    while(bullets < dragons){
-        if(bullets < dragons){
-            return false
-        } else if(bullets % 2 === 0 && bullets % 2 === 0 < dragons){
-            return false
-        }
-    }
-    return true
+//     while(bullets < dragons){
+//         if(bullets < dragons){
+//             return false
+//         } else if(bullets % 2 === 0 && bullets % 2 === 0 < dragons){
+//             return false
+//         }
+//     }
+//     return true
+// }
+
+// console.log(hero(1500, 751))
+
+
+/*
+Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+For example, for [1, 2, 2] it should return 9 because 
+1^2 + 2^2 + 2^2 = 9
+
+*/
+
+function squareSum(numbers){
+    
+   return numbers.forEach(num => num * 2).reduce((a,b) => a + b)
+
 }
-
-console.log(hero(1500, 751))
