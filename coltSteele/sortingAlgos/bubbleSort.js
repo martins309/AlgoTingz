@@ -15,21 +15,21 @@ return the sorted arr
 //the second loop starts at the beginning until i - 1 
 // this keeps the loop from going over the edge
 // and comparing integers with undefined values
-function bubbleSort(arr){
+// function bubbleSort(arr){
     
-    for(let i = arr.length; i > 0; i--){
-        for(let j = 0; j < i - 1; j++){
-            console.log(arr, arr[j], arr[j + 1])
-             if(arr[j] > arr[j + 1]){
-                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
-             }
-        }
-    }
+//     for(let i = arr.length; i > 0; i--){
+//         for(let j = 0; j < i - 1; j++){
+//             console.log(arr, arr[j], arr[j + 1])
+//              if(arr[j] > arr[j + 1]){
+//                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+//              }
+//         }
+//     }
 
-    return arr
-}
+//     return arr
+// }
 
-console.log(bubbleSort([5,8,2,6,4,1,3]))
+// console.log(bubbleSort([5,8,2,6,4,1,3]))
 
 
 function es2015(arr){
@@ -46,3 +46,5 @@ function es2015(arr){
     }
     return arr
 }
+
+console.log(es2015([1,5,8,66,4,3,56,1,3]))
