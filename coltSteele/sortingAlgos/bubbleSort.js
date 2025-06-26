@@ -11,11 +11,15 @@ return the sorted arr
 
 */
 
-
+//when doing bubble sort, the first loop starts from the end of the array to the beginning
+//the second loop starts at the beginning until i - 1 
+// this keeps the loop from going over the edge
+// and comparing integers with undefined values
 function bubbleSort(arr){
     
-    for(let i = arr.length - 1; i >= 0; i--){
-        for(let j = 0; j < arr.length; j++){
+    for(let i = arr.length; i > 0; i--){
+        for(let j = 0; j < i - 1; j++){
+            console.log(arr, arr[j], arr[j + 1])
              if(arr[j] > arr[j + 1]){
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
              }
