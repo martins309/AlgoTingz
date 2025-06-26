@@ -58,9 +58,12 @@ return the sorted arr
 // is also unecessary to me
 
 
+//optimized to prevent unecessary swappping in a
+// nearly sorted array
 function es5(arr){
-    let no = true
+    let no
     for(let i = arr.length; i > 0; i--){
+        no = true
         for(let j = 0; j < i - 1; j++){
             if(arr[j] > arr[j + 1]){
                 console.log(arr, arr[j], arr[j + 1])
@@ -75,4 +78,4 @@ function es5(arr){
     return arr
 }
 
-console.log(es5([9,6,1,2,3,4,5,]))
+console.log(es5([8,1,2,3,4,5,7]))
