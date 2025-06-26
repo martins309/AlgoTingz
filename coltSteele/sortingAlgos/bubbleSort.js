@@ -32,19 +32,44 @@ return the sorted arr
 // console.log(bubbleSort([5,8,2,6,4,1,3]))
 
 
-function es2015(arr){
-    const swap = (arr, idx1, idx2) => {
-        [arr[idx1], arr[idx2]] = arr[idx2, arr[idx1]]
-    }
+
+
+
+// yeah this is too much writing lol mine is the best lol
+// function es2015(arr){
+//     const swap = (arr, idx1, idx2) => {
+//         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
+
+//     for(let i = arr.length; i > 0; i--){
+//         for(let j = 0; j < i -1; j++){
+//             if(arr[j] > arr[j + 1]){
+//                 swap(arr, j, j + 1)
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(es2015([1,5,8,66,4,3,56,1,3]))
+
+
+//then theres this thing where you create a temp variable which 
+// is also unecessary to me
+
+
+function es5(arr){
 
     for(let i = arr.length; i > 0; i--){
-        for(let j = 0; j < i -1; j++){
+        for(let j = 0; j < i - 1; j++){
             if(arr[j] > arr[j + 1]){
-                swap(arr, j, j + 1)
+                let temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
             }
         }
     }
     return arr
 }
 
-console.log(es2015([1,5,8,66,4,3,56,1,3]))
+console.log(es5([1,5,88,54,3,79,4,23]))
