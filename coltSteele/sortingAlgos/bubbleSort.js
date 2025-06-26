@@ -59,17 +59,20 @@ return the sorted arr
 
 
 function es5(arr){
-
+    let no = true
     for(let i = arr.length; i > 0; i--){
         for(let j = 0; j < i - 1; j++){
             if(arr[j] > arr[j + 1]){
+                console.log(arr, arr[j], arr[j + 1])
                 let temp = arr[j]
                 arr[j] = arr[j + 1]
                 arr[j + 1] = temp
+                no = false
             }
         }
+        if(no) break
     }
     return arr
 }
 
-console.log(es5([1,5,88,54,3,79,4,23]))
+console.log(es5([9,6,1,2,3,4,5,]))
