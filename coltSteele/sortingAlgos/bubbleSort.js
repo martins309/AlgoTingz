@@ -153,5 +153,10 @@ bubbleSort(moarKittyData, oldestToYoungest); // sorted by age in descending orde
 
 
 function bubbleSort(arr, comparator){
+
+}
+
+
+function comparator(a, b){
     
 }
