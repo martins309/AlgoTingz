@@ -153,10 +153,31 @@ bubbleSort(moarKittyData, oldestToYoungest); // sorted by age in descending orde
 
 
 function bubbleSort(arr, comparator){
+    let noSwap
+    if(typeof comparator !== 'function'){
+        return -1
+    }
+    for(let i = arr.length; i > 0; i--){
+        noSwap = true
+        for(let j = 0; j < i - 1; i++){
+            if(arr[j] > arr[j + 1]){
+                let temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+                noSwap = false
+            }
 
+        }
+        if(noSwap) break
+    }
+    return arr
 }
+
+bubbleSort([4, 20, 12, 10, 7, 9])
 
 
 function comparator(a, b){
-    
+    if(a > b) return 1
+    if(a < b) return -1
+    return 0
 }
