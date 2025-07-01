@@ -60,25 +60,25 @@ return the sorted arr
 
 //optimized to prevent unecessary swappping in a
 // nearly sorted array
-function es5(arr){
-    let no
-    for(let i = arr.length; i > 0; i--){
-        no = true
-        for(let j = 0; j < i - 1; j++){
-            if(arr[j] > arr[j + 1]){
-                console.log(arr, arr[j], arr[j + 1])
-                let temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
-                no = false
-            }
-        }
-        if(no) break
-    }
-    return arr
-}
+// function es5(arr){
+//     let no
+//     for(let i = arr.length; i > 0; i--){
+//         no = true
+//         for(let j = 0; j < i - 1; j++){
+//             if(arr[j] > arr[j + 1]){
+//                 console.log(arr, arr[j], arr[j + 1])
+//                 let temp = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = temp
+//                 no = false
+//             }
+//         }
+//         if(no) break
+//     }
+//     return arr
+// }
 
-console.log(es5([8,1,2,3,4,5,7]))
+// console.log(es5([8,1,2,3,4,5,7]))
 
 
 
@@ -155,12 +155,14 @@ bubbleSort(moarKittyData, oldestToYoungest); // sorted by age in descending orde
 function bubbleSort(arr, comparator){
     let noSwap
     if(typeof comparator !== 'function'){
-        return -1
+        comparator = function(a, b) {
+            return a - b
+        }
     }
     for(let i = arr.length; i > 0; i--){
         noSwap = true
-        for(let j = 0; j < i - 1; i++){
-            if(arr[j] > arr[j + 1]){
+        for(let j = 0; j < i - 1; j++){
+            if(comparator(arr[j], arr[j + 1]) > 0){
                 let temp = arr[j]
                 arr[j] = arr[j + 1]
                 arr[j + 1] = temp
@@ -173,11 +175,11 @@ function bubbleSort(arr, comparator){
     return arr
 }
 
-bubbleSort([4, 20, 12, 10, 7, 9])
+console.log(bubbleSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
 
 
 function comparator(a, b){
     if(a > b) return 1
-    if(a < b) return -1
+    else if(a < b) return -1
     return 0
 }
