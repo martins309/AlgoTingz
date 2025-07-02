@@ -37,7 +37,8 @@ Examples (input --> output):
 
 
 function numToString(num){
-    return num.toString()
+    return (num).toString()
+
 }
 console.log(numToString(123))
 
