@@ -3,7 +3,7 @@ store first element as the smallest value that you've seen
 compare this item to the next item in the array until you find a smaller number
 if the smaller number is found, designate the smaller number to be the new min and 
 continue until the end of the array
-if the minimum is the value index you initially began with
+if the minimum is not the value (index) you initially began with
 swap the two values
 repeat this with the next element until the array is sorted
 
@@ -13,15 +13,25 @@ repeat this with the next element until the array is sorted
 
 
 function selectionSort(arr){
-    let min = 0
 
     for(let i = 0; i < arr.length; i++) {
-        if(arr[i] < min) {
-            min = arr[i]
+        let min = i
+        for(let j = i + 1; j < arr.length; j++) {
+            if(arr[j]< arr[min]) {
+                min = j
         }
-        if(arr[i + 1] < min){
-            min = arr[i + 1]
-        }
-    }
 
+        
+    }   
+    if(i !== min){
+            let temp = arr[i]
+            arr[i] = arr[min]
+            arr[min] = temp
+    
+        }
+
+    }
+    return arr
 }
+
+console.log(selectionSort([22,4,5,67,4,17,6]))
