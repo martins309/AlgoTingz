@@ -12,26 +12,56 @@ repeat this with the next element until the array is sorted
 */
 
 
-function selectionSort(arr){
+// function selectionSort(arr){
 
-    for(let i = 0; i < arr.length; i++) {
-        let min = i
-        for(let j = i + 1; j < arr.length; j++) {
-            if(arr[j]< arr[min]) {
-                min = j
-        }
+//     for(let i = 0; i < arr.length; i++) {
+//         let min = i
+//         for(let j = i + 1; j < arr.length; j++) {
+//             if(arr[j]< arr[min]) {
+//                 min = j
+//         }
 
         
-    }   
-    if(i !== min){
-            let temp = arr[i]
-            arr[i] = arr[min]
-            arr[min] = temp
+//     }   
+//     if(i !== min){
+//             let temp = arr[i]
+//             arr[i] = arr[min]
+//             arr[min] = temp
     
-        }
+//         }
 
+//     }
+//     return arr
+// }
+
+// console.log(selectionSort([22,4,5,67,4,17,6]))
+
+
+
+function selectionSort(arr, comparator){
+    if(comparator !== 'function'){
+        comparator = function(a, b){
+            return a - b
+        }
+    }
+    for(let i = 0; i < arr.length; i++){
+        let min = i
+        for(let j = i + 1; j < arr.length; j++){
+            if(comparator(arr[min], arr[j])){
+                min = j
+            }
+        }
+        if(i !== min) {
+            let temp = min
+            min = arr[i]
+            arr[i] = temp
+        }
     }
     return arr
 }
 
-console.log(selectionSort([22,4,5,67,4,17,6]))
+function comparator(a, b){
+    if(a > b) return -1
+    if(a < b) return 1
+    return 0
+}
