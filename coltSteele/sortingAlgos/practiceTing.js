@@ -64,8 +64,8 @@ function bubbleSort(arr, comparator){
 
     return arr
 }
-// console.log(bubbleSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
-console.log(bubbleSort([12,4,5,67,43,233,56,42,4,67,8,6], comparator))
+console.log(bubbleSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
+// console.log(bubbleSort([12,4,5,67,43,233,56,42,4,67,8,6], comparator))
 
 
 
