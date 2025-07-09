@@ -38,32 +38,92 @@ repeat this with the next element until the array is sorted
 
 
 
-function selectionSort(arr, comparator){
+// function selectionSort(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     for(let i = 0; i < arr.length; i++){
+//         let min = i
+//         for(let j = i + 1; j < arr.length; j++){
+//             if(comparator(arr[min], arr[j]) > 0){
+//                 min = j
+//             }
+//         }
+//         if(i !== min) {
+//            [arr[i], arr[min]] = [arr[min], arr[i]]
+//         }
+
+//     }
+// }
+
+// function comparator(a, b) {
+//     if(a > b) return 1
+//     if(a < b) return -1
+//     return 0
+// }
+
+
+
+// function selectionSort(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     for(let i = 0; i < arr.length; i++){
+//         let min = i
+//         for(let j = i + 1; j < arr.length; j++){
+//             if(comparator(arr[min], arr[j]) > 0){
+//                 min = j
+//             }
+//         }
+//         if(i !== min){
+//             [arr[i], arr[min]] = [arr[min], arr[i]]
+//         }
+//     }
+//     return arr
+// }
+
+// function comparator(a , b){
+//     if(a > b) return 1
+//     else if(a < b) return -1
+//     return 0
+// }
+
+
+
+
+
+//now to try the selection sort ting
+
+
+function selectionSort(arr, comparator) {
     if(typeof comparator !== 'function'){
-        comparator = function(a, b){
+        comparator = function(a, b) {
             return a - b
         }
     }
-    for(let i = 0; i < arr.length; i++){
+    for(i = 0; i < arr.length; i++){
         let min = i
-        for(let j = i + 1; j < arr.length; j++){
-            if(comparator(arr[min], arr[j]) > 0){
-                min = j
-            }
+        for(let j = i + 1 ; j < arr.length; j++){
+            comparator(arr[min], arr[j]) > 0
+            ? min = j 
+            : null
         }
-        if(i !== min) {
-           [arr[i], arr[min]] = [arr[min], arr[i]]
-        }
+        i !== min ? [arr[i], arr[min]] = [arr[min], arr[i]]
+        : null
     }
     return arr
 }
+console.log(selectionSort([22,4,5,67,4,17,6]), comparator)
 
-console.log(selectionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
+// console.log(selectionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
 
 
-
-function comparator(a, b){
+function comparator(a, b) {
     if(a > b) return 1
-    else if(a < b) return -1
+    if(a < b) return -1
     return 0
 }
