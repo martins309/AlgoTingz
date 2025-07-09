@@ -80,18 +80,46 @@
 //Do the bubble ting again
 
 
+// function bubbleSort(arr, comparator) {
+//     let noSwap 
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b) {
+//             return a - b
+//         }
+//     }
+//     for(let i = arr.length; i > 0; i--) {
+//         noSwap = true
+//         for(let j = 0; j < i - 1; j++) {
+//             comparator(arr[j], arr[j + 1]) > 0
+//             ? ([arr[j], arr[j + 1]] = [arr[j + 1], arr[j]], noSwap = false)
+//             : null
+//         }
+//         if(noSwap) break
+//     }
+//     return arr
+// }
+// console.log(bubbleSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
+
+
+// function comparator(a, b) {
+//     if(a > b) return 1
+//     else if(a < b) return -1
+//     return 0 
+// }
+
+
 function bubbleSort(arr, comparator) {
     let noSwap 
     if(typeof comparator !== 'function'){
-        comparator = function(a , b) {
+        comparator = function(a, b) {
             return a - b
         }
     }
-    for(let i = arr.length; i > 0; i--) {
+    for(let i = arr.length; i > 0; i--){
         noSwap = true
-        for(let j = 0; j < i - 1; j++) {
+        for(let j = 0; j < i - 1; j++){
             comparator(arr[j], arr[j + 1]) > 0
-            ? ([arr[j], arr[j + 1], arr[j + 1], arr[j]], noSwap = false)
+            ? ([arr[j], arr[j + 1]] = [arr[j + 1], arr[j]], noSwap = false )
             : null
         }
         if(noSwap) break
@@ -99,9 +127,11 @@ function bubbleSort(arr, comparator) {
     return arr
 }
 
+console.log(bubbleSort([12,4,5,67,43,233,56,42,4,67,8,6], comparator))
+
 
 function comparator(a, b) {
     if(a > b) return 1
-    else if(a < b) return -1
+    if(a < b) return -1
     return 0 
 }
