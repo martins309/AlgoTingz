@@ -81,7 +81,22 @@
 
 
 function bubbleSort(arr, comparator) {
-
+    let noSwap 
+    if(typeof comparator !== 'function'){
+        comparator = function(a , b) {
+            return a - b
+        }
+    }
+    for(let i = arr.length; i > 0; i--) {
+        noSwap = true
+        for(let j = 0; j < i - 1; j++) {
+            comparator(arr[j], arr[j + 1]) > 0
+            ? ([arr[j], arr[j + 1], arr[j + 1], arr[j]], noSwap = false)
+            : null
+        }
+        if(noSwap) break
+    }
+    return arr
 }
 
 
