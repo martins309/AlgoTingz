@@ -173,29 +173,52 @@
 
 
 
-function selectionSort(arr, comparator) {
-    if(typeof comparator !== 'function') {
-        comparator = function(a, b){
-            return a - b
-        }
+// function selectionSort(arr, comparator) {
+//     if(typeof comparator !== 'function') {
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     for(let i = 0; i < arr.length; i ++) {
+//         let min = i
+//         for(let j = i + 1; j < arr.length; j++) {
+//             comparator(arr[min], arr[j]) > 0
+//             ? min = j
+//             : null
+//         }
+//         i !== min ? 
+//         [arr[i], arr[min]] = [arr[min], arr[i]]
+//         : null
+//     }
+
+//     return arr
+// }
+// console.log(selectionSort([22,4,5,67,4,17,6], comparator))
+
+
+// function comparator(a, b) {
+//     return a > b ? 1 : a < b ? -1 : 0
+// }
+
+
+//this the  sliding windows ting
+
+
+
+function maxSum(arr, num){
+    let maxSum = 0
+    let tempSum = 0
+
+    maxSum += arr[i]
+
+    for(let i = 0; i < num; i++){
+        maxSum += arr[i]
     }
-    for(let i = 0; i < arr.length; i ++) {
-        let min = i
-        for(let j = i + 1; j < arr.length; j++) {
-            comparator(arr[min], arr[j]) > 0
-            ? min = j
-            : null
-        }
-        i !== min ? 
-        [arr[i], arr[min]] = [arr[min], arr[i]]
-        : null
+
+    tempSum = maxSum
+    for(let i = num; i < arr.length; i++){
+        tempSum = tempSum - arr[i - num] + arr[i]
+        maxSum = Math.max(maxSum, tempSum)
     }
-
-    return arr
-}
-console.log(selectionSort([22,4,5,67,4,17,6], comparator))
-
-
-function comparator(a, b) {
-    return a > b ? 1 : a < b ? -1 : 0
+    return maxSum
 }
