@@ -230,22 +230,50 @@
 //do it again now that I understand what it does completely
 
 
-function maxSubArray(arr, num){
-    if(arr.length < num) return null 
+// function maxSubArray(arr, num){
+//     if(arr.length < num) return null 
+
+//     let maxSum = 0
+//     let tempSum = 0
+
+//     for(let i = 0; i < num; i++){
+//         maxSum += arr[i]
+//     }
+
+//     tempSum = maxSum
+//     for(let i = num; i < arr.length; i++ ){
+//         tempSum = tempSum - arr[i - num] + arr[i]
+//         maxSum = Math.max(maxSum, tempSum)
+//     }
+//     return maxSum
+// }
+
+// console.log(maxSubArray([1,2,3,4,5], 3))
+
+
+
+
+
+//this is the maxSub array sum 
+// it is the maximum sum you can get when given k
+
+function maxSubArraySum(arr, k){
+    if(arr.length < k) return null
 
     let maxSum = 0
-    let tempSum = 0
+    let windowSum = 0
+    let windowStart = 0
 
-    for(let i = 0; i < num; i++){
-        maxSum += arr[i]
+    for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
+        windowSum += arr[windowEnd]
     }
 
-    tempSum = maxSum
-    for(let i = num; i < arr.length; i++ ){
-        tempSum = tempSum - arr[i - num] + arr[i]
-        maxSum = Math.max(tempSum, maxSum)
+    if(windowEnd >= k - 1){
+        maxSum = Math.max(maxSum, windowSum)
+        windowEnd -= arr[windowStart]
+        windowStart++
     }
-    return maxSum
+    return maxSum 
 }
 
-console.log(maxSubArray([1,2,3,4,5], 3))
+console.log(maxSubArraySum([100,200,300,400], 2))
