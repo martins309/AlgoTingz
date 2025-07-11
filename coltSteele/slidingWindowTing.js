@@ -28,23 +28,22 @@
 ///////actual sliding window approach
 
 
-// function maxSubArray(arr, num) {
-//   let maxSum = 0
-//   let tempSum = 0
+function maxSubArray(arr, num) {
+  let maxSum = 0
+  let tempSum = 0
 
-//   if(arr.length < num) return null
-//   for(let i = 0; i < num; i++){
-//     maxSum += arr[i]
-//   }
-//   tempSum = maxSum
-//   for(let i = num; i < arr.length; i++){
-//     tempSum = tempSum - arr[i - num] + arr[i]
-//     maxSum = Math.max(maxSum, tempSum)
-//   }
-//   return maxSum
-// }
+  for(let i = 0; i < num; i++){
+    maxSum += arr[i]
+  }
+  tempSum = maxSum
+  for(let i = num; i < arr.length; i++){
+    tempSum = tempSum - arr[i - num] + arr[i]
+    maxSum = Math.max(maxSum, tempSum)
+  }
+  return maxSum
+}
 
-// console.log(maxSubArray([1,2,3,4,5,6,7,8,9], 3))
+console.log(maxSubArray([1,2,3,4,5,6,7,8,9], 3))
   
   
   
@@ -214,25 +213,25 @@ Time Complexity - O(n)
 Space Complexity - O(1)
 */
 
-function minSubArrayLen(arr, num){
+// function minSubArrayLen(arr, num){
  
-  let windowStart = 0
-  let minLength = Infinity
-  let windowSum = 0
+//   let windowStart = 0
+//   let minLength = Infinity
+//   let windowSum = 0
 
-  for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
-    windowSum += arr[windowEnd]
+//   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
+//     windowSum += arr[windowEnd]
     
-    while(windowSum >= num){
-      minLength = Math.min(minLength, windowEnd - windowStart + 1)
-      windowSum -= arr[windowStart]
-      windowStart++ 
-    }
-  }
-  return minLength === Infinity ? 0 : minLength
-}
+//     while(windowSum >= num){
+//       minLength = Math.min(minLength, windowEnd - windowStart + 1)
+//       windowSum -= arr[windowStart]
+//       windowStart++ 
+//     }
+//   }
+//   return minLength === Infinity ? 0 : minLength
+// }
 
-console.log(minSubArrayLen([2,3,1,2,4,3], 7))
+// console.log(minSubArrayLen([2,3,1,2,4,3], 7))
 
 
 
