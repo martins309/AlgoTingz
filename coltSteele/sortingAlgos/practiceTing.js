@@ -257,23 +257,67 @@
 //this is the maxSub array sum 
 // it is the maximum sum you can get when given k
 
-function maxSubArraySum(arr, k){
-    if(arr.length < k) return null
+// function maxSubArraySum(arr, k){
+//     if(arr.length < k) return null
 
+//     let maxSum = 0
+//     let windowSum = 0
+//     let windowStart = 0
+
+//     for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
+//         windowSum += arr[windowEnd]
+
+//         if(windowEnd >= k - 1){
+//         maxSum = Math.max(maxSum, windowSum)
+//         windowSum -= arr[windowStart]
+//         windowStart++
+//         }
+
+//     }
+//     return maxSum
+    
+// }
+
+// console.log(maxSubArraySum([100,200,300,400], 2))
+
+
+
+
+
+
+
+//final maxSubArrSum practice
+
+
+function maxSubArraySum(arr, k){
+    arr.length < k ?? null
+
+    let windowStart = 0 
     let maxSum = 0
     let windowSum = 0
-    let windowStart = 0
 
     for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
         windowSum += arr[windowEnd]
-    }
 
-    if(windowEnd >= k - 1){
-        maxSum = Math.max(maxSum, windowSum)
-        windowEnd -= arr[windowStart]
-        windowStart++
+        if(windowEnd >= k - 1){
+            maxSum = Math.max(maxSum, windowSum)
+            windowSum -= arr[windowStart]
+            windowStart++
+        }
     }
-    return maxSum 
+    return maxSum
+
 }
 
 console.log(maxSubArraySum([100,200,300,400], 2))
+
+
+
+
+
+
+
+
+
+
+
