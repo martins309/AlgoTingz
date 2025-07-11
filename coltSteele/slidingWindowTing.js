@@ -213,25 +213,25 @@ Time Complexity - O(n)
 Space Complexity - O(1)
 */
 
-function minSubArrayLen(arr, num){
+// function minSubArrayLen(arr, num){
  
-  let windowStart = 0
-  let minLength = Infinity
-  let windowSum = 0
+//   let windowStart = 0
+//   let minLength = Infinity
+//   let windowSum = 0
 
-  for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
-    windowSum += arr[windowEnd]
+//   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++){
+//     windowSum += arr[windowEnd]
     
-    while(windowSum >= num){
-      minLength = Math.min(minLength, windowEnd - windowStart + 1)
-      windowSum -= arr[windowStart]
-      windowStart++ 
-    }
-  }
-  return minLength === Infinity ? 0 : minLength
-}
+//     while(windowSum >= num){
+//       minLength = Math.min(minLength, windowEnd - windowStart + 1)
+//       windowSum -= arr[windowStart]
+//       windowStart++ 
+//     }
+//   }
+//   return minLength === Infinity ? 0 : minLength
+// }
 
-console.log(minSubArrayLen([2,3,1,2,4,3], 7))
+// console.log(minSubArrayLen([2,3,1,2,4,3], 7))
 
 
 

@@ -173,29 +173,44 @@
 
 
 
-function selectionSort(arr, comparator) {
-    if(typeof comparator !== 'function') {
-        comparator = function(a, b){
-            return a - b
-        }
+// function selectionSort(arr, comparator) {
+//     if(typeof comparator !== 'function') {
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     for(let i = 0; i < arr.length; i ++) {
+//         let min = i
+//         for(let j = i + 1; j < arr.length; j++) {
+//             comparator(arr[min], arr[j]) > 0
+//             ? min = j
+//             : null
+//         }
+//         i !== min ? 
+//         [arr[i], arr[min]] = [arr[min], arr[i]]
+//         : null
+//     }
+
+//     return arr
+// }
+// console.log(selectionSort([22,4,5,67,4,17,6], comparator))
+
+
+// function comparator(a, b) {
+//     return a > b ? 1 : a < b ? -1 : 0
+// }
+
+
+
+
+//sliding windows practice
+
+function maxSubArray(arr, num){
+
+    let maxSum = 0
+    let tempSum = 0
+
+    for(let i = 0; i < arr.length; i++){
+        
     }
-    for(let i = 0; i < arr.length; i ++) {
-        let min = i
-        for(let j = i + 1; j < arr.length; j++) {
-            comparator(arr[min], arr[j]) > 0
-            ? min = j
-            : null
-        }
-        i !== min ? 
-        [arr[i], arr[min]] = [arr[min], arr[i]]
-        : null
-    }
-
-    return arr
-}
-console.log(selectionSort([22,4,5,67,4,17,6], comparator))
-
-
-function comparator(a, b) {
-    return a > b ? 1 : a < b ? -1 : 0
 }
