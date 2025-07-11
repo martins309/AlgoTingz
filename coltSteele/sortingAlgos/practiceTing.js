@@ -209,8 +209,6 @@ function maxSum(arr, num){
     let maxSum = 0
     let tempSum = 0
 
-    maxSum += arr[i]
-
     for(let i = 0; i < num; i++){
         maxSum += arr[i]
     }
