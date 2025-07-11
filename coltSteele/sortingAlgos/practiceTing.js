@@ -231,7 +231,7 @@
 
 
 function maxSubArray(arr, num){
-    if(num < arr.length) return null 
+    if(arr.length < num) return null 
 
     let maxSum = 0
     let tempSum = 0
@@ -248,3 +248,4 @@ function maxSubArray(arr, num){
     return maxSum
 }
 
+console.log(maxSubArray([1,2,3,4,5], 3))
