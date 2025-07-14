@@ -173,40 +173,40 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 
 
 //gpt showed me this for practice 
-function longestSubString(s) {
-  if (s.length === 0) return 0;
+// function longestSubString(s) {
+//   if (s.length === 0) return 0;
 
-  let windowStart = 0;
-  let chars = {};
-  let maxLength = 0;
+//   let windowStart = 0;
+//   let chars = {};
+//   let maxLength = 0;
 
-  for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
-    const rightChar = s[windowEnd];
+//   for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
+//     const rightChar = s[windowEnd];
 
-    // Add current char to frequency map
-    chars[rightChar] = (chars[rightChar] || 0) + 1;
+//     // Add current char to frequency map
+//     chars[rightChar] = (chars[rightChar] || 0) + 1;
 
-    // Shrink window if chars[rightChar] > 1
-    while (chars[rightChar] > 1) {
-      const leftChar = s[windowStart];
-      chars[leftChar]--;
+//     // Shrink window if chars[rightChar] > 1
+//     while (chars[rightChar] > 1) {
+//       const leftChar = s[windowStart];
+//       chars[leftChar]--;
      
 
-      if (chars[leftChar] === 0) {
-        delete chars[leftChar]; // no longer in window
-      }
+//       if (chars[leftChar] === 0) {
+//         delete chars[leftChar]; // no longer in window
+//       }
 
-      windowStart++; // shrink window from the left
-    }
+//       windowStart++; // shrink window from the left
+//     }
 
-    // Update max length
-    maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
-  }
+//     // Update max length
+//     maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+//   }
 
-  return maxLength;
-}
+//   return maxLength;
+// }
 
-console.log(longestSubString('rithmschool')); // Output 7
+// console.log(longestSubString('rithmschool')); // Output 7
 
 
 
