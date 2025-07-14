@@ -320,4 +320,5 @@ console.log(maxSubArraySum([100,200,300,400], 2))
 
 
 
+//this the  sliding windows ting
 
