@@ -28,22 +28,22 @@
 ///////actual sliding window approach
 
 
-function maxSubArray(arr, num) {
-  let maxSum = 0
-  let tempSum = 0
+// function maxSubArray(arr, num) {
+//   let maxSum = 0
+//   let tempSum = 0
 
-  for(let i = 0; i < num; i++){
-    maxSum += arr[i]
-  }
-  tempSum = maxSum
-  for(let i = num; i < arr.length; i++){
-    tempSum = tempSum - arr[i - num] + arr[i]
-    maxSum = Math.max(maxSum, tempSum)
-  }
-  return maxSum
-}
+//   for(let i = 0; i < num; i++){
+//     maxSum += arr[i]
+//   }
+//   tempSum = maxSum
+//   for(let i = num; i < arr.length; i++){
+//     tempSum = tempSum - arr[i - num] + arr[i]
+//     maxSum = Math.max(maxSum, tempSum)
+//   }
+//   return maxSum
+// }
 
-console.log(maxSubArray([1,2,3,4,5,6,7,8,9], 3))
+// console.log(maxSubArray([1,2,3,4,5,6,7,8,9], 3))
   
   
   
@@ -156,40 +156,88 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 
 
 
+
+// Write a function called findLongestSubstring, 
+// which accepts a string and returns the length of the longest substring 
+// with all distinct characters.
+
+// findLongestSubstring('') // 0
+// findLongestSubstring('rithmschool') // 7
+// findLongestSubstring('thisisawesome') // 6
+// findLongestSubstring('thecatinthehat') // 7
+// findLongestSubstring('bbbbbb') // 1
+// findLongestSubstring('longestsubstring') // 8
+// findLongestSubstring('thisishowwedoit') // 6
+// Time Complexity - O(n)
+
+
+
 //gpt showed me this for practice 
-// function longestSubString(s, k) {
-//   if (s.length === 0 || k === 0) return 0;
+function longestSubString(s) {
+  if (s.length === 0) return 0;
 
-//   let windowStart = 0;
-//   let chars = {};
-//   let maxLength = 0;
+  let windowStart = 0;
+  let chars = {};
+  let maxLength = 0;
 
-//   for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
-//     const rightChar = s[windowEnd];
+  for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
+    const rightChar = s[windowEnd];
 
-//     // Add current char to frequency map
-//     chars[rightChar] = (chars[rightChar] || 0) + 1;
+    // Add current char to frequency map
+    chars[rightChar] = (chars[rightChar] || 0) + 1;
 
-//     // Shrink window if distinct chars > k
-//     while (Object.keys(chars).length > k) {
-//       const leftChar = s[windowStart];
-//       chars[leftChar]--;
+    // Shrink window if chars[rightChar] > 1
+    while (chars[rightChar] > 1) {
+      const leftChar = s[windowStart];
+      chars[leftChar]--;
+     
 
-//       if (chars[leftChar] === 0) {
-//         delete chars[leftChar]; // no longer in window
-//       }
+      if (chars[leftChar] === 0) {
+        delete chars[leftChar]; // no longer in window
+      }
 
-//       windowStart++; // shrink window from the left
+      windowStart++; // shrink window from the left
+    }
+
+    // Update max length
+    maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+  }
+
+  return maxLength;
+}
+
+console.log(longestSubString('rithmschool')); // Output 7
+
+
+
+
+//simpler version of the same thing
+// function findLongestSubstring(str) {
+//   let start = 0;           // left edge of window
+//   let seen = {};           // char ➜ last index we saw it
+//   let maxLen = 0;
+
+//   for (let end = 0; end < str.length; end++) {
+//     const ch = str[end];
+
+//     // If the char is inside the current window, move `start`
+//     if (seen[ch] >= start) {
+//       start = seen[ch] + 1;
 //     }
 
-//     // Update max length
-//     maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+//     // Record this char's latest index
+//     seen[ch] = end;
+
+//     // Update the answer
+//     maxLen = Math.max(maxLen, end - start + 1);
 //   }
 
-//   return maxLength;
+//   return maxLen;
 // }
 
-// console.log(longestSubString("eceba", 2)); // Output: 3
+
+
+
 
 
 /*
