@@ -8,29 +8,26 @@
 // Time Complexity - O(log n)
 
 
-function countZeros(arr, val){
+function countZeros(arr){
     if(arr.length === 0) return null
 
-    let left = 0
-    let count = 0
-    const sortedArr = arr.sort((a, b) => a - b)
-    
-    let right = arr.length -1
+    let left = 0 
+    let right = arr.length - 1
+    let firstZero = -1
 
     while(left <= right){
         let middle = Math.floor((left + right) / 2)
-
-        if(sortedArr[middle] !== val){
-            
-             
-        }else if(sortedArr[middle] > val){
-            left = middle + 1
+        
+        if(arr[middle] === 0){
+            firstZero = mid
+            right = middle -1
         }else {
-            right = middle - 1
+            left = middle + 1
         }
-        count++
     }
-    return 0
+
+    return firstZero === -1 ? 0 : arr.length - firstZero
 }
 
-console.log(countZeros([0,0,0], 0))
+const nums = [1,1,1,0,0,0]
+console.log(countZeros([1,1,1,0,0,0]))
