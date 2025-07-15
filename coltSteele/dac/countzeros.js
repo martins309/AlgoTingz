@@ -19,7 +19,7 @@ function countZeros(arr){
         let middle = Math.floor((left + right) / 2)
         
         if(arr[middle] === 0){
-            firstZero = mid
+            firstZero = middle
             right = middle -1
         }else {
             left = middle + 1
