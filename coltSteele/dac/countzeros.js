@@ -20,19 +20,17 @@ function countZeros(arr, val){
     while(left <= right){
         let middle = Math.floor((left + right) / 2)
 
-        if(sortedArr[middle] === val){
-            count++
-
-        }else if(sortedArr[middle] === val ){
-            count++
+        if(sortedArr[middle] !== val){
+            
+             
+        }else if(sortedArr[middle] > val){
             left = middle + 1
-        }else{
-            count++
+        }else {
             right = middle - 1
         }
-        
+        count++
     }
-    return count
+    return 0
 }
 
-console.log(countZeros([0,0,0]), 0)
+console.log(countZeros([0,0,0], 0))
