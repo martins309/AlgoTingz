@@ -212,28 +212,28 @@ findAverages([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
 
 
 //simpler version of the same thing
-// function findLongestSubstring(str) {
-//   let start = 0;           // left edge of window
-//   let seen = {};           // char ➜ last index we saw it
-//   let maxLen = 0;
+function findLongestSubstring(str) {
+  let start = 0;           // left edge of window
+  let seen = {};           // char ➜ last index we saw it
+  let maxLen = 0;
 
-//   for (let end = 0; end < str.length; end++) {
-//     const ch = str[end];
+  for (let end = 0; end < str.length; end++) {
+    const ch = str[end];
 
-//     // If the char is inside the current window, move `start`
-//     if (seen[ch] >= start) {
-//       start = seen[ch] + 1;
-//     }
+    // If the char is inside the current window, move `start`
+    if (seen[ch] >= start) {
+      start = seen[ch] + 1;
+    }
 
-//     // Record this char's latest index
-//     seen[ch] = end;
+    // Record this char's latest index
+    seen[ch] = end;
 
-//     // Update the answer
-//     maxLen = Math.max(maxLen, end - start + 1);
-//   }
+    // Update the answer
+    maxLen = Math.max(maxLen, end - start + 1);
+  }
 
-//   return maxLen;
-// }
+  return maxLen;
+}
 
 
 

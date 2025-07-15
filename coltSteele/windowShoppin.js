@@ -10,3 +10,27 @@
 // findLongestSubstring('longestsubstring') // 8
 // findLongestSubstring('thisishowwedoit') // 6
 // Time Complexity - O(n)
+
+
+function findLongestSubstring(str){
+    let seen = {}
+    let maxLen = 0
+    let start = 0
+
+
+    for(let end = 0; end < str.length; end ++){
+        const ch = str[end]
+
+        if(seen[ch] >= start){
+            start = seen[ch] + 1
+        }
+
+        seen[ch] = end
+
+        maxLen = Math.max(maxLen, end - start + 1)
+    }
+
+    return maxLen
+}
+
+console.log(findLongestSubstring('thisishowwedoit'))
