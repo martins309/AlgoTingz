@@ -14,9 +14,19 @@ function countZeros(arr){
     let left = 0
     let right = arr.length -1
     let count = 0
+
+
     while(left <= right){
         let middle = Math.floor((left + right) / 2)
 
-        if()
+        if(arr[left] !== 0){
+            left = middle + 1
+
+        }else if(arr[right] !== 0){
+            right = middle - 1
+        }else {
+            count++ 
+        }
     }
+    return -1
 }
