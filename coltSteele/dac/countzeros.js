@@ -18,15 +18,12 @@ function countZeros(arr){
 
     while(left <= right){
         let middle = Math.floor((left + right) / 2)
-
-        if(arr[left] !== 0){
-            left = middle + 1
-
-        }else if(arr[right] !== 0){
-            right = middle - 1
-        }else {
-            count++ 
+        
+        if(arr[middle] !== 0){
+            return count
         }
     }
-    return -1
+    
 }
+
+console.log(countZeros([1,1,1,0,0,0]))
