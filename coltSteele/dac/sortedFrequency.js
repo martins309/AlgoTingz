@@ -6,7 +6,7 @@
 function sortedFrequency(arr, num) {
     let left = 0
     let right = arr.length - 1 
-
+    let frequency = {}
 
 
 }
