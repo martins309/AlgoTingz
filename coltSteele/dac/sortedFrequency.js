@@ -2,3 +2,7 @@
 //That counts the occurrences of the number in the array
 
 
+
+function sortedFrequency(arr, num) {
+    
+}
