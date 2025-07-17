@@ -2,24 +2,42 @@
 //That counts the occurrences of the number in the array
 
 
+// here is the colt steele solution for the sorted frequency parttern 
 
 function sortedFrequency(arr, num) {
-    let left = 0
-    let right = arr.length - 1 
-    let count = 0
-    
-
-    while(left <= right){
-        let middle = Math.floor((left + right) / 2)
-        if(arr[middle] === num) {
-            count = arr[middle]
-            right = middle - 1
-        }else {
-            left = middle + 1
-        }
-        
+  let firstIdx = findFirst(arr, num);
+  if (firstIdx === -1) return firstIdx;
+  let lastIdx = findLast(arr, num);
+  return lastIdx - firstIdx + 1;
+}
+ 
+function findFirst(arr, num, low = 0, high = arr.length - 1) {
+  if (high >= low) {
+    let mid = Math.floor((low + high) / 2)
+    if ((mid === 0 || num > arr[mid - 1]) && arr[mid] === num) {
+      return mid;
+    } else if (num > arr[mid]) {
+      return findFirst(arr, num, mid + 1, high)
+    } else {
+      return findFirst(arr, num, low, mid - 1)
     }
-    
+  }
+  return -1
+}
+ 
+function findLast(arr, num, low = 0, high = arr.length - 1) {
+  if (high >= low) {
+    let mid = Math.floor((low + high) / 2)
+    if ((mid === arr.length - 1 || num < arr[mid + 1]) && arr[mid] === num) {
+      return mid;
+    } else if (num < arr[mid]) {
+      return findLast(arr, num, low, mid - 1)
+    } else {
+      return findLast(arr, num, mid + 1, high)
+    }
+  }
+  return -1
 }
 
-console.log(sortedFrequency([1,1,2,2,2,2,3], 2))
+
+
