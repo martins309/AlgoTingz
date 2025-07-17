@@ -8,5 +8,8 @@ function sortedFrequency(arr, num) {
     let right = arr.length - 1 
     let frequency = {}
 
+    while(left <= right){
+        let middle = Math.floor((left + right) / 2)
+    }
 
 }
