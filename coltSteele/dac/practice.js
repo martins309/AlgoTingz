@@ -2,7 +2,6 @@
 //That counts the occurrences of the number in the array
 
 
-// here is the colt steele solution for the sorted frequency parttern 
 
 
 function sortedFrequency(arr, num){
