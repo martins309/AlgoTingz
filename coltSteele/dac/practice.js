@@ -33,7 +33,7 @@ function sortedFrequency(arr, num){
             let middle = Math.floor((left + right ) / 2)
             if(arr[middle] === num){
                 result = middle
-                right = middle - 1
+                left = middle + 1
             }else if(arr[middle] < num){
                 left = middle + 1 
             }else {
