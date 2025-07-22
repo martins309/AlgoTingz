@@ -58,7 +58,7 @@
 //look ma no hands lol
 
 function sortedFrequency(arr, num){
-    function findFirst(arr, num){
+    function findFirst(){
         let first = 0
         let end = arr.length -1
         let result = -1
@@ -77,7 +77,7 @@ function sortedFrequency(arr, num){
         return result
     }
 
-    function findLast(arr, num){
+    function findLast(){
         let first = 0 
         let last = arr.length - 1
         let result = -1
