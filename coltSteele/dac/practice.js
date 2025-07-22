@@ -59,15 +59,15 @@
 
 function sortedFrequency(arr, num){
     function findFirst(){
-        let first = 0
-        let end = arr.length -1
+        let left = 0
+        let right = arr.length -1
         let result = -1
 
         while(left <= right){
             let middle = Math.floor((left + right) / 2)
             if(arr[middle] === num){
                 result = middle
-                right = middle -1
+                right = middle - 1
             }else if(arr[middle] < num){
                 left = middle + 1
             }else {
@@ -78,8 +78,8 @@ function sortedFrequency(arr, num){
     }
 
     function findLast(){
-        let first = 0 
-        let last = arr.length - 1
+        let left = 0 
+        let right = arr.length - 1
         let result = -1
 
         while(left <= right){
