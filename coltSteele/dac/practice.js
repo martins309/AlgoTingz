@@ -103,7 +103,7 @@ function sortedFrequency(arr, num){
     return last - first + 1
 }
 
-console.log()
+console.log(sortedFrequency([1,2,2,2,2,2,3], 2))
 
 
 
