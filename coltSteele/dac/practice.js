@@ -135,7 +135,7 @@ function sortedFreak(arr, num){
             let mid = Math.floor((left + right) / 2)
             if(arr[mid] === num){
                 result = mid
-                right = middle - 1
+                right = mid - 1
             }else if(arr[mid] < num){
                 left = mid + 1
             }else {
@@ -154,6 +154,7 @@ function sortedFreak(arr, num){
             let mid = Math.floor((left + right) / 2)
             if(arr[mid] === num){
                 result = mid
+                left = mid + 1
             }else if(arr[mid] < num){
                 left = mid + 1
             }else {
@@ -170,7 +171,7 @@ function sortedFreak(arr, num){
     return last - first + 1
 }
 
-console.log(1,2,3,4,5,5,5,5,5,6,7,8,15,34,56,78,88,99)
+console.log(sortedFreak([1,2,3,4,5,5,5,5,5,6,7,8,15,34,56,78,88,99], 5))
 
 
 
