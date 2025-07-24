@@ -101,7 +101,7 @@ function sortedFrequency(arr, num){
     if(first === -1) return -1
     let last = occ2()
 
-    return occ2 - occ1 + 1
+    return last - first + 1
 }
 
 console.log(sortedFrequency([1,3,4,4,4,4,5,6,7], 4))
