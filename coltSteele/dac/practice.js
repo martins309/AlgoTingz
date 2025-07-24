@@ -68,18 +68,18 @@ function sortedFrequency(arr, num){
 
             if(arr[mid] === num){
                 result = mid
-                right = middle - 1
+                right = mid - 1
             }else if (arr[mid] < num){
                 left = mid + 1
             }else {
-                right = mid -1
+                right = mid - 1
             }
         }
         return result
     }
     function occ2(){
-        let first = 0 
-        let last = arr.length - 1
+        let left= 0 
+        let right = arr.length - 1
         let result = -1
 
         while(left <= right){
