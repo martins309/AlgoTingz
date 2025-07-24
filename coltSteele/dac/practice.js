@@ -170,7 +170,7 @@ function sortedFreak(arr, num){
     return last - first + 1
 }
 
-
+console.log(1,2,3,4,5,5,5,5,5,6,7,8,15,34,56,78,88,99)
 
 
 
