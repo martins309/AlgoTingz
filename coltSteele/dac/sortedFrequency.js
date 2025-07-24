@@ -39,6 +39,8 @@ function findLast(arr, num, low = 0, high = arr.length - 1) {
   return -1
 }
 
+console.log(sortedFrequency([1,2,3,4,5,6,6,6,6,6,7,8,9],6))
+
 
 
 // here is the gpt solution 
@@ -51,55 +53,55 @@ function findLast(arr, num, low = 0, high = arr.length - 1) {
 
 // Here’s a fixed version that keeps your style:
 
-function sortedFrequency(arr, num) {
-    function findFirst() {
-        let left = 0;
-        let right = arr.length - 1;
-        let result = -1;
+// function sortedFrequency(arr, num) {
+//     function findFirst() {
+//         let left = 0;
+//         let right = arr.length - 1;
+//         let result = -1;
 
-        while (left <= right) {
-            let mid = Math.floor((left + right) / 2);
-            if (arr[mid] === num) {
-                result = mid;
-                right = mid - 1; // Keep going left
-            } else if (arr[mid] < num) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
+//         while (left <= right) {
+//             let mid = Math.floor((left + right) / 2);
+//             if (arr[mid] === num) {
+//                 result = mid;
+//                 right = mid - 1; // Keep going left
+//             } else if (arr[mid] < num) {
+//                 left = mid + 1;
+//             } else {
+//                 right = mid - 1;
+//             }
+//         }
 
-        return result;
-    }
+//         return result;
+//     }
 
-    function findLast() {
-        let left = 0;
-        let right = arr.length - 1;
-        let result = -1;
+//     function findLast() {
+//         let left = 0;
+//         let right = arr.length - 1;
+//         let result = -1;
 
-        while (left <= right) {
-            let mid = Math.floor((left + right) / 2);
-            if (arr[mid] === num) {
-                result = mid;
-                left = mid + 1; // Keep going right
-            } else if (arr[mid] < num) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
+//         while (left <= right) {
+//             let mid = Math.floor((left + right) / 2);
+//             if (arr[mid] === num) {
+//                 result = mid;
+//                 left = mid + 1; // Keep going right
+//             } else if (arr[mid] < num) {
+//                 left = mid + 1;
+//             } else {
+//                 right = mid - 1;
+//             }
+//         }
 
-        return result;
-    }
+//         return result;
+//     }
 
-    let first = findFirst();
-    if (first === -1) return -1; // Not found
-    let last = findLast();
+//     let first = findFirst();
+//     if (first === -1) return -1; // Not found
+//     let last = findLast();
 
-    return last - first + 1;
-}
+//     return last - first + 1;
+// }
 
-console.log(sortedFrequency([1,1,2,2,2,2,3], 2)); // Output: 4
+// console.log(sortedFrequency([1,1,2,2,2,2,3], 2)); // Output: 4
 
 
 
