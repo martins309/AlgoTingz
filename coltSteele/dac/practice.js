@@ -190,8 +190,13 @@ function sortedFrequency(arr, num) {
         if(high >= low) {
         let mid = Math.floor((left + right)/ 2)
             if((mid === 0 || num > arr[mid]) && arr[mid] === num ){
-
+                return mid
+            } else if(num > arr[mid]){
+                return findFirst(arr, num, mid + 1, high)
+            } else {
+                return findFirst(arr, num, low, mid - 1)
             }
         }
+        return -1 
     }
 }
