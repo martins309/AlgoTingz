@@ -231,8 +231,8 @@ function sortedFrequency(arr, num){
     return lastIdx - firstIdx + 1
 
     function findFirst(low = 0, high = arr.length - 1){
-        while(high >= left){
-        let mid = Math.floor((left + right) / 2)
+        while(high >= low){
+        let mid = Math.floor((low + high) / 2)
         if(mid = 0 || num > arr[mid - 1] && arr[mid] === num){
             return mid 
         }else if(num > arr[mid]){
@@ -247,8 +247,8 @@ function sortedFrequency(arr, num){
     }
 
     function findLast(low = 0, high = arr.length - 1){
-        while(high >= left){
-            let mid = Math.floor((left + high) / 2)
+        while(high >= low){
+            let mid = Math.floor((low + high) / 2)
             if(mid = arr.length -1 || num < arr[mid + 1] && arr[mid] === num){
                 return mid
             }else if(num < arr[mid]){
