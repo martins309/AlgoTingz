@@ -175,3 +175,23 @@
 
 
 
+
+
+//recursive call 
+
+function sortedFrequency(arr, num) {
+    let firstIdx = findFirst(arr, num)
+    if(firstIdx === -1) return -1
+    let lastIdx = findLast(arr, num)
+    return lastIdx - firstIdx + 1
+
+
+    function findFirst(low = 0, high = arr.length -1 ){
+        if(high >= low) {
+        let mid = Math.floor((left + right)/ 2)
+            if((mid === 0 || num > arr[mid]) && arr[mid] === num ){
+
+            }
+        }
+    }
+}
