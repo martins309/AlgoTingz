@@ -19,7 +19,15 @@
 
 function findRotatedIndex(arr, num){
 
-    
+    let first = 0
+    let last = arr.length - 1
+    let index = 0
+
+    while(left <= right){
+        let mid = Math.floor((left + right) / 2)
+    }
+
+
 
 
 }
