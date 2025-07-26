@@ -23,14 +23,20 @@ function findRotatedIndex(arr, num){
     let last = arr.length - 1
     let index = 0
 
-    while(left <= right){
-        let mid = Math.floor((left + right) / 2)
+    while(first <= last){
+        let mid = Math.floor((first + last) / 2)
         if(arr[mid] === num){
-            console.log(index = arr[mid])
+            index = mid 
+            first = mid + 1
+        }else if(arr[mid] !== num){
+            last = mid - 1
+        } else {
+            first = mid + 1
         }
     }
 
-
+    return index 
 
 
 }
+console.log(findRotatedIndex([3,4,1,2], 4 ))
