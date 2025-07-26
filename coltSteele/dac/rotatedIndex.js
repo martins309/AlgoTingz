@@ -30,16 +30,29 @@ function findRotatedIndex(arr, num){
             let mid = Math.floor((left + right) / 2)
             if(arr[mid] === num){
                return  index = mid
-            }else if (arr[mid] > num){
-                first = mid + 1
+            }else if (arr[mid] < num){
+                right = mid - 1
             }else {
-                last = mid -1
+                left = mid + 1
             }
         }
         return index
 
     }
    
+
+    function lastIdx(){
+        let left = 0
+        let right = arr.length - 1
+        let index = -1
+
+        while(left <= right){
+            let mid = Math.floor((left + right ) / 2)
+            if(arr[mid] === num){
+                return index = mid
+            }
+        }
+    }
 
 
 }
