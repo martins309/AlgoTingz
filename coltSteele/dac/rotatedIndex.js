@@ -50,9 +50,19 @@ function findRotatedIndex(arr, num){
             let mid = Math.floor((left + right ) / 2)
             if(arr[mid] === num){
                 return index = mid
+            }else if (arr[mid] > num){
+                left = mid + 1
+            }else {
+                right = mid - 1
             }
         }
+        return index
     }
+
+    let first = firstIdx()
+    let last = lastIdx()
+
+    return first === num ? first : last === num ? last : -1
 
 
 }
