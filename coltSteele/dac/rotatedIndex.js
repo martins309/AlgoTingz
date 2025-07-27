@@ -30,18 +30,18 @@ function findRotatedIndex(arr, num){
         while(left <= right){
             let mid = Math.floor((left + right) / 2)
             if(arr[mid] === num){
-                index = mid 
-                console.log(index)
-            }
-        }
+                index = mid
+                console.log(arr[mid]) 
+            } 
       
         return index
     }
 
-    firstHalf()
+ 
 
-   
+}
 
+    return firstHalf()
     // function lastHalf(){
     //     let left = 0
     //     let right = arr.length - 1
