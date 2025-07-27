@@ -21,28 +21,28 @@ function findRotatedIndex(arr, num){
 
 
     //check to see if the num is in the first half of the array
-//     function firstHalf(){
+    function firstHalf(){
 
-//         let left = 0
-//         let right = arr.length - 1
-//         let index = -1
+        let left = 0
+        let right = arr.length - 1
+        let index = -1
 
-//         while(left <= right){
-//             let mid = Math.floor((left + right) / 2)
-//             if(arr[mid] === num){
-//                 return mid 
-//             } else if(arr[mid] > num){
-//                 right = mid - 1
-//             }else{
-//                 left = mid + 1
-//             }
+        while(left <= right){
+            let mid = Math.floor((left + right) / 2)
+            if(arr[mid] === num){
+                return mid 
+            } else if(arr[mid] > num){
+                right = mid - 1
+            } else {
+                left = mid  + 1
+            }
       
         
-//     }
+    }
 
-//     return index
+    return index
 
-// }
+}
 
     
     function lastHalf(){
@@ -53,7 +53,7 @@ function findRotatedIndex(arr, num){
         while(left <= right){
             let mid = Math.floor((left + right ) / 2)
             if(arr[mid] === num){
-                return  mid
+                return mid
             }else if (arr[mid] < num){
                 left = mid + 1
             }else {
@@ -63,13 +63,14 @@ function findRotatedIndex(arr, num){
         return index
     }
 
-    // let first = firstHalf()
-    // let last = lastHalf()
+    let first = firstHalf()
+    let last = lastHalf()
 
-    // return first === num 
-    // ? first 
-    // : last === num ? last : -1
-    return lastHalf()
+    return first !== -1 
+    ? first 
+    : last !== -1 
+    ? last : -1 
+ 
 
 }
-console.log(findRotatedIndex([6, 7, 8, 9, 1, 2, 3], ))
+console.log(findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16))
