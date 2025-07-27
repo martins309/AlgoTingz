@@ -20,7 +20,7 @@
 function findRotatedIndex(arr, num){
 
 
-    function firstIdx(){
+    function firstHalf(){
 
         let left = 0
         let right = arr.length - 1
@@ -30,7 +30,7 @@ function findRotatedIndex(arr, num){
             let mid = Math.floor((left + right) / 2)
             if(arr[mid] === num){
                return  index = mid
-            }else if (arr[mid] < num){
+            }else if (arr[mid] > num){
                 right = mid - 1
             }else {
                 left = mid + 1
@@ -41,7 +41,7 @@ function findRotatedIndex(arr, num){
     }
    
 
-    function lastIdx(){
+    function lastHalf(){
         let left = 0
         let right = arr.length - 1
         let index = -1
@@ -50,7 +50,7 @@ function findRotatedIndex(arr, num){
             let mid = Math.floor((left + right ) / 2)
             if(arr[mid] === num){
                 return index = mid
-            }else if (arr[mid] > num){
+            }else if (arr[mid] < num){
                 left = mid + 1
             }else {
                 right = mid - 1
@@ -59,10 +59,12 @@ function findRotatedIndex(arr, num){
         return index
     }
 
-    let first = firstIdx()
-    let last = lastIdx()
+    let first = firstHalf()
+    let last = lastHalf()
 
-    return first === num ? first : last === num ? last : -1
+    return first === num 
+    ? first 
+    : last === num ? last : -1
 
 
 }
