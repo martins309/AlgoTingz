@@ -17,60 +17,60 @@
 // findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16) // 5
 
 
-function findRotatedIndex(arr, num){
+// function findRotatedIndex(arr, num){
 
 
-    //check to see if the num is in the first half of the array
-    function firstHalf(){
+//     //check to see if the num is in the first half of the array
+//     function firstHalf(){
 
-        let left = 0
-        let right = arr.length - 1
-        let index = -1
+//         let left = 0
+//         let right = arr.length - 1
+//         let index = -1
 
-        while(left <= right){
-            let mid = Math.floor((left + right) / 2)
-            if(arr[mid] === num){
-                return mid 
-            } else if(arr[mid] > num){
-                right = mid - 1
-            } else {
-                left = mid  + 1
-            }
+//         while(left <= right){
+//             let mid = Math.floor((left + right) / 2)
+//             if(arr[mid] === num){
+//                 return mid 
+//             } else if(arr[mid] > num){
+//                 right = mid - 1
+//             } else {
+//                 left = mid  + 1
+//             }
       
         
-    }
+//     }
 
-    return index
+//     return index
 
-}
+// }
 
     
-    function lastHalf(){
-        let left = 0
-        let right = arr.length - 1
-        let index = -1
+//     function lastHalf(){
+//         let left = 0
+//         let right = arr.length - 1
+//         let index = -1
 
-        while(left <= right){
-            let mid = Math.floor((left + right ) / 2)
-            if(arr[mid] === num){
-                return mid
-            }else if (arr[mid] < num){
-                left = mid + 1
-            }else {
-                left = mid + 1
-            }
-        }
-        return index
-    }
+//         while(left <= right){
+//             let mid = Math.floor((left + right ) / 2)
+//             if(arr[mid] === num){
+//                 return mid
+//             }else if (arr[mid] < num){
+//                 left = mid + 1
+//             }else {
+//                 left = mid + 1
+//             }
+//         }
+//         return index
+//     }
 
-    let first = firstHalf()
-    let last = lastHalf()
+//     let first = firstHalf()
+//     let last = lastHalf()
 
-    return first !== -1 
-    ? first 
-    : last !== -1 
-    ? last : -1 
+//     return first !== -1 
+//     ? first 
+//     : last !== -1 
+//     ? last : -1 
  
 
-}
-console.log(findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16))
+// }
+// console.log(findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16))
