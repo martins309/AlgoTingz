@@ -323,3 +323,9 @@ function findRotatedIndex(arr, num) {
   if (arr.length === 1) return arr[0] === num ? 0 : -1 
 
 }
+
+
+
+function pivotPoint(arr) {
+  
+}
