@@ -327,5 +327,18 @@ function findRotatedIndex(arr, num) {
 
 
 function pivotPoint(arr) {
-  
+  if(arr.length === 0) -1
+
+  let left = 0
+  let right = arr.length - 1
+
+  if(arr[left] < arr[right]) return 0
+
+  while(left <= right) {
+    let mid = Math.floor((left + right ) / 2)
+    
+    if(arr[mid] > arr[mid + 1]) return mid + 1
+    if(arr[mid - 1] > arr[mid]) return mid 
+  }
+
 }
