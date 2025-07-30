@@ -20,7 +20,7 @@
 // function findRotatedIndex(arr, num){
 
 
-    //check to see if the num is in the first half of the array
+//     //check to see if the num is in the first half of the array
 //     function firstHalf(){
 
 //         let left = 0
