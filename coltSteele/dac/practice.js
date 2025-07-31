@@ -349,9 +349,12 @@ function pivotPoint(arr) {
     while (left <= right) {
         let mid = Math.floor((left + right) / 2);
         
+        //if the number to the right of mid is greater, return that num
+        // else return mid if the number to the left of mid is greater
         if (arr[mid] > arr[mid + 1]) return mid + 1;
         if (arr[mid - 1] > arr[mid]) return mid;
 
+        //determine where to search after finding the pivot
         if (arr[mid] >= arr[left]) {
             left = mid + 1;
         } else {
@@ -366,7 +369,7 @@ function pivotPoint(arr) {
 function binarySearch(arr, target, left, right){
 
   while(left <= right){
-    mid = Math.floor((left + right) / 2)
+    let mid = Math.floor((left + right) / 2)
     if(arr[mid] === target) {
       return mid
     } else if(arr[mid] < target){
