@@ -410,6 +410,7 @@ function findRotatedIndex(arr, num){
 }
 
 
+
 function pivotPoint(arr){
   let left = 0
   let right = arr.length - 1
@@ -444,3 +445,5 @@ function binarySearch(arr, target, left, right){
   }
   return - 1
 }
+
+console.log(findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16)) // 5
