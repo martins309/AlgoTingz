@@ -317,70 +317,130 @@
 
 
 
-//main function for the pivot and the search
-function findRotatedIndex(arr, num) {
-  // if the arr empty return 0 if not then 
-  // the first element is the number so return 0 or -1
+// //main function for the pivot and the search
+// function findRotatedIndex(arr, num) {
+//   // if the arr empty return 0 if not then 
+//   // the first element is the number so return 0 or -1
 
-  if(arr.length === 0) return -1
-  if (arr.length === 1) return arr[0] === num ? 0 : -1 
+//   if(arr.length === 0) return -1
+//   if (arr.length === 1) return arr[0] === num ? 0 : -1 
+
+//   let pivot = pivotPoint(arr)
+
+//   if(arr[pivot] === num) return pivot
+
+//   if(pivot === 0 || num >= arr[0]){
+//     return binarySearch(arr, num, 0, pivot - 1)
+//   } else{
+//     return binarySearch(arr, num, pivot, arr.length - 1)
+//   }
+
+// }
+
+
+
+// function pivotPoint(arr) {
+//     let left = 0;
+//     let right = arr.length - 1;
+
+//     // Not rotated at all
+//     if (arr[left] < arr[right]) return 0;
+
+//     while (left <= right) {
+//         let mid = Math.floor((left + right) / 2);
+        
+//         //if the number to the right of mid is greater, return that num
+//         // else return mid if the number to the left of mid is greater
+//         if (arr[mid] > arr[mid + 1]) return mid + 1;
+//         if (arr[mid - 1] > arr[mid]) return mid;
+
+//         //determine where to search after finding the pivot
+//         if (arr[mid] >= arr[left]) {
+//             left = mid + 1;
+//         } else {
+//             right = mid - 1;
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+// function binarySearch(arr, target, left, right){
+
+//   while(left <= right){
+//     let mid = Math.floor((left + right) / 2)
+//     if(arr[mid] === target) {
+//       return mid
+//     } else if(arr[mid] < target){
+//       left = mid + 1
+//     } else{
+//       right = mid - 1
+//     }
+//   }
+//   return -1
+
+// }
+
+
+// console.log(findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16)) // 5
+
+
+
+
+
+
+
+// I think we got this one too. Let's see
+
+function findRotatedIndex(arr, num){
+  if(arr.length === 0) return 0
+  if(arr.length === 1) return arr[0] === num ? 0 : -1
 
   let pivot = pivotPoint(arr)
 
-  if(arr[pivot] === num) return pivot
+  if(pivot === num) return pivot
 
   if(pivot === 0 || num >= arr[0]){
     return binarySearch(arr, num, 0, pivot - 1)
-  } else{
+  } else {
     return binarySearch(arr, num, pivot, arr.length - 1)
   }
 
 }
 
 
+function pivotPoint(arr){
+  let left = 0
+  let right = arr.length - 1
 
-function pivotPoint(arr) {
-    let left = 0;
-    let right = arr.length - 1;
-
-    // Not rotated at all
-    if (arr[left] < arr[right]) return 0;
-
-    while (left <= right) {
-        let mid = Math.floor((left + right) / 2);
-        
-        //if the number to the right of mid is greater, return that num
-        // else return mid if the number to the left of mid is greater
-        if (arr[mid] > arr[mid + 1]) return mid + 1;
-        if (arr[mid - 1] > arr[mid]) return mid;
-
-        //determine where to search after finding the pivot
-        if (arr[mid] >= arr[left]) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
-    }
-    return 0;
-}
-
-
-
-function binarySearch(arr, target, left, right){
+  if(arr[left] < arr[right]) return 0
 
   while(left <= right){
     let mid = Math.floor((left + right) / 2)
-    if(arr[mid] === target) {
-      return mid
-    } else if(arr[mid] < target){
+
+    if(arr[mid] >= arr[mid + 1]) return mid + 1
+    if(arr[mid - 1] >= arr[mid]) return mid
+
+    if(arr[mid] >= arr[left]){
       left = mid + 1
-    } else{
+    } else {
       right = mid - 1
     }
   }
-  return -1
 
+  return 0
 }
 
-
-console.log(findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16)) // 5
+function binarySearch(arr, target, left, right){
+  while(left <= right){
+    let mid = Math.floor((left + right) / 2)
+    if(arr[mid] === target) return mid
+    else if(arr[mid] < target){
+      left = mid + 1
+    } else {
+      left = mid - 1
+    }
+  }
+  return - 1
+}
