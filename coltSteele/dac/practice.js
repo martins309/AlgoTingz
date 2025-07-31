@@ -317,8 +317,11 @@
 
 
 
-
+//main function for the pivot and the search
 function findRotatedIndex(arr, num) {
+  // if the arr empty return 0 if not then 
+  // the first element is the number so return 0 or -1
+
   if(arr.length === 0) return -1
   if (arr.length === 1) return arr[0] === num ? 0 : -1 
 
