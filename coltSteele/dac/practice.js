@@ -326,50 +326,47 @@ function findRotatedIndex(arr, num) {
 
   if(arr[pivot] === num) return pivot
 
-  if(pivot === 0 || num >= arr[num]){
+  if(pivot === 0 || num >= arr[0]){
     return binarySearch(arr, num, 0, pivot - 1)
+  } else{
+    return binarySearch(arr, num, pivot, arr.length - 1)
   }
 
-  return binarySearch(arr, num, pivot, arr.length - 1)
 }
 
 
 
 function pivotPoint(arr) {
-  if(arr.length === 0) -1
+    let left = 0;
+    let right = arr.length - 1;
 
-  let left = 0
-  let right = arr.length - 1
+    // Not rotated at all
+    if (arr[left] < arr[right]) return 0;
 
-  if(arr[left] < arr[right]) return 0
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        
+        if (arr[mid] > arr[mid + 1]) return mid + 1;
+        if (arr[mid - 1] > arr[mid]) return mid;
 
-  while(left <= right) {
-    let mid = Math.floor((left + right ) / 2)
-    
-    if(arr[mid] > arr[mid + 1]) return mid + 1
-    if(arr[mid - 1] > arr[mid]) return mid 
-
-    if(num >= arr[left]){
-      left = mid + 1
-
-    }else {
-      right = mid - 1
+        if (arr[mid] >= arr[left]) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
     }
-  }
-  return 0
-
+    return 0;
 }
 
 
+
 function binarySearch(arr, target, left, right){
-  left = 0
-  right = arr.length - 1
 
   while(left <= right){
     mid = Math.floor((left + right) / 2)
     if(arr[mid] === target) {
       return mid
-    } else if(arr[mid] < num){
+    } else if(arr[mid] < target){
       left = mid + 1
     } else{
       right = mid - 1
@@ -378,5 +375,6 @@ function binarySearch(arr, target, left, right){
   return -1
 
 }
+
 
 console.log(findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16)) // 5
