@@ -339,6 +339,33 @@ function pivotPoint(arr) {
     
     if(arr[mid] > arr[mid + 1]) return mid + 1
     if(arr[mid - 1] > arr[mid]) return mid 
+
+    if(num >= arr[left]){
+      left = mid + 1
+
+    }else {
+      right = mid - 1
+    }
   }
+  return 0
+
+}
+
+
+function binarySearch(arr, target, left, right){
+  left = 0
+  right = arr.length - 1
+
+  while(left <= right){
+    mid = Math.floor((left + right) / 2)
+    if(arr[mid] === target) {
+      return mid
+    } else if(arr[mid] < num){
+      left = mid + 1
+    } else{
+      right = mid - 1
+    }
+  }
+  return -1
 
 }
