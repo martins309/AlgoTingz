@@ -443,7 +443,7 @@ function binarySearch(arr, target, left, right){
       left = mid - 1
     }
   }
-  return - 1
+  return -1
 }
 
 console.log(findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16)) // 5
