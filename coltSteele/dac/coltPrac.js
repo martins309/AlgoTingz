@@ -57,5 +57,11 @@ function pivotPoint(arr){
 
   while(start <= end) {
     let mid = Math.floor((start + end ) / 2)
+    if(arr[mid] > arr[mid + 1]) return mid + 1
+    else if(arr[start] <= arr[mid]){
+      start = mid + 1
+    } else {
+      end = mid - 1
+    }
   }
 }
