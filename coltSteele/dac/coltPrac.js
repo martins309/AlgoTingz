@@ -45,7 +45,32 @@
 
 
 function findRotatedIndex(arr, num) {
+  let pivot = pivotPoint(arr)
 
+  if(pivot > 0 && num >= arr[0] && num <= arr[pivot - 1]) {
+    return binarySearch(arr, num, 0, pivot - 1)
+  } else{
+    binarySearch(arr, num, pivot, arr.length - 1)
+  }
+
+}
+
+
+function binarySearch(arr, num, start = 0, end = arr.length - 1) {
+  if(arr.length ===  0) return -1
+  if(num < arr[start] || num > arr[end]) return -1
+
+  while(start <= end) {
+    let mid = Math.floor((start + end ) / 2)
+    if(arr[mid] === num) return mid
+    else if(num < arr[mid]) {
+      end = mid - 1
+    } else {
+      start = mid + 1
+    }
+  }
+
+  return -1
 }
 
 
