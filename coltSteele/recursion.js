@@ -104,3 +104,8 @@ function power(base, exponent){
 
 console.log(power(2,2))
 
+function power(base, power){
+    if(base === 0) return 1
+
+    return base * power(base, exponent - 1)
+}
