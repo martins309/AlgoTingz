@@ -17,6 +17,8 @@ function collectOddValues(arr) {
             result.push(helperInput[0])
         }
 
+        helper(helperInput.slice(1))
+
     }
     helper(arr)
 
