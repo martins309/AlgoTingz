@@ -66,11 +66,8 @@ function collectOddValues(arr){
 }
 
 collectOddValues([1,2,3,4,5])
-                                        
-                                                                
-                                                                             
-                            
-        
+
+
 
 
 //first recursive problem
@@ -104,8 +101,8 @@ function power(base, exponent){
 
 console.log(power(2,2))
 
-function power(base, power){
-    if(base === 0) return 1
+function power(base, exponent){
+    if(exponent === 0) return 1
 
     return base * power(base, exponent - 1)
 }
