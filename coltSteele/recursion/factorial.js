@@ -9,6 +9,8 @@ because 4 * 3 * 2 * 1 equals 24.  factorial zero (0!) is always 1.
 */
 
 
+//okay so this needs to be worked on.
+// we have the right idea but it needs more
 
 function factorial(num){
 
