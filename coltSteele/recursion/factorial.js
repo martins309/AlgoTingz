@@ -12,4 +12,11 @@ because 4 * 3 * 2 * 1 equals 24.  factorial zero (0!) is always 1.
 
 function factorial(num){
 
+    if (num === 0) return num
+
+    return factorial(num * (num - 1))
+
+
 }
+
+console.log(factorial(4))
