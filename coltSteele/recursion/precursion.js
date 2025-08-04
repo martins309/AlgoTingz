@@ -60,11 +60,11 @@ function collectOddValues(arr){
 
     let newArr = []
 
-    if(newArr.length === 0){
+    if(arr.length === 0){
         return newArr
     }
 
-    if(newArr[0] % 2 !== 0){
+    if(arr[0] % 2 !== 0){
         newArr.push(arr[0])
     }
     newArr = newArr.concat(collectOddValues(arr.slice(1)))
