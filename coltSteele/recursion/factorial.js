@@ -13,10 +13,13 @@ because 4 * 3 * 2 * 1 equals 24.  factorial zero (0!) is always 1.
 // we have the right idea but it needs more
 
 function factorial(num){
+    
+    if (num < 0) return 
 
-    if (num === 0) return num
+   if( num === 0 || num === 1) return 1 
 
-    return factorial(num * (num - 1))
+   num * factorial(num - 1)
+
 
 
 }
