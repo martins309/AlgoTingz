@@ -11,6 +11,13 @@ the sum of the previous two numbers.
 */
 
 
-function fib(){
+function fib(num){
+
+    if(num === 0 ) return 0
+
+    return num + fib(num + 1)
+
     
 }
+
+console.log(fib(4))
