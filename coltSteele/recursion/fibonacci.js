@@ -42,7 +42,6 @@ function fib(num) {
 }
 
 
-
 //memoized version to account the calculation of larger numbers
 
 
@@ -52,3 +51,12 @@ function fibonacci(num, memo = {}){
 
     return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo)
 }
+
+
+console.time("Plain");
+console.log(fib(40)); // First run with memo → still instant for large numbers
+console.timeEnd("Plain");
+
+console.time("Memoized");
+console.log(fibonacci(50)); // Way faster than plain recursion
+console.timeEnd("Memoized");
