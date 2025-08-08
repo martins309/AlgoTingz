@@ -1,4 +1,5 @@
 /*
+
 Write a recursive function called fib 
 which accepts a number and returns the nth number 
 in the Fibonacci sequence. 
@@ -7,9 +8,11 @@ Recall that the Fibonacci sequence is the sequence of whole numbers
 which starts with 1 and 1, 
 and where every number thereafter is equal to 
 the sum of the previous two numbers.
-
+                  4              10
 sequence: 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 
+                                                            28
 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 
+                                                35
 514229 832040 1346269 2178309 3524578 5702887 9227465 14930352 
 24157817 39088169 63245986
 
@@ -32,16 +35,20 @@ sequence: 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
 //but how? 
 
 
-function fib(num){
 
-    if(num === 0) return 0
-    if(num === 1) return 1
-    
-
-    
-    
-
-    
+function fib(num) {
+    if (num <= 1) return num; // base cases: 0 → 0, 1 → 1
+    return fib(num - 1) + fib(num - 2); // recursive step
 }
 
-console.log(fib(4))
+
+
+//memoized version to account the calculation of larger numbers
+
+
+function fibonacci(num, memo = {}){
+    if(num in memo) return memo[num]
+    if(num <= 1) return num
+
+    return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo)
+}
