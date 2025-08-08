@@ -19,22 +19,43 @@ function logDebug({ name, calls, timeMs, notes = "" }) {
 
 //fib test 
 
+let plainCalls = 0
 
 let memoCalls = 0
+
+function fib(num){
+    plainCalls++
+    if(num <= 1) return 1 
+    return fib(num - 1) + fib(num - 2 )
+}
+
+console.time("plainCalls")
+const plain  = fib(30)
+console.timeEnd("plainCalls")
+
+
+logDebug({
+    name: "plain calls",
+    calls: plainCalls,
+    timeMs: performance.now(),
+    notes: "plain calls"
+})
 
 function fibonacci(n, memo = {}){
     memoCalls++
 
-    if(num in memo) return memo[num]
-    if(num <= 1) return num
-    return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo)
-    return memo[num]
+    if(n in memo) return memo[n]
+    if(n <= 1) return n
+    return memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo)
+    return memo[n]
 }
 
 
-console.time("fib(30)")
+console.time("memoCalls")
 const result = fibonacci(30)
-console.timeEnd("fib(30)")
+console.timeEnd("memoCalls")
+
+
 
 
 logDebug({
