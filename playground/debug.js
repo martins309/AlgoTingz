@@ -25,7 +25,7 @@ let memoCalls = 0
 
 function fib(num){
     plainCalls++
-    if(num <= 1) return 1 
+    if(num <= 1) return num
     return fib(num - 1) + fib(num - 2 )
 }
 
@@ -46,7 +46,7 @@ function fibonacci(n, memo = {}){
 
     if(n in memo) return memo[n]
     if(n <= 1) return n
-    return memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo)
+    memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo)
     return memo[n]
 }
 
@@ -59,7 +59,7 @@ console.timeEnd("memoCalls")
 
 
 logDebug({
-    name: "fibonacci(30)",
+    name: "memo calls",
     calls: memoCalls,
     timeMs: performance.now(),
     notes: "recursion notes"
