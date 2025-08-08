@@ -49,7 +49,8 @@ function fibonacci(num, memo = {}){
     if(num in memo) return memo[num]
     if(num <= 1) return num
 
-    return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo)
+    memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo)
+    return memo[num]
 }
 
 
