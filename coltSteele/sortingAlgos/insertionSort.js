@@ -15,6 +15,8 @@ repeat until the array is sorted
 */
 
 
+// like the enthusiam but this is most defintely a brute force method lol
+
 function insertionSort(arr){
     if(arr.length === 0) return arr
 
@@ -35,6 +37,6 @@ function insertionSort(arr){
     return arr
 }
 console.log(insertionSort([4,9,2,4,0,7,5]))
-                         [4,2,9,4,0,7,4]
-                         [2,4,9,4,0,7,4]
-                         [2,4,4,9,0,7,4]
+                          [4,2,9,4,0,7,4]
+                          [2,4,9,4,0,7,4]
+                          [2,4,4,9,0,7,4]
