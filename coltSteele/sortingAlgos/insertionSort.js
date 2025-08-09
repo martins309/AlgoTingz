@@ -29,9 +29,12 @@ function insertionSort(arr){
             if(arr[j] > arr[j + 1]){
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
             }
+            [arr[i + 2], arr[i + 1]] = [arr[i + 1], arr[i + 2]]
         }
     }
     return arr
 }
 console.log(insertionSort([4,9,2,4,0,7,5]))
                          [4,2,9,4,0,7,4]
+                         [2,4,9,4,0,7,4]
+                         [2,4,4,9,0,7,4]
