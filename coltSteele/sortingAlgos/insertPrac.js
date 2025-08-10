@@ -69,21 +69,24 @@ function insertionSort(arr, comparator){
             return a - b
         }
     }
-    for(let i = 1; i < arr.length; i++){
-        let currentVal = arr[i]
-        for(let j = i - 1; j >= 0 && arr[j] > currentVal; j--){
-          comparator(arr[j], currentVal) > 0
-          ? arr[j + 1] = arr[j]
-          : null
-            
-          arr[j + 1] = currentVal
+
+    for(var i = 1; i < arr.length; i++){
+        var currentVal = arr[i]
+        for(var j = i - 1; j >= 0 && arr[j] > currentVal; j--){
+          if(comparator(arr[j], currentVal) > 0) {
+            arr[j + 1] = arr[j]
+          }
+        
         }
+            arr[j + 1] = currentVal
     }
+        
 
     return arr
 }
 
-console.log(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"]))
+console.table(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
+console.table(insertionSort([4,7,9,1,2,3]))
 
 
 
