@@ -69,7 +69,14 @@ function insertionSort(arr, comparator){
             return a - b
         }
     }
+    for(let i = 1; i < arr.length; i++){
+        let currentVal = arr[i]
+        for(let j = i - 1; j >= 0 && arr[j] > currentVal; j--){
 
+        }
+    }
+
+    return arr
 }
 
 
