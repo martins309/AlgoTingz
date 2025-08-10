@@ -72,12 +72,19 @@ function insertionSort(arr, comparator){
     for(let i = 1; i < arr.length; i++){
         let currentVal = arr[i]
         for(let j = i - 1; j >= 0 && arr[j] > currentVal; j--){
-
+          comparator(arr[j], currentVal) > 0
+          ? arr[j + 1] = arr[j]
+          : null
+            
+          arr[j + 1] = currentVal
         }
     }
 
     return arr
 }
+
+
+
 
 
 function comparator(a, b){
