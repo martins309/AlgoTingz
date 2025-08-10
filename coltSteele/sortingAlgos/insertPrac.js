@@ -83,6 +83,7 @@ function insertionSort(arr, comparator){
     return arr
 }
 
+console.log(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"]))
 
 
 
