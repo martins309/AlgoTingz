@@ -84,10 +84,27 @@ function insertionSort(arr, comparator){
 
     return arr
 }
+var moarKittyData = [{
+  name: "LilBub",
+  age: 7
+}, {
+  name: "Garfield",
+  age: 40
+}, {
+  name: "Heathcliff",
+  age: 45
+}, {
+  name: "Blue",
+  age: 1
+}, {
+  name: "Grumpy",
+  age: 6
+}];
 
-console.table(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
-console.table(insertionSort([4,7,9,1,2,3]))
 
+// console.table(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
+// console.table(insertionSort([4,7,9,1,2,3]))
+console.log(insertionSort([moarKittyData[0]]))
 
 
 
