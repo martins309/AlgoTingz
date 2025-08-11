@@ -135,7 +135,26 @@ function insertionSort(arr, comparator){
 }
 
 function comparator(a, b){
-  if(a > b) return 1
-  if(a < b) return -1
+  if(a.age > b.age) return 1
+  if(a.age < b.age) return -1
   return 0
 }
+
+var moarKittyData = [{
+  name: "LilBub",
+  age: 7
+}, {
+  name: "Garfield",
+  age: 40
+}, {
+  name: "Heathcliff",
+  age: 45
+}, {
+  name: "Blue",
+  age: 1
+}, {
+  name: "Grumpy",
+  age: 6
+}];
+
+console.log(insertionSort(moarKittyData, comparator))
