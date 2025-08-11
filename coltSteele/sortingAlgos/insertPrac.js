@@ -63,53 +63,79 @@ insertionSort(moarKittyData, oldestToYoungest); // sorted by age in descending o
 */
 
 
+// function insertionSort(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+
+//     for(let i = 1; i < arr.length; i++){
+//         let currentVal = arr[i]
+//         let j = i - 1
+
+//         while(j >= 0 && comparator(arr[j], currentVal) > 0){
+//             arr[j + 1] = arr[j]
+//             j--
+//         }
+//         arr[j + 1] = currentVal
+//     }
+        
+
+//     return arr
+// }
+
+
+// var moarKittyData = [{
+//   name: "LilBub",
+//   age: 7
+// }, {
+//   name: "Garfield",
+//   age: 40
+// }, {
+//   name: "Heathcliff",
+//   age: 45
+// }, {
+//   name: "Blue",
+//   age: 1
+// }, {
+//   name: "Grumpy",
+//   age: 6
+// }];
+
+
+// // console.table(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
+// // console.table(insertionSort([4,7,9,1,2,3]))
+// console.log(insertionSort(moarKittyData, comparator))
+
+
+
+// function comparator(a, b){
+//     if(a > b) return 1
+//     if(a < b) return -1
+//     return 0
+// }
+
+//so this can work the way that I had it just need to make some small adjustments
+
 function insertionSort(arr, comparator){
-    if(typeof comparator !== 'function'){
-        comparator = function(a, b){
-            return a - b
-        }
-    }
+  if(typeof comparator !== 'function'){
+    comparator = (a, b) => a - b
+  }
+  for(let i = 1; i < arr.length; i++){
+    let currentVal = arr[i]
+    let j
 
-    for(var i = 1; i < arr.length; i++){
-        var currentVal = arr[i]
-        for(var j = i - 1; j >= 0 && arr[j] > currentVal; j--){
-          if(comparator(arr[j], currentVal) > 0) {
-            arr[j + 1] = arr[j]
-          }
-        
-        }
-            arr[j + 1] = currentVal
+    for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--){
+      arr[j + 1] = arr[j]
     }
-        
-
-    return arr
+    arr[j + 1] = currentVal
+  }
+  return arr
 }
-var moarKittyData = [{
-  name: "LilBub",
-  age: 7
-}, {
-  name: "Garfield",
-  age: 40
-}, {
-  name: "Heathcliff",
-  age: 45
-}, {
-  name: "Blue",
-  age: 1
-}, {
-  name: "Grumpy",
-  age: 6
-}];
-
-
-// console.table(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
-// console.table(insertionSort([4,7,9,1,2,3]))
-console.log(insertionSort([moarKittyData[0]]))
-
-
 
 function comparator(a, b){
-    if(a > b) return 1
-    if(a < b) return -1
-    return 0
+  if(a > b) return 1
+  if(a < b) return -1
+  return 0
 }
