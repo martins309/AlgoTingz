@@ -17,16 +17,5 @@ function binarySearch(arr, val){
 
     while(left <= right){
         let mid = Math.floor((left + right) / 2)
-        if(arr[mid] === val){
-            return val
-        } else if(val > arr[mid]){
-            left = mid + 1
-        } else {
-            right = mid - 1
-        }
     }
-    return -1
 }
-
-
-c
