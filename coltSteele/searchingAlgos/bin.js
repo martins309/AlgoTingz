@@ -53,4 +53,4 @@ function firstOccurence(arr, val){
     return first
 }
 
-console.log(firstOccurence([1,2,2,2,3,4,5], 2))
+console.log(firstOccurence([1,2,2,2,3,4,5], 1))
