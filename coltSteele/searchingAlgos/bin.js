@@ -11,23 +11,22 @@ if you dont find the value return -1
 
 */
 
-function binarySearch(arr, value){
-
+function binarySearch(arr, val){
     let left = 0
-    let right = arr.length -1
+    let right = arr.length - 1
 
     while(left <= right){
-        let middle = Math.floor((left + right) / 2)
-        if(arr[middle] === value){
-            return middle
-
-        }else if(value > arr[middle]) {
-            left = middle + 1
-        }else{
-            right = middle - 1
+        let mid = Math.floor((left + right) / 2)
+        if(arr[mid] === val){
+            return val
+        } else if(val > arr[mid]){
+            left = mid + 1
+        } else {
+            right = mid - 1
         }
     }
-    return -1 
+    return -1
 }
 
-console.log(binarySearch([1,2,3,4,5,6,7,8,9], 2))
+
+c
