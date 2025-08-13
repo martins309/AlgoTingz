@@ -69,10 +69,10 @@ function lastOccurence(arr, val){
         if(arr[mid] === val){
             lastIdx = mid 
             left =  mid + 1
-        } else if(val < arr[mid + 1]) {
-            right = mid - 1
-        } else {
+        } else if(val > arr[mid]) {
             left = mid + 1
+        } else {
+            right = mid - 1
         }
     }
     return lastIdx
