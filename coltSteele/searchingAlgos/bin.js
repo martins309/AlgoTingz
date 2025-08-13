@@ -67,7 +67,15 @@ function lastOccurence(arr, val){
     while(left <= right){
         let mid = Math.floor((left + right) / 2)
         if(arr[mid] === val){
-            return mid
+            lastIdx = mid 
+            right =  mid - 1
+        } else if(val < arr[mid + 1]) {
+            right = mid - 1
+        } else {
+            left = mid + 1
         }
     }
+    return lastIdx
 }
+
+console.log(lastOccurence([1,2,2,2,3,4,5], 2))
