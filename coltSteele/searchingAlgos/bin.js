@@ -68,7 +68,7 @@ function lastOccurence(arr, val){
         let mid = Math.floor((left + right) / 2)
         if(arr[mid] === val){
             lastIdx = mid 
-            right =  mid - 1
+            left =  mid + 1
         } else if(val < arr[mid + 1]) {
             right = mid - 1
         } else {
@@ -78,4 +78,4 @@ function lastOccurence(arr, val){
     return lastIdx
 }
 
-console.log(lastOccurence([1,2,2,2,3,4,5], 2))
+console.log(lastOccurence([1,2,2,2,4,5], 2))
