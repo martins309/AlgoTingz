@@ -2,28 +2,33 @@
 
 
 
-function insertionSort(arr, comparator){
-    if(typeof comparator !== 'function'){
-        comparator = (a, b) => a - b
-    }
-    for(let i = 1; i < arr.length; i++){
-        let currentVal = arr[i]
-        let j = i - 1
+// function insertionSort(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = (a, b) => a - b
+//     }
+//     for(let i = 1; i < arr.length; i++){
+//         let currentVal = arr[i]
+//         let j = i - 1
 
-        while(j >= 0 && comparator(arr[j], currentVal) > 0){
-            arr[j + 1] = arr[j]
-            j--
-        }
-        arr[j + 1] = currentVal
-    }
-    return arr
-}
-// console.log(insertionSort([4,5,7,9,6,44,34,7]))
-console.table(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
+//         while(j >= 0 && comparator(arr[j], currentVal) > 0){
+//             arr[j + 1] = arr[j]
+//             j--
+//         }
+//         arr[j + 1] = currentVal
+//     }
+//     return arr
+// }
+// // console.log(insertionSort([4,5,7,9,6,44,34,7]))
+// console.table(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
 
-function comparator(a, b){
-    return a > b ? 
-    1 :
-    a < b ? 
-    -1 : 0
+// function comparator(a, b){
+//     return a > b ? 
+//     1 :
+//     a < b ? 
+//     -1 : 0
+// }
+
+
+function bubbleSort(arr){
+    
 }

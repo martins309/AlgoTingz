@@ -15,21 +15,20 @@ return the sorted arr
 //the second loop starts at the beginning until i - 1 
 // this keeps the loop from going over the edge
 // and comparing integers with undefined values
-// function bubbleSort(arr){
+function bubbleSort(arr){
     
-//     for(let i = arr.length; i > 0; i--){
-//         for(let j = 0; j < i - 1; j++){
-//             console.log(arr, arr[j], arr[j + 1])
-//              if(arr[j] > arr[j + 1]){
-//                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
-//              }
-//         }
-//     }
+    for(let i = arr.length; i > 0; i--){
+        for(let j = 0; j < i - 1; j++){
+            if(arr[j] > arr[j + 1]){
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+            }
+        }
+    }
 
-//     return arr
-// }
+    return arr
+}
 
-// console.log(bubbleSort([5,8,2,6,4,1,3]))
+console.log(bubbleSort([5,8,2,6,4,1,3]))
 
 
 
@@ -152,34 +151,34 @@ bubbleSort(moarKittyData, oldestToYoungest); // sorted by age in descending orde
 
 
 
-function bubbleSort(arr, comparator){
-    let noSwap
-    if(typeof comparator !== 'function'){
-        comparator = function(a, b) {
-            return a - b
-        }
-    }
-    for(let i = arr.length; i > 0; i--){
-        noSwap = true
-        for(let j = 0; j < i - 1; j++){
-            if(comparator(arr[j], arr[j + 1]) > 0){
-                let temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
-                noSwap = false
-            }
+// function bubbleSort(arr, comparator){
+//     let noSwap
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b) {
+//             return a - b
+//         }
+//     }
+//     for(let i = arr.length; i > 0; i--){
+//         noSwap = true
+//         for(let j = 0; j < i - 1; j++){
+//             if(comparator(arr[j], arr[j + 1]) > 0){
+//                 let temp = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = temp
+//                 noSwap = false
+//             }
 
-        }
-        if(noSwap) break
-    }
-    return arr
-}
+//         }
+//         if(noSwap) break
+//     }
+//     return arr
+// }
 
-console.log(bubbleSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
+// console.log(bubbleSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
 
 
-function comparator(a, b){
-    if(a > b) return 1
-    else if(a < b) return -1
-    return 0
-}
+// function comparator(a, b){
+//     if(a > b) return 1
+//     else if(a < b) return -1
+//     return 0
+// }
