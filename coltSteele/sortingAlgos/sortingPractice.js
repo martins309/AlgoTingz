@@ -10,7 +10,7 @@ function insertionSort(arr, comparator){
         let currentVal = arr[i]
         let j = i - 1
 
-        while(j >= 0 && comparator(arr[j] > currentVal)){
+        while(j >= 0 && comparator(arr[j], currentVal) > 0){
             arr[j + 1] = arr[j]
             j--
         }
