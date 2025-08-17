@@ -7,8 +7,9 @@ function insertionSort(arr) {
         let currentVal = arr[i]
         let j
 
-        for(j = 1 - 1; j >= 0 && arr[j] > currentVal; j--){
+        while(j >= 0 && arr[j] > currentVal){
             arr[j + 1] = arr[j]
+            j--
         }
         arr[j + 1] = currentVal
     }
