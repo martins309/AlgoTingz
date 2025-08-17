@@ -18,7 +18,8 @@ return the sorted arr
 function bubbleSort(arr){
     
     for(let i = arr.length; i > 0; i--){
-        while(j = 0 && j < i - 1 ){
+      let j = 0
+        while(j < i - 1 ){
           if(arr[j] > arr[j + 1]){
             [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
           }
