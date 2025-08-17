@@ -16,3 +16,10 @@ function insertionSort(arr){
     return arr
 }
 console.log(insertionSort([4,5,7,9,6,44,34,7]))
+
+function comparator(a, b){
+    return a > b ? 
+    1 :
+    a < b ? 
+    -1 : 0
+}
