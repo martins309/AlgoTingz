@@ -23,7 +23,9 @@ function bubbleSort(arr){
           if(arr[j] > arr[j + 1]){
             [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
           }
+          j++
         }
+        
     }
 
     return arr
