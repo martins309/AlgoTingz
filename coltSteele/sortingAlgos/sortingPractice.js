@@ -39,3 +39,5 @@ function bubbleSort(arr){
     }
     return arr
 }
+
+console.log(bubbleSort([4,5,76,8,9,2,3,88,67]))
