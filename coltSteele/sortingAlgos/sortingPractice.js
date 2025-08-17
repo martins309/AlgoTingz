@@ -18,7 +18,8 @@ function insertionSort(arr, comparator){
     }
     return arr
 }
-console.log(insertionSort([4,5,7,9,6,44,34,7]))
+// console.log(insertionSort([4,5,7,9,6,44,34,7]))
+console.table(insertionSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
 
 function comparator(a, b){
     return a > b ? 
