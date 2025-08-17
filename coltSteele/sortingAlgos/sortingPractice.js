@@ -11,5 +11,7 @@ function insertionSort(arr){
             arr[j + 1] = j
             j--
         }
+        arr[j + 1 ] = currentVal
     }
+    return arr
 }
