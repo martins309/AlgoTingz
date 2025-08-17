@@ -61,7 +61,7 @@ function bubbleSort(arr, comparator) {
     for(let i = arr.length; i > 0; i--){
         let j = 0
         while(j < i - 1){
-        comparator(arr[j] > arr[j + 1]) > 0 
+        comparator(arr[j], arr[j + 1]) > 0 
             ? [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
             : null
             j++
@@ -69,7 +69,7 @@ function bubbleSort(arr, comparator) {
     }
     return arr
 }
-(a, b) => 
+const comparator = (a, b) => 
     a > b ? 1 : 
     a < b ? -1 : 0
 
