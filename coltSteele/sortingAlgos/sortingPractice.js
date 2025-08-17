@@ -44,6 +44,7 @@ function bubbleSort(arr){
 }
 
 console.log(bubbleSort([4,5,76,8,9,2,3,88,67]))
+console.table(bubbleSort(['noddle', 'chicken', 'cinnamon', 'roll', 'filet', 'mignon']))
 
 function comparator(a, b){
     return a > b ?
