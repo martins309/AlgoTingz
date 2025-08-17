@@ -118,43 +118,51 @@ insertionSort(moarKittyData, oldestToYoungest); // sorted by age in descending o
 
 //so this can work the way that I had it just need to make some small adjustments
 
-function insertionSort(arr, comparator){
-  if(typeof comparator !== 'function'){
-    comparator = (a, b) => a - b
-  }
+// function insertionSort(arr, comparator){
+//   if(typeof comparator !== 'function'){
+//     comparator = (a, b) => a - b
+//   }
+//   for(let i = 1; i < arr.length; i++){
+//     let currentVal = arr[i]
+//     let j
+
+//     for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--){
+//       arr[j + 1] = arr[j]
+//     }
+//     arr[j + 1] = currentVal
+//   }
+//   return arr
+// }
+
+// function comparator(a, b){
+//   if(a.age > b.age) return 1
+//   if(a.age < b.age) return -1
+//   return 0
+// }
+
+// var moarKittyData = [{
+//   name: "LilBub",
+//   age: 7
+// }, {
+//   name: "Garfield",
+//   age: 40
+// }, {
+//   name: "Heathcliff",
+//   age: 45
+// }, {
+//   name: "Blue",
+//   age: 1
+// }, {
+//   name: "Grumpy",
+//   age: 6
+// }];
+
+// console.log(insertionSort(moarKittyData, comparator))
+
+
+
+function insertionSorting(arr){
   for(let i = 1; i < arr.length; i++){
-    let currentVal = arr[i]
-    let j
-
-    for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--){
-      arr[j + 1] = arr[j]
-    }
-    arr[j + 1] = currentVal
+    
   }
-  return arr
 }
-
-function comparator(a, b){
-  if(a.age > b.age) return 1
-  if(a.age < b.age) return -1
-  return 0
-}
-
-var moarKittyData = [{
-  name: "LilBub",
-  age: 7
-}, {
-  name: "Garfield",
-  age: 40
-}, {
-  name: "Heathcliff",
-  age: 45
-}, {
-  name: "Blue",
-  age: 1
-}, {
-  name: "Grumpy",
-  age: 6
-}];
-
-console.log(insertionSort(moarKittyData, comparator))
