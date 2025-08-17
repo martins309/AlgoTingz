@@ -11,7 +11,8 @@ function insertionSort(arr){
             arr[j + 1] = j
             j--
         }
-        arr[j + 1 ] = currentVal
+        arr[j + 1] = currentVal
     }
     return arr
 }
+console.log(insertionSort([4,5,7,9,6,44,34,7]))
