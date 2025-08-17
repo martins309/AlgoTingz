@@ -37,6 +37,8 @@ console.log(bubbleSort([5,8,2,6,4,1,3]))
 
 
 
+
+
 // yeah this is too much writing lol mine is the best lol
 // function es2015(arr){
 //     const swap = (arr, idx1, idx2) => {

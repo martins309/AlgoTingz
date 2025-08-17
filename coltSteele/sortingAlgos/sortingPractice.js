@@ -29,26 +29,64 @@
 // }
 
 
-function bubbleSort(arr){
+// function bubbleSort(arr){
+//     if(typeof comparator !== 'function'){
+//         comparator = (a, b) => a - b
+//     }
+//     for(let i = arr.length; i > 0; i--){
+//         for(let j = 0; j < i - 1; j++){
+//             if(comparator(arr[j], arr[j + 1]) > 0){
+//                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(bubbleSort([4,5,76,8,9,2,3,88,67]))
+// console.table(bubbleSort(['noddle', 'chicken', 'cinnamon', 'roll', 'filet', 'mignon']))
+
+// function comparator(a, b){
+//     return a > b ?
+//     1 :
+//     a < b ?
+//     -1 : 0
+// }
+
+
+function bubbleSort(arr, comparator) {
     if(typeof comparator !== 'function'){
         comparator = (a, b) => a - b
     }
     for(let i = arr.length; i > 0; i--){
-        for(let j = 0; j < i - 1; j++){
-            if(comparator(arr[j], arr[j + 1]) > 0){
-                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
-            }
+        let j = 0
+        while(j < i - 1){
+        comparator(arr[j] > arr[j + 1]) > 0 
+            ? [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+            : null
+            j++
         }
     }
     return arr
 }
+(a, b) => 
+    a > b ? 1 : 
+    a < b ? -1 : 0
 
-console.log(bubbleSort([4,5,76,8,9,2,3,88,67]))
-console.table(bubbleSort(['noddle', 'chicken', 'cinnamon', 'roll', 'filet', 'mignon']))
+console.log(bubbleSort([3,56,7,8,2,3,547,8,4,1], comparator))
 
-function comparator(a, b){
-    return a > b ?
-    1 :
-    a < b ?
-    -1 : 0
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
