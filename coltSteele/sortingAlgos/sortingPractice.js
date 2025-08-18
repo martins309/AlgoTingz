@@ -78,26 +78,90 @@
 
 
 
-function insertionSort(arr){
-    if(typeof comparator !== 'function'){
-        comparator = (a, b) => (a - b)
-    }
-    for(let i = 1; i < arr.length; i++){
-        let currentVal = arr[i]
-        let j
-        for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--){
-            arr[j + 1] = arr[j]
+// function insertionSort(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = (a, b) => (a - b)
+//     }
+//     for(let i = 1; i < arr.length; i++){
+//         let currentVal = arr[i]
+//         let j
+//         for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--){
+//             arr[j + 1] = arr[j]
+//         }
+//         arr[j + 1] = currentVal
+//     }
+//     return arr
+// }
+
+
+// const comparator = (a, b) => 
+//     a > b ? 1
+//     : a < b ? -1 : 0
+
+// console.log(insertionSort(['indian', 'babies', 'boogers', 'typhoon', 'doodle'], comparator))
+
+
+
+
+
+// function bubbleSort(arr){
+//     for(let i = arr.length; i > 0; i--){
+//         for(let j = 0; j < i - 1; j++){
+//             if(arr[j] > arr[j + 1]){
+//                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(bubbleSort([3,6,8,7,45,4,68,1]))
+
+
+
+
+
+
+function selectionSort(arr){
+    for(let i = 0; i < arr.length; i++){
+        let min = i
+        
+        for(let j = i + 1; j < arr.length; j++){
+            if(arr[min] > arr[j]){
+                min = j
+            }
         }
-        arr[j + 1] = currentVal
+        if(i !== min){
+            [arr[i], arr[min]] = [arr[min], arr[i]]
+        }
     }
     return arr
 }
 
-console.log(insertionSort([3,4,8,9,77,5,2]))
+console.log(selectionSort([4,3,7,9,8,665,1,33,2,9]))
 
-comparator = (a, b) => 
-    a > b ? 1 :
-    a < b ? -1 : 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
