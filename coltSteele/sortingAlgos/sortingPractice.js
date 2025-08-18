@@ -92,6 +92,10 @@ function insertionSort(arr){
 
 console.log(insertionSort([3,4,8,9,77,5,2]))
 
+comparator = (a, b) => 
+    a > b ? 1 :
+    a < b ? -1 : 0
+
 
 
 
