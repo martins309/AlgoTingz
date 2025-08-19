@@ -40,9 +40,14 @@ function mergeArr(arr1, arr2) {
             j++
         }
     }
-   
-    return  arr1.length === 0 ? result.push(arr2) 
-    : arr2.length === 0 ? result.push(arr1) : result
+    if(arr1.length === 0){
+        result.push(arr2)
+    } 
+
+    if(arr2.length === 0){
+        result.push(arr1)
+    }
+    return result
 }
 
 console.log(mergeArr([1,10,50], [2,14,99,100]))
