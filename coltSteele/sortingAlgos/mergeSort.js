@@ -41,11 +41,11 @@ function mergeArr(arr1, arr2) {
         }
     }
     if(arr1.length === 0){
-        result.push(arr2)
+        result.push(arr2.slice(1))
     } 
 
     if(arr2.length === 0){
-        result.push(arr1)
+        result.push(arr1.slice(1))
     }
     return result
 }
