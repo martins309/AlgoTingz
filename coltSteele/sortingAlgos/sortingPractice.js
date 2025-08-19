@@ -88,3 +88,5 @@ const insertionSort = (arr) => {
     }
     return arr
 }
+
+console.log(insertionSort([7,4,6,9,2,3,6,4,1]))
