@@ -72,8 +72,6 @@
 // const comparator = (a, b) => 
 //     a > b ? 1 : 
 //     a < b ? -1 : 0
-<<<<<<< HEAD
-=======
 
 // console.log(bubbleSort([3,56,7,8,2,3,547,8,4,1], comparator))
 
@@ -174,7 +172,6 @@ console.log(selectionSort([4,3,7,9,8,665,1,33,2,9]))
 
 
 
->>>>>>> a5d78eb2e80465fb3d6e489d4c89dd5136eb0d72
 
 // console.log(bubbleSort([3,56,7,8,2,3,547,8,4,1], comparator))
 
