@@ -75,26 +75,17 @@
 
 // console.log(bubbleSort([3,56,7,8,2,3,547,8,4,1], comparator))
 
-function insertionSort(arr, comparator){
-    if(typeof comparator !== 'function'){
-        comparator = (a, b) => a - b
-        }
 
-    for(let i = 1; i < arr.length; i++){
-        let currentVal = arr[i]
-        let j
-        for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j-- ){
-            arr[j + 1] = arr[j]
+function bubbleSort(arr) {
+    for(let i = arr.length; i > 0; i--){
+        let j = 0
+
+        while(j < i - 1){
+            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+            j++
         }
-        arr[j + 1] = currentVal
     }
-
     return arr
 }
 
-const comparator = (a, b) =>
-    a > b ? 1 : 
-    a < b ? -1 : 0
-
-console.log(insertionSort(["hi", "apple", 'nugget', 'zebra', 'cow'], comparator))
-
+console.log(bubbleSort([3,1,2,88,5,3,0]))
