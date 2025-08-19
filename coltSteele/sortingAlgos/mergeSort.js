@@ -22,6 +22,26 @@ one we exhaust on array, push in all remaining values from the other array
 
 */
 
-function mergeSort1(arr1, arr2) {
+function mergeArr(arr1, arr2) {
     let result = []
+    let i = 0
+    let j = 0
+
+    while(i < arr1.length) {
+        if(arr1[i] < arr2[i]){
+            result.push(arr1[i])
+            i++
+        }
+    }
+
+    while(j < arr2.length) {
+        if(arr1[j] > arr2[j]){
+            result.push(arr2[j])
+            j++
+        }
+    }
+   
+    return  arr1.length === 0 ? result.push(arr2) 
+    : arr2.length === 0 ? result.push(arr1) : result
 }
+
