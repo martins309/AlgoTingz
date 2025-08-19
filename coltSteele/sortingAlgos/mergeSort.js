@@ -27,26 +27,24 @@ function mergeArr(arr1, arr2) {
     let i = 0
     let j = 0
 
-    while(i < arr1.length) {
+    while(i < arr1.length && j < arr2.length) {
         if(arr1[i] < arr2[i]){
             result.push(arr1[i])
             i++
-        }
-    }
-
-    while(j < arr2.length) {
-        if(arr1[j] > arr2[j]){
+        } else {
             result.push(arr2[j])
             j++
         }
     }
-    if(arr1.length === 0){
-        result.push(arr2.slice(1))
-    } 
 
-    if(arr2.length === 0){
-        result.push(arr1.slice(1))
+    while(i < arr1.length) {
+        result.push(arr[i])
+        i++
     }
+     while(j < arr2.length){
+        result.push(arr2[j])
+        j++
+     }
     return result
 }
 
