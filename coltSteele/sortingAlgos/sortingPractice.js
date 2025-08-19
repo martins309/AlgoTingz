@@ -76,17 +76,18 @@
 // console.log(bubbleSort([3,56,7,8,2,3,547,8,4,1], comparator))
 
 
-const insertionSort = (arr) => {
-    for(let i = 1; i < arr.length; i++){
-        let currentVal = arr[i]
-        let j
 
-        for(j = i - 1; j >=0 && arr[j] > currentVal; j--){
-            arr[j + 1] = arr[j]
+const selectionTing = (arr) => {
+    for(let i = 0; i < arr.length; i++){
+        let min = i
+        for(let j = i + 1; j < arr.length; j++){
+            if(arr[min] > arr[j]){
+                min = j
+            }
         }
-        arr[j + 1] = currentVal
+        if(i !== min) {
+            [arr[min], arr[i]] = [arr[i], arr[min]]
+        }
     }
     return arr
 }
-
-console.log(insertionSort([7,4,6,9,2,3,6,4,1]))
