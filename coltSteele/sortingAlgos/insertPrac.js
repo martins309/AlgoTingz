@@ -161,8 +161,3 @@ insertionSort(moarKittyData, oldestToYoungest); // sorted by age in descending o
 
 
 
-function insertionSorting(arr){
-  for(let i = 1; i < arr.length; i++){
-    
-  }
-}
