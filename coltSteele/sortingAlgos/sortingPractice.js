@@ -92,8 +92,9 @@ function insertionSort(arr, comparator){
     return arr
 }
 
-console.log(insertionSort([2,4,58,1,5,7,2,1,0], comparator))
-
 const comparator = (a, b) =>
     a > b ? 1 : 
     a < b ? -1 : 0
+
+console.log(insertionSort(["hi", "apple", 'nugget', 'zebra', 'cow'], comparator))
+
