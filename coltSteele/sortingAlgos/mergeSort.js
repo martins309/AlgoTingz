@@ -50,7 +50,7 @@ function mergeArr(arr1, arr2){
 
 }
 
-console.log(mergeArr([], [1, 3]))
+// console.log(mergeArr([], [1, 3]))
 
 
 
@@ -70,11 +70,13 @@ return the merge array
 function mergeSort(arr){
     if (arr.length <= 1) return arr
 
-   let half = mergeSort(arr.slice(0, (arr.length / 2)), arr.slice(arr.length / 2))
+    let mid = Math.floor(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+   
+   return mergeArr(left, right)
 
-    mergeSort(half)
-
-    return mergeSort(half)
+    
 }
 
 console.log(mergeSort([10,24,76,73,72,1,9]))
