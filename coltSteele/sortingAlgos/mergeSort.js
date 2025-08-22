@@ -15,7 +15,7 @@ If the value of the first array is larger than the value of second array
 push the value of the seconds array into the results and move on to the next
 item in the second array
 
-one we exhaust on array, push in all remaining values from the other array
+once we exhaust on array, push in all remaining values from the other array
 
 
 
@@ -28,23 +28,26 @@ function mergeArr(arr1, arr2){
     let j = 0 
 
     while(i < arr1.length && j < arr2.length){
-        if(arr1[i] < arr2[j]){
+        if(arr2[j] > arr1[i]){
             result.push(arr1[i])
             i++
-        } else if(arr1[i] > arr2[j])
+        } else {
             result.push(arr2[j])
             j++
+        }
 
     }
     while(i < arr1.length){
         result.push(arr1[i])
+        i++
     }
     
     while(j < arr2.length){
         result.push(arr2[j])
+        j++
     }
     return result
 
 }
 
-console.log(mergeArr([5,8,3,4], [9,2,3,4]))
+console.log(mergeArr([], [1, 3]))
