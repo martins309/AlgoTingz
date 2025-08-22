@@ -51,3 +51,30 @@ function mergeArr(arr1, arr2){
 }
 
 console.log(mergeArr([], [1, 3]))
+
+
+
+/*
+break up the array into halves until you have arrays
+recursive call merge sort again to break halves into halves
+that are empty or have one element in them
+once they're broken up merge them
+use array.slice
+
+return the merge array
+
+
+*/
+
+
+function mergeSort(arr){
+    if (arr.length <= 1) return arr
+
+   let half = mergeSort(arr.slice(0, (arr.length / 2)), arr.slice(arr.length / 2))
+
+    mergeSort(half)
+
+    return mergeSort(half)
+}
+
+console.log(mergeSort([10,24,76,73,72,1,9]))
