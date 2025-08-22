@@ -28,7 +28,13 @@ function mergeArr(arr1, arr2){
     let j = 0 
 
     while(i < arr1.length && j < arr2.length){
-        
+        if(arr1[i] < arr2[j]){
+            result.push(arr1[i])
+            i++
+        } else if(arr1[i] > arr2[j])
+            result.push(arr2[j])
+            j++
+
     }
 
 }
