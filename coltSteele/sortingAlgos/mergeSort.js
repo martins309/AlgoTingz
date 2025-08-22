@@ -23,5 +23,7 @@ one we exhaust on array, push in all remaining values from the other array
 */
 
 function mergeArr(arr1, arr2){
+    let result = []
+
     
 }
