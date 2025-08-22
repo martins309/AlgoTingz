@@ -24,6 +24,13 @@ one we exhaust on array, push in all remaining values from the other array
 
 function mergeArr(arr1, arr2){
     let result = []
+    let i = 0
+    let j = 0 
 
-    
+    while(i < arr1.length && j < arr2.length){
+        
+    }
+
 }
+
+console.log(mergeArr([5,8,3,4], [9,2,3,4]))
