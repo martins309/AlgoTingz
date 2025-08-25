@@ -22,7 +22,12 @@ once we exhaust on array, push in all remaining values from the other array
 
 */
 
-function mergeArr(arr1, arr2){
+function mergeArr(arr1, arr2, comparator){
+
+    if(typeof comparator !== 'fuction'){
+        comparator = (a, b) => a - b
+    }
+
     let result = []
     let i = 0
     let j = 0 
@@ -51,6 +56,10 @@ function mergeArr(arr1, arr2){
 }
 
 // console.log(mergeArr([], [1, 3]))
+
+const comparator = (a, b) => 
+    a > b ? 1 :
+    a < b ? -1 : 0
 
 
 
