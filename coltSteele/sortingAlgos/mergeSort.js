@@ -32,8 +32,8 @@ function mergeArr(arr1, arr2, comparator){
     let i = 0
     let j = 0 
 
-    while(comparator(i < arr1.length && j < arr2.length)){
-        if(arr2[j] > arr1[i]){
+    while(i < arr1.length && j < arr2.length){
+        if(comparator(arr2[j], arr1[i]) >= 0){
             result.push(arr1[i])
             i++
         } else {
@@ -55,11 +55,12 @@ function mergeArr(arr1, arr2, comparator){
 
 }
 
-console.log(mergeArr([1, 5, 9, 43], [10, 23, 33, 98]))
-
 const comparator = (a, b) => 
     a > b ? 1 :
     a < b ? -1 : 0
+
+
+console.log(mergeArr([1, 5, 9, 43], [10, 23, 33, 98], comparator))
 
 
 
