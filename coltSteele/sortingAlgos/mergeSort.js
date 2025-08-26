@@ -55,7 +55,7 @@ function mergeArr(arr1, arr2, comparator){
 
 }
 
-// console.log(mergeArr([], [1, 3]))
+// console.log(mergeArr([1, 5, 9, 43], [10, 23, 33, 98]))
 
 const comparator = (a, b) => 
     a > b ? 1 :
