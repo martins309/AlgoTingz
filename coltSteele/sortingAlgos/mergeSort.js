@@ -24,7 +24,7 @@ once we exhaust on array, push in all remaining values from the other array
 
 function mergeArr(arr1, arr2, comparator){
 
-    if(typeof comparator !== 'fuction'){
+    if(typeof comparator !== 'function'){
         comparator = (a, b) => a - b
     }
 
@@ -55,12 +55,6 @@ function mergeArr(arr1, arr2, comparator){
 
 }
 
-const comparator = (a, b) => 
-    a > b ? 1 :
-    a < b ? -1 : 0
-
-
-console.log(mergeArr(['Blue', 'Green', 'Yellow'], ['Orange', 'Magenta', "Teal"], comparator))
 
 
 
@@ -77,16 +71,25 @@ return the merge array
 */
 
 
-function mergeSort(arr){
+function mergeSort(arr, comparator){
     if (arr.length <= 1) return arr
 
     let mid = Math.floor(arr.length / 2)
-    let left = mergeSort(arr.slice(0, mid))
-    let right = mergeSort(arr.slice(mid))
+    let left = mergeSort(arr.slice(0, mid), comparator)
+    let right = mergeSort(arr.slice(mid), comparator)
    
-   return mergeArr(left, right)
+   return mergeArr(left, right, comparator)
 
     
 }
 
-console.log(mergeSort([10,24,76,73,72,1,9]))
+const comparator = (a, b) => 
+    a > b ? 1 :
+    a < b ? -1 : 0
+
+
+console.log(mergeSort(["banana", "apple", "cherry"], comparator))
+
+
+
+
