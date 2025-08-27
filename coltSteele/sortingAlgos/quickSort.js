@@ -44,4 +44,4 @@ function partition(arr, start = 0, end = arr.length - 1){
     return pivot
 }
 
-console.log(partition([28,5,8,35,3,6,8,45,4]))
+console.log(partition([28,4,11,41,16,1,40,14,36,37,42,18]))
