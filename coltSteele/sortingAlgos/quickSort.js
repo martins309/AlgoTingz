@@ -33,13 +33,15 @@ function partition(arr, start, end){
 
     let pivot = start
 
-    for(let i = start; i < arr.length; i++){
+    for(let i = start; i < end; i++){
         if(pivot > arr[i]){
-            
+            pivot++
+            [arr[pivot], arr[i]] = [arr[i], arr[pivot]]
         }
+        pivot = arr[i]
     }
 
     return pivot
 }
 
-console.log(partition())
+console.log(partition([28,5,8,35,3,6,8,45,4]))
