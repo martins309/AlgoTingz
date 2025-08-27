@@ -16,7 +16,7 @@ for simplicity choose the first element as the pivot
 
 /*
 the function takes 3 arguments: an array, start index and end index
-grab the pivor fromthe start of the array
+grab the pivor from the start of the array
 store the current pivot index in a variable
 loop through the array from start until the end
     if the pivot is greater than the current element increment the pivot index
@@ -27,3 +27,19 @@ return the pivot index
 
 
 */
+
+
+function partition(arr, start, end){
+
+    let pivot = start
+
+    for(let i = start; i < arr.length; i++){
+        if(pivot > arr[i]){
+            
+        }
+    }
+
+    return pivot
+}
+
+console.log(partition())
