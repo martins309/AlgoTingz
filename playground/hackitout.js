@@ -247,6 +247,8 @@ Return true if the array contains the value, false if not.
 // console.log(sortTing([4,5,8,1,4,33,9]))
 
 
+
+// the end var was a mistake lol
 function partition(arr, start = 0, end = arr.length + 1){
     function swap(arr, i, j){
         var temp = arr[i]
@@ -265,3 +267,5 @@ function partition(arr, start = 0, end = arr.length + 1){
     swap(arr, start, swapIdx)
     return swapIdx
 }
+
+console.log(partition([4,8,2,1,5,7,6,3]))
