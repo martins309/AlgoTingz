@@ -36,9 +36,9 @@ function partition(arr, start = 0, end = arr.length - 1){
     for(let i = start; i < end; i++){
         if(pivot > arr[i]){
             pivot++
-            [arr[pivot + 1], arr[i]] = [arr[i], arr[pivot + 1]]
+            [arr[pivot], arr[i]] = [arr[i], arr[pivot]]
         }
-        pivot = arr[i]
+        pivot = i
     }
 
     return pivot
