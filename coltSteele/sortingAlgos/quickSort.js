@@ -29,19 +29,24 @@ return the pivot index
 */
 
 
-function partition(arr, start = 0, end = arr.length - 1){
+function partition(arr, start = 0, end = arr.length + 1){
 
-    let pivot = start
-
-    for(let i = start; i < end; i++){
-        if(pivot > arr[i]){
-            pivot++
-            [arr[pivot], arr[i]] = [arr[i], arr[pivot]]
-        }
-        pivot = i
+    const swap = (arr, idx1, idx2) => {
+        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
 
-    return pivot
+    let pivot = arr[start]
+    swapIdx = start
+
+    for(let i = start + 1; i < arr.length; i++){
+        if(pivot > arr[i]){
+            swapIdx++
+            swap(arr, swapIdx, i)
+        }
+    }
+    swap(arr, start, swapIdx)
+
+    return swapIdx
 }
 
 console.log(partition([28,4,11,41,16,1,40,14,36,37,42,18]))
