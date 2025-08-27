@@ -240,9 +240,28 @@ Return true if the array contains the value, false if not.
 // const cleaned = raw.replace(/[^0-9]/g, "");
 // console.log(cleaned); // → "123"
   
-function sortTing(num){
-    return num.sort((a, b) => b - a)
+// function sortTing(num){
+//     return num.sort((a, b) => b - a)
+// }
+
+// console.log(sortTing([4,5,8,1,4,33,9]))
+
+
+function partition(arr, start = 0, end = arr.length + 1){
+    function swap(arr, i, j){
+        var temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
+    }
+    var pivot = arr[start]
+    var swapIdx = start
+
+    for(var i = start + 1; i < arr.length; i++){
+        if(pivot > arr[i]){
+            swapIdx++
+            swap(arr, swapIdx, i)
+        }
+    }
+    swap(arr, start, swapIdx)
+    return swapIdx
 }
-
-console.log(sortTing([4,5,8,1,4,33,9]))
-
