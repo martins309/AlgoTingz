@@ -80,4 +80,4 @@ function quickSort(arr, left = 0, right = arr.length - 1){
 
 }
 
-console.log(quickSort([4,6,9,1,2,5,3]))
+console.log(quickSort([-1203, -19, 41,-3, 4,6,9,1,2,5,3, -395,20.49, 39283, -29]))
