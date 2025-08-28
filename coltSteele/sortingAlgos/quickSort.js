@@ -49,4 +49,35 @@ function partition(arr, start = 0, end = arr.length - 1){
     return swapIdx
 }
 
-console.log(partition([4,8,2,1,5,7,6,3]))
+
+
+
+
+
+
+
+/*
+call the pivot helper on the array
+when the helper returs to you the updated pivot index, 
+recursively call the pivot helper on the subarray to the left of that index
+and the subarray to the right of that index
+
+the base case occurs when you have subarray with less than two elements
+
+
+*/
+
+function quickSort(arr, left = 0, right = arr.length - 1){
+    if(left < right){
+
+    let pivotIdx = partition(arr, left, right)
+
+    quickSort(arr, left, pivotIdx - 1)
+    quickSort(arr, pivotIdx + 1, right)
+    }
+     
+ return arr
+
+}
+
+console.log(quickSort([4,6,9,1,2,5,3]))
