@@ -17,3 +17,15 @@ function digitCount(num){
     return Math.floor(Math.log10(Math.abs(num))) + 1
 
 }
+
+//given an array of integers, return the number of digits 
+// in the largest numbers in the list
+
+
+function mostDigits(nums){
+    let maxDigits = 0
+    for(let i = 0; i < nums.length; i++){
+        maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+    }
+    return maxDigits
+}
