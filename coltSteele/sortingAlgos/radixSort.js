@@ -9,7 +9,7 @@ returns the digit in num at the given place value
 
 
 function getDigit(num, i){
-    return Math.floor(Math.abs(num) / Math.pow(10, i) % 10)
+    return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
 }
 
 //this method shows how many digits there are in a number
