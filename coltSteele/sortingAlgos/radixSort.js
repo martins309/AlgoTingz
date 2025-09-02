@@ -41,5 +41,19 @@ function mostDigits(nums){
 /*
 define a function that accepts a list of numbers
 figure out how many digits the largest number has
+loop from k = 0 up to this largest number of digits
 
+for each iteration of the loop
+    create a bucket for each digit (0 to 9)
+    place each number in the corresponding bucket
+    based on its kth digit
+
+Replace our existing array with the values in our buckets,
+starting with 0 and going up to 9
+return the list at the end
 */
+
+
+function radixSort(nums){
+
+}
