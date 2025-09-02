@@ -8,6 +8,13 @@ returns the digit in num at the given place value
 
 
 
+//for the get digit method the way that it works is that if
+//we were looking at a number like 7323 and we're looking at the 100th place
+// you divide that number by 10^ i power which is 2 
+//then you floor that to get rid of the decimal
+// then you do mod 10 to get the answer
+//abs is for neg nums
+
 function getDigit(num, i){
     return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
 }
