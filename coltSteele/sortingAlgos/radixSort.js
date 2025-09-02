@@ -10,7 +10,7 @@ returns the digit in num at the given place value
 
 //for the get digit method the way that it works is that if
 //we were looking at a number like 7323 and we're looking at the 100th place
-// you divide that number by 10^ i power which is 2 
+// you divide that number place or by 10^ i power which is 2 
 //then you floor that to get rid of the decimal
 // then you do mod 10 to get the answer
 //abs is for neg nums
@@ -35,3 +35,11 @@ function mostDigits(nums){
     }
     return maxDigits
 }
+
+
+
+/*
+define a function that accepts a list of numbers
+figure out how many digits the largest number has
+
+*/
