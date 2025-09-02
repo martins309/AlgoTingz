@@ -56,4 +56,20 @@ return the list at the end
 
 function radixSort(nums){
 
+    let result = []
+
+    let count = mostDigits(nums)
+
+    for(let i = 0; i <= count; i++){
+        for(let j = 0; j < nums.length; j++){
+            let buckets = getDigit(nums[j], j)
+
+        }
+
+        
+    }
+
+
+    return result
+
 }
