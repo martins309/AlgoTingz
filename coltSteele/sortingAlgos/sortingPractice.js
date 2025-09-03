@@ -122,29 +122,49 @@
 
 
 
-function selectionSort(arr){
-    for(let i = 0; i < arr.length; i++){
-        let min = i
+// function selectionSort(arr){
+//     for(let i = 0; i < arr.length; i++){
+//         let min = i
         
-        for(let j = i + 1; j < arr.length; j++){
-            if(arr[min] > arr[j]){
-                min = j
-            }
-        }
-        if(i !== min){
-            [arr[i], arr[min]] = [arr[min], arr[i]]
-        }
-    }
-    return arr
+//         for(let j = i + 1; j < arr.length; j++){
+//             if(arr[min] > arr[j]){
+//                 min = j
+//             }
+//         }
+//         if(i !== min){
+//             [arr[i], arr[min]] = [arr[min], arr[i]]
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(selectionSort([4,3,7,9,8,665,1,33,2,9]))
+
+
+
+
+
+//////////////Radix Ting////////////////////////////////
+
+
+function getDigit(num, i){
+    return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
 }
 
-console.log(selectionSort([4,3,7,9,8,665,1,33,2,9]))
+
+function digitCount(num){
+    if(num === 0) return 1 
+    return Math.floor(Math.log10(Math.abs(num))) + 1
+}
 
 
-
-
-
-
+function mostDigits(nums){
+    let maxDigits = 0
+    for(let i = 0; i < nums.length; i++){
+        maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+    }
+    return maxDigits
+}
 
 
 
