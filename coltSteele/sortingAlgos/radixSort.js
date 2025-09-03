@@ -56,20 +56,20 @@ return the list at the end
 
 function radixSort(nums){
 
-    let result = []
-
     let count = mostDigits(nums)
 
-    for(let i = 0; i <= count; i++){
-        for(let j = 0; j < nums.length; j++){
-            let buckets = getDigit(nums[j], j)
-
+    for(let k = 0; k < count; k++){
+        //creates a bucket for each digit
+        let buckets = Array.from({ length: 10}, () => [])
+        for(let i = 0; i < nums.length; i++){
+            //put numbers in their bucket based on the position of the digit
+            buckets[getDigit(nums[i], k)].push(nums[i])
         }
-
-        
+        //add them back together into a new array
+        nums = [].concat(...buckets)
     }
 
 
-    return result
+    return nums
 
 }
