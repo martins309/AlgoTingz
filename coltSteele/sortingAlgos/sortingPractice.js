@@ -178,7 +178,9 @@ function radixSort(nums){
         for(let i = 0; i < nums.length; i++){
             buckets[getDigit(nums[i], k)].push(nums[i])
         }
+        nums = [].concat(...buckets)
     }
+    return nums
 }
 
 
