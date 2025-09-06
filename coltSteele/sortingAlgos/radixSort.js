@@ -100,4 +100,4 @@ function mostDigits(nums) {
     return maxDigits
 }
 
-console.log(mostDigits([2,56,8,6,443425,3,1,4324523,12,145,2,12]))
+
