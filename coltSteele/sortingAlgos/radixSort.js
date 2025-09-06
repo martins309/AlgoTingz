@@ -112,3 +112,5 @@ function radixSort(nums) {
     }
     return nums
 }
+
+console.log(radixSort([902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593]))
