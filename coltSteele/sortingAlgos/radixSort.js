@@ -101,3 +101,14 @@ function mostDigits(nums) {
 }
 
 
+function radixSort(nums) {
+    let count = digitCount(nums)
+    for(let k = 0; k < count; k++){
+        let buckets = Array.from({length: 10}, () => [])
+        for(let i = 0; i < nums.length; i++) {
+            buckets[getDigit(nums[i], k)].push(nums[i])
+        }
+        nums = [].concat(...buckets)
+    }
+    return nums
+}
