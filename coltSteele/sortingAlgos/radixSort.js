@@ -97,5 +97,7 @@ function mostDigits(nums) {
     for(let i = 0; i < nums.length; i++){
         maxDigits = Math.max(maxDigits, digitCount(nums[i]))
     }
+    return maxDigits
 }
 
+console.log(mostDigits([2,56,8,6,443425,3,1,4324523,12,145,2,12]))
