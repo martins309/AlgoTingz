@@ -59,10 +59,10 @@ console.log(bubbleSort([5,8,2,6,4,1,3]))
 
 
 //then theres this thing where you create a temp variable which 
-// is also unecessary to me
+// is also unnecessary to me
 
 
-//optimized to prevent unecessary swappping in a
+//optimized to prevent unnecessary swapping in a
 // nearly sorted array
 // function es5(arr){
 //     let no
