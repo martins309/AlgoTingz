@@ -13,6 +13,10 @@ class Student {
         this.lastName = lastName
         this.grade = year
     }
+    //you can create static methods that work on the instance of the class 
+    fullName() {
+        return `this is your full name ${firstStudent} ${this.lastName}`
+    }
 }
 
 
@@ -21,4 +25,4 @@ class Student {
 let firstStudent = new Student('chicken', 'little', 9)
 let secondStudent = new Student('your mom', 'is a hoe', '69')
 
-console.log(secondStudent)
+console.log(secondStudent.fullName())
