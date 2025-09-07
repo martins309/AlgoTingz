@@ -214,19 +214,48 @@ function radixSort(nums){
 
 
 
-const selectionTing = (arr) => {
-    for(let i = 0; i < arr.length; i++){
-        let min = i
-        for(let j = i + 1; j < arr.length; j++){
-            if(arr[min] > arr[j]){
-                min = j
+// const selectionTing = (arr) => {
+//     for(let i = 0; i < arr.length; i++){
+//         let min = i
+//         for(let j = i + 1; j < arr.length; j++){
+//             if(arr[min] > arr[j]){
+//                 min = j
+//             }
+//         }
+//         if(i !== min) {
+//             [arr[min], arr[i]] = [arr[i], arr[min]]
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(selectionTing([6,3,8,1,7,3,5]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////Bubble Sort//////////////
+
+
+function bubbleSort(arr) {
+    for(let i = arr.length; i > 0; i-- ){
+        for (let j = i - 1; i < arr.length; i++){
+            if(arr[j] > arr[i]){
+                [arr[i], arr[j]] = [arr[j], arr[i]]
             }
         }
-        if(i !== min) {
-            [arr[min], arr[i]] = [arr[i], arr[min]]
-        }
     }
-    return arr
+    return arr 
 }
-
-console.log(selectionTing([6,3,8,1,7,3,5]))
