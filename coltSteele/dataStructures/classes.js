@@ -19,5 +19,6 @@ class Student {
 //when you want to instantiate an object you use the new keyword like so
 
 let firstStudent = new Student('chicken', 'little', 9)
+let secondStudent = new Student('your mom', 'is a hoe', '69')
 
-console.log(firstStudent)
+console.log(secondStudent)
