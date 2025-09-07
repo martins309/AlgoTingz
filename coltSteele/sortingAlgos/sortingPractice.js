@@ -250,10 +250,13 @@ function radixSort(nums){
 
 
 function bubbleSort(arr) {
+    const swap = (arr, idx1, idx2) => {
+        [arr[idx1], arr[idx2]] = [arr[idx2], idx1 ]
+    }
     for(let i = arr.length; i > 0; i-- ){
         for (let j = i - 1; i < arr.length; i++){
             if(arr[j] > arr[i]){
-                [arr[i], arr[j]] = [arr[j], arr[i]]
+                swap(arr, i, j)
             }
         }
     }
