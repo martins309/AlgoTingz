@@ -12,11 +12,20 @@ class Student {
         this.firstName = firstName
         this.lastName = lastName
         this.grade = year
+        this.tardies = 0
     }
     //you can create static methods that work on the instance of the class 
     fullName() {
-        return `this is your full name ${firstStudent} ${this.lastName}`
+        return `this is your full name:  ${this.firstName} ${this.lastName}`
     }
+    markLate(){
+        if(this.tardies >= 3){
+            return 'Your are expelled'
+        }
+        this.tardies += 1
+        return `${this.firstName} has been late ${this.tardies} times `
+    }
+   
 }
 
 
@@ -25,4 +34,4 @@ class Student {
 let firstStudent = new Student('chicken', 'little', 9)
 let secondStudent = new Student('your mom', 'is a hoe', '69')
 
-console.log(secondStudent.fullName())
+console.log(secondStudent.markLate())
