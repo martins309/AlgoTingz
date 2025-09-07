@@ -262,3 +262,5 @@ function bubbleSort(arr) {
     }
     return arr 
 }
+
+console.log(bubbleSort([6,3,4,78,78,34,2,5,6,7,23,]))
