@@ -147,60 +147,41 @@
 //////////////Radix Ting////////////////////////////////
 
 
-function getDigit(num, i){
-    return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
-}
+// function getDigit(num, i){
+//     return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
+// }
 
 
-function digitCount(num){
-    if(num === 0) return 1 
-    return Math.floor(Math.log10(Math.abs(num))) + 1
-}
+// function digitCount(num){
+//     if(num === 0) return 1 
+//     return Math.floor(Math.log10(Math.abs(num))) + 1
+// }
 
 
-function mostDigits(nums){
-    let maxDigits = 0
-    for(let i = 0; i < nums.length; i++){
-        maxDigits = Math.max(maxDigits, digitCount(nums[i]))
-    }
-    return maxDigits
-}
-
-
-
-
-function radixSort(nums){
-
-    let count = mostDigits(nums)
-
-    for(let k = 0; k < count; k++){
-        let buckets = Array.from({ length: 10}, () => [])
-        for(let i = 0; i < nums.length; i++){
-            buckets[getDigit(nums[i], k)].push(nums[i])
-        }
-        nums = [].concat(...buckets)
-    }
-    return nums
-}
+// function mostDigits(nums){
+//     let maxDigits = 0
+//     for(let i = 0; i < nums.length; i++){
+//         maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+//     }
+//     return maxDigits
+// }
 
 
 
 
+// function radixSort(nums){
 
+//     let count = mostDigits(nums)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+//     for(let k = 0; k < count; k++){
+//         let buckets = Array.from({ length: 10}, () => [])
+//         for(let i = 0; i < nums.length; i++){
+//             buckets[getDigit(nums[i], k)].push(nums[i])
+//         }
+//         nums = [].concat(...buckets)
+//     }
+//     return nums
+// }
 
 
 
@@ -249,18 +230,26 @@ function radixSort(nums){
 //////////Bubble Sort//////////////
 
 
-function bubbleSort(arr) {
+function bubbleSort(arr, comparator) {
+    if(typeof comparator !== 'function'){
+        comparator = (a, b) => a - b
+    }
     const swap = (arr, idx1, idx2) => {
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1] ]
     }
     for(let i = arr.length; i > 0; i-- ){
         for (let j = 0; j < i - 1; j++){
-            if(arr[j] > arr[j + 1]){
+            if(comparator(arr[j], arr[j + 1]) > 0){
                 swap(arr, j, j + 1)
             }
         }
     }
     return arr 
+}
+
+const comparator = (a, b) => {
+    return a > b ? 1 :
+    a < b ? -1 : 0
 }
 
 console.log(bubbleSort([6,3,4,78,78,34,2,5,6,7,23,]))

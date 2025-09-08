@@ -48,7 +48,7 @@ class Student {
 
 //when using a class method you cannot call it on an individual instance 
 // it is solely used as a utility of that class 
-// like when we are creating methods for models 
+// like when we are creating methods for models `
 
 let firstStudent = new Student('chicken', 'little', 9)
 let secondStudent = new Student('your mom', 'is a hoe', 69)
