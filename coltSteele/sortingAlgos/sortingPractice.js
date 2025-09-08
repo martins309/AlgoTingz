@@ -252,7 +252,7 @@ const comparator = (a, b) => {
     a < b ? -1 : 0
 }
 
-console.log(bubbleSort([6,3,4,78,78,34,2,5,6,7,23,]))
+console.log(bubbleSort(['zebra', 'donkey', 'youMuj', 'apples', 'esteak', 'kitty'], comparator))
 
 
 //write the comparator tomorrow
