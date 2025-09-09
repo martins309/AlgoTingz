@@ -10,3 +10,23 @@
 //linked lists consists of nodes and 
 // each node has a value and a pointer that points to the next node 
 // or null
+
+
+class Node{
+    constructor(val){
+        this.val = val
+        this.next = 0
+
+    }
+}
+
+class SinglyLinkedList{
+    constructor(){
+        this.head = null
+        this.tail = null
+        this.length = 0
+    }
+    push(val){
+
+    }
+}
