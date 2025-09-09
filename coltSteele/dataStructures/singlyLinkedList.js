@@ -48,18 +48,20 @@ class SinglyLinkedList{
         return this
     }
     pop(){
-        if(!this.length){
+        if(!this.head){
             return undefined
         }
-        
-        while(this){
-            let end = this.tail
-            let temp = end - 1 
-            temp = null
-            end = temp
+            let current = this.head
+            let newTail = end 
+           
+        while(current.next){
+           newTail = current
+           current = current.next
         }
+        this.tail = newTail
+        this.tail.next = null
         this.length--
-        return temp
+        return current
     }
 }
 
@@ -67,6 +69,7 @@ let list = new SinglyLinkedList()
 list.push('chicken')
 list.push('wings')
 list.push(99)
+list.pop()
 console.log(list)
 
 
