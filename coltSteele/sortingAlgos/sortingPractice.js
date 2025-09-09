@@ -277,10 +277,13 @@
 
 
 function insertionSort(arr){
+    if(typeof comparator !== 'function'){
+        comparator = (a, b) => a - b
+    }
     for(let i = 1; i < arr.length; i++){
         let currentVal = arr[i]
-        let j
-        while(j >=0 && arr[j] > currentVal){
+        let j = i - 1
+        while(comparator(j >=0 && arr[j], currentVal) > 0){
             arr[j + 1] = arr[j]
             j--
         }
@@ -289,5 +292,9 @@ function insertionSort(arr){
     return arr
 }
 
+const comparator = (a, b) => {
+    return a > b ? 1 :
+    a < b ? -1 : 0
+}
 
-console.log(insertionSort([3,4,5,1,3,4,2]))
+console.log(insertionSort(['kitty', 'uranus', 'bottle', 'cookies', 'gwen']))
