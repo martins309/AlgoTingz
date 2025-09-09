@@ -230,29 +230,29 @@
 //////////Bubble Sort//////////////
 
 
-function bubbleSort(arr, comparator) {
-    if(typeof comparator !== 'function'){
-        comparator = (a, b) => a - b
-    }
-    const swap = (arr, idx1, idx2) => {
-        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1] ]
-    }
-    for(let i = arr.length; i > 0; i-- ){
-        for (let j = 0; j < i - 1; j++){
-            if(comparator(arr[j], arr[j + 1]) > 0){
-                swap(arr, j, j + 1)
-            }
-        }
-    }
-    return arr 
-}
+// function bubbleSort(arr, comparator) {
+//     if(typeof comparator !== 'function'){
+//         comparator = (a, b) => a - b
+//     }
+//     const swap = (arr, idx1, idx2) => {
+//         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1] ]
+//     }
+//     for(let i = arr.length; i > 0; i-- ){
+//         for (let j = 0; j < i - 1; j++){
+//             if(comparator(arr[j], arr[j + 1]) > 0){
+//                 swap(arr, j, j + 1)
+//             }
+//         }
+//     }
+//     return arr 
+// }
 
-const comparator = (a, b) => {
-    return a > b ? 1 :
-    a < b ? -1 : 0
-}
+// const comparator = (a, b) => {
+//     return a > b ? 1 :
+//     a < b ? -1 : 0
+// }
 
-console.log(bubbleSort(['zebra', 'donkey', 'youMuj', 'apples', 'esteak', 'kitty'], comparator))
+// console.log(bubbleSort(['zebra', 'donkey', 'youMuj', 'apples', 'esteak', 'kitty'], comparator))
 
 
 //write the comparator tomorrow
@@ -279,13 +279,13 @@ console.log(bubbleSort(['zebra', 'donkey', 'youMuj', 'apples', 'esteak', 'kitty'
 function insertionSort(arr){
     for( let i = 1; i < arr.length; i++){
         let currentVal = arr[i]
-        for( let j = i - 1; i >= 0 && currentVal; j--){
+        let j 
+        for( j = i - 1; j >= 0 && arr[j] > currentVal; j--){
             arr[j + 1] = arr[j]
         }
-            arr[j] = currentVal
-
+          arr[j + 1] = currentVal
     }
     return arr
 }
 
-console.log(insertionSort([3,4,5,7,1,3,4]))
+console.log(insertionSort([3,4,5,9,8,1,2,3]))
