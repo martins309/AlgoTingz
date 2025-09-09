@@ -48,19 +48,33 @@ class SinglyLinkedList{
         return this
     }
     pop(){
+        //if the list is empty
         if(!this.head){
             return undefined
-        }
+        }   
+            //these pointers are at the same position at first
             let current = this.head
-            let newTail = end 
-           
+            let newTail = current
+        //while there is another node in the sequence
         while(current.next){
+        //set the new tail to be head 
+        //current to be the next node in the list
            newTail = current
            current = current.next
         }
+        // set the tail to be the one before it
+        //sever the connection after it 
         this.tail = newTail
         this.tail.next = null
+        //decrement the length
         this.length--
+        //if list is empty 
+        //set everything to null
+        if(this.length === 0){
+            this.head = null
+            this.tail = null
+        }
+        //return the item that you took out
         return current
     }
 }
