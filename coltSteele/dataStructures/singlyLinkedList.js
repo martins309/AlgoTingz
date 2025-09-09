@@ -35,8 +35,8 @@ class SinglyLinkedList{
         this.length = 0
     }
     push(val){
-        let newNode = new Node()
-        if(this.head === null){
+        let newNode = new Node(val)
+        if(!this.head){
             this.head = newNode 
             this.tail = this.head
         } else {
@@ -50,5 +50,7 @@ class SinglyLinkedList{
 }
 
 let list = new SinglyLinkedList()
-
+list.push('chicken')
+list.push('wings')
+list.push(99)
 console.log(list)
