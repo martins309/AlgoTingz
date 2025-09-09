@@ -256,3 +256,36 @@ console.log(bubbleSort(['zebra', 'donkey', 'youMuj', 'apples', 'esteak', 'kitty'
 
 
 //write the comparator tomorrow
+
+
+
+
+
+
+
+//Alright now for insertion sort ting
+
+
+
+
+// we are comparing the second number to the first number and inserting it in place if the second number
+// is larger than the first
+// in an array if i = 1 and the value of one is 1
+// and j = i - 1 and that value is 3 
+// then you insert the one where the 3 is.
+// we are going backwards because 
+
+
+function insertionSort(arr){
+    for( let i = 1; i < arr.length; i++){
+        let currentVal = arr[i]
+        for( let j = i - 1; i >= 0 && currentVal; j--){
+            arr[j + 1] = arr[j]
+        }
+            arr[j] = currentVal
+
+    }
+    return arr
+}
+
+console.log(insertionSort([3,4,5,7,1,3,4]))

@@ -1,14 +1,18 @@
 /*
 
 start by picking the second element in the array
+because the sorted portion is considered the first element in the array
+no need to sort the first one so
 now compare the second element with the one before it 
 and swap if necessary.
-Continye to the nect element and if it is in the incorrect
+Continue to the next element and if it is in the incorrect
 order, iterate through the sorted portion 
 i.e the left side 
 to place the element in the correct place
 repeat until the array is sorted
 
+
+you're taking an element and inserting in the correct position in the array
 
 
 
