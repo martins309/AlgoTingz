@@ -47,6 +47,20 @@ class SinglyLinkedList{
         this.length ++
         return this
     }
+    pop(){
+        if(!this.length){
+            return undefined
+        }
+        
+        while(this){
+            let end = this.tail
+            let temp = end - 1 
+            temp = null
+            end = temp
+        }
+        this.length--
+        return temp
+    }
 }
 
 let list = new SinglyLinkedList()
@@ -54,3 +68,13 @@ list.push('chicken')
 list.push('wings')
 list.push(99)
 console.log(list)
+
+
+//popping pseudocode
+//if there are no nodes in the list, 
+//return undefined
+//loop through the list until you reach the tail 
+//set the next property of the second to last node to be null
+//set the tail to be the second to last node
+//decrement the list by one
+//return the node that was removed
