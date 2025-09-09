@@ -35,16 +35,20 @@ class SinglyLinkedList{
         this.length = 0
     }
     push(val){
-        val = new Node()
+        let newNode = new Node()
         if(this.head === null){
-            this.head = val 
-            this.tail = val
+            this.head = newNode 
+            this.tail = this.head
         } else {
-            this.next = this.tail
-            this.tail = val
+            this.tail.next = newNode
+            this.tail = newNode
+            
         }
-        this.length += 1
+        this.length ++
+        return this
     }
 }
 
 let list = new SinglyLinkedList()
+
+console.log(list)
