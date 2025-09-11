@@ -77,7 +77,30 @@ class SinglyLinkedList{
         //return the item that you took out
         return current
     }
+    //if there are node return undefined
+    // store the current head prop in a variable
+    //set the head property to be the current heads next property
+    //decrement the length by 1
+    // return the value of the node removed
+
+    shift(){
+        if(!this.head) return undefined
+        let current = this.head
+        let newHead = current.next
+        while(current.next){
+            current = newHead
+        }
+        this.length--
+        return current
+
+    }
 }
+
+
+
+
+
+
 
 let list = new SinglyLinkedList()
 list.push('chicken')
