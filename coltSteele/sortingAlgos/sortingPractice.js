@@ -306,7 +306,12 @@
 
 
 
-function insertionSort(arr) {
+function insertionSort(arr, comparator) {
+    if(typeof comparator !== 'function') {
+        comparator = function(a, b) {
+            return a - b
+        }
+    }
     for(let i = 1; i < arr.length; i++) {
         let currentVal = arr[i]
         let j
@@ -316,6 +321,10 @@ function insertionSort(arr) {
         arr[j + 1] = currentVal
     }
     return arr
+}
+function comparator(a, b) {
+    return a > b ? 1 : 
+    a < b ? -1 : 0
 }
 
 console.log(insertionSort([5,6,8,12,4,1,8,3]))
