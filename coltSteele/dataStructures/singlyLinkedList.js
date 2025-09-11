@@ -86,13 +86,16 @@ class SinglyLinkedList{
     shift(){
         if(!this.head) return undefined
         let current = this.head
-        let newHead = current.next
-        while(current.next){
-            current = newHead
-        }
+        this.head = current.next
         this.length--
+        if(this.length === 0){
+            this.tail = null
+        }
         return current
 
+    }
+    unshift(val){
+        let newNode = new Node(val)
     }
 }
 
@@ -103,10 +106,12 @@ class SinglyLinkedList{
 
 
 let list = new SinglyLinkedList()
-list.push('chicken')
-list.push('wings')
-list.push(99)
-list.pop()
+list.push('hello')
+list.push('world')
+list.push('im')
+list.push('awake')
+
+
 console.log(list)
 
 
