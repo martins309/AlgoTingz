@@ -433,26 +433,57 @@
 
 
 
-function insertionTing(arr, comparator){
+// function insertionTing(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     for(let i = 1; i < arr.length; i++){
+//         let currentVal = arr[i]
+//         let j = i - 1
+//         while(j >=0 && comparator(arr[j], currentVal) > 0){
+//             arr[j + 1] = arr[j]
+//             j--
+//         }
+//         arr[j + 1] = currentVal
+//     }
+//     return arr
+// }
+// function comparator(a, b){
+//     return a > b ? 1 :
+//     a < b ? -1 : 0
+// }
+
+// console.log(insertionTing(['zebra', 'chicken', 'donkey', 'anus', 'recipe', 'taint'], comparator))\
+
+
+
+function selectiveHearing(arr, comparator){
     if(typeof comparator !== 'function'){
         comparator = function(a, b){
             return a - b
         }
     }
-    for(let i = 1; i < arr.length; i++){
-        let currentVal = arr[i]
-        let j = i - 1
-        while(j >=0 && comparator(arr[j], currentVal) > 0){
-            arr[j + 1] = arr[j]
-            j--
+    function swap(arr, idx1, idx2){
+        return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+    }
+
+    for(let i = 0; i < arr.length; i++){
+        let min = i
+        for(let j = i + 1; j < arr.length; j++){
+            if(comparator(arr[min], arr[j]) > 0){
+                min = j
+            }
         }
-        arr[j + 1] = currentVal
+        if(i !== min) swap(arr, i, min)
     }
     return arr
 }
+
 function comparator(a, b){
     return a > b ? 1 :
-    a < b ? -1 : 0
+    a < b ? -1: 0
 }
 
-console.log(insertionTing(['zebra', 'chicken', 'donkey', 'anus', 'recipe', 'taint'], comparator))
+console.log(selectiveHearing(['zebra', 'chicken', 'donkey', 'anus', 'recipe', 'taint'], comparator))
