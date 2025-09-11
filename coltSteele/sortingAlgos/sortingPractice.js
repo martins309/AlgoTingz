@@ -306,25 +306,47 @@
 
 
 
-function insertionSort(arr, comparator) {
-    if(typeof comparator !== 'function') {
-        comparator = function(a, b) {
-            return a - b
-        }
+// function insertionSort(arr, comparator) {
+//     if(typeof comparator !== 'function') {
+//         comparator = function(a, b) {
+//             return a - b
+//         }
+//     }
+//     for(let i = 1; i < arr.length; i++) {
+//         let currentVal = arr[i]
+//         let j
+//         for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--) {
+//             arr[j + 1] = arr[j]
+//         }
+//         arr[j + 1] = currentVal
+//     }
+//     return arr
+// }
+// function comparator(a, b) {
+//     return a > b ? 1 : 
+//     a < b ? -1 : 0
+// }
+
+// console.log(insertionSort(["titty", 'kitty', 'lick', 'prick', 'apple'], comparator))
+
+
+
+
+
+
+
+function bubbles(arr){
+    function swap(arr, idx1, idx2){
+        return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
-    for(let i = 1; i < arr.length; i++) {
-        let currentVal = arr[i]
-        let j
-        for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--) {
-            arr[j + 1] = arr[j]
+    for(let i = arr.length; i >0 ; i--){
+        for(let j = 0; j = i -1; j++){
+            if(arr[j] > arr[j + 1]){
+                swap(arr, i, j)
+            }
         }
-        arr[j + 1] = currentVal
     }
     return arr
 }
-function comparator(a, b) {
-    return a > b ? 1 : 
-    a < b ? -1 : 0
-}
 
-console.log(insertionSort(["titty", 'kitty', 'lick', 'prick', 'apple'], comparator))
+con
