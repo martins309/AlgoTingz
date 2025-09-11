@@ -334,14 +334,19 @@
 
 
 
-
-function bubbles(arr){
+function bubbleTing(arr, comparator){
+    if(typeof comparator !== 'function') {
+        comparator = function(a , b) {
+            return a - b
+        }
+    }
     function swap(arr, idx1, idx2){
         return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
+
     for(let i = arr.length; i > 0; i--){
         for(let j = 0; j < i - 1; j++){
-            if(arr[j] > arr[j + 1]){
+            if(comparator(arr[j], arr[j + 1]) > 0){
                 swap(arr, j, j + 1)
             }
         }
@@ -349,4 +354,9 @@ function bubbles(arr){
     return arr
 }
 
-console.log(bubbles([5,7,89,34,2,5,7,3,12,1,6,78,23]))
+function comparator(a, b){
+    return a > b ? 1 :
+    a < b ? -1 : 0
+}
+
+console.log(bubbleTing(['zebra', 'chicken', 'donkey', 'anus', 'recipe', 'taint'], comparator))
