@@ -94,8 +94,24 @@ class SinglyLinkedList{
         return current
 
     }
+    //the function accepts a val
+    // create a new node using the val passed to the function
+    //if there is no head on the list, set the head and tail to be the new created node
+    // otherwise set the newly created nodes next property to be the current head property on the list
+    //set the head property to be the newly created node on the list
+    // incrememnt the list by 1
+    //return the list
     unshift(val){
         let newNode = new Node(val)
+        if(!this.head){
+            this.head = newNode
+            this.tail = this.head
+        } else {
+            newNode.next = this.head
+            this.head = newNode.next
+        }
+        this.length++
+        return this
     }
 }
 
@@ -110,7 +126,7 @@ list.push('hello')
 list.push('world')
 list.push('im')
 list.push('awake')
-
+list.unshift('yo')
 
 console.log(list)
 
