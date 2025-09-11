@@ -444,6 +444,7 @@ function insertionTing(arr, comparator){
         let j = i - 1
         while(j >=0 && comparator(arr[j], currentVal) > 0){
             arr[j + 1] = arr[j]
+            j--
         }
         arr[j + 1] = currentVal
     }
