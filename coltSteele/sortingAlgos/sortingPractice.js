@@ -349,4 +349,4 @@ function bubbles(arr){
     return arr
 }
 
-con
+console.log(bubbles([5,7,89,34,2,5,7,3,12,1,6,78,23]))
