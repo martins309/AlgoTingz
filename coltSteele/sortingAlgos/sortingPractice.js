@@ -404,28 +404,54 @@
 
 
 
-function bubblingBubble(arr, comparator){
+// function bubblingBubble(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     function swap(arr, idx1, idx2){
+//         return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
+//     for(let i = arr.length; i > 0; i--){
+//         for(let j = 0; j < i - 1; j++){
+//             if(comparator(arr[j], arr[j + 1]) > 0){
+//                 swap(arr, j + 1, j)
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// function comparator(a, b){
+//     return a > b ? 1 :
+//     a < b ? -1 : 0
+// }
+
+// console.log(bubblingBubble(['zebra', 'chicken', 'donkey', 'anus', 'recipe', 'taint'], comparator))
+
+
+
+
+function insertionTing(arr, comparator){
     if(typeof comparator !== 'function'){
         comparator = function(a, b){
             return a - b
         }
     }
-    function swap(arr, idx1, idx2){
-        return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
-    }
-    for(let i = arr.length; i > 0; i--){
-        for(let j = 0; j < i - 1; j++){
-            if(comparator(arr[j], arr[j + 1]) > 0){
-                swap(arr, j + 1, j)
-            }
+    for(let i = 1; i < arr.length; i++){
+        let currentVal = arr[i]
+        let j = i - 1
+        while(j >=0 && comparator(arr[j], currentVal) > 0){
+            arr[j + 1] = arr[j]
         }
+        arr[j + 1] = currentVal
     }
     return arr
 }
-
 function comparator(a, b){
     return a > b ? 1 :
     a < b ? -1 : 0
 }
 
-console.log(bubblingBubble(['zebra', 'chicken', 'donkey', 'anus', 'recipe', 'taint'], comparator))
+console.log(insertionTing(['zebra', 'chicken', 'donkey', 'anus', 'recipe', 'taint'], comparator))
