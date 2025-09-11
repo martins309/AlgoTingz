@@ -327,4 +327,4 @@ function comparator(a, b) {
     a < b ? -1 : 0
 }
 
-console.log(insertionSort(["titty", 'kitty', 'lick', 'prick', 'apple']))
+console.log(insertionSort(["titty", 'kitty', 'lick', 'prick', 'apple'], comparator))
