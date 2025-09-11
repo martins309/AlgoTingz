@@ -276,25 +276,46 @@
 // we are going backwards because 
 
 
-function insertionSort(arr){
-    if(typeof comparator !== 'function'){
-        comparator = (a, b) => a - b
-    }
-    for(let i = 1; i < arr.length; i++){
+// function insertionSort(arr){
+//     if(typeof comparator !== 'function'){
+//         comparator = (a, b) => a - b
+//     }
+//     for(let i = 1; i < arr.length; i++){
+//         let currentVal = arr[i]
+//         let j = i - 1
+//         while(comparator(j >=0 && arr[j], currentVal) > 0){
+//             arr[j + 1] = arr[j]
+//             j--
+//         }
+//         arr[j + 1] = currentVal
+//     }
+//     return arr
+// }
+
+// const comparator = (a, b) => {
+//     return a > b ? 1 :
+//     a < b ? -1 : 0
+// }
+
+// console.log(insertionSort(['kitty', 'uranus', 'bottle', 'cookies', 'gwen']))
+
+
+
+
+
+
+
+
+function insertionSort(arr) {
+    for(let i = 1; i < arr.length; i++) {
         let currentVal = arr[i]
-        let j = i - 1
-        while(comparator(j >=0 && arr[j], currentVal) > 0){
+        let j
+        for(j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
             arr[j + 1] = arr[j]
-            j--
         }
         arr[j + 1] = currentVal
     }
     return arr
 }
 
-const comparator = (a, b) => {
-    return a > b ? 1 :
-    a < b ? -1 : 0
-}
-
-console.log(insertionSort(['kitty', 'uranus', 'bottle', 'cookies', 'gwen']))
+console.log(insertionSort([5,6,8,12,4,1,8,3]))
