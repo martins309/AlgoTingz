@@ -315,7 +315,7 @@ function insertionSort(arr, comparator) {
     for(let i = 1; i < arr.length; i++) {
         let currentVal = arr[i]
         let j
-        for(j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+        for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--) {
             arr[j + 1] = arr[j]
         }
         arr[j + 1] = currentVal
@@ -327,4 +327,4 @@ function comparator(a, b) {
     a < b ? -1 : 0
 }
 
-console.log(insertionSort([5,6,8,12,4,1,8,3]))
+console.log(insertionSort(["titty", 'kitty', 'lick', 'prick', 'apple']))
