@@ -20,13 +20,6 @@ class Node{
     }
 }
 
-//pushing pseudocode
-//the function should accept a val
-//create a new node using the value passed to the function
-//if there is no head on the list set the head and the tail to be the newly created node
-//otherwise set the next property on the tail to be the new node
-// and set the tail property on the list to be the newly created node
-//increment the length by one
 
 class SinglyLinkedList{
     constructor(){
@@ -34,6 +27,13 @@ class SinglyLinkedList{
         this.tail = null
         this.length = 0
     }
+    //pushing pseudocode
+//the function should accept a val
+//create a new node using the value passed to the function
+//if there is no head on the list set the head and the tail to be the newly created node
+//otherwise set the next property on the tail to be the new node
+// and set the tail property on the list to be the newly created node
+//increment the length by one
     push(val){
         let newNode = new Node(val)
         if(!this.head){
@@ -108,7 +108,7 @@ class SinglyLinkedList{
             this.tail = this.head
         } else {
             newNode.next = this.head
-            this.head = newNode.next
+            this.head = newNode
         }
         this.length++
         return this
