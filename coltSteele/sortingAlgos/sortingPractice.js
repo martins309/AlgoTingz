@@ -459,9 +459,47 @@
 
 
 
-function selectiveHearing(arr, comparator){
+// function selectiveHearing(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     function swap(arr, idx1, idx2){
+//         return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
+
+//     for(let i = 0; i < arr.length; i++){
+//         let min = i
+//         for(let j = i + 1; j < arr.length; j++){
+//             if(comparator(arr[min], arr[j]) > 0){
+//                 min = j
+//             }
+//         }
+//         if(i !== min) swap(arr, i, min)
+//     }
+//     return arr
+// }
+
+// function comparator(a, b){
+//     return a > b ? 1 :
+//     a < b ? -1: 0
+// }
+
+// console.log(selectiveHearing(['zebra', 'chicken', 'donkey', 'anus', 'recipe', 'taint'], comparator))
+
+
+
+
+
+
+
+
+
+
+function bubbleGuts(arr, comparator){
     if(typeof comparator !== 'function'){
-        comparator = function(a, b){
+        comparator = function(a, b) {
             return a - b
         }
     }
@@ -469,21 +507,19 @@ function selectiveHearing(arr, comparator){
         return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
 
-    for(let i = 0; i < arr.length; i++){
-        let min = i
-        for(let j = i + 1; j < arr.length; j++){
-            if(comparator(arr[min], arr[j]) > 0){
-                min = j
+    for(let i = arr.length; i > 0; i--){
+        for(let j = 0; j < i - 1; j++){
+            if(comparator(arr[j], arr[j + 1]) > 0){
+                swap(arr, j, j + 1)
             }
         }
-        if(i !== min) swap(arr, i, min)
     }
     return arr
 }
 
-function comparator(a, b){
+function comparator(a, b) {
     return a > b ? 1 :
-    a < b ? -1: 0
+    a < b ? -1 : 0
 }
 
-console.log(selectiveHearing(['zebra', 'chicken', 'donkey', 'anus', 'recipe', 'taint'], comparator))
+console.log(bubbleGuts(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
