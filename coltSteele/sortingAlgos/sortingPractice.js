@@ -587,4 +587,4 @@ function comparator(a, b) {
     a < b ? -1 : 0
 }
 
-console.table(doubleInsertion(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
+console.table(doubleInsertion([5,7,2,1,67,78,3,2,56,67,2,2,3], comparator))
