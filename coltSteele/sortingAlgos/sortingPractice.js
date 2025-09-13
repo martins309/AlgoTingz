@@ -525,6 +525,11 @@
 // console.table(bubbleGuts(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
 
 
+
+//remember with this one that we are comparing the position and not the actual value which is i not arr[i]
+//arr[i] is in the insertion sort ting that we are about to do now
+
+
 function selectDeezNutz(arr, comparator){
     if(typeof comparator !== 'function'){
         comparator = function(a, b){
@@ -536,14 +541,14 @@ function selectDeezNutz(arr, comparator){
     }
     
     for(let i = 0; i < arr.length; i++){
-        let min = arr[i]
+        let min = i
         for(let j = i + 1; j < arr.length; j++){
-            if(comparator(min, j) > 0){
+            if(comparator(arr[min], arr[j]) > 0){
                 min = j
             }
         }
         if(i !== min){
-            swap(arr, min, i)
+            swap(arr, i, min)
         }
     }
     return arr
@@ -554,4 +559,4 @@ function comparator(a, b){
     a < b ? -1 : 0
 }
 
-console.logo(selectDeezNutz([6,4,6,7,23,2,67,2,67,7,3,1,3]))
+console.table(selectDeezNutz(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
