@@ -530,33 +530,61 @@
 //arr[i] is in the insertion sort ting that we are about to do now
 
 
-function selectDeezNutz(arr, comparator){
-    if(typeof comparator !== 'function'){
+// function selectDeezNutz(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//       function swap(arr, idx1, idx2){
+//         return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
+    
+//     for(let i = 0; i < arr.length; i++){
+//         let min = i
+//         for(let j = i + 1; j < arr.length; j++){
+//             if(comparator(arr[min], arr[j]) > 0){
+//                 min = j
+//             }
+//         }
+//         if(i !== min){
+//             swap(arr, i, min)
+//         }
+//     }
+//     return arr
+// }
+
+// function comparator(a, b){
+//     return a > b ? 1 :
+//     a < b ? -1 : 0
+// }
+
+// console.table(selectDeezNutz(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
+
+
+
+
+function doubleInsertion(arr, comparator){
+      if(typeof comparator !== 'function'){
         comparator = function(a, b){
             return a - b
         }
     }
-      function swap(arr, idx1, idx2){
-        return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
-    }
-    
-    for(let i = 0; i < arr.length; i++){
-        let min = i
-        for(let j = i + 1; j < arr.length; j++){
-            if(comparator(arr[min], arr[j]) > 0){
-                min = j
-            }
+    for(let i = 1; i < arr.length; i++){
+        let currentVal = arr[i]
+        let j = i - 1
+        while(j >= 0 && comparator(arr[j], currentVal) > 0){
+            arr[j + 1] = arr[j]
+            j--
         }
-        if(i !== min){
-            swap(arr, i, min)
-        }
+        arr[j + 1] = currentVal
     }
     return arr
 }
 
-function comparator(a, b){
-    return a > b ? 1 :
+function comparator(a, b) {
+    return a > b ? 1 : 
     a < b ? -1 : 0
 }
 
-console.table(selectDeezNutz(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
+console.table(doubleInsertion(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
