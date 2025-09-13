@@ -522,4 +522,4 @@ function comparator(a, b) {
     a < b ? -1 : 0
 }
 
-console.log(bubbleGuts(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
+console.table(bubbleGuts(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
