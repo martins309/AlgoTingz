@@ -497,29 +497,61 @@
 
 
 
-function bubbleGuts(arr, comparator){
+// function bubbleGuts(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b) {
+//             return a - b
+//         }
+//     }
+//     function swap(arr, idx1, idx2){
+//         return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
+
+//     for(let i = arr.length; i > 0; i--){
+//         for(let j = 0; j < i - 1; j++){
+//             if(comparator(arr[j], arr[j + 1]) > 0){
+//                 swap(arr, j, j + 1)
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// function comparator(a, b) {
+//     return a > b ? 1 :
+//     a < b ? -1 : 0
+// }
+
+// console.table(bubbleGuts(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
+
+
+function selectDeezNutz(arr, comparator){
     if(typeof comparator !== 'function'){
-        comparator = function(a, b) {
+        comparator = function(a, b){
             return a - b
         }
     }
-    function swap(arr, idx1, idx2){
+      function swap(arr, idx1, idx2){
         return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
-
-    for(let i = arr.length; i > 0; i--){
-        for(let j = 0; j < i - 1; j++){
-            if(comparator(arr[j], arr[j + 1]) > 0){
-                swap(arr, j, j + 1)
+    
+    for(let i = 0; i < arr.length; i++){
+        let min = arr[i]
+        for(let j = i + 1; j < arr.length; j++){
+            if(comparator(min, j) > 0){
+                min = j
             }
+        }
+        if(i !== min){
+            swap(arr, min, i)
         }
     }
     return arr
 }
 
-function comparator(a, b) {
+function comparator(a, b){
     return a > b ? 1 :
     a < b ? -1 : 0
 }
 
-console.table(bubbleGuts(['what', 'the', 'actual', 'fuck', 'i', 'dont', 'like', 'this', 'rock'], comparator))
+console.logo(selectDeezNutz([6,4,6,7,23,2,67,2,67,7,3,1,3]))
