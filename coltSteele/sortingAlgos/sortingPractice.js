@@ -597,17 +597,29 @@
 
 
 
-function insertionSort(arr, comparator){
-    for(let i = 1; i < arr.length; i++){
-        let currentVal = arr[i]
-        let j = i - 1
-        while(j >= 0 && comparator(arr[j], currentVal)> 0){
-            arr[j + 1] = arr[j]
-            j--
+function bubbleSort(arr, comparator){
+    function swap(arr, idx1, idx2){
+        return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+    }
+
+    if(typeof comparator !== 'function'){
+        comparator = function(a, b){
+            return a - b
         }
-        arr[j + 1] = currentVal
+    }
+    for(let i = arr.length; i > 0; i--){
+        for(let j = 0; j < i - 1; j++){
+            if(comparator(arr[j], arr[j + 1]) > 0){
+                swap(arr, arr[j], arr[j + 1])
+            }
+        }
     }
     return arr
 }
 
-console.log(insertionSort([5,6,9,2,5,4,3,0,1]))
+function comparator(a, b){
+    return a > b ? 1:
+    a < b ? -1: 0
+}
+
+console.log(bubbleSort([56,98,2,4,55,2,3,2,0,1,4], comparator))
