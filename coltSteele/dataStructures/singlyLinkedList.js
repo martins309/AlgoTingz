@@ -121,11 +121,24 @@ class SinglyLinkedList{
         if(idx < 0 || idx >= this.length) return null
         let count = 0
         let current = this.head
-        while(current !== idx){
+        while(count !== idx){
             current = current.next
             count++
         }
-        return idx
+        return current
+    }
+    //function should accept an index and a value
+    // use the get method to find a node a specific node
+    //if no node return false
+    //if the node is found, set the value of that node to be
+    //the value passed to the function and return true
+    set(idx, val){
+        let node = get(idx)
+        if(!node) return false
+        if(node){
+            val = node
+        }
+        return true
     }
 }
 
@@ -141,9 +154,9 @@ list.push('world')
 list.push('im')
 list.push('awake')
 list.unshift('yo')
-list.get(3)
 
-console.log(list.get(3))
+
+console.log(list.set(3, 'hi'))
 
 
 //popping pseudocode
