@@ -614,7 +614,7 @@ function selectionSort(arr, comparator){
             }
         }
         if(i !== min){
-            swap(arr, min, i)
+            swap(arr, i, min)
         }
     }
     return arr
@@ -624,4 +624,4 @@ function comparator(a, b){
     a < b ? -1: 0
 }
 
-console.table(selectionSort([4,6,24,2,6,8,9,3,9]))
+console.table(selectionSort(['she', 'he', 'me', 'wumbo'], comparator))
