@@ -119,12 +119,13 @@ class SinglyLinkedList{
     // loop until you reach that index and return the node at that specific index
     get(idx){
         if(idx < 0 || idx >= this.length) return null
-        for(let i = 0; i < this.length; i++){
-            if(this.head.next === idx){
-                return idx
-            }
+        let count = 0
+        let current = this.head
+        while(current !== idx){
+            current = current.next
+            count++
         }
-
+        return idx
     }
 }
 
@@ -142,7 +143,7 @@ list.push('awake')
 list.unshift('yo')
 list.get(3)
 
-console.log(list.get())
+console.log(list.get(3))
 
 
 //popping pseudocode
