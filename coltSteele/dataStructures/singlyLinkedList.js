@@ -113,6 +113,19 @@ class SinglyLinkedList{
         this.length++
         return this
     }
+    //function should accept and index
+    //if the idx is less than 0 or
+    // greater than or equal to the length of the list return null
+    // loop until you reach that index and return the node at that specific index
+    get(idx){
+        if(idx < 0 || idx >= this.length) return null
+        for(let i = 0; i < this.length; i++){
+            if(this.head.next === idx){
+                return idx
+            }
+        }
+
+    }
 }
 
 
@@ -127,8 +140,9 @@ list.push('world')
 list.push('im')
 list.push('awake')
 list.unshift('yo')
+list.get(3)
 
-console.log(list)
+console.log(list.get())
 
 
 //popping pseudocode
