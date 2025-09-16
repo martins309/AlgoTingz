@@ -564,16 +564,44 @@
 
 
 
-function doubleInsertion(arr, comparator){
-      if(typeof comparator !== 'function'){
-        comparator = function(a, b){
-            return a - b
-        }
-    }
+// function doubleInsertion(arr, comparator){
+//       if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     for(let i = 1; i < arr.length; i++){
+//         let currentVal = arr[i]
+//         let j = i - 1
+//         while(j >= 0 && comparator(arr[j], currentVal) > 0){
+//             arr[j + 1] = arr[j]
+//             j--
+//         }
+//         arr[j + 1] = currentVal
+//     }
+//     return arr
+// }
+
+// function comparator(a, b) {
+//     return a > b ? 1 : 
+//     a < b ? -1 : 0
+// }
+
+// console.table(doubleInsertion([5,7,2,1,67,78,3,2,56,67,2,2,3], comparator))
+
+
+
+
+
+
+
+
+
+function insertionSort(arr, comparator){
     for(let i = 1; i < arr.length; i++){
         let currentVal = arr[i]
         let j = i - 1
-        while(j >= 0 && comparator(arr[j], currentVal) > 0){
+        while(j >= 0 && comparator(arr[j], currentVal)> 0){
             arr[j + 1] = arr[j]
             j--
         }
@@ -582,9 +610,4 @@ function doubleInsertion(arr, comparator){
     return arr
 }
 
-function comparator(a, b) {
-    return a > b ? 1 : 
-    a < b ? -1 : 0
-}
-
-console.table(doubleInsertion([5,7,2,1,67,78,3,2,56,67,2,2,3], comparator))
+console.log(insertionSort([5,6,9,2,5,4,3,0,1]))
