@@ -133,12 +133,12 @@ class SinglyLinkedList{
     //if the node is found, set the value of that node to be
     //the value passed to the function and return true
     set(idx, val){
-        let node = get(idx)
-        if(!node) return false
+        let node = this.get(idx)
         if(node){
-            val = node
+            node.val = val
+            return true
         }
-        return true
+        return false
     }
 }
 
@@ -154,9 +154,9 @@ list.push('world')
 list.push('im')
 list.push('awake')
 list.unshift('yo')
+list.set(3, 'hi')
 
-
-console.log(list.set(3, 'hi'))
+console.log(list.get(3))
 
 
 //popping pseudocode
