@@ -180,7 +180,7 @@ class SinglyLinkedList{
         if(idx === 0) return this.shift(idx)
         
         let prev = this.get(idx - 1)
-        prev.next = prex.next.next
+        prev.next = prev.next.next
 
         this.length--
         return this.get(idx)
@@ -202,7 +202,10 @@ list.push('awake')
 list.unshift('yo')
 list.set(3, 'hi')
 
-console.log(list)
+
+console.log(list.remove(4))
+
+
 
 
 //popping pseudocode
