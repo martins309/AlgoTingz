@@ -166,6 +166,26 @@ class SinglyLinkedList{
         this.length++
         return true
     }
+    //define a function that takes an index
+    //if the index is less than 0 or greater than or eq the length return undefined
+    //if the index is that same as the length -1 pop
+    //if the index is 0, shift
+    //otherwise using the get method get the index of the node - 1
+    //set next property on that node to be the next of the next node
+    //decrement the length
+    //return the value of the node removed
+    remove(idx){
+        if(idx < 0 || idx >= this.length) return undefined
+        if(idx === this.length -1) return this.pop(idx)
+        if(idx === 0) return this.shift(idx)
+        
+        let prev = this.get(idx - 1)
+        prev.next = prex.next.next
+
+        this.length--
+        return this.get(idx)
+
+    }
 }
 
 
@@ -182,8 +202,6 @@ list.push('awake')
 list.unshift('yo')
 list.set(3, 'hi')
 
-console.log(list.insert(3, 'chicken'))
-console.log(list.get(3))
 console.log(list)
 
 
