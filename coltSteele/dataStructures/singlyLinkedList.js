@@ -155,12 +155,15 @@ class SinglyLinkedList{
         if(idx < 0 || idx > this.length) return false
         
         if(idx === this.length){
-            this.push(this.tail)
+            newNode = this.tail
+            this.push(newNode)
         } 
         if(idx === 0){
-            this.unshift(this.head)
+            newNode = this.head
+            this.unshift(newNode)
         } else {
             this.get(idx - 1)
+            
         }
         this.length++
         return true
