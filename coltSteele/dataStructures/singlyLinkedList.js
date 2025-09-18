@@ -154,17 +154,15 @@ class SinglyLinkedList{
 
         if(idx < 0 || idx > this.length) return false
         
-        if(idx === this.length){
-            newNode = this.tail
-            this.push(newNode)
-        } 
-        if(idx === 0){
-            newNode = this.head
-            this.unshift(newNode)
-        } else {
-            this.get(idx - 1)
+        if(idx === this.length) return !!this.push(val)
+         
+        if(idx === 0) return !!this.unshift(val)
             
-        }
+        let prev = this.get(idx - 1)
+        let temp = prev.next
+        prev.next = newNode
+        newNode.next = temp
+            
         this.length++
         return true
     }
@@ -184,7 +182,9 @@ list.push('awake')
 list.unshift('yo')
 list.set(3, 'hi')
 
+console.log(list.insert(3, 'chicken'))
 console.log(list.get(3))
+console.log(list)
 
 
 //popping pseudocode
