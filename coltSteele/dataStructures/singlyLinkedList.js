@@ -176,11 +176,12 @@ class SinglyLinkedList{
     //return the value of the node removed
     remove(idx){
         if(idx < 0 || idx >= this.length) return undefined
-        if(idx === this.length -1) return this.pop(idx)
-        if(idx === 0) return this.shift(idx)
+        if(idx === this.length -1) return this.pop()
+        if(idx === 0) return this.shift()
         
         let prev = this.get(idx - 1)
-        prev.next = prev.next.next
+        let removed = prev.next
+        prev.next = removed.next
 
         this.length--
         return this.get(idx)
