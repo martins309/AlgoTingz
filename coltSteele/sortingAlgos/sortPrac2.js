@@ -71,4 +71,4 @@ function mergeArr(arr1, arr2){
     return results
 }
 
-console.log(mergeArr([5,6,3], [1, 8, 9]))
+console.log(mergeArr([3,5,6], [1, 8, 9]))
