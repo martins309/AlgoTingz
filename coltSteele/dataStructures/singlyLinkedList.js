@@ -187,6 +187,25 @@ class SinglyLinkedList{
         return this.get(idx)
 
     }
+    //swap the head and the tail
+    // create a variable called next
+    //then one called prev
+    //create a variable called node and initialize it to the head property
+    //loop throught the list
+    // set the next to be the next property on whatever the node is
+    //set the next property on the node to be whatever the node is
+    // set the prev to  be the value of the node variable
+    //set the node variable to be the value of the next variable
+
+    reverse(){
+        this.head = this.tail
+        let next 
+        let prev
+        let node = this.head
+        while(this > 0){
+            
+        }
+    }
 }
 
 
