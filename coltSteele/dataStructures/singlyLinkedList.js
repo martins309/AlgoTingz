@@ -198,13 +198,18 @@ class SinglyLinkedList{
     //set the node variable to be the value of the next variable
 
     reverse(){
-        this.head = this.tail
-        let next 
-        let prev
-        let node = this.head
-        while(this > 0){
-            
-        }
+      let node = this.head
+      this.head = this.tail
+      this.tail = node
+      let prev = null
+      let next
+      while(this.length > 0){
+        next = node.next
+        node.next = prev
+        prev = node
+        node = next
+      }
+      return this
     }
 }
 
