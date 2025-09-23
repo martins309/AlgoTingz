@@ -143,8 +143,22 @@ function mergeArrays(arr1, arr2, comparator){
    return results
 }
 
+
+
+
+function mergeSort(arr, comparator){
+   if(arr.length <= 1) return arr
+
+   let mid = Math.floor(arr.length / 2)
+   let left = mergeSort(arr.slice(0, mid), comparator)
+   let right = mergeSort(arr.slice(mid),comparator)
+
+   return mergeArrays(left, right, comparator)
+}
+
 function comparator(a, b){
    return a > b ? 1:
    a < b ? -1 : 0
 }
-console.log(mergeArrays(['apples', 'dress', 'pie'], ['gays', 'rake', 'vibrator'], comparator))
+
+console.log(mergeSort(['fuel', 'theez', 'nuts', 'with', 'praise'], comparator))
