@@ -44,7 +44,7 @@ class SinglyLinkedList{
             this.tail = newNode
             
         }
-        this.length ++
+        this.length++
         return this
     }
     pop(){
