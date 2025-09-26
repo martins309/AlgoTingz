@@ -168,20 +168,25 @@
 
 
 
-function insertionSort(arr, comparator){
+function selectionSort(arr, comparator){
    if(typeof comparator !== 'function'){
       comparator = function(a, b){
          return a - b
       }
    }
-   for(let i = 1; i < arr.length; i++){
-      let currentVal = arr[i]
-      let j = i - 1
-      while(j >= 0 && comparator(arr[j], currentVal) > 0){
-         arr[j + 1] = arr[j]
-         j--
+   function swap(arr, idx1, idx2){
+      return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+   }
+   for(let i = 0; i < arr.length; i++){
+      let min = i
+      let j = 0
+      while(j < arr.length){
+         if(comparator(arr[min], arr[i]) > 0){
+            min = j
+            j++
+         }
       }
-      arr[j + 1] = currentVal
+      if(i !== min) return swap(arr, min, i)
    }
    return arr
 }
@@ -191,4 +196,4 @@ function comparator(a, b) {
    a < b ? -1 : 0
 }
 
-console.table(insertionSort(['chicken', 'is', 'fum', 'as', 'fuck'], comparator))
+console.table(selectionSort(['chicken', 'is', 'fum', 'as', 'fuck'], comparator))
