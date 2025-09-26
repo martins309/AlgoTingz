@@ -142,4 +142,16 @@ function mergeArr(arr1, arr2, comparator){
       return results
 }
 
-console.log(mergeArr([1,4,7], [3,7,9], comparator))
+
+
+
+function mergeSort(arr, comparator){
+   if(arr.length <= 1) return arr
+
+   let mid = Math.floor(arr.length / 2)
+   let left = mergeSort(arr.slice(0, mid), comparator)
+   let right = mergeSort(arr.slice(mid), comparator)
+   return mergeArr(left, right,  comparator)
+}
+
+
