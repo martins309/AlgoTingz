@@ -110,48 +110,85 @@
 
 
 
-function mergeArr(arr1, arr2, comparator){
+// function mergeArr(arr1, arr2, comparator){
+//    if(typeof comparator !== 'function'){
+//       comparator = function(a, b) {
+//          return a - b
+//       }
+//    }
+//    let i = 0
+//    let j = 0
+//    let results = []
+
+//    while(i < arr1.length && j < arr2.length){
+//       if(comparator(arr2[j], arr1[i]) > 0){
+//          results.push(arr1[i])
+//          i++
+//       } else {
+//          results.push(arr2[j])
+//          j++
+//       }
+//    }
+
+//    while(i < arr1.length){
+//       results.push(arr1[i])
+//       i++
+//    }
+
+//    while(j < arr2.length){
+//       results.push(arr2[j])
+//       j++
+//    }
+//       return results
+// }
+
+
+
+
+// function mergeSort(arr, comparator){
+//    if(arr.length <= 1) return arr
+
+//    let mid = Math.floor(arr.length / 2)
+//    let left = mergeSort(arr.slice(0, mid), comparator)
+//    let right = mergeSort(arr.slice(mid), comparator)
+//    return mergeArr(left, right,  comparator)
+// }
+
+
+// function comparator(a, b){
+//    return a > b ? 1 :
+//    a < b ? -1 : 0
+// }
+
+// console.table(mergeSort(['i', 'like', 'chicken', 'alot'], comparator))
+
+
+
+
+
+
+
+function insertionSort(arr, comparator){
    if(typeof comparator !== 'function'){
-      comparator = function(a, b) {
+      comparator = function(a, b){
          return a - b
       }
    }
-   let i = 0
-   let j = 0
-   let results = []
-
-   while(i < arr1.length && j < arr2.length){
-      if(comparator(arr2[j], arr1[i]) > 0){
-         results.push(arr1[i])
-         i++
-      } else {
-         results.push(arr2[j])
-         j++
+   for(let i = 1; i < arr.length; i++){
+      let currentVal = arr[i]
+      let j = i - 1
+      while(j >= 0 && comparator(arr[j], currentVal) > 0){
+         arr[j + 1] = arr[j]
+         j--
       }
+      arr[j + 1] = currentVal
    }
-
-   while(i < arr1.length){
-      results.push(arr1[i])
-      i++
-   }
-
-   while(j < arr2.length){
-      results.push(arr2[j])
-      j++
-   }
-      return results
+   return arr
 }
 
-
-
-
-function mergeSort(arr, comparator){
-   if(arr.length <= 1) return arr
-
-   let mid = Math.floor(arr.length / 2)
-   let left = mergeSort(arr.slice(0, mid), comparator)
-   let right = mergeSort(arr.slice(mid), comparator)
-   return mergeArr(left, right,  comparator)
+function comparator(a, b) {
+   return a > b ? 1 :
+   a < b ? -1 : 0
 }
 
-
+console.log(insertionSort([3,4,5,7,1,4,3,2,99], comparator))
