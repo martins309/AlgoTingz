@@ -179,14 +179,14 @@ function selectionSort(arr, comparator){
    }
    for(let i = 0; i < arr.length; i++){
       let min = i
-      let j = 0
+      let j = i + 1
       while(j < arr.length){
-         if(comparator(arr[min], arr[i]) > 0){
+         if(comparator(arr[min], arr[j]) > 0){
             min = j
             j++
          }
       }
-      if(i !== min) return swap(arr, min, i)
+      if(i !== min) return swap(arr, i, min)
    }
    return arr
 }
