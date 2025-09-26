@@ -191,4 +191,4 @@ function comparator(a, b) {
    a < b ? -1 : 0
 }
 
-console.log(insertionSort([3,4,5,7,1,4,3,2,99], comparator))
+console.table(insertionSort(['chicken', 'is', 'fum', 'as', 'fuck'], comparator))
