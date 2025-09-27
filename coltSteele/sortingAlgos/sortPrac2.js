@@ -175,7 +175,7 @@ function selectionSort(arr, comparator){
       }
    }
    function swap(arr, idx1, idx2){
-      return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+      [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
    }
    for(let i = 0; i < arr.length; i++){
       let min = i
@@ -183,10 +183,10 @@ function selectionSort(arr, comparator){
       while(j < arr.length){
          if(comparator(arr[min], arr[j]) > 0){
             min = j
-            j++
          }
+         j++
       }
-      if(i !== min) return swap(arr, i, min)
+      if(i !== min) swap(arr, i, min)
    }
    return arr
 }
