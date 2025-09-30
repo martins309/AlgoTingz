@@ -168,32 +168,68 @@
 
 
 
-function selectionSort(arr, comparator){
-   if(typeof comparator !== 'function'){
-      comparator = function(a, b){
-         return a - b
+// function selectionSort(arr, comparator){
+//    if(typeof comparator !== 'function'){
+//       comparator = function(a, b){
+//          return a - b
+//       }
+//    }
+//    function swap(arr, idx1, idx2){
+//       [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//    }
+//    for(let i = 0; i < arr.length; i++){
+//       let min = i
+//       let j = i + 1
+//       while(j < arr.length){
+//          if(comparator(arr[min], arr[j]) > 0){
+//             min = j
+//          }
+//          j++
+//       }
+//       if(i !== min) swap(arr, i, min)
+//    }
+//    return arr
+// }
+
+// function comparator(a, b) {
+//    return a > b ? 1 :
+//    a < b ? -1 : 0
+// }
+
+// console.table(selectionSort(['chicken', 'is', 'fum', 'as', 'fuck'], comparator))
+
+
+
+
+
+
+
+
+function mergeArr(arr1, arr2){
+   let results = []
+   let i = 0
+   let j = 0
+
+   while(arr1.length < i && arr2.length < j){
+      if(arr2[j] > arr1[i]){
+         results.push(arr1[i])
+         i++
+      } else {
+         results.push(arr2[j])
       }
    }
-   function swap(arr, idx1, idx2){
-      [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+
+
+   while(arr1.length < i){
+      results.push(arr1[i])
+      i++
    }
-   for(let i = 0; i < arr.length; i++){
-      let min = i
-      let j = i + 1
-      while(j < arr.length){
-         if(comparator(arr[min], arr[j]) > 0){
-            min = j
-         }
-         j++
-      }
-      if(i !== min) swap(arr, i, min)
+
+   while(arr2.length < j){
+      results.push(arr2[j])
+      j++
    }
-   return arr
+   return results
 }
 
-function comparator(a, b) {
-   return a > b ? 1 :
-   a < b ? -1 : 0
-}
-
-console.table(selectionSort(['chicken', 'is', 'fum', 'as', 'fuck'], comparator))
+console.log(mergeArr([1,5,7], [4,8,9]))
