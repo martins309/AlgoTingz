@@ -267,13 +267,14 @@ function bubbleGuts(arr, comparator){
       [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
    }
    for(let i = arr.length; i > 0; i--){
+       noSwap = true
       for(let j = 0; j < i - 1; j++){
-         noSwap = false
          if(comparator(arr[j], arr[j + 1]) > 0){
-            swap(arr, arr[j], arr[j + 1])
-            noSwap = true
+            swap(arr, j, j + 1)
+            noSwap = false
          }
       }
+      if(noSwap) break
    }
    return arr
 }
@@ -283,4 +284,4 @@ function comparator(a, b) {
    a < b ? -1 : 0
 }
 
-console.log(bubbleGuts([300,467,2,1,5674,2,47,32,88,4], comparator))
+console.table(bubbleGuts([300,467,2,1,5674,2,47,32,88,4], comparator))
