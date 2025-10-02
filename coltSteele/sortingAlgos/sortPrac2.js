@@ -297,26 +297,26 @@ const bubbleGuts = (arr, comparator) => {
    }
 
    if(typeof comparator !== 'function') {
-      comparator = (a, b ) => {
-         a - b
-      }
+      comparator = (a, b) => a - b
    }
+
    for(let i = arr.length; i > 0; i--){
       noSwap = true
       for(let j = 0; j < i - 1; j++){
          if(comparator(arr[j], arr[j + 1]) > 0){
             swap(arr, j, j + 1)
+            noSwap = false
          }
-         noSwap = false
+      
       }
       if(noSwap) break
    }
    return arr
 }
 
-const comparator = (a, b) => {
+const comparator = (a, b) => 
    a > b ? 1 :
    a < b ? -1 : 0
-}
 
-console.log(bubbleGuts([54,6,23,7,788,2,62,7,32,32,1], comparator))
+
+console.table(bubbleGuts([54,6,23,7,788,2,62,7,82,32,1], comparator))
