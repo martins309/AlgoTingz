@@ -255,10 +255,43 @@
 
 
 
-function bubbleGuts(arr, comparator){
-   let noSwap
+// function bubbleGuts(arr, comparator){
+//    let noSwap
 
-    if(typeof comparator !== 'function'){
+//     if(typeof comparator !== 'function'){
+//       comparator = function(a, b){
+//          return a - b
+//       }
+//    }
+//    function swap(arr, idx1, idx2){
+//       [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//    }
+//    for(let i = arr.length; i > 0; i--){
+//        noSwap = true
+//       for(let j = 0; j < i - 1; j++){
+//          if(comparator(arr[j], arr[j + 1]) > 0){
+//             swap(arr, j, j + 1)
+//             noSwap = false
+//          }
+//       }
+//       if(noSwap) break
+//    }
+//    return arr
+// }
+
+// function comparator(a, b) {
+//    return a > b ? 1 :
+//    a < b ? -1 : 0
+// }
+
+// console.table(bubbleGuts([300,467,2,1,5674,2,47,32,88,4], comparator))
+
+
+
+
+
+function selectionSort(arr, comparator){
+   if(typeof comparator !== 'function'){
       comparator = function(a, b){
          return a - b
       }
@@ -266,22 +299,12 @@ function bubbleGuts(arr, comparator){
    function swap(arr, idx1, idx2){
       [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
    }
-   for(let i = arr.length; i > 0; i--){
-       noSwap = true
-      for(let j = 0; j < i - 1; j++){
-         if(comparator(arr[j], arr[j + 1]) > 0){
-            swap(arr, j, j + 1)
-            noSwap = false
+   for(let i = 0; i < arr.length; i++){
+      let min = i
+      for(let j = i + 1; j < arr.length; j++){
+         if(comparator(arr[min], arr[j]) > 0){
+            min = j
          }
       }
-      if(noSwap) break
    }
-   return arr
 }
-
-function comparator(a, b) {
-   return a > b ? 1 :
-   a < b ? -1 : 0
-}
-
-console.table(bubbleGuts([300,467,2,1,5674,2,47,32,88,4], comparator))
