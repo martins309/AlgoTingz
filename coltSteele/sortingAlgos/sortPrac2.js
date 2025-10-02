@@ -317,3 +317,5 @@ function comparator(a, b){
 }
 
 console.table(selectionSort(['chicken', 'is', 'fum', 'hoe'], comparator))
+
+//kanpeki datta!!
