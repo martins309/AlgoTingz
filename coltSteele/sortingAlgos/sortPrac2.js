@@ -306,5 +306,14 @@ function selectionSort(arr, comparator){
             min = j
          }
       }
+      if(i !== min) swap(arr, i, min)
    }
+   return arr
 }
+
+function comparator(a, b){
+   return a > b ? 1 :
+   a < b ? -1 : 0
+}
+
+console.table(selectionSort([3,5,6,2,66,7,9,4,45], comparator))
