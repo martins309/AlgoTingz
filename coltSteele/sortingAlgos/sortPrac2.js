@@ -290,6 +290,44 @@
 
 
 
+// const bubbleGuts = (arr, comparator) => {
+//    let noSwap
+//    const swap = (arr, idx1, idx2) => {
+//       [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//    }
+
+//    if(typeof comparator !== 'function') {
+//       comparator = (a, b) => a - b
+//    }
+
+//    for(let i = arr.length; i > 0; i--){
+//       noSwap = true
+//       for(let j = 0; j < i - 1; j++){
+//          if(comparator(arr[j], arr[j + 1]) > 0){
+//             swap(arr, j, j + 1)
+//             noSwap = false
+//          }
+      
+//       }
+//       if(i !== min) swap(arr, i, min)
+//    }
+//    return arr
+// }
+
+// const comparator = (a, b) => 
+//    a > b ? 1 :
+//    a < b ? -1 : 0
+
+
+// console.table(bubbleGuts([54,6,23,7,788,2,62,7,82,32,1], comparator))
+
+
+
+
+
+//futatabi yare!!
+
+
 function selectionSort(arr, comparator){
    if(typeof comparator !== 'function'){
       comparator = function(a, b){
@@ -299,6 +337,7 @@ function selectionSort(arr, comparator){
    function swap(arr, idx1, idx2){
       [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
    }
+
    for(let i = 0; i < arr.length; i++){
       let min = i
       for(let j = i + 1; j < arr.length; j++){
@@ -316,6 +355,4 @@ function comparator(a, b){
    a < b ? -1 : 0
 }
 
-console.table(selectionSort(['chicken', 'is', 'fum', 'hoe'], comparator))
-
-//kanpeki datta!!
+console.table(selectionSort(['chicken', 'butt', 'pork', 'belly', 'monkey', 'brains'], comparator))
