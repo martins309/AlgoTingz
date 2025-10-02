@@ -255,33 +255,68 @@
 
 
 
-function bubbleGuts(arr, comparator){
-   let noSwap
+// function bubbleGuts(arr, comparator){
+//    let noSwap
 
-    if(typeof comparator !== 'function'){
-      comparator = function(a, b){
-         return a - b
-      }
-   }
-   function swap(arr, idx1, idx2){
+//     if(typeof comparator !== 'function'){
+//       comparator = function(a, b){
+//          return a - b
+//       }
+//    }
+//    function swap(arr, idx1, idx2){
+//       [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//    }
+//    for(let i = arr.length; i > 0; i--){
+//        noSwap = true
+//       for(let j = 0; j < i - 1; j++){
+//          if(comparator(arr[j], arr[j + 1]) > 0){
+//             swap(arr, j, j + 1)
+//             noSwap = false
+//          }
+//       }
+//       if(noSwap) break
+//    }
+//    return arr
+// }
+
+// function comparator(a, b) {
+//    return a > b ? 1 :
+//    a < b ? -1 : 0
+// }
+
+// console.table(bubbleGuts([300,467,2,1,5674,2,47,32,88,4], comparator))
+
+
+
+
+
+const bubbleGuts = (arr, comparator) => {
+   let noSwap
+   const swap = (arr, idx1, idx2) => {
       [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
    }
+
+   if(typeof comparator !== 'function') {
+      comparator = (a, b ) => {
+         a - b
+      }
+   }
    for(let i = arr.length; i > 0; i--){
-       noSwap = true
+      noSwap = true
       for(let j = 0; j < i - 1; j++){
          if(comparator(arr[j], arr[j + 1]) > 0){
             swap(arr, j, j + 1)
-            noSwap = false
          }
+         noSwap = false
       }
       if(noSwap) break
    }
    return arr
 }
 
-function comparator(a, b) {
-   return a > b ? 1 :
+const comparator = (a, b) => {
+   a > b ? 1 :
    a < b ? -1 : 0
 }
 
-console.table(bubbleGuts([300,467,2,1,5674,2,47,32,88,4], comparator))
+console.log(bubbleGuts([54,6,23,7,788,2,62,7,32,32,1], comparator))
