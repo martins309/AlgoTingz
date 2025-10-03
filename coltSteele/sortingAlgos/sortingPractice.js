@@ -627,4 +627,6 @@ function comparator(a, b){
 console.table(selectionSort(['she', 'he', 'me', 'wumbo'], comparator))
 
 
-
+function hello(){
+    return 'hello'
+}
