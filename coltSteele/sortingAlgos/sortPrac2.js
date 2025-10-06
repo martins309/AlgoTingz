@@ -420,6 +420,7 @@ function mergeArr(arr1, arr2) {
          i++
       } else {
          results.push(arr2[j])
+         j++
       }
    }
 
