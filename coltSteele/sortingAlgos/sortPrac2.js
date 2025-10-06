@@ -392,8 +392,8 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 
       let pivotIdx = partition(arr, left, right)
 
-      quickSort(arr, start, pivotIdx - 1)
-      quickSort(arr, pivotIdx + 1, end)
+      quickSort(arr, left, pivotIdx - 1)
+      quickSort(arr, pivotIdx + 1, right)
    }
 
    return arr
