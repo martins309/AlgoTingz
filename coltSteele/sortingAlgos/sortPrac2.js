@@ -408,14 +408,20 @@
 
 
 
-function mergeArr(arr1, arr2) {
+function mergeArr(arr1, arr2, comparator) {
+
+   if(typeof comparator !== 'function') {
+      comparator = function(a, b) {
+         return a - b
+      }
+   }
 
    let i = 0
    let j = 0
    let results = []
 
    while(i < arr1.length && j < arr2.length){
-      if(arr2[j] > arr1[i]) {
+      if(comparator(arr2[j], arr1[i]) > 0) {
          results.push(arr1[i])
          i++
       } else {
@@ -437,17 +443,25 @@ function mergeArr(arr1, arr2) {
    return results
 }
 
-console.log(mergeArr([1,5,7], [2,4,9]))
 
 
 
 
-function mergeSort(arr) {
+
+function mergeSort(arr, comparator) {
    if(arr.length <= 1) return arr
 
    let mid = Math.floor(arr.length / 2)
-   let left = mergeSort(arr.slice(0, mid))
-   let right = mergeSort(arr.slice(mid))
+   let left = mergeSort(arr.slice(0, mid), comparator)
+   let right = mergeSort(arr.slice(mid), comparator)
 
-   return mergeArr(left, right)
+   return mergeArr(left, right, comparator)
 }
+
+function comparator(a, b) {
+   return a > b ? 1 :
+   a < b ? -1 : 0
+}
+
+
+console.table(mergeSort(['mary', 'had', 'a', 'little', 'donkey', 'name', 'felix'], comparator))
