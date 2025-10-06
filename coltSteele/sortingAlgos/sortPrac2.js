@@ -362,7 +362,7 @@
 
 
 function partition(arr, start = 0, end = arr.length -1) {
-   const swap(arr, idx1, idx2){
+   function swap(arr, idx1, idx2){
       [arr[idx1], ar[idx2]] = [arr[idx2], arr[idx1]]
    }
 
@@ -370,7 +370,7 @@ function partition(arr, start = 0, end = arr.length -1) {
    let swapIdx = start
 
    for(let i = start + 1; i <= end; i++) {
-      if(pivor > arr[i]){
+      if(pivot > arr[i]){
          swapIdx++
          swap(arr, swapIdx, i)
       }
