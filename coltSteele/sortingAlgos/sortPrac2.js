@@ -398,3 +398,5 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 
    return arr
 }
+
+console.log(quickSort([5,6,7,8,9,-1,-2,-3,-4,-5]))
