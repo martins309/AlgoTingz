@@ -438,3 +438,16 @@ function mergeArr(arr1, arr2) {
 }
 
 console.log(mergeArr([1,5,7], [2,4,9]))
+
+
+
+
+function mergeSort(arr) {
+   if(arr.length <= 1) return arr
+
+   let mid = Math.floor(arr.length / 2)
+   let left = mergeSort(arr.slice(0, mid))
+   let right = mergeSort(arr.slice(mid))
+
+   return mergeArr(left, right)
+}
