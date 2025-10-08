@@ -408,60 +408,100 @@
 
 
 
-function mergeArr(arr1, arr2, comparator) {
+// function mergeArr(arr1, arr2, comparator) {
 
-   if(typeof comparator !== 'function') {
-      comparator = function(a, b) {
-         return a - b
+//    if(typeof comparator !== 'function') {
+//       comparator = function(a, b) {
+//          return a - b
+//       }
+//    }
+
+//    let i = 0
+//    let j = 0
+//    let results = []
+
+//    while(i < arr1.length && j < arr2.length){
+//       if(comparator(arr2[j], arr1[i]) > 0) {
+//          results.push(arr1[i])
+//          i++
+//       } else {
+//          results.push(arr2[j])
+//          j++
+//       }
+//    }
+
+//    while(i < arr1.length) {
+//       results.push(arr1[i])
+//       i++
+//    }
+
+//    while(j < arr2.length){
+//       results.push(arr2[j])
+//       j++
+//    }
+
+//    return results
+// }
+
+
+
+
+
+
+// function mergeSort(arr, comparator) {
+//    if(arr.length <= 1) return arr
+
+//    let mid = Math.floor(arr.length / 2)
+//    let left = mergeSort(arr.slice(0, mid), comparator)
+//    let right = mergeSort(arr.slice(mid), comparator)
+
+//    return mergeArr(left, right, comparator)
+// }
+
+// function comparator(a, b) {
+//    return a > b ? 1 :
+//    a < b ? -1 : 0
+// }
+
+
+// console.table(mergeSort(['mary', 'had', 'a', 'little', 'donkey', 'name', 'felix'], comparator))
+
+
+
+
+
+function partition(arr, start = 0, end = arr.length - 1){
+
+   function swap(arr, idx1, idx2){
+      [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+   }
+
+   let pivot = arr[start]
+   let swapIdx = start
+
+   for(let i = start + 1; i <= end; i++){
+      if(pivot > arr[start]){
+         swapIdx++
+         swap(arr, swapIdx, i)
       }
    }
+   swap(arr, start, swapIdx)
 
-   let i = 0
-   let j = 0
-   let results = []
-
-   while(i < arr1.length && j < arr2.length){
-      if(comparator(arr2[j], arr1[i]) > 0) {
-         results.push(arr1[i])
-         i++
-      } else {
-         results.push(arr2[j])
-         j++
-      }
-   }
-
-   while(i < arr1.length) {
-      results.push(arr1[i])
-      i++
-   }
-
-   while(j < arr2.length){
-      results.push(arr2[j])
-      j++
-   }
-
-   return results
+   return swapIdx
 }
 
 
+function quicky(arr, left = 0, right = arr.length -1){
 
+   if(left < right){
 
+      let pivotIdx = partition(arr, left, right)
 
+      quicky(arr, left, pivotIdx -1)
+      quicky(arr, pivotIdx + 1, right)
+   }
 
-function mergeSort(arr, comparator) {
-   if(arr.length <= 1) return arr
-
-   let mid = Math.floor(arr.length / 2)
-   let left = mergeSort(arr.slice(0, mid), comparator)
-   let right = mergeSort(arr.slice(mid), comparator)
-
-   return mergeArr(left, right, comparator)
+   return arr
 }
 
-function comparator(a, b) {
-   return a > b ? 1 :
-   a < b ? -1 : 0
-}
-
-
-console.table(mergeSort(['mary', 'had', 'a', 'little', 'donkey', 'name', 'felix'], comparator))
+console.log(quicky([33,55,66,77,88,99,1,2,3,5,6]))
