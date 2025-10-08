@@ -509,34 +509,34 @@
 
 
 
-function bubbles(arr, comparator){
-   let noSwap
-      function swap(arr, idx1, idx2){
-      [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
-   }
+// function bubbles(arr, comparator){
+//    let noSwap
+//       function swap(arr, idx1, idx2){
+//       [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//    }
 
-   if(typeof comparator !== 'function'){
-      comparator = function(a, b){
-         return a - b
-      }
-   }
+//    if(typeof comparator !== 'function'){
+//       comparator = function(a, b){
+//          return a - b
+//       }
+//    }
 
-   for(let i = arr.length; i > 0; i--){
-      noSwap = false
-      for(let j = 0; j < i - 1; j++){
-         if(comparator(arr[j], arr[j + 1]) > 0){
-            swap(arr, j, j + 1)
-             noSwap = true
-         }
-      }
-   }
-   return arr
-}
+//    for(let i = arr.length; i > 0; i--){
+//       noSwap = false
+//       for(let j = 0; j < i - 1; j++){
+//          if(comparator(arr[j], arr[j + 1]) > 0){
+//             swap(arr, j, j + 1)
+//              noSwap = true
+//          }
+//       }
+//    }
+//    return arr
+// }
 
 
-function comparator(a, b){
-   return a > b ? 1 :
-   a < b ? -1 : 0
-}
+// function comparator(a, b){
+//    return a > b ? 1 :
+//    a < b ? -1 : 0
+// }
 
-console.table(bubbles(['shut', 'up', 'when', 'i\'m', 'when', 'i\'m', 'talking', 'to', 'you'], comparator))
+// console.table(bubbles(['shut', 'up', 'when', 'i\'m', 'when', 'i\'m', 'talking', 'to', 'you'], comparator))
