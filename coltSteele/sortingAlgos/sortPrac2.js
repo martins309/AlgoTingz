@@ -480,7 +480,7 @@ function partition(arr, start = 0, end = arr.length - 1){
    let swapIdx = start
 
    for(let i = start + 1; i <= end; i++){
-      if(pivot > arr[start]){
+      if(pivot > arr[i]){
          swapIdx++
          swap(arr, swapIdx, i)
       }
