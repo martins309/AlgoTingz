@@ -532,3 +532,11 @@ function bubbles(arr, comparator){
    }
    return arr
 }
+
+
+function comparator(a, b){
+   return a > b ? 1 :
+   a < b ? -1 : 0
+}
+
+console.table(bubbles([4,3,55,6,7,88,1,2,3,44,323,78,-1.4, 49]))
