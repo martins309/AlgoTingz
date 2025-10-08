@@ -539,4 +539,4 @@ function comparator(a, b){
    a < b ? -1 : 0
 }
 
-console.table(bubbles([4,3,55,6,7,88,1,2,3,44,323,78,-1.4, 49]))
+console.table(bubbles(['shut', 'up', 'when', 'i\'m', 'when', 'i\'m', 'talking', 'to', 'you'], comparator))
