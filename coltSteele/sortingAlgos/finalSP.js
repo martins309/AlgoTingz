@@ -29,35 +29,35 @@
 
 
 
-function partition(arr, start = 0, end = arr.length - 1){
-    function swap(arr, idx1, idx2){
-        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
-    }
+// function partition(arr, start = 0, end = arr.length - 1){
+//     function swap(arr, idx1, idx2){
+//         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
 
-    let pivot = arr[start]
-    let swapIdx = start
+//     let pivot = arr[start]
+//     let swapIdx = start
 
-    for(let i = start + 1; i <= end; i++){
-        if(pivot > arr[i]){
-            swapIdx++
-            swap(arr, swapIdx, i)
-        }
-    }
-    swap(arr, start, swapIdx)
-    return arr
-}
+//     for(let i = start + 1; i <= end; i++){
+//         if(pivot > arr[i]){
+//             swapIdx++
+//             swap(arr, swapIdx, i)
+//         }
+//     }
+//     swap(arr, start, swapIdx)
+//     return arr
+// }
 
-function quickSort(arr, left = 0, right = arr.length - 1){
-    if(arr <= 1) return arr
+// function quickSort(arr, left = 0, right = arr.length - 1){
+//     if(arr <= 1) return arr
 
-    while(left  < right){
+//     while(left  < right){
 
-        let pivotIdx = partition (arr, left, right)
-        quickSort(arr, 0, pivotIdx -1)
-        quickSort(arr, right, pivotIdx + 1)
+//         let pivotIdx = partition (arr, left, right)
+//         quickSort(arr, 0, pivotIdx -1)
+//         quickSort(arr, right, pivotIdx + 1)
 
-    }
-    return arr
-}
+//     }
+//     return arr
+// }
 
-console.table(quickSort([5,6,7,8,9,1,2,3,4,0]))
+// console.table(quickSort([5,6,7,8,9,1,2,3,4,0]))
