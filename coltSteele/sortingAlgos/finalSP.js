@@ -53,8 +53,8 @@ function quickSort(arr, left = 0, right = arr.length - 1){
     while(left  < right){
 
         let pivotIdx = partition (arr, left, right)
-        left = quickSort(arr, 0, pivotIdx -1)
-        right = quickSort(arr, right, pivotIdx + 1)
+        quickSort(arr, 0, pivotIdx -1)
+        quickSort(arr, right, pivotIdx + 1)
 
     }
     return arr
