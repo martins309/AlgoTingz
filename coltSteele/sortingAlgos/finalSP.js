@@ -11,7 +11,7 @@ function insertionSort(arr, comparator){
     for(let i = 1; i < arr.length; i++){
         let currentVal = arr[i]
         let j
-        for(j = i - 1; j >= 0 && currentVal > arr[j]; j--){
+        for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--){
             arr[j + 1] = arr[j]
         }
         arr[j + 1] = currentVal
@@ -24,4 +24,4 @@ function comparator(a, b){
     a < b ? -1 : 0
 }
 
-console.table(insertionSort([3,4,5,1,7,9,8,6], comparator))
+console.table(insertionSort(['chicken', 'noodle', 'bitch', 'stream'], comparator))
