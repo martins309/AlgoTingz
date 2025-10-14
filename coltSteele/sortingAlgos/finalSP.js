@@ -148,13 +148,15 @@ function getDigit(num, i){
 }
 
 function digitCount(num){
+    if(num === 0) return 1
     return Math.floor(Math.log10(Math.abs(num))) + 1
 }
 
 function mostDigits(nums){
-    let maxDigits = 0 
-    for(let i = 0; i < arr.length; i++){
-        maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+    let max = 0
+    for(let i = 0; i < nums.length; i++){
+        max = Math.max(max, digitCount[nums[i]])
     }
-    return maxDigits
+
+    return max
 }
