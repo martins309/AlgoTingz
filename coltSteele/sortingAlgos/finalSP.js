@@ -68,43 +68,77 @@
 
 
 
-function mergeArr(arr1, arr2){
+// function mergeArr(arr1, arr2){
 
-    let i = 0
-    let j = 0
-    let results = []
+//     let i = 0
+//     let j = 0
+//     let results = []
 
-    while(i < arr1.length && j < arr2.length){
-        if(arr2[j] > arr1[i]){
-            results.push(arr1[i])
-            i++
-        } else {
-            results.push(arr2[j])
-            j++
+//     while(i < arr1.length && j < arr2.length){
+//         if(arr2[j] > arr1[i]){
+//             results.push(arr1[i])
+//             i++
+//         } else {
+//             results.push(arr2[j])
+//             j++
+//         }
+//     }
+
+//     while(i < arr1.length){
+//         results.push(arr1[i])
+//         i++
+//     }
+
+//     while(j < arr2.length){
+//         results.push(arr2[j])
+//         j++
+//     }
+
+//     return results
+// }
+
+// function mergeSort(arr){
+//     if(arr.length <= 1) return arr
+
+//     let mid = Math.floor(arr.length / 2)
+//     let left = mergeSort(arr.slice(0, mid))
+//     let right = mergeSort(arr.slice(mid))
+
+//     return mergeArr(left, right)
+// }
+
+// console.table(mergeSort([3,7,4,1,3,6,5]))
+
+
+function selectionSort(arr, comparator){
+    if(typeof comparator !== 'function'){
+        comparator = function(a, b){
+            return a - b
         }
     }
 
-    while(i < arr1.length){
-        results.push(arr1[i])
-        i++
+    function swap(arr, idx1, idx2){
+        [arr[idx1], arr[idx2]] = [arr[idx1], arr[idx2]]
     }
 
-    while(j < arr2.length){
-        results.push(arr2[j])
-        j++
+    for(let i = 0; i < arr.length; i++){
+        let min = i
+        let j = i + 1
+        while(j < arr.length){
+            if(comparator(arr[min], arr[j]) > 0){
+                min = j
+                j++
+            }
+        }
+        if(i !== min) swap(arr, i, min)
     }
-
-    return results
+    return arr
 }
 
-function mergeSort(arr){
-    if(arr.length <= 1) return arr
-
-    let mid = Math.floor(arr.length / 2)
-    let left = mergeSort(arr.slice(0, mid))
-    let right = mergeSort(arr.slice(mid))
-
-    return mergeArr(left, right)
+function comparator(a, b){
+    return a > b ? 1:
+    a < b ? -1 : 0
 }
 
-console.table(mergeSort([3,7,4,1,3,6,5]))
+
+console.table(selectionSort([2,5,4,3,1,6,7,8], comparator))
