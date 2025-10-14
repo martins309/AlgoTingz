@@ -123,14 +123,13 @@ function selectionSort(arr, comparator){
 
     for(let i = 0; i < arr.length; i++){
         let min = i
-        let j = i + 1
-        while(j < arr.length){
+        for(let j = i + 1; j < arr.length; j++){
             if(comparator(arr[min], arr[j]) > 0){
                 min = j
-                j++
             }
         }
-        if(i !== min) swap(arr, i, min)
+        
+        if(i !== min) swap(arr, min, i)
     }
     return arr
 }
