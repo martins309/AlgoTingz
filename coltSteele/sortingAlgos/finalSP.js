@@ -143,3 +143,18 @@
 // console.table(selectionSort([2,5,4,3,1,6,7,8], comparator))
 
 
+function getDigit(num, i){
+    return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
+}
+
+function digitCount(num){
+    return Math.floor(Math.log10(Math.abs(num))) + 1
+}
+
+function mostDigits(nums){
+    let maxDigits = 0 
+    for(let i = 0; i < arr.length; i++){
+        maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+    }
+    return maxDigits
+}
