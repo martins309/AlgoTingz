@@ -97,4 +97,14 @@ function mergeArr(arr1, arr2){
     return results
 }
 
-console.log(mergeArr([1,5,9], [2,4,8]))
+function mergeSort(arr){
+
+    let mid = Math.floor(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+
+    return mergeArr(left, right)
+}
+
+
+
