@@ -106,5 +106,4 @@ function mergeSort(arr){
     return mergeArr(left, right)
 }
 
-
-
+console.table(mergeSort([3,7,4,1,3,6,5]))
