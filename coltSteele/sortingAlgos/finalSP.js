@@ -129,7 +129,7 @@ function selectionSort(arr, comparator){
             }
         }
         
-        if(i !== min) swap(arr, min, i)
+        if(i !== min) swap(arr, i, min)
     }
     return arr
 }

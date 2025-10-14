@@ -599,7 +599,7 @@
 
 function selectionSort(arr, comparator){
     function swap(arr, idx1, idx2){
-        return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
     if(typeof comparator !== 'function'){
         comparator = function(a, b){
