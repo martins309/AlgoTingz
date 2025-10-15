@@ -164,29 +164,63 @@
 
 
 
-function selectionSort(arr, comparator){
+// function selectionSort(arr, comparator){
+//     function swap(arr, idx1, idx2){
+//         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
+
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+
+//     for(let i = 0; i < arr.length; i++){
+//         let min = i
+//         let j = i + 1
+//         while(j < arr.length){
+//             if(comparator(arr[min], arr[j]) > 0){
+//                 min = j
+//             }
+//             j++
+//         }
+//         if(i !== min) swap(arr, i, min)
+//     }
+//     return arr
+// }
+
+// console.table(selectionSort([4,7,6,1,4,3,7,8,9]))
+
+
+
+function partition(arr, start = 0, end = arr.length - 1){
     function swap(arr, idx1, idx2){
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
 
-    if(typeof comparator !== 'function'){
-        comparator = function(a, b){
-            return a - b
+    let pivot = arr[start]
+    let swapIdx = start
+
+    for(let i = start + 1; i <= end; i++){
+        if(pivot >= start){
+            swapIdx++
+            swap(arr, swapIdx, i)
         }
     }
+    swap(arr, start, swapIdx)
 
-    for(let i = 0; i < arr.length; i++){
-        let min = i
-        let j = i + 1
-        while(j < arr.length){
-            if(comparator(arr[min], arr[j]) > 0){
-                min = j
-                j++
-            }
-        }
-        if(i !== min) swap(arr, i, min)
+    return swapIdx
+}
+
+
+function quickSort(arr, left = 0, right = arr.length - 1){
+    if(arr <= 1) return arr
+
+    while(left < right){
+
+        let pivotIdx = partition(arr, left, right)
+        quickSort(arr, left, pivotIdx -1)
+        quickSort(arr, pivotIdx + 1, right)
     }
     return arr
 }
-
-console.log(selectionSort([4,7,6,1,4,3,7,8,9]))
