@@ -143,20 +143,50 @@
 // console.table(selectionSort([2,5,4,3,1,6,7,8], comparator))
 
 
-function getDigit(num, i){
-    return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
-}
+// function getDigit(num, i){
+//     return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
+// }
 
-function digitCount(num){
-    if(num === 0) return 1
-    return Math.floor(Math.log10(Math.abs(num))) + 1
-}
+// function digitCount(num){
+//     if(num === 0) return 1
+//     return Math.floor(Math.log10(Math.abs(num))) + 1
+// }
 
-function mostDigits(nums){
-    let max = 0
-    for(let i = 0; i < nums.length; i++){
-        max = Math.max(max, digitCount[nums[i]])
+// function mostDigits(nums){
+//     let max = 0
+//     for(let i = 0; i < nums.length; i++){
+//         max = Math.max(max, digitCount[nums[i]])
+//     }
+
+//     return max
+// }
+
+
+
+
+function selectionSort(arr, comparator){
+    function swap(arr, idx1, idx2){
+        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
 
-    return max
+    if(typeof comparator !== 'function'){
+        comparator = function(a, b){
+            return a - b
+        }
+    }
+
+    for(let i = 0; i < arr.length; i++){
+        let min = i
+        let j = i + 1
+        while(j < arr.length){
+            if(comparator(arr[min], arr[j]) > 0){
+                min = j
+                j++
+            }
+        }
+        if(i !== min) swap(arr, i, min)
+    }
+    return arr
 }
+
+console.log(selectionSort([4,7,6,1,4,3,7,8,9]))
