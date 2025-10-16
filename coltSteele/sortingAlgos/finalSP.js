@@ -354,4 +354,4 @@ function comparator(a, b){
     return a > b ? 1 : a < b ? -1 : 0
 }
 
-console.table(selectionSort([6,5,37,6,5,1,2,3]))
+console.table(selectionSort(['mary', 'had', 'a', 'little', 'lamb'], comparator))
