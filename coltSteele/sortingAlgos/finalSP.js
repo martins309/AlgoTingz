@@ -263,37 +263,63 @@
 
 // and for the grand finalie, we got the radix ting them 
 
-function getDigit(num, i){
-    return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
-}
+// function getDigit(num, i){
+//     return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
+// }
 
 
-function digitCount(num){
-    return Math.floor(Math.log10(Math.abs(num))) + 1
-}
+// function digitCount(num){
+//     return Math.floor(Math.log10(Math.abs(num))) + 1
+// }
 
-function mostDigits(nums){
-    let max = 0
-    for(let i = 0; i < nums.length; i++){
-        max = Math.max(max, digitCount(nums[i]))
-    }
-    return max
-}
+// function mostDigits(nums){
+//     let max = 0
+//     for(let i = 0; i < nums.length; i++){
+//         max = Math.max(max, digitCount(nums[i]))
+//     }
+//     return max
+// }
 
 
-function radixSort(nums){
-    let count = mostDigits(nums)
-    for(let k = 0; k < count; k++){
-        let buckets = Array.from({length: 10}, () => [])
-        for(let i = 0; i < nums.length; i++){
-            buckets[digitCount(nums[i], k)].push(nums[i])
+// function radixSort(nums){
+//     let count = mostDigits(nums)
+//     for(let k = 0; k < count; k++){
+//         let buckets = Array.from({length: 10}, () => [])
+//         for(let i = 0; i < nums.length; i++){
+//             buckets[digitCount(nums[i], k)].push(nums[i])
+//         }
+//         nums = [].concat(...buckets)
+//     }
+//     return nums
+// }
+
+
+
+
+// console.table(radixSort([902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593]))
+
+
+
+function insertionSort(arr, comparator){
+    if(typeof comparator !== 'function'){
+        comparator = function(a, b){
+            return a - b
         }
-        nums = [].concat(...buckets)
     }
-    return nums
+    for(let i = 1; i < arr.length; i++){
+        let currentVal = arr[i]
+        let j
+        while(j = i - 1 && comparator(arr[j], currentVal) > 0){
+            arr[j + 1] = currentVal
+            j--
+        }
+        arr[j + 1] = currentVal
+    }
+    return arr
 }
 
+function comparator(a, b){
+    return a > b ? 1 : a < b ? -1 : 0
+}
 
-
-
-console.table(radixSort([902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593]))
+console.log(insertionSort([3,4,5,6,1,2,3,8], comparator))
