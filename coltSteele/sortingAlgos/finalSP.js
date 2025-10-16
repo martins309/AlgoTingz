@@ -327,24 +327,53 @@
 
 
 
-function selectionSort(arr, comparator){
+// function selectionSort(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     function swap(arr, idx1, idx2){
+//         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
+
+//     for(let i = 0; i < arr.length; i++){
+//         let min = i
+//         for(let j = i + 1; j < arr.length; j++){
+//             if(comparator(arr[min], arr[j]) > 0){
+//                 min = j
+//             }
+//         }
+//         if(i  !== min) swap(arr, i, min)
+//     }
+//     return arr
+// }
+
+
+// function comparator(a, b){
+//     return a > b ? 1 : a < b ? -1 : 0
+// }
+
+// console.table(selectionSort(['mary', 'had', 'a', 'little', 'lamb'], comparator))
+
+
+function bubbleSort(arr, comparator){
     if(typeof comparator !== 'function'){
         comparator = function(a, b){
             return a - b
         }
     }
+
     function swap(arr, idx1, idx2){
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
-
-    for(let i = 0; i < arr.length; i++){
-        let min = i
-        for(let j = i + 1; j < arr.length; j++){
-            if(comparator(arr[min], arr[j]) > 0){
-                min = j
+    
+    for(let i = arr.length; i > 0; i--){
+        for(let j = 0; j < arr.length; j++){
+            if(comparator(arr[j], arr[j +1]) > 0){
+                swap(arr, j, j + 1)
             }
         }
-        if(i  !== min) swap(arr, i, min)
     }
     return arr
 }
@@ -354,4 +383,4 @@ function comparator(a, b){
     return a > b ? 1 : a < b ? -1 : 0
 }
 
-console.table(selectionSort(['mary', 'had', 'a', 'little', 'lamb'], comparator))
+console.table(bubbleSort([88,6,4,55,1,3,2,43,6,9]))
