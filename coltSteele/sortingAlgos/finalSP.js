@@ -423,34 +423,78 @@
 
 
 
-function partition(arr, start = 0, end = arr.length - 1){
-    function swap(arr, idx1, idx2){
-        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
-    }
+// function partition(arr, start = 0, end = arr.length - 1){
+//     function swap(arr, idx1, idx2){
+//         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
 
-    let pivot = arr[start]
-    let swapIdx = start
+//     let pivot = arr[start]
+//     let swapIdx = start
 
-    for(let i = start + 1; i < arr.length; i++){
-        if(pivot > arr[i]){
-            swapIdx++
-            swap(arr, swapIdx, i)
+//     for(let i = start + 1; i < arr.length; i++){
+//         if(pivot > arr[i]){
+//             swapIdx++
+//             swap(arr, swapIdx, i)
+//         }
+//     }
+//     swap(arr, start, swapIdx)
+//     return swapIdx
+// }
+
+
+// function quickSort(arr, left = 0, right = arr.length - 1){
+
+//     if(left < right){
+
+//         let pivotIdx = partition(arr, left, right)
+//         quickSort(arr, left, pivotIdx - 1)
+//         quickSort(arr, pivotIdx + 1, right)
+//     }
+//     return arr
+// }
+
+// console.table(quickSort([4,5,6,7,8,1,2,3]))
+
+
+
+
+
+function mergeArr(arr1, arr2){
+    let i = 0
+    let j = 0
+    let results = []
+
+    while(i < arr1.length && j < arr2.length){
+        if(arr2[j] > arr1[i]){
+            results.push(arr1[i])
+            i++
+        } else {
+            results.push(arr2[j])
+            j++
         }
     }
-    swap(arr, start, swapIdx)
-    return swapIdx
-}
 
-
-function quickSort(arr, left = 0, right = arr.length - 1){
-
-    if(left < right){
-
-        let pivotIdx = partition(arr, left, start)
-        quickSort(arr, left, pivotIdx - 1)
-        quickSort(arr, pivotIdx + 1, right)
+    while(i < arr1.length){
+        results.push(arr1[i])
+        i++
     }
-    return arr
+
+    while(j < arr2.length){
+        results.push(arr2[j])
+        j++
+    }
+
+    return results
 }
 
-console.table(quickSort(4,5,6,7,8,1,2,3))
+
+function mergeSort(arr){
+    if(arr.length <= 1) return arr
+
+    let mid = Math.floor(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+    return mergeArr(left, right)
+}
+
+console.table(mergeSort([3,6,5,4,1,3,4,6,78,3]))
