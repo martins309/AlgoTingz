@@ -29,7 +29,7 @@ return the pivot index
 */
 
 
-function partition({arr, start = 0, end = arr.length - 1}){
+function partition(arr, start = 0, end = arr.length - 1){
 
     const swap = (arr, idx1, idx2) => {
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
@@ -80,4 +80,4 @@ function quickSort(arr, left = 0, right = arr.length - 1){
 
 }
 
-console.log(quickSort([-1203, -19, 41,-3, 4,6,9,1,2,5,3, -395,20.49, 39283, -29]))
+console.table(quickSort([4,6,9,1,2,5,3, -395,20.49, 39283, -29]))

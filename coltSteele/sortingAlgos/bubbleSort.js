@@ -164,7 +164,7 @@ bubbleSort(moarKittyData, oldestToYoungest); // sorted by age in descending orde
 //         }
 //     }
 //     for(let i = arr.length; i > 0; i--){
-//         noSwap = true
+//         noSwap = true 
 //         for(let j = 0; j < i - 1; j++){
 //             if(comparator(arr[j], arr[j + 1]) > 0){
 //                 let temp = arr[j]
