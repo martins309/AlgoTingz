@@ -15,7 +15,7 @@ function digitCount(num){
 }
 
 function mostDigits(nums){
-    let max = digitCount(nums)
+    let max = 0
     for (let i = 0; i < nums.length; i++){
         max = Math.max(max, digitCount(nums[i]))
     }
@@ -23,4 +23,15 @@ function mostDigits(nums){
     return max
 }
 
-console.log(mostDigits([3,4,6,663,3,44,2434324,642343]))
+
+function radixSort(nums){
+    let count = mostDigits(nums)
+    for (let k = 0; k < count; k++){
+        let buckets = Array.from({ length: 10}, () => [])
+        for(let i = 0; i < nums.length; i++){
+            buckets[digitCount(nums, k)].push(nums[i])
+        }
+        [].concat(...buckets)
+    }
+    return nums
+}
