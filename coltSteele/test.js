@@ -29,9 +29,11 @@ function radixSort(nums){
     for (let k = 0; k < count; k++){
         let buckets = Array.from({ length: 10}, () => [])
         for(let i = 0; i < nums.length; i++){
-            buckets[digitCount(nums, k)].push(nums[i])
+            buckets[digitCount(nums[i], k)].push(nums[i])
         }
         [].concat(...buckets)
     }
     return nums
 }
+
+console.table(radixSort(902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593))
