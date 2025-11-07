@@ -6,11 +6,12 @@
 
 
 function getDigit(num, i){
-    return Math.floor(Math.abs(num) / Math.pow(10, i))
+    return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
 }
 
 
 function digitCount(num){
+    if(num === 0) return 1
     return Math.floor(Math.log10(Math.abs(num))) + 1
 }
 
@@ -29,11 +30,11 @@ function radixSort(nums){
     for (let k = 0; k < count; k++){
         let buckets = Array.from({ length: 10}, () => [])
         for(let i = 0; i < nums.length; i++){
-            buckets[digitCount(nums[i], k)].push(nums[i])
+            buckets[getDigit(nums[i], k)].push(nums[i])
         }
-        [].concat(...buckets)
+       nums = [].concat(...buckets)
     }
     return nums
 }
 
-console.table(radixSort(902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593))
+console.table(radixSort([902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593]))
