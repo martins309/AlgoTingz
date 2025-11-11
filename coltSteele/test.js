@@ -35,3 +35,34 @@ function radixSort(nums){
 }       
 
 console.table(radixSort([902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593]))
+
+
+
+
+
+// time for the bubbles to sort
+
+
+function bubbleSort(arr, comparator){
+    let noSwap
+    if(typeof comparator !== 'function'){
+        comparator = function(a, b){
+            return a - b
+        }
+    }
+    function swap(arr, idx1, idx2){
+        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+    }
+
+    for(let i = arr.length; i > 0; i--){
+        noSwap = true
+        for(let j = 0; j < i - 1; j++){
+            if(comparator(arr[j], arr[j + 1]) > 0){
+                swap(arr, j, j + 1)
+                noSwap = false
+            }
+        }
+        if(noSwap) break
+    }
+    return arr
+}
