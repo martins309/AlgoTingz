@@ -72,3 +72,6 @@ function comparator(a, b){
 }
 
 console.table(bubbleSort([7,5,3,2,6,4,99,5,65,12,63,4,6,9]))
+
+
+//this shits in my brain son
