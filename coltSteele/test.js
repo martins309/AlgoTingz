@@ -80,6 +80,9 @@ console.table(bubbleSort([7,5,3,2,6,4,99,5,65,12,63,4,6,9]))
 
 
 function insertionSort(arr, comparator){
+    if(typeof comparator !== 'function'){
+        comparator = (a, b) => a - b
+    }
     for(let i = 1; i < arr.length; i++){
         let currentVal = arr[i]
         let j = i - 1
