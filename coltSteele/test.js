@@ -102,3 +102,40 @@ function comparator(a, b) {
 }
 
 console.table(insertionSort([3,2,1,5,6,8,89,6,4,2]))
+
+
+
+
+
+
+function partition(arr, start = 0, end = arr.length - 1) {
+    function swap(arr, idx1, idx2) {
+        [arr[idx1, arr[idx2]] = arr[idx2], arr[idx1]]
+    }
+
+    let pivot = arr[start]
+    let swapIdx = start
+
+    for(let i = start + 1; i < end; i++) {
+        if(pivot > arr[i]){
+            swapIdx++
+            swap(arr, pivot, swapIdx)
+        }
+        swap(arr, start, swapIdx)
+    }
+    return swapIdx
+}
+
+
+function quickSort(arr, left = 0, right = arr.length - 1) {
+
+    if(left < right) {
+
+        let pivotIdx = partition(arr, left, right)
+
+        quickSort(arr, start, pivotIdx - 1)
+        quickSort(arr, pivotIdx + 1, end)
+    }
+
+    return arr
+}
