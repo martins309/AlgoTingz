@@ -98,3 +98,4 @@ function comparator(a, b) {
     return a > b ? 1 : a < b ? -1 : 0
 }
 
+console.table(insertionSort([3,2,1,5,6,8,89,6,4,2]))
