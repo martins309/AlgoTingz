@@ -75,3 +75,26 @@ console.table(bubbleSort([7,5,3,2,6,4,99,5,65,12,63,4,6,9]))
 
 
 //this shits in my brain son
+
+
+
+
+function insertionSort(arr, comparator){
+    for(let i = 1; i < arr.length; i++){
+        let currentVal = arr[i]
+        let j = i - 1
+        while(j >= 0 && comparator(arr[j], currentVal) > 0) {
+            arr[j + 1] = arr[j]
+        }
+        j--
+
+        arr[j + 1] = currentVal
+    }
+    return arr 
+}
+
+
+function comparator(a, b) {
+    return a > b ? 1 : a < b ? -1 : 0
+}
+
