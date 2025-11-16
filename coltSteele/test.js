@@ -119,7 +119,7 @@ function partition(arr, start = 0, end = arr.length - 1) {
     for(let i = start + 1; i < end; i++) {
         if(pivot > arr[i]){
             swapIdx++
-            swap(arr, pivot, swapIdx)
+            swap(arr, pivot, i)
         }
         swap(arr, start, swapIdx)
     }
@@ -139,3 +139,9 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 
     return arr
 }
+
+console.table(quickSort([4,5,6,7,8,1,2,3,2]))
+
+
+
+//selection and merge tomorrow!!
