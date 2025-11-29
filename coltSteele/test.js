@@ -119,27 +119,56 @@
 // console.table(quickSort([7,8,9,1,3,4,5]))
 
 
-function insertionSort(arr, comparator){
-    if(typeof comparator !== 'function'){
-        comparator = function(a, b) {
-            return a - b
+// function insertionSort(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b) {
+//             return a - b
+//         }
+//     }
+
+//     for(let i = 1; i < arr.length; i++){
+//         let currentVal = arr[i]
+//         let j = i - 1
+//         while(j >= 0 && comparator(arr[j], currentVal) > 0){
+//             arr[j + 1] = arr[j]
+//             j--
+//         }
+//         arr[j + 1] = currentVal
+//     }
+//     return arr
+// }
+
+// function comparator(a, b){
+//     return a > b ? 1 : a < b ? -1 : 0
+// }
+
+// console.table(insertionSort([1,3,5,6,6,3,2,5,8,7,4,9,8]))
+
+
+
+function mergeArr(arr1, arr2){
+    let i = 0
+    let j = 0
+    let results = []
+
+    while(i < arr1.length && j < arr2.length){
+        if(arr2[j] > arr1[i]){
+            results.push(arr1[i])
+        } else {
+            results.push(arr2[j])
         }
     }
 
-    for(let i = 1; i < arr.length; i++){
-        let currentVal = arr[i]
-        let j = i - 1
-        while(j >= 0 && comparator(arr[j], currentVal) > 0){
-            arr[j + 1] = arr[j]
-            j--
-        }
-        arr[j + 1] = currentVal
+    while(i < arr1.length){
+        results.push(arr1[i])
+        i++
     }
-    return arr
+    while(j < arr2.length){
+        results.push(arr2[j])
+        j++
+    }
+    return results
 }
 
-function comparator(a, b){
-    return a > b ? 1 : a < b ? -1 : 0
-}
 
-console.table(insertionSort([1,3,5,6,6,3,2,5,8,7,4,9,8]))
+console.log(mergeArr([1,4,5], [7,8,9]))
