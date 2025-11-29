@@ -75,3 +75,41 @@ console.table(bubbleSort([7,5,3,2,6,4,99,5,65,12,63,4,6,9]))
 
 
 //this shits in my brain son
+//quick sort and insertion sort tomorrow
+
+
+
+
+
+
+function partition(arr, start = 0, end = arr.length - 1){
+
+    function swap(arr, idx1, idx2){
+        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+    }
+
+    let pivotPoint = arr[start]
+
+    let swapIdx = start
+
+    for(let i = start; i < end; i++){
+        if(pivot > arr[start]){
+            swapIdx++
+            swap(arr, swapIdx, i)
+        }
+        swap(arr, start, pivotPoint)
+    }
+    return swapIdx
+}
+
+
+function quickSort(arr, left = 0, right = arr.length - 1){
+    
+    let pivotIdx = partition(arr, left, right)
+
+    if(left < right){
+        quickSort(arr, left, pivotIdx -1)
+        quickSort(arr, pivotIdx + 1, end)
+    }
+    return arr
+}
