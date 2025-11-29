@@ -93,7 +93,7 @@ function partition(arr, start = 0, end = arr.length - 1){
     let swapIdx = start
 
     for(let i = start; i < end; i++){
-        if(pivot > arr[start]){
+        if(pivot > arr[i]){
             swapIdx++
             swap(arr, swapIdx, i)
         }
@@ -113,3 +113,5 @@ function quickSort(arr, left = 0, right = arr.length - 1){
     }
     return arr
 }
+
+console.table(quickSort([7,8,9,1,3,4,5]))
