@@ -82,38 +82,63 @@
 
 
 
-function partition(arr, start = 0, end = arr.length - 1){
+// function partition(arr, start = 0, end = arr.length - 1){
 
-    function swap(arr, idx1, idx2){
-        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
-    }
+//     function swap(arr, idx1, idx2){
+//         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
 
-    let pivot = arr[start]
+//     let pivot = arr[start]
 
-    let swapIdx = start
+//     let swapIdx = start
 
-    for(let i = start + 1; i <= end; i++){
-        if(pivot > arr[i]){
-            swapIdx++
-            swap(arr, swapIdx, i)
-        }
+//     for(let i = start + 1; i <= end; i++){
+//         if(pivot > arr[i]){
+//             swapIdx++
+//             swap(arr, swapIdx, i)
+//         }
         
+//     }
+//     swap(arr, start, swapIdx)
+//     return swapIdx
+// }
+
+
+// function quickSort(arr, left = 0, right = arr.length - 1){
+    
+    
+
+//     if(left < right){
+//         let pivotIdx = partition(arr, left, right)
+//         quickSort(arr, left, pivotIdx - 1)
+//         quickSort(arr, pivotIdx + 1, right)
+//     }
+//     return arr
+// }
+
+// console.table(quickSort([7,8,9,1,3,4,5]))
+
+
+function insertionSort(arr, comparator){
+    if(typeof comparator !== 'function'){
+        comparator = function(a, b) {
+            return a - b
+        }
     }
-    swap(arr, start, swapIdx)
-    return swapIdx
-}
 
-
-function quickSort(arr, left = 0, right = arr.length - 1){
-    
-    
-
-    if(left < right){
-        let pivotIdx = partition(arr, left, right)
-        quickSort(arr, left, pivotIdx - 1)
-        quickSort(arr, pivotIdx + 1, right)
+    for(let i = 1; i < arr.length; i++){
+        let currentVal = arr[i]
+        let j = i -1
+        while(j >=0 && comparator(arr[j], currentVal) > 0){
+            arr[j + 1] = arr[j]
+        }
+        arr[j + 1] = currentVal
     }
     return arr
 }
 
-console.table(quickSort([7,8,9,1,3,4,5]))
+function comparator(a, b){
+    return a > b ? 1 : a < b ? -1 : 0
+}
+
+console.log(insertionSort([1,3,5,6,6,3,2,5,8,7,4,9,8]))
