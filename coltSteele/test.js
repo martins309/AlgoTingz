@@ -212,3 +212,9 @@ function selectionSort(arr, comparator){
 function comparator(a, b){
     return a > b ? 1 : a < b ? -1 : 0
 }
+
+console.table(selectionSort([4,6,8,9,6,3,1,4,35,6,7]))
+
+//time to move on to the other ones that I have been neglecting...
+
+//gotta revist and cement the singly linked lists tomorrow"
