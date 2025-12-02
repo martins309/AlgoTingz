@@ -13,7 +13,7 @@ class Node {
 class SinglyLinkedList {
     constructor(){
         this.head = null 
-        this.tail = nill
+        this.tail = null
         this.length = 0
     }
 
@@ -24,7 +24,7 @@ class SinglyLinkedList {
             this.tail = this.head
         } else{
             this.tail.next = newNode
-            this.tail = newNOde
+            this.tail = newNode
         }
         this.length++
         return this
@@ -41,5 +41,6 @@ class SinglyLinkedList {
 let list = new SinglyLinkedList()
 list.push('hi')
 list.push('bitch')
-
+list.push('bye')
+list.push('bitch')
 console.log(list)
