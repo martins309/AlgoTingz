@@ -221,3 +221,5 @@ console.table(selectionSort([4,6,8,9,6,3,1,4,35,6,7]))
 
 //gotta cement the singly linked lists algorithm :)
 
+
+

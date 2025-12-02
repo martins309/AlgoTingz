@@ -1,0 +1,45 @@
+// so here we are going to study the singly linked list ting
+
+
+
+
+class Node {
+    constructor(val){
+        this.val = val 
+        this.next = null 
+    }
+}
+
+class SinglyLinkedList {
+    constructor(){
+        this.head = null 
+        this.tail = nill
+        this.length = 0
+    }
+
+    push(val){
+        let newNode = new Node(val)
+        if(!this.head){
+            this.head = newNode
+            this.tail = this.head
+        } else{
+            this.tail.next = newNode
+            this.tail = newNOde
+        }
+        this.length++
+        return this
+    }
+
+
+
+
+
+
+}
+
+
+let list = new SinglyLinkedList()
+list.push('hi')
+list.push('bitch')
+
+console.log(list)
