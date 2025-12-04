@@ -8,7 +8,8 @@ class Node {
     }
 }
 
-class SinglyLinkedList {
+
+class SinglyLinkedList{
     constructor(){
         this.head = null
         this.tail = null
@@ -20,12 +21,12 @@ class SinglyLinkedList {
         if(!this.head){
             this.head = newNode
             this.tail = this.head
-        }else {
+        } else {
             this.tail.next = newNode
-            this.tail = this.next
+            this.tail = newNode
         }
-        return this
         this.length++
+        return this
     }
 }
 
