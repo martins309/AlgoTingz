@@ -34,6 +34,7 @@
 
 
 function partition(arr, start = 0, end = arr.length - 1){
+    
     function swap(arr, idx1, idx2){
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
@@ -46,8 +47,9 @@ function partition(arr, start = 0, end = arr.length - 1){
             swapIdx++
             swap(arr, swapIdx, i)
         }
-        swap(arr, start, swapIdx)
     }
+    
+    swap(arr, start, swapIdx)
     return swapIdx
 }
 
@@ -57,11 +59,11 @@ function quickSort(arr, left = 0, right = arr.length - 1){
     if(left < right){
         let pivotIdx = partition(arr, left, right)
 
-        quickSort(arr, left, pivotIdx -1)
+        quickSort(arr, left, pivotIdx - 1)
         quickSort(arr, pivotIdx + 1, right)
     }
 
     return arr
 }
 
-console.table(quickSort([4,5,6,1,2,3,.9,-1]))
+console.table(quickSort([4,5,6,1,2,3]))
