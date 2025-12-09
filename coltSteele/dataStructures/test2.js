@@ -1,40 +1,31 @@
 // so here we are going to study the singly linked list ting
 
-class Node {
-    constructor(){
-        this.val = null
-        this.next = null
-    }
-}
 
-class SinglyLinkedList{
-    constructor(){
-        this.head = null
-        this.tail = null
-        this.length = 0
-    }
 
-    push(val){
-        let newNode = new Node(val)
-        if(!this.head){
-            this.head = newNode
-            this.tail = this.head
-        } else {
-            this.tail.next = newNode
-            this.tail = newNode
+//insertion sort
+
+
+function insertionSort(arr, comparator){
+    if(typeof comparator !== 'function'){
+        comparator = function(a, b){
+            return a - b
         }
-        this.length++
-        return this
+    }
+    for(let i = 1; i < arr.length; i++){
+        let currentVal = arr[i]
+        let j = i - 1
+        while(j >=0 && comparator(arr[j], currentVal) > 0){
+            arr[j + 1] = arr[j]
+        }
+        j--
+        arr[j + 1] = currentVal
 
     }
+    return arr
 }
 
+function comparator(a, b){
+    return a > b ? 1 : a < b ? -1 : 0
+}
 
-
-
-let list = new SinglyLinkedList()
-list.push('hi')
-list.push('bitch')
-list.push('bye')
-list.push('bitch')
-console.log(list)
+console.table(insertionSort([4,12,6,78,5,34]))
