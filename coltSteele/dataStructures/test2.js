@@ -14,10 +14,11 @@ function insertionSort(arr, comparator){
     for(let i = 1; i < arr.length; i++){
         let currentVal = arr[i]
         let j = i - 1
-        while(j >=0 && comparator(arr[j], currentVal) > 0){
+        while(j >= 0 && comparator(arr[j], currentVal) > 0){
             arr[j + 1] = arr[j]
+            j--
         }
-        j--
+        
         arr[j + 1] = currentVal
 
     }
