@@ -1,13 +1,11 @@
 // so here we are going to study the singly linked list ting
 
-
 class Node {
-    constructor(val){
+    constructor(){
         this.val = null
         this.next = null
     }
 }
-
 
 class SinglyLinkedList{
     constructor(){
@@ -27,6 +25,7 @@ class SinglyLinkedList{
         }
         this.length++
         return this
+
     }
 }
 
