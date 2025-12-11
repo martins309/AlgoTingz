@@ -2,65 +2,43 @@
 // for the other sorting algos that we did
 
 
-class Node{
+class Node {
     constructor(val){
         this.val = val
         this.next = null
-
     }
+
 }
 
 
-class singlyLinkedList{
+class SinglyLinkedList{
     constructor(){
-        this.head = null 
-        this.tail = null 
+        this.head = null
+        this.tail = null
         this.length = 0
     }
 
-    push(val){
-    let newNode = new Node(val)
-        if(this.head === null) {
-        this.head = newNode
-        this.tail = this.head
-        } else {
-            this.tail.next = newNode
+
+    push(){
+        let newNode = new Node()
+        if(this.head = null){
+            this.head = newNode
+            this.tail = this.next
+        }else {
             this.tail = newNode
+            this.tail.next = newNode
         }
-        this.length++ 
+        this.length++
         return this
-    }
-
-    pop(){
-        if(!this.head) return undefined
-
-        let current = this.head
-        let newTail = current
-
-        while(current.next){
-            newTail = current 
-            current = current.next
-        }
-
-        this.tail = newTail
-        this.tail.next = null
-        this.length-- 
-
-        if(this.length === 0){
-            this.head = null
-            this.tail = null
-        }
-        return current 
     }
 }
 
 
+list = new SinglyLinkedList()
 
-let list = singlyLinkedList()
 
-list.push("hello")
-list.push("how")
-list.push("are")
-list.push("you")
+list.push("1")
+list.push("2")
+list.push("3")
 
 console.log(list)
