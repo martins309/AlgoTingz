@@ -1,5 +1,4 @@
-// okay so here will be the practice and the test file will be
-// for the other sorting algos that we did
+// nuke and do it again!!!!
 
 
 class Node {
@@ -7,24 +6,23 @@ class Node {
         this.val = val
         this.next = null
     }
-
 }
 
 
-class SinglyLinkedList{
+class SinglyLinkeList{
     constructor(){
         this.head = null
         this.tail = null
         this.length = 0
     }
 
+    push(val){
+        let newNode = new Node(val)
 
-    push(){
-        let newNode = new Node()
-        if(this.head = null){
+        if(!this.head) {
             this.head = newNode
-            this.tail = this.next
-        }else {
+            this.tail = this.head
+        } else {
             this.tail = newNode
             this.tail.next = newNode
         }
@@ -34,11 +32,12 @@ class SinglyLinkedList{
 }
 
 
-list = new SinglyLinkedList()
+let list = new SinglyLinkeList()
 
 
-list.push("1")
-list.push("2")
-list.push("3")
+list.push("hi")
+list.push("bitch")
+list.push("ass")
+list.push("nigga")
 
 console.log(list)
