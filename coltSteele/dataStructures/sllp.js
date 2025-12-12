@@ -23,12 +23,14 @@ class SinglyLinkeList{
             this.head = newNode
             this.tail = this.head
         } else {
-            this.tail = newNode
             this.tail.next = newNode
+            this.tail = newNode
         }
         this.length++
         return this
     }
+
+    
 }
 
 
