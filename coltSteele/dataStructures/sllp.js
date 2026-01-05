@@ -1,15 +1,18 @@
 // nuke and do it again!!!!
 
 
-class Node{
-    constructor(val){
+
+
+
+class Node {
+    constructor(){
         this.val = val
         this.next = null
     }
 }
 
 
-class SinglyLinkedList{
+class SinglyLinkedList {
     constructor(){
         this.head = null
         this.tail = null
@@ -18,49 +21,25 @@ class SinglyLinkedList{
 
     push(val){
         let newNode = new Node(val)
-
         if(!this.head){
             this.head = newNode
             this.tail = this.head
         } else {
-            this.tail.next = newNode
             this.tail = newNode
+            this.tail.next = newNode
         }
         this.length++
         return this
     }
-
-    pop(){
-        if(!this.head) return undefined
-
-        let current = this.head
-        let newTail = current
-
-        while(current.next){
-            newTail = current
-            current = current.next
-        }
-        this.tail = newTail
-        this.tail.next = null
-        this.length--
-
-        if(this.length === 0){
-            this.head = null
-            this.tail = null
-        }
-        return current
-    }
 }
+
 
 
 let list = new SinglyLinkedList()
 
-
-list.push("hi")
-list.push("bitch")
-list.push("ass")
-list.push("nigga")
-list.pop()
-
+list.push("i")
+list.push("fucked")
+list.push("queen")
+list.push("tashaar")
 
 console.log(list)
