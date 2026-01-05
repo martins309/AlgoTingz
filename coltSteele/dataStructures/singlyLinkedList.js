@@ -184,7 +184,7 @@ class SinglyLinkedList{
         prev.next = removed.next
 
         this.length--
-        return this.get(idx)
+        return removed
 
     }
     //swap the head and the tail
@@ -203,7 +203,7 @@ class SinglyLinkedList{
       this.tail = node
       let prev = null
       let next
-      while(this.length > 0){
+      while(node){
         next = node.next
         node.next = prev
         prev = node
@@ -228,7 +228,7 @@ list.unshift('yo')
 list.set(3, 'hi')
 
 
-console.log(list.remove(4))
+console.log(list)
 
 
 
