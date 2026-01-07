@@ -47,6 +47,23 @@ class SinglyLinkedList{
         }
         current
     }
+
+    shift(){
+
+        if(!this.head) return undefined
+
+        let current = this.head 
+        this.head = current.next
+        this.length--
+        if(this.length === 0){
+            this.tail = null
+        }
+
+        return current
+    
+
+
+    }
 }
 
 
@@ -55,7 +72,7 @@ let list = new SinglyLinkedList()
 list.push("I'm")
 list.push("rich")
 list.push("as fuck")
-
+list.shift("I'm")
 
 
 console.log(list)
