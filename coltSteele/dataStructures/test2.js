@@ -89,3 +89,4 @@ function bubbleSort(arr, comparator){
     return arr
 }
 
+console.table(bubbleSort([67,76,3,2,44,2,12,55,6]))
