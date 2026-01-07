@@ -81,7 +81,7 @@ function bubbleSort(arr, comparator){
 
     for(let i = arr.length; i > 0; i--){
         for(let j = 0; j < i - 1; j++){
-            if(comparator(arr[j], arr[j + 1])){
+            if(comparator(arr[j], arr[j + 1]) > 0){
                 swap(arr, j, j + 1)
             }
         }
@@ -89,4 +89,7 @@ function bubbleSort(arr, comparator){
     return arr
 }
 
-console.table(bubbleSort([67,76,3,2,44,2,12,55,6]))
+function comparator(a, b){
+    return a > b ? 1 : a < b ? -1 : 0
+}
+console.table(bubbleSort(['noodle', 'chicken', 'apple', 'john']))
