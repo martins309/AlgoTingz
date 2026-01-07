@@ -79,6 +79,7 @@ list.push("rich")
 list.push("as fuck")
 list.shift("I'm")
 list.unshift("really though...")
+list.unshift("hi")
 
 
 console.log(list)
