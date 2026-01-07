@@ -48,14 +48,12 @@ class SinglyLinkedList{
         current
     }
     shift(){
-        if(!this.head) return undefined
-
         let current = this.head
         this.head = current.next
-        this.length--
         if(this.length === 0){
             this.tail = null
         }
+        this.length--
         return current
     }
 
@@ -64,7 +62,7 @@ class SinglyLinkedList{
         if(!this.head){
             this.head = newNode
             this.tail = this.head
-        } else{
+        } else {
             newNode.next = this.head
             this.head = newNode
         }
@@ -80,6 +78,7 @@ list.push("I'm")
 list.push("rich")
 list.push("as fuck")
 list.shift("I'm")
+list.unshift("really though...")
 
 
 console.log(list)
