@@ -34,7 +34,7 @@ class SinglyLinkedList{
 
         while(current.next){
             newTail = current
-            currnet = current.next
+            current = current.next
         }
         this.tail = newTail
         this.tail.next = null
@@ -55,7 +55,7 @@ let list = new SinglyLinkedList()
 list.push("I'm")
 list.push("rich")
 list.push("as fuck")
-list.pop()
+
 
 
 console.log(list)
