@@ -17,10 +17,11 @@ class SinglyLinkedList{
 
     push(val){
         let newNode = new Node(val)
+
         if(!this.head){
             this.head = newNode
             this.tail = this.head
-        } else {
+        } else{
             this.tail.next = newNode
             this.tail = newNode
         }
@@ -29,8 +30,11 @@ class SinglyLinkedList{
     }
 
     pop(){
-        let current = this.head
+        let current = this.head 
         let newTail = current
+
+
+        if(!this.head)return undefined
 
         while(current.next){
             newTail = current
@@ -38,36 +42,34 @@ class SinglyLinkedList{
         }
         this.tail = newTail
         this.tail.next = null
-
         this.length--
-
         if(this.length === 0){
             this.head = null
             this.tail = null
         }
-        current
-    }
-    shift(){
-        let current = this.head
-        this.head = current.next
-        if(this.length === 0){
-            this.tail = null
-        }
-        this.length--
         return current
     }
 
+    shift(){
+        let current = this.head
+        this.head = current.next
+        this.length--
+        if(this.length === 0){
+            this.tail = null
+        }
+        return this
+    }
+
     unshift(val){
-        let newNode = new Node(val)
+        let newNode = newNode(val)
+
         if(!this.head){
             this.head = newNode
             this.tail = this.head
-        } else {
+        } else{
             newNode.next = this.head
             this.head = newNode
         }
-        this.length++
-        return this
     }
 }
 
@@ -77,9 +79,9 @@ let list = new SinglyLinkedList()
 list.push("I'm")
 list.push("rich")
 list.push("as fuck")
-list.shift("I'm")
-list.unshift("really though...")
-list.unshift("hi")
+list.pop()
+
+
 
 
 console.log(list)
