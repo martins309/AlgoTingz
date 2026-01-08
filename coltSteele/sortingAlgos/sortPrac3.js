@@ -19,4 +19,16 @@ function partition(arr, start = 0, end = arr.length - 1){
     return swapIdx
 }
 
-console.table(partition([4,5,6,7,1,2,3]))
+function quickSort(arr, left = 0, right = arr.length - 1){
+
+    if(left < right){
+        let pivot = partition(arr, left, right)
+
+        quickSort(arr, left, pivot - 1)
+        quickSort(arr, pivot + 1, end)
+    }
+
+    return arr
+}
+
+console.log(quickSort([5,6,7,89,777,1,2,3,4]))
