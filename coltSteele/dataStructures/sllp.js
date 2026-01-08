@@ -71,6 +71,26 @@ class SinglyLinkedList{
             this.head = newNode
         }
     }
+
+    get(idx){
+        if(idx < 0 || idx >= this.length) return null
+        let count = 0
+        let current = this.head
+        while(count !== idx){
+            current = current.next  
+            count++
+        }
+        return current
+    }
+
+    set(idx, val){
+        let node = this.get(idx)
+        if(node){
+            node.val = val
+            return true
+        }
+        return false
+    }
 }
 
 
@@ -79,9 +99,9 @@ let list = new SinglyLinkedList()
 list.push("I'm")
 list.push("rich")
 list.push("as fuck")
-list.pop()
 
 
 
 
-console.log(list)
+
+console.log(list.get(2))
