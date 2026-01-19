@@ -78,6 +78,15 @@ class SinglyLinkedList{
         return current
 
     }
+
+    set(idx, val){
+        let node = this.get(idx)
+        if(node){
+            node.val = val
+            return true
+        }
+        return false
+    }
 }
 
 
@@ -90,4 +99,5 @@ list.push("as")
 list.push("fuck!!")
 
 
+console.log(list.set(0, "fagget"))
 console.log(list.get(0))
