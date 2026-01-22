@@ -211,6 +211,15 @@ class SinglyLinkedList{
       }
       return this
     }
+    //This function should rotate all the nodes in the list by some number passed in. 
+    // For instance, if your list looks like 1 -> 2 -> 3 -> 4 -> 5 and you rotate by 2, 
+    // the list should be modified to 3 -> 4 -> 5 -> 1 -> 2. 
+    // The number passed in to rotate can be any integer.
+
+    rotate(int, idx){
+        if(!this.head) return undefined
+        
+    }
 }
 
 
