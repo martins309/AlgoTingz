@@ -216,15 +216,14 @@ class SinglyLinkedList{
     // the list should be modified to 3 -> 4 -> 5 -> 1 -> 2. 
     // The number passed in to rotate can be any integer.
 
-    rotate(num){
+    rotate(){
         if(this.length < 2) return false
         let rot = this.reverse()
         if(this.length === 2){
             return rot
         } else {
             let current = this.head
-            this.tail = num
-            this.head = this.tail.next
+        
         }
 
         return this
@@ -241,6 +240,7 @@ let list = new SinglyLinkedList()
 list.push(1)
 list.push(2)
 list.push(3)
+list.rotate()
 
 console.log(list)
 
