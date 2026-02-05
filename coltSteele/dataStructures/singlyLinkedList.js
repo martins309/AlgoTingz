@@ -214,19 +214,12 @@ class SinglyLinkedList{
     //This function should rotate all the nodes in the list by some number passed in. 
     // For instance, if your list looks like 1 -> 2 -> 3 -> 4 -> 5 and you rotate by 2, 
     // the list should be modified to 3 -> 4 -> 5 -> 1 -> 2. 
-    // The number passed in to rotate can be any integer.
+    // The number passed in to rotate, can be any integer.
 
-    rotate(){
-        if(this.length < 2) return false
-        let rot = this.reverse()
-        if(this.length === 2){
-            return rot
-        } else {
-            let current = this.head
+    rotate(num){
+        let rot = this.get(num - 1)
         
-        }
-
-        return this
+        return rot
     }
 }
 
@@ -240,9 +233,11 @@ let list = new SinglyLinkedList()
 list.push(1)
 list.push(2)
 list.push(3)
-list.rotate()
+list.push(4)
+list.push(5)
 
-console.log(list)
+
+console.log(list.rotate(5))
 
 
 

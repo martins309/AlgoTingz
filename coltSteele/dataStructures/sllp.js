@@ -128,6 +128,7 @@ class SinglyLinkedList{
     }
     return this
    }
+   
    rotate(){
     
    }
