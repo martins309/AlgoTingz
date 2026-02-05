@@ -217,9 +217,25 @@ class SinglyLinkedList{
     // The number passed in to rotate, can be any integer.
 
     rotate(num){
-        let rot = this.get(num - 1)
+        if(!this.head || this.length === 1 || this.length === 0) return this
         
-        return rot
+        let k = num % this.length
+        if(k < 0) k += this.length
+        if(k === 0) return this
+
+        const newTail = this.get(k - 1)
+        const newHead = newTail.next
+
+        const oldhHead = this.head
+        const oldTail = this.tail
+
+        oldTail.next = oldhHead
+        this.head = newHead
+        this.tail = newTail
+        this.tail.next = null
+        
+        
+        return this
     }
 }
 
@@ -233,11 +249,10 @@ let list = new SinglyLinkedList()
 list.push(1)
 list.push(2)
 list.push(3)
-list.push(4)
-list.push(5)
 
 
-console.log(list.rotate(5))
+
+console.log(list.rotate(1))
 
 
 
