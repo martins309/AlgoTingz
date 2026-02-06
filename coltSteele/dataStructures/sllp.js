@@ -129,8 +129,26 @@ class SinglyLinkedList{
     return this
    }
    
-   rotate(){
+   rotate(num){
+    if(!this.head || this.length === 0 || this.length === 1) return this
+
+    let k = num % this.length
+    if(k < 0) k += this.length
+    if(k === 0) return this
+
+    let newTail = this.get(k - 1)
+    let newHead = newTail.next
+
+    let oldHead = this.head
+    let oldTail = this.tail
+
+    oldTail.next = oldHead
+    this.head = newHead
+    this.tail = newTail
+    this.tail.next = null
     
+
+    return this
    }
 }
 
@@ -138,11 +156,13 @@ class SinglyLinkedList{
 
 let list = new SinglyLinkedList()
 
-list.push("i")
-list.push("like to")
-list.push("fuck")
+list.push(1)
+list.push(2)
+list.push(3)
+list.push(4)
+list.push(5)
 
 
 
-console.log(list.insert(4,"fagget"))
+console.log(list.rotate(3))
 

@@ -44,6 +44,30 @@ class DoublyLinkedList{
         this.length++
         return this
     }
+
+    //if there is no head, return undefined
+    //store the current tail in a variable to return later
+    //if the length is 1, set the head and the tail to be null
+    //update the tail to be the prev node
+    //set the newTails next to be null
+    //decrement the length
+    //return the value removed
+
+    pop(){
+        if(!this.head) return undefined
+        let currentTail = this.tail
+        let newTail
+        if(this.length === 1){
+            this.head = null
+            this.tail = null
+        }
+        newTail = currentTail.prev
+        currentTail.prev = null
+        newTail.next = null
+
+        this.length--
+        return currentTail
+    }
 }
 
 
@@ -57,4 +81,4 @@ list.push(3)
 list.push(4)
 
 
-console.log(list)
+console.log(list.pop())
