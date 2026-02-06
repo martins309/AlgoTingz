@@ -56,17 +56,16 @@ class DoublyLinkedList{
     pop(){
         if(!this.head) return undefined
         let currentTail = this.tail
-        let newTail
         if(this.length === 1){
             this.head = null
             this.tail = null
+        } else {
+            this.tail = currentTail.prev
+            this.tail.next = null
+            currentTail.prev = null
         }
-        newTail = currentTail.prev
-        currentTail.prev = null
-        newTail.next = null
-
-        this.length--
-        return currentTail
+            this.length--
+            return currentTail
     }
 }
 
