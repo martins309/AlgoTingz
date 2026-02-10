@@ -84,14 +84,81 @@ class DoublyLinkedList{
         if(this.length === 1){
             this.head = null
             this.tail = null
-        } 
-        oldHead.next = this.head
-        this.head.prev = null
-        this.head.next = null
+        } else {
+            this.head = oldHead.next
+            this.head.prev = null
+            oldHead.next = null
+        }
         this.length--
         return oldHead
 
     }
+    //create a new node with a value passed to the function
+    //if the length is 0 set the head and tail to be the new node
+    //otherwise set the prev property on the head of the list to be the new node
+    //set the next property on the new node to be the head property
+    //update the head to be the new node
+    //increment the length 
+    //return the list
+    unshift(val){
+        let newNode = new Node(val)
+        if(this.length === 0){
+            this.head = newNode
+            this.tail = this.head
+        } else {
+            this.head.prev = newNode
+            newNode.next = this.head
+            this.head = newNode
+        }
+        this.length++
+        return this
+    }
+    //if the index is less than 0, or greater than or equal to the length, return null
+    //if the index is less than or equal half the length of the list
+        //loop through the list starting at the head and loop towards the middle
+        //return the node once found
+    //if the index is greater than half the length of the list
+        //loop through the list starting from the tail to the middle
+        //return the node once found
+
+    get(idx){
+        if(idx < 0 || idx >= this.length) return null
+        let mid = Math.floor(this.length / 2)
+        let count, current
+
+        if(idx !== mid){ 
+            count = 0
+            current = this.head
+            while(count !== idx){
+                current = current.next
+                count++ 
+            } 
+        } else {
+            count = this.length -1
+            current = this.tail
+            while(count !== idx){
+                current = current.prev
+                count--
+            }
+            
+        }
+        return current
+    }
+    //create a var which a result of the get method at 
+    // index passed to the function
+    // if the get method returns a valid node
+    //set the value of that node to be the val of the node passed to the func
+    // return true
+
+    set(idx, val){
+        let node = this.get(idx)
+        if(node){
+            node.val = val
+            return true
+        }
+        return false
+    }
+
 }
 
 
@@ -103,6 +170,9 @@ list.push(1)
 list.push(2)
 list.push(3)
 list.push(4)
+list.push(5)
+list.push(6)
+list.push(7)
+list.push(8)
 
-
-console.log(list.shift())
+console.log(list.set(5, 20000), list.get(5))
