@@ -159,6 +159,35 @@ class DoublyLinkedList{
         return false
     }
 
+    //if the index is less than zero or
+    //greater than or equal to the length return false
+    //if index is 0 unshift
+    //if the index is the same as the length push
+    //otherwise use the get method to access the item 
+    //before where we are trying to insert
+    //set the next and previous properties on the correct nodes
+    //to link everything together
+    //increment length
+    //return true
+
+    insert(idx, val){
+        let newNode = new Node(val)
+        if(idx < 0 || idx >= this.length) return false
+        if(idx === 0) return !!this.unshift(val)
+        if(idx === this.length) return !!this.push(val)
+
+        let lastNode = this.get(idx - 1)
+        let currentNode = lastNode.next
+        lastNode.next = newNode
+        newNode.prev = lastNode
+        currentNode.next = temp
+        temp.prev = currentNode
+        
+        this.length++
+        return true
+        
+    }
+
 }
 
 
