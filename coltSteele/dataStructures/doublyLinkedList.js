@@ -180,8 +180,8 @@ class DoublyLinkedList{
         let currentNode = lastNode.next
         lastNode.next = newNode
         newNode.prev = lastNode
-        currentNode.next = temp
-        temp.prev = currentNode
+        newNode.next = currentNode
+        currentNode.prev = currentNode
         
         this.length++
         return true
@@ -204,4 +204,4 @@ list.push(6)
 list.push(7)
 list.push(8)
 
-console.log(list.set(5, 20000), list.get(5))
+console.log(list.insert(5, 100), list.get(5))
