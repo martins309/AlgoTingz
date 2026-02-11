@@ -172,7 +172,7 @@ class DoublyLinkedList{
 
     insert(idx, val){
         let newNode = new Node(val)
-        if(idx < 0 || idx >= this.length) return false
+        if(idx < 0 || idx > this.length) return false
         if(idx === 0) return !!this.unshift(val)
         if(idx === this.length) return !!this.push(val)
 
