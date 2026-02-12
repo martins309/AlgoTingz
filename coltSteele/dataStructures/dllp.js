@@ -28,6 +28,22 @@ class DoublyLinkedList{
         this.length++
         return this
     }
+    pop(){
+        if(this.length === 0) return undefined
+
+        let currentTail = this.tail
+
+        if(this.length === 1){
+            this.head = null
+            this.tail = null
+        } else {
+            this.tail = currentTail.prev
+            this.tail.next = null
+            currentTail.prev = null
+        }
+        this.length--
+        return currentTail
+    }
 }
 
 
