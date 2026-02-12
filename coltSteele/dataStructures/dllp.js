@@ -59,6 +59,7 @@ list.push('hey')
 list.push('now')
 list.push('you\'re a' )
 list.push('rock star')
+list.pop()
 
 
 console.log(list)
