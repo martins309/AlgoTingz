@@ -41,8 +41,8 @@ let list = new DoublyLinkedList()
 
 list.push('hey')
 list.push('now')
-list.push('you\'re a rock' )
-list.push('star')
+list.push('you\'re a' )
+list.push('rock star')
 
 
 console.log(list)
