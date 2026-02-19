@@ -16,55 +16,54 @@ class DoublyLinkedList{
         this.length = 0
     }
 
-   push(val){
-    let newNode = new Node(val)
-
-    if(!this.head){
-        this.head = newNode
-        this.tail = this.head
-    } else {
-        this.tail.next = newNode
-        newNode.prev =  this.tail
-        this.tail = newNode
+    push(val){
+        let newNode = new Node(val)
+        if(!this.head){
+            this.head = newNode
+            this.tail = this.head
+        } else {
+            this.tail.next = newNode
+            newNode.prev = this.tail
+            this.tail = newNode
+        }
+        this.length++
+        return this
     }
-    this.length++
-    return this
 
-   }
+    pop(){
+        if(this.head === 0) return undefined
 
-   pop(){
-    if(!this.head) return undefined
-    
-    let currentTail = this.tail
+        let currentTail = this.tail
 
-    if(this.length === 1){
-        this.head = null
-        this.tail = null
-    } else {
-        this.tail = currentTail.prev
-        this.tail.next = null
-        currentTail.prev = null
+        if(this.length === 1){
+            this.head = null
+            this.tail = null
+        } else {
+            this.tail = currentTail.prev
+            this.tail.next = null
+            currentTail.prev = null
+        }
+        this.length--
+        return currentTail
     }
-    this.length--
-    return currentTail
-   }
 
-   shift(){
-    if(!this.head) return undefined
+    shift(){
+        if(!this.head) return undefined
 
-    let oldHead = this.head
+        let oldHead = this.head
 
-    if(this.length === 1){
-        this.head = null
-        this.tail = null
-    } else {
-        this.head = oldHead.next 
-        this.head.prev = null
-        oldHead.next = null
+        if(this.length === 0){
+            this.head = null
+            this.tail = null
+        } else {
+            this.head = oldHead.next
+            this.head.prev = null
+            oldHead.next = null
+        }
+        this.length--
+        return oldHead
     }
-    this.length--
-    return oldHead
-   }
+   
 }
 
 
@@ -79,7 +78,6 @@ list.push('hey')
 list.push('now')
 list.push('you\'re a' )
 list.push('rock star')
-
-
+list.pop()
 
 console.log(list)
