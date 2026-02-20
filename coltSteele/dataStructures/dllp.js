@@ -31,7 +31,7 @@ class DoublyLinkedList{
     }
 
     pop(){
-        if(this.head === 0) return undefined
+        if(!this.head) return undefined
 
         let currentTail = this.tail
 
@@ -48,22 +48,34 @@ class DoublyLinkedList{
     }
 
     shift(){
-        if(!this.head) return undefined
+        if(this.length === 0) return undefined
 
         let oldHead = this.head
 
-        if(this.length === 0){
+        if(this.length === 1){
             this.head = null
             this.tail = null
         } else {
-            this.head = oldHead.next
+            this.head = oldHead.next 
             this.head.prev = null
             oldHead.next = null
         }
-        this.length--
+        this.length++
         return oldHead
     }
-   
+   unshift(val){
+    let newNode = new Node(val)
+        if(!this.head){
+            this.head = newNode
+            this.tail = this.head
+        } else{
+            this.head.prev = newNode
+            newNode.next = this.head
+            this.head = newNode
+        }
+        this.length++
+        return this
+   }
 }
 
 
@@ -78,6 +90,6 @@ list.push('hey')
 list.push('now')
 list.push('you\'re a' )
 list.push('rock star')
-list.pop()
+list.unshift("ahhhhhhh")
 
 console.log(list)
