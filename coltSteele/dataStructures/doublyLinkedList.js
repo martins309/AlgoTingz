@@ -234,5 +234,6 @@ list.push(5)
 list.push(6)
 list.push(7)
 list.push(8)
+list.unshift('fuck')
 
-console.log(list.remove(5), list.get(5))
+console.log(list)
