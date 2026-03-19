@@ -83,7 +83,26 @@ class DoublyLinkedList{
 
    get(idx){
         if(idx < 0 || idx >= this.length) return null
-        
+        let mid = Math.floor(this.length / 2)
+        let count, current
+
+        if(idx !== mid){
+            count = 0
+            current = this.head
+            while(count !== idx){
+                current = current.next 
+                count++
+            }
+        } else {
+            count = this.length -1
+            current = this.tail
+
+            while(count !== idx){
+                current = current.prev
+                count--
+            }
+        }
+        return current
    }
 }
 
