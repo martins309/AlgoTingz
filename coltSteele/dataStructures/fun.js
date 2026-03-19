@@ -1,8 +1,8 @@
 
 
 function bubbleSort(arr, comparator){
-    let noSwap
-    function swap(idx1, idx2){
+  
+    function swap(arr, idx1, idx2){
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
 
@@ -12,12 +12,10 @@ function bubbleSort(arr, comparator){
         }
     }
 
-    for(let i = arr.length - 1; i > 0; i--){
-        noSwap = true
+    for(let i = arr.length; i > 0; i--){
         for(let j = 0; j < i - 1; j++){
             if(comparator(arr[j], arr[j + 1]) > 0){
-                swap(arr, j, j + 1)
-                noSwap = false
+                swap(arr, j, j + 1) 
             }
         }
     }
@@ -28,3 +26,6 @@ function bubbleSort(arr, comparator){
 function comparator(a , b){
     return a > b ? 1 : a < b ? -1 : 0
 }
+
+
+console.table(bubbleSort([9,4,76,2,11,5,2,1]))
