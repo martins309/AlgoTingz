@@ -106,14 +106,15 @@ class DoublyLinkedList{
 
    set(idx, val){
     let node = this.get(idx)
-    if(node){
-        node.val = val
-        return true
-    }
+        if(node){
+            node.val = val
+            return true
+        }
         return false
    }
 
-   
+
+
 }
 
 
