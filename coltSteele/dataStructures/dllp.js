@@ -105,7 +105,7 @@ class DoublyLinkedList{
    }
 
    set(idx, val){
-    let node = this.get(idx)
+        let node = this.get(idx)
         if(node){
             node.val = val
             return true
@@ -113,7 +113,12 @@ class DoublyLinkedList{
         return false
    }
 
-
+   insert(idx, val){
+        let newNode = new Node(val)
+        if(idx < 0 || idx > this.length) return false
+        if(idx === 0) return !!this.unshift(val)
+        if(idx === this.length) return !!this.push(val)
+   }
 
 }
 
