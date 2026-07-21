@@ -43,27 +43,45 @@
 
 
 
-function insertionSort(arr, comparator){
-    if(typeof comparator !== 'function'){
-        comparator = function(a, b){
-            return a - b
-        }
-    }
+// function insertionSort(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+//     for(let i = 0; i < arr.length; i++){
+//         let currentVal = arr[i]
+//         let j = i - 1
+//         while(j >= 0 && comparator(arr[j], currentVal) > 0){
+//             arr[j + 1] = arr[j]
+//             j--
+//         }
+//         arr[j + 1] = currentVal
+//     }
+//     return arr
+// }
+
+// function comparator(a, b){
+//     return a > b ? 1 : 
+//     a < b ? -1 : 0
+// }
+
+// console.table(insertionSort(["lily", 'apple', 'pussy', 'chicken'], comparator))
+
+
+function selectionSort(arr){
     for(let i = 0; i < arr.length; i++){
-        let currentVal = arr[i]
-        let j = i - 1
-        while(j >= 0 && comparator(arr[j], currentVal) > 0){
-            arr[j + 1] = arr[j]
-            j--
+        let min = arr[i]
+        for(let j = i + 1; j < arr.length; j++){
+            if (arr[min] > arr[j]){
+                min = j
+            }
         }
-        arr[j + 1] = currentVal
+        if(i !== min){
+            [arr[min], arr[i]] = [arr[i], arr[min]]
+        }
     }
     return arr
 }
 
-function comparator(a, b){
-    return a > b ? 1 : 
-    a < b ? -1 : 0
-}
-
-console.table(insertionSort(["lily", 'apple', 'pussy', 'chicken'], comparator))
+console.table(selectionSort([8,1,2,3,7,6]))
