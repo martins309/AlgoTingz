@@ -1,31 +1,38 @@
+//here we are going to test what i remember purely based of logic and understanding 
+
+//here we go!!
 
 
-function bubbleSort(arr, comparator){
-  
+
+
+function bubbleSort(arr, comparator) {
+    let noSwap
+
     function swap(arr, idx1, idx2){
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
 
-    if(typeof comparator != 'function'){
-        comparator = function(a ,b){
+    if(typeof comparator !== 'function'){
+        comparator = function(a, b){
             return a - b
         }
     }
 
-    for(let i = arr.length; i > 0; i--){
-        for(let j = 0; j < i - 1; j++){
+    for(let i = arr.length; i > 0; i--) {
+        noSwap = false
+        for(j = 0; j < i - 1; j++){
             if(comparator(arr[j], arr[j + 1]) > 0){
-                swap(arr, j, j + 1) 
+                swap(arr, j, j + 1)
+                noSwap = true
             }
         }
     }
     return arr
 }
 
-
-function comparator(a , b){
-    return a > b ? 1 : a < b ? -1 : 0
+function comparator(a, b){
+    return a > b ? 1 :
+    a < b ? -1 : 0
 }
 
-
-console.table(bubbleSort([9,4,76,2,11,5,2,1]))
+console.table(bubbleSort([9,3,57,4,8,3,1], comparator))
