@@ -5,34 +5,65 @@
 
 
 
-function bubbleSort(arr, comparator) {
-    let noSwap
+// function bubbleSort(arr, comparator) {
+//     let noSwap
 
-    function swap(arr, idx1, idx2){
-        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
-    }
+//     function swap(arr, idx1, idx2){
+//         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//     }
 
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
+
+//     for(let i = arr.length; i > 0; i--) {
+//         noSwap = false
+//         for(j = 0; j < i - 1; j++){
+//             if(comparator(arr[j], arr[j + 1]) > 0){
+//                 swap(arr, j, j + 1)
+//                 noSwap = true
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// function comparator(a, b){
+//     return a > b ? 1 :
+//     a < b ? -1 : 0
+// }
+
+// console.table(bubbleSort([9,3,57,4,8,3,1], comparator))
+
+
+
+
+
+
+
+function insertionSort(arr, comparator){
     if(typeof comparator !== 'function'){
         comparator = function(a, b){
             return a - b
         }
     }
-
-    for(let i = arr.length; i > 0; i--) {
-        noSwap = false
-        for(j = 0; j < i - 1; j++){
-            if(comparator(arr[j], arr[j + 1]) > 0){
-                swap(arr, j, j + 1)
-                noSwap = true
-            }
+    for(let i = 0; i < arr.length; i++){
+        let currentVal = arr[i]
+        let j = i - 1
+        while(j >= 0 && comparator(arr[j], currentVal) > 0){
+            arr[j + 1] = arr[j]
+            j--
         }
+        arr[j + 1] = currentVal
     }
     return arr
 }
 
 function comparator(a, b){
-    return a > b ? 1 :
+    return a > b ? 1 : 
     a < b ? -1 : 0
 }
 
-console.table(bubbleSort([9,3,57,4,8,3,1], comparator))
+console.table(insertionSort(["lily", 'apple', 'pussy', 'chicken'], comparator))

@@ -118,8 +118,16 @@ class DoublyLinkedList{
         if(idx < 0 || idx > this.length) return false
         if(idx === 0) return !!this.unshift(val)
         if(idx === this.length) return !!this.push(val)
+        
+        let prevNode = this.get(idx - 1)
+        let currentNode = prevNode.next
+        prevNode.next = newNode
+        newNode.prev = prevNode
+        newNode.next = currentNode
+        currentNode.prev = newNode
 
-        let lastNode = this.get(idx - 1)
+        this.length++
+        return true
    }
 
 }
