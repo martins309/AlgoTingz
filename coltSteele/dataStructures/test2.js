@@ -120,11 +120,10 @@
 
 
 
-const arr = [1,2,23,34,4,5,67,74]
+
 
 function arrTing(arr) {
-    for(let i = arr.length; i > 0; i--) {
-        console.log(arr.length)
-    }
     return arr.length
 }
+
+console.log(arrTing([10,6,1,3,5,9]))
