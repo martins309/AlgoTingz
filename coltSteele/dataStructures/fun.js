@@ -3,7 +3,7 @@
 //here we go!!
 
 
-
+//Bubble Sort Ting Them.... 
 
 function bubbleSort(arr, comparator) {
     let noSwap
@@ -35,4 +35,4 @@ function comparator(a, b){
     a < b ? -1 : 0
 }
 
-console.table(bubbleSort([9,3,57,4,8,3,1], comparator))
+console.table(bubbleSort(["nugget", "chicken", "ass", "burger"], comparator))
