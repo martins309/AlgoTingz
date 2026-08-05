@@ -82,7 +82,7 @@ class DoublyLinkedList{
    }
 
    get(idx){
-        if(idx < 0 || idx >= this.length - 1) return null
+        if(idx < 0 || idx >= this.length) return null
         let count, current
         let mid = Math.floor(this.length / 2)
 
@@ -103,6 +103,33 @@ class DoublyLinkedList{
         }
         return current
    }
+
+   set(idx, val){
+        let node = this.get(idx)
+        if(node){
+            node.val = val
+            return true
+        }
+        return false
+   }
+
+   insert(idx, val){
+        let newNode = new Node(val)
+        if(idx < 0 || idx > this.length) return false
+        if(idx === 0) return !!this.unshift(val)
+        if(idx === this.length) return !!this.push(val)
+        
+        let prevNode = this.get(idx - 1)
+        let currentNode = prevNode.next
+        prevNode.next = newNode
+        newNode.prev = prevNode
+        newNode.next = currentNode
+        currentNode.prev = newNode
+
+        this.length++
+        return true
+   }
+
 }
 
 

@@ -160,7 +160,7 @@ class DoublyLinkedList{
     }
 
     //if the index is less than zero or
-    //greater than or equal to the length return false
+    //greater than the length return false
     //if index is 0 unshift
     //if the index is the same as the length push
     //otherwise use the get method to access the item 
@@ -176,10 +176,10 @@ class DoublyLinkedList{
         if(idx === 0) return !!this.unshift(val)
         if(idx === this.length) return !!this.push(val)
 
-        let lastNode = this.get(idx - 1)
-        let currentNode = lastNode.next
-        lastNode.next = newNode
-        newNode.prev = lastNode
+        let prevNode = this.get(idx - 1)
+        let currentNode = prevNode.next
+        prevNode.next = newNode
+        newNode.prev = prevNode
         newNode.next = currentNode
         currentNode.prev = newNode
         
