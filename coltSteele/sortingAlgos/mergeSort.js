@@ -57,7 +57,6 @@ function mergeArr(arr1, arr2, comparator){
 
 
 
-
 /*
 break up the array into halves until you have arrays
 recursive call merge sort again to break halves into halves
@@ -71,24 +70,24 @@ return the merge array
 */
 
 
-function mergeSort(arr, comparator){
-    if (arr.length <= 1) return arr
+// function mergeSort(arr, comparator){
+//     if (arr.length <= 1) return arr
 
-    let mid = Math.floor(arr.length / 2)
-    let left = mergeSort(arr.slice(0, mid), comparator)
-    let right = mergeSort(arr.slice(mid), comparator)
+//     let mid = Math.floor(arr.length / 2)
+//     let left = mergeSort(arr.slice(0, mid), comparator)
+//     let right = mergeSort(arr.slice(mid), comparator)
    
-   return mergeArr(left, right, comparator)
+//    return mergeArr(left, right, comparator)
 
     
-}
+// }
 
-const comparator = (a, b) => 
-    a > b ? 1 :
-    a < b ? -1 : 0
+// const comparator = (a, b) => 
+//     a > b ? 1 :
+//     a < b ? -1 : 0
 
 
-console.log(mergeSort(["banana", "apple", "cherry"], comparator))
+// console.log(mergeSort(["banana", "apple", "cherry"], comparator))
 
 
 
