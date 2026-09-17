@@ -130,4 +130,9 @@ function mergeArr(arr1, arr2) {
 }
 
 
-console.log(mergeArr([1,3,5], [8,5,7]))
+console.log(mergeArr([1,10,50], [2,14,99,100]))
+
+// okay so here is not going to actually sort the array, this is just to merge to the array 
+// the arrays must already be sorted 
+
+
