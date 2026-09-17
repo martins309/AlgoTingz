@@ -128,3 +128,6 @@ function mergeArr(arr1, arr2) {
 
     return result
 }
+
+
+console.log(mergeArr([1,3,5], [8,5,7]))
