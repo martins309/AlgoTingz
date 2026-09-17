@@ -97,23 +97,33 @@
 
 
 
-function insertionSort(arr, comparator){
-    if(typeof comparator !== 'function'){
-        comparator = function(a, b){
-            return a - b
-        }
-    }
+// function insertionSort(arr, comparator){
+//     if(typeof comparator !== 'function'){
+//         comparator = function(a, b){
+//             return a - b
+//         }
+//     }
 
-    for(let i = 0; i < arr.length; i++){
-        let currentVal = arr[i]
-        let j = i - 1
-        while(j >= 0 && comparator(arr[j], currentVal) > 0){
-            arr[j + 1] = arr[j]
-            j--
-        }
-        arr[j + 1] = currentVal
-    }
-    return arr
+//     for(let i = 0; i < arr.length; i++){
+//         let currentVal = arr[i]
+//         let j = i - 1
+//         while(j >= 0 && comparator(arr[j], currentVal) > 0){
+//             arr[j + 1] = arr[j]
+//             j--
+//         }
+//         arr[j + 1] = currentVal
+//     }
+//     return arr
+// }
+
+// console.table(insertionSort([3,4,5,1,2,6,2,3]))
+
+
+
+
+
+function arrTing(arr) {
+    return arr.length
 }
 
-console.table(insertionSort([3,4,5,1,2,6,2,3]))
+console.log(arrTing([10,6,1,3,5,9]))
