@@ -25,9 +25,9 @@ function bubbleSort(arr, comparator) {
 }
 
 function comparator(a, b){
-    a > b ? 1 :
+    return a > b ? 1 :
     a < b ? -1 : 0
 }
 
 
-console.table(bubbleSort([10,4,5,7,23,1,3]))
+console.table(bubbleSort(['zebra', 'donkey', 'youMuj', 'apples', 'esteak', 'kitty'], comparator))
