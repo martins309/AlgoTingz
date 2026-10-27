@@ -21,3 +21,5 @@ function selectionSort(arr){
     }
     return arr
 }
+
+console.table(selectionSort([5,1,2,3,9,4,0,7]))
