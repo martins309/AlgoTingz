@@ -2,7 +2,7 @@
 // its cool if i cant lol 
 
 
-function selectionSort(arr){
+function selectionSort(arr, comparator){
 
     if(typeof comparator !== 'function'){
         comparator = function(a, b){
@@ -16,7 +16,7 @@ function selectionSort(arr){
     for (let i = 0; i < arr.length; i++){
         let min = i
         for(let j = i + 1; j < arr.length; j++){
-            if(arr[j] < arr[min]){
+            if(comparator(arr[j], arr[min])){
                 min = j 
             }
             
@@ -31,4 +31,4 @@ function comparator(a, b) {
 }
 
 
-console.table(selectionSort(["noodle", 'chicken', 'soup', 'lycan', 'baboozled']))
+console.table(selectionSort(["noodle", 'chicken', 'soup', 'lycan', 'baboozled'], comparator))
