@@ -32,3 +32,13 @@ function comparator(a, b) {
 
 
 console.table(selectionSort(["noodle", 'chicken', 'soup', 'lycan', 'baboozled'], comparator))
+
+////////note////////
+
+//can this sort without the comparator??? if so wtf is it for
+//it just sorted without the comparator parameter or me adding it
+// in the fucking for loop
+// what is going on lolol 
+
+
+/////////////////////
