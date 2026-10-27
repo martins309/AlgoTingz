@@ -3,6 +3,12 @@
 
 
 function selectionSort(arr){
+
+    if(typeof comparator !== 'function'){
+        comparator = function(a, b){
+            return a - b
+        }
+    }
     function swap(arr, idx1, idx2){
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
     }
@@ -19,5 +25,10 @@ function selectionSort(arr){
     }
     return arr
 }
+function comparator(a, b) {
+    return a > b ? 1 :
+    a < b ? -1 : 0
+}
 
-console.table(selectionSort([5,1,2,3,9,4,0,7]))
+
+console.table(selectionSort(["noodle", 'chicken', 'soup', 'lycan', 'baboozled']))
