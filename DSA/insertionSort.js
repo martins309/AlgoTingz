@@ -5,10 +5,17 @@
 
 
 
-function insertionSort(arr) {
+function insertionSort(arr, comparator) {
+    if(typeof comparator !== 'function') {
+        comparator = function(a, b) {
+            return a - b
+        }
+    }
     for(let i = 1; i < arr.length; i++) {
         let currentVal = arr[i]
-        for(let j = i - 1; j >= 0 && arr[j] > currentVal; j++) {
+
+        let j 
+        for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--) {
             arr[j + 1] = arr[j]
         }
         arr[j + 1] = currentVal
@@ -16,4 +23,9 @@ function insertionSort(arr) {
     return arr
 }
 
-console.table([insertionSort([4,3,2,5,1,7])])
+function comparator(a, b) {
+    return a > b ? 1 :
+    a < b ? -1 : 0
+}
+
+console.table(insertionSort(["what", "am", "i", "doing"], comparator))
