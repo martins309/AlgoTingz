@@ -16,7 +16,7 @@ function selectionSort(arr, comparator){
     for (let i = 0; i < arr.length; i++){
         let min = i
         for(let j = i + 1; j < arr.length; j++){
-            if(comparator(arr[j], arr[min]) > 0){
+            if(comparator(arr[j], arr[min]) < 0){
                 min = j 
             }
             
@@ -31,7 +31,7 @@ function comparator(a, b) {
 }
 
 
-console.table(selectionSort([43,2,1,67,5,12, 8], comparator))
+console.table(selectionSort([43,2,1,67,5,12,8], comparator))
 
 ////////note////////
 
