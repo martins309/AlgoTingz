@@ -31,7 +31,7 @@ function comparator(a, b) {
 }
 
 
-console.table(selectionSort([43,2,1,67,5,12,8], comparator))
+console.table(selectionSort(["chicken", 'apple', "likkle", "botanical", "zebra"], comparator))
 
 ////////note////////
 
