@@ -16,7 +16,11 @@ function selectionSort(arr, comparator){
     for (let i = 0; i < arr.length; i++){
         let min = i
         for(let j = i + 1; j < arr.length; j++){
+<<<<<<< HEAD
             if(comparator(arr[j], arr[min]) > 0){
+=======
+            if(comparator(arr[j], arr[min]) < 0){
+>>>>>>> 632945ae17c890d03348cc994fe641d742319964
                 min = j 
             }
             
@@ -31,7 +35,7 @@ function comparator(a, b) {
 }
 
 
-console.table(selectionSort(["noodle", 'chicken', 'soup', 'lycan', 'baboozled'], comparator))
+console.table(selectionSort(["chicken", 'apple', "likkle", "botanical", "zebra"], comparator))
 
 ////////note////////
 
