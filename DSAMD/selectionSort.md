@@ -10,9 +10,9 @@
 > in the first part of the algo, we are trying to find the smallest value that exists in the array starting from the beginning and then comparing every other element from that first position.
     - if there is an element that is smaller, then we will store it the min variable. (min = i)
     - in the second loops, we start at i + 1 so that we dont compare i to the first element, we want to compare i to the second element on
-    - then we compare arr[min] to arr[j] to see if the number in the first position is greater then the subsequent value
+    - then we compare arr[min] to arr[j] to see if the number in the first position is greater then the element in the subsequent position
         - if so then we update the min variable
-    - to prevent unnecessary swapping, we have a condition that states that if i ≠= min, meaning they aren’t the same position, then you swap
+    - to prevent unnecessary swapping, we have a condition that states that if i ≠ min, if the minimum is not the initial value you started with, then you swap
     - and return the array at the end
 
     ```js

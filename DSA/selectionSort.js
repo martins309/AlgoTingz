@@ -16,7 +16,7 @@ function selectionSort(arr, comparator){
     for (let i = 0; i < arr.length; i++){
         let min = i
         for(let j = i + 1; j < arr.length; j++){
-            if(comparator(arr[j], arr[min])){
+            if(comparator(arr[j], arr[min]) > 0){
                 min = j 
             }
             
