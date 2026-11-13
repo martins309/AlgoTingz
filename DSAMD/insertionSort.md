@@ -26,7 +26,7 @@
         let currentVal = arr[i]
 
         let j 
-        for(j = i - 1; j >= 0 && comparator(arr[j], currentVal) > 0; j--) {
+        for(j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
             arr[j + 1] = arr[j]
         }
         arr[j + 1] = currentVal
