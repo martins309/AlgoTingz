@@ -11,7 +11,7 @@ function mergeArr(arr1, arr2){
     let results = []
 
     while(i < arr1.length && j < arr2.length){
-        if(arr1[i] < arr2[j]){
+        if(arr2[j] > arr1[i]){
             results.push(arr1[i])
             i++
         } else {
@@ -19,6 +19,7 @@ function mergeArr(arr1, arr2){
             j++
         }
     }
+
     while(i < arr1.length){
         results.push(arr1[i])
         i++
@@ -33,18 +34,18 @@ function mergeArr(arr1, arr2){
 }
 
 
-
+//remember this only returns one array lol 
 
 
 function mergeSort(arr){
-    if(arr.length <= 1) return 
+    if(arr.length <= 1) return arr
 
-    const mid = Math.floor(arr.length / 2)
-    left = mergeSort(arr.slice(0, mid))
-    right = mergeSort(arr.slice(mid, arr.length))
+    let mid = Math.floor(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
 
     return mergeArr(left, right)
 
 }
 
-console.log(mergeSort([2,5,7], [1,9,8]))
+console.log(mergeSort([2,5,7,1,9,8]))
