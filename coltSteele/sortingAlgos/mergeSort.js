@@ -70,17 +70,17 @@ return the merge array
 */
 
 
-// function mergeSort(arr, comparator){
-//     if (arr.length <= 1) return arr
+function mergeSort(arr, comparator){
+    if (arr.length <= 1) return arr
 
-//     let mid = Math.floor(arr.length / 2)
-//     let left = mergeSort(arr.slice(0, mid), comparator)
-//     let right = mergeSort(arr.slice(mid), comparator)
+    let mid = Math.floor(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid), comparator)
+    let right = mergeSort(arr.slice(mid), comparator)
    
-//    return mergeArr(left, right, comparator)
+   return mergeArr(left, right, comparator)
 
     
-// }
+}
 
 // const comparator = (a, b) => 
 //     a > b ? 1 :
