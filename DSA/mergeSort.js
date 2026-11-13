@@ -12,7 +12,7 @@ function mergeArr(arr1, arr2){
 
     while(i < arr1.length && j < arr2.length){
         if(arr1[i] < arr2[j]){
-            results.push(arr[i])
+            results.push(arr1[i])
             i++
         } else {
             results.push(arr2[j])
@@ -20,7 +20,7 @@ function mergeArr(arr1, arr2){
         }
     }
     while(i < arr1.length){
-        results.push(arr[i])
+        results.push(arr1[i])
         i++
     }
 
@@ -32,10 +32,19 @@ function mergeArr(arr1, arr2){
     return results
 }
 
-console.log(mergeArr([1,3,5], [7,8,9]))
 
 
 
-// function mergeSort(arr){
-//     return arr 
-// }
+
+function mergeSort(arr){
+    if(arr.length <= 1) return 
+
+    const mid = Math.floor(arr.length / 2)
+    left = mergeSort(arr.slice(0, mid))
+    right = mergeSort(arr.slice(mid, arr.length))
+
+    return mergeArr(left, right)
+
+}
+
+console.log(mergeSort([2,5,7], [1,9,8]))
