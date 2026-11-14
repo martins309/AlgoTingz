@@ -27,4 +27,4 @@ function comparator(a, b) {
     a < b ? -1 : 0
 }
 
-console.table(bubbleSort(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], comparator))
+console.table(bubbleSort([10,5,1,3,4,99,2,64], comparator))
