@@ -1,4 +1,4 @@
-# Selection Sort
+# Merge Sort
 
 ##
 | Time Complexity | Space Complexity |
@@ -80,12 +80,12 @@ console.log(mergeSort([2,5,7,1,9,8]))
 ### Time Complexity of Merge Sort 
 
 - Is O(n log n) because we have to break the array down into smaller parts
--when we are breaking down the array we are essentially doing O(log n) decompositions
+- when we are breaking down the array we are essentially doing O(log n) decompositions
     - and O(n) comparisons per decomposition
 
 - like this for example
 
-!(DSA/pisha/msBO.png)
+![Merge Sort Diagram](./pisha/msBO.png)
 
                   
 
